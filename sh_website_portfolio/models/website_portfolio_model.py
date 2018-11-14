@@ -12,6 +12,6 @@ class website_portfolio(models.Model):
     name=fields.Char(string="Title",required=False)
     desc=fields.Text(string="Description")
     is_active=fields.Boolean(string="Active",default=True)
-    website_id = fields.Many2one("website", related="category_id.website_id", required=True, readonly = True)       
+    website_id = fields.Many2one("website", related="category_id.website_id", required=True, readonly = False)       
     
     
