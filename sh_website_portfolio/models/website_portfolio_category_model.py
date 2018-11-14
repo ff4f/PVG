@@ -7,7 +7,7 @@ class website_portfolio_category(models.Model):
     _name="website.portfolio.category"
     _description = "Website Portfolio Category"        
     
-    name = fields.Char(string="Category", required=True )
+    name = fields.Char(string="Category", required=True, translatable=True )
     is_active = fields.Boolean(string="Active",default=True)
     website_id = fields.Many2one('website', required=True)        
     
