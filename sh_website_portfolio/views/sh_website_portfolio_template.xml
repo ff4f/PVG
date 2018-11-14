@@ -72,7 +72,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <h5><t t-esc="rec.name"/></h5>
-                                                                <img t-attf-src="/website/image/website.portfolio/{{rec.id}}/img" style="width: 600px;height: 400px;object-fit: cover;"></img>
+                                                                <img t-attf-src="/website/image/website.portfolio/{{rec.id}}/img" style="width: 300px;height: 200px;object-fit: cover;"></img>
                                                                 <p>
                                                                 	<t t-esc="rec.desc"/>
                                                                 </p>
