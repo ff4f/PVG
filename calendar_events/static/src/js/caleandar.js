@@ -13,7 +13,8 @@ odoo.define('marketplace_seller_events.caleandar', function (require) {
       var day = parseInt($(this).text())
        var new_date = new Date(Date.parse(mon +day+','+year))
        var base_url = window.location.origin;
-       var url = base_url+'/event/calendar/day?cdate='+new_date.getFullYear()+'-'+(new_date.getMonth()+1)+'-'+new_date.getDate()
+       //var url = base_url+'/event/calendar/day?cdate='+new_date.getFullYear()+'-'+(new_date.getMonth()+1)+'-'+new_date.getDate()
+        var url = "#";
         window.location.href = url;
   });
 
