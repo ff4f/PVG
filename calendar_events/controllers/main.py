@@ -77,8 +77,7 @@ class SellerWebsiteEventController(http.Controller):
                 ("date_begin", "<", (today.replace(day=1) + relativedelta(months=2)).strftime('%Y-%m-%d 00:00:00'))],
                 0],
             ['old', _('Old Events'), [
-                ("date_end", "<", today.strftime('%Y-%m-%d 00:00:00')),
-                ("date_begin", "<", today.strftime('%Y-%m-%d 00:00:00'))],
+                ("date_end", "<", today.strftime('%Y-%m-%d 00:00:00'))],
                 0],
         ]
 
