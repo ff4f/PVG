@@ -223,13 +223,13 @@ odoo.define('marketplace_seller_events.caleandar', function (require) {
             for(var n = 0; n < calendar.Model.length; n++){
               var evDate = calendar.Model[n].Date;
               var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month, (i+1));
-              
+              if(evDate.getTime() == toDate.getTime()){
                 var title = document.createElement('span');
                 number.className += " eventday";
                 title.className += "cld-title";
                 title.innerHTML += calendar.Model[n].Title;
                 number.appendChild(title);
-              
+              }
             }
             day.appendChild(number);
             // If Today..
