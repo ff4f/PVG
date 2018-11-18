@@ -108,7 +108,7 @@ class SellerWebsiteEventController(http.Controller):
             return domain
 
         for date in dates:
-            #if date[0] != 'old':
+            if date[0] != 'old':
                 date[3] = Event.search_count(dom_without('date') + date[2])
 
         domain = dom_without('type')
