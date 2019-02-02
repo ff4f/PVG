@@ -68,9 +68,9 @@ class ProjectGanttView(models.Model):
                             startdate = datetime.datetime.strptime(str(task.date_start), '%Y-%m-%d %H:%M:%S')
                             enddate = datetime.datetime.strptime(str(task.date_deadline), '%Y-%m-%d')
                             if not project_deadline:
-                                # if project_deadline < enddate:
-                                #     project_deadline = enddate
-                                # else:
+                                if project_deadline < enddate:
+                                    project_deadline = enddate
+                                else:
                                     project_deadline = enddate
                             durationdays = (enddate - startdate).days
                             temp['start_date'] = datetime.datetime.strptime(str(task.date_start), '%Y-%m-%d %H:%M:%S').strftime(
