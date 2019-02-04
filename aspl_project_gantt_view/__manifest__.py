@@ -23,7 +23,7 @@
     'depends': ['base', 'project'],
     'images': ['static/description/main_screenshot.png'],
     "data": [
-        # 'views/templates.xml',
+        'views/templates.xml',
         'views/project_views.xml',
     ],
     'qweb': ['static/src/xml/*.xml'],
