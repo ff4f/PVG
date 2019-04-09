@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-students_scheduler_timing_user,StudentsSchedulerTimingUser,model_accr_timing,students_scheduler_group_user,1,0,0,0
-students_scheduler_timing_manager,StudentsSchedulerTimingManager,model_accr_timing,students_scheduler_group_manager,1,1,1,1
-students_scheduler_sessions_user,StudentsSchedulerSessionsUser,model_accr_session,students_scheduler_group_user,1,0,0,0
-students_scheduler_sessions_manager,StudentsSchedulerSessionsManager,model_accr_session,students_scheduler_group_manager,1,1,1,1
