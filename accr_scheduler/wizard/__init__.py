@@ -1,1 +1,0 @@
-from . import accr_generate_timetable
