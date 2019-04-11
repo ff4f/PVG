@@ -74,37 +74,37 @@
                                                 <span t-raw="a['name'] if  a['name']  else ''" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('0',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('0',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('0',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('1',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('1',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('1',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('2',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('2',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('2',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('3',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('3',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('3',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('4',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('4',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('4',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('5',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('5',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('5',{'start_datetime':''})['start_datetime']" />
                                             </td>
                                             <td>
-                                                <b><span t-esc="a['line'].get('6',{'subject':''})['subject']" /></b>
+                                                <b><span t-esc="a['line'].get('6',{'section':''})['section']" /></b>
                                                 <br></br>
                                                 <span t-esc="a['line'].get('6',{'start_datetime':''})['start_datetime']" />
                                             </td>
