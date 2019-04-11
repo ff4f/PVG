@@ -48,7 +48,7 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
 
     def get_object(self, data):
         data_list = []
-        for timetable_obj in self.env['op.session'].browse(
+        for timetable_obj in self.env['accr.session'].browse(
                 data['time_table_ids']):
             oldDate = pytz.UTC.localize(
                 fields.Datetime.from_string(timetable_obj.start_datetime))
