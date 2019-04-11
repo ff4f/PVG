@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_time_table_report_form" model="ir.ui.view">
+            <field name="name">accr.time.table.report.form</field>
+            <field name="model">accr.time.table.report</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Time Table Report" version="7.0">
+                    <sheet>
+                        <div>
+                            <group colspan="4" cols="4">
+                                <field name="section" />
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <span groups="base.group_user">
+                            <button string="Generate Time Table Report" type="object" name="gen_time_table_report" class="oe_highlight"/>
+                            <button special="cancel" string="Close" type="object" />
+                        </span>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_time_table_report_view">
+            <field name="name">Generate Sessions Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.time.table.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_time_table_report_view_form">
+            <field name="act_window_id" ref="act_open_accr_time_table_report_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_time_table_report_form" />
+        </record>
+    </data>
+</odoo>

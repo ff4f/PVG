@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report
+                id="report_timetable_generate"
+                string="TimeTable report"
+                model="accr.session" report_type="qweb-pdf"
+                file="accr_scheduler.timetable_report_generate"
+                name="accr_scheduler.timetable_report_generate"
+                menu="False"/>
+    </data>
+</odoo>
