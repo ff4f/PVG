@@ -23,7 +23,7 @@
     <!-- Menu item to open the accr timetable report -->
     <menuitem id="menu_accr_timetable_report" name="Timetable report" parent="menu_students_scheduler" action="action_accr_timetable_report" />
 
-    <menuitem id="menu_accr_timing" name="Task Timing" parent="menu_students_scheduler" action="act_open_accr_timing_view" />
+    <!-- <menuitem id="menu_accr_timing" name="Task Timing" parent="menu_students_scheduler" action="act_open_accr_timing_view" />
     <menuitem id="menu_accr_session" name="Task session" parent="menu_students_scheduler" action="act_open_accr_session_view" />
     <menuitem id="menu_accr_generate_timetable" name="Generate Time Table" parent="menu_students_scheduler" action="act_open_accr_generate_time_table_view" />
 
@@ -31,7 +31,7 @@
     <menuitem id="menu_accr_session" name="Task session" parent="studio_customization.student_reg_schedule_da9d52e6-fd3f-4c68-a58b-e1b48489a097" action="act_open_accr_session_view" />
     <menuitem id="menu_accr_generate_timetable" name="Generate Time Table" parent="studio_customization.student_reg_schedule_da9d52e6-fd3f-4c68-a58b-e1b48489a097" action="act_open_accr_generate_time_table_view" />
     <menuitem id="menu_accr_session_analysis_pivot" name="Session Analysis" parent="studio_customization.student_reg_schedule_da9d52e6-fd3f-4c68-a58b-e1b48489a097" sequence="50" action="act_open_accr_session_view_pivot"/>
-    <menuitem id="menu_accr_generate_time_table_report" string="Generate Timetable Report" parent="studio_customization.student_reg_schedule_da9d52e6-fd3f-4c68-a58b-e1b48489a097" sequence="30" action="act_open_accr_time_table_report_view"/>
+    <menuitem id="menu_accr_generate_time_table_report" string="Generate Timetable Report" parent="studio_customization.student_reg_schedule_da9d52e6-fd3f-4c68-a58b-e1b48489a097" sequence="30" action="act_open_accr_time_table_report_view"/> -->
 
 
 </odoo>
