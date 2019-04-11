@@ -51,7 +51,7 @@
                                 <table width="100%">
                                     <tbody>
                                         <tr>
-                                            <td><b>session:</b> <span t-esc="data['session'][1]" /></td>
+                                            <td><b>Section:</b> <span t-esc="data['section'][1]" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
