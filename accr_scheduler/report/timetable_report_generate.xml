@@ -89,8 +89,6 @@
                                         <tr t-foreach="get_object(data)" t-as="a">
                                             <td>
                                                 <span t-raw="a['name'] if  a['name']  else ''" />
-                                                <br></br>
-                                                <span t-esc="a['line'].get('4',{'type':''})['type']" />
                                             </td>
                                             <td>
                                                 <span t-esc="a['line'].get('5',{'start_datetime':''})['start_datetime']" />
