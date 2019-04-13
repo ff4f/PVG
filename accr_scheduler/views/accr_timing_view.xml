@@ -12,6 +12,7 @@
                     <field name="minute" />
                     <field name="am_pm" />
                     <field name="duration" widget="float_time" />
+                    <field name="timing_type"/>
                     <field name="sequence" />
                 </tree>
             </field>
@@ -30,6 +31,7 @@
                             <field name="hour" />
                             <field name="minute" />
                             <field name="am_pm" />
+                            <field name="timing_type"/>
                         </group>
                     </sheet>
                 </form>
@@ -42,6 +44,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Period">
+                    <field name="timing_type"/>
                     <field name="name" select="True" />
                     <field name="duration" />
                     <field name="hour" select="True" />
