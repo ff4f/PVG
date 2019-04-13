@@ -37,13 +37,13 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
         return main_list
 
     def get_heading(self):
-        dayofWeek = [_(calendar.day_name[0]),
+        dayofWeek = [_(calendar.day_name[5]),
+                     _(calendar.day_name[6]),
+                     _(calendar.day_name[0]),
                      _(calendar.day_name[1]),
                      _(calendar.day_name[2]),
                      _(calendar.day_name[3]),
-                     _(calendar.day_name[4]),
-                     _(calendar.day_name[5]),
-                     _(calendar.day_name[6])]
+                     _(calendar.day_name[4])]
         return dayofWeek
 
     def get_object(self, data):
@@ -64,6 +64,7 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
                     tools.DEFAULT_SERVER_DATETIME_FORMAT),
                 'day': str(day),
                 'session': timetable_obj.timing_id.name,
+                'Type': timetable_obj.timing_id.timing_type,
             }
             data_list.append(timetable_data)
         ttdl = sorted(data_list, key=lambda k: k['sequence'])
