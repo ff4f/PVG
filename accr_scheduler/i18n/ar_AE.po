@@ -214,13 +214,13 @@ msgstr "الجمعة"
 #: model:ir.actions.act_window,name:accr_scheduler.act_open_accr_generate_time_table_view
 #: model:ir.model,name:accr_scheduler.model_accr_generate_time_table
 msgid "Generate Sessions"
-msgstr "أنشاء مجدول"
+msgstr "أنشاء توقيت مهمة"
 
 #. module: accr_scheduler
 #: model:ir.actions.act_window,name:accr_scheduler.act_open_accr_time_table_report_view
 #: model:ir.ui.menu,name:accr_scheduler.menu_accr_generate_time_table_report
 msgid "Generate Sessions Report"
-msgstr "أنشاء تقرير جدول"
+msgstr "أنشاء تقرير أوقات المهام"
 
 #. module: accr_scheduler
 #: model:ir.ui.menu,name:accr_scheduler.menu_accr_generate_timetable
@@ -360,22 +360,22 @@ msgstr "التسلسل"
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_form
 msgid "Session"
-msgstr "مجدول"
+msgstr "توقيت مهمة"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_pivot
 msgid "Session Analysis"
-msgstr "تحليل المجدولات"
+msgstr "تحليل أوقات المهام"
 
 #. module: accr_scheduler
 #: model:ir.actions.act_window,name:accr_scheduler.act_open_accr_session_view_pivot
 msgid "Session Analysis Pivot"
-msgstr "تحليل المجدولات"
+msgstr "تحليل أوقات المهام"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_gen_time_table_line_tree
 msgid "Session Line"
-msgstr "مدخل جدول"
+msgstr "وقت مهمة"
 
 #. module: accr_scheduler
 #: model:ir.actions.act_window,name:accr_scheduler.act_open_accr_session_view
@@ -384,7 +384,7 @@ msgstr "مدخل جدول"
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_search
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_tree
 msgid "Sessions"
-msgstr "المجدولات"
+msgstr "أوقات المهام"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_form
@@ -519,12 +519,12 @@ msgstr "تقرير الجدول الزمني"
 #: model:ir.model.fields,field_description:accr_scheduler.field_accr_gen_time_table_line__timing_id
 #: model:ir.model.fields,field_description:accr_scheduler.field_accr_session__timing_id
 msgid "Timing"
-msgstr "توقيت"
+msgstr "المهمة"
 
 #. module: accr_scheduler
 #: model:ir.actions.act_window,name:accr_scheduler.act_open_accr_timing_view
 msgid "Timings"
-msgstr "الأوقات"
+msgstr "المهام"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_session_search
