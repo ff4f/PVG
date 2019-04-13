@@ -64,7 +64,7 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
                     tools.DEFAULT_SERVER_DATETIME_FORMAT),
                 'day': str(day),
                 'session': timetable_obj.timing_id.name,
-                'Type': timetable_obj.timing_id.timing_type,
+                'type': timetable_obj.timing_id.timing_type,
             }
             data_list.append(timetable_data)
         ttdl = sorted(data_list, key=lambda k: k['sequence'])
