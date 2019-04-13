@@ -447,7 +447,7 @@ msgstr "المهام"
 #. module: accr_scheduler
 #: model:ir.ui.menu,name:accr_scheduler.menu_accr_session
 msgid "Task session"
-msgstr "جدولة المهام"
+msgstr "تواريخ المهام"
 
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
