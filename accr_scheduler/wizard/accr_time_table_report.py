@@ -43,35 +43,35 @@ class SessionReport(models.TransientModel):
             'accr_scheduler.report_timetable_generate')
         data = self.read(
             ['start_date', 'end_date', 'section', 'timing_type'])[0]
-        # timing_type = str(self.read(['timing_type'])[0])
-        # if timing_type == 'all':
-        #     time_table_ids = self.env['accr.session'].search(
-        #         [('section', '=', data['section'][0]),
-        #          ('start_datetime', '>=', data['start_date']),
-        #          ('end_datetime', '<=', data['end_date'])],
-        #         order='start_datetime asc')
-        #     data.update({'time_table_ids': time_table_ids.ids})
-        # elif timing_type == 'academic':
-        #     time_table_ids = self.env['accr.session'].search(
-        #         [('section', '=', data['section'][0]),
-        #          ('start_datetime', '>=', data['start_date']),
-        #          ('end_datetime', '<=', data['end_date']),
-        #          ('timing_type', '=', 'academic')],
-        #         order='start_datetime asc')
-        #     data.update({'time_table_ids': time_table_ids.ids})
-        # elif timing_type == 'non-academic':
-        #     time_table_ids = self.env['accr.session'].search(
-        #         [('section', '=', data['section'][0]),
-        #          ('start_datetime', '>=', data['start_date']),
-        #          ('end_datetime', '<=', data['end_date']),
-        #          ('timing_type', '=', 'non-academic')],
-        #         order='start_datetime asc')
-        #     data.update({'time_table_ids': time_table_ids.ids})
-        time_table_ids = self.env['accr.session'].search(
+        timing_type = str(self.read(['timing_type'].selection)[0])
+        if timing_type == 'all':
+            time_table_ids = self.env['accr.session'].search(
+                [('section', '=', data['section'][0]),
+                 ('start_datetime', '>=', data['start_date']),
+                 ('end_datetime', '<=', data['end_date'])],
+                order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
+        elif timing_type == 'academic':
+            time_table_ids = self.env['accr.session'].search(
                 [('section', '=', data['section'][0]),
                  ('start_datetime', '>=', data['start_date']),
                  ('end_datetime', '<=', data['end_date']),
-                 ('timing_type', '=', data['timing_type'])],
+                 ('timing_type', '=', 'academic')],
                 order='start_datetime asc')
-        data.update({'time_table_ids': time_table_ids.ids})
+            data.update({'time_table_ids': time_table_ids.ids})
+        elif timing_type == 'non-academic':
+            time_table_ids = self.env['accr.session'].search(
+                [('section', '=', data['section'][0]),
+                 ('start_datetime', '>=', data['start_date']),
+                 ('end_datetime', '<=', data['end_date']),
+                 ('timing_type', '=', 'non-academic')],
+                order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
+        # time_table_ids = self.env['accr.session'].search(
+        #         [('section', '=', data['section'][0]),
+        #          ('start_datetime', '>=', data['start_date']),
+        #          ('end_datetime', '<=', data['end_date']),
+        #          ('timing_type', '=', data['timing_type'])],
+        #         order='start_datetime asc')
+        # data.update({'time_table_ids': time_table_ids.ids})
         return template.report_action(self, data=data)
