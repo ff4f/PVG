@@ -48,6 +48,7 @@ class SessionReport(models.TransientModel):
                 ('start_datetime', '>=', data['start_date']),
                 ('end_datetime', '<=', data['end_date'])],
                 order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
         elif self.read(['timing_type'])[0] == 'academic':
             time_table_ids = self.env['accr.session'].search(
                 [('section', '=', data['section'][0]),
@@ -55,6 +56,7 @@ class SessionReport(models.TransientModel):
                 ('end_datetime', '<=', data['end_date']),
                 ('timing_type', '=', 'academic')],
                 order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
         elif self.read(['timing_type'])[0] == 'non-academic':
             time_table_ids = self.env['accr.session'].search(
                 [('section', '=', data['section'][0]),
@@ -62,5 +64,5 @@ class SessionReport(models.TransientModel):
                 ('end_datetime', '<=', data['end_date']),
                 ('timing_type', '=', 'non-academic')],
                 order='start_datetime asc')
-        data.update({'time_table_ids': time_table_ids.ids})
+            data.update({'time_table_ids': time_table_ids.ids})
         return template.report_action(self, data=data)
