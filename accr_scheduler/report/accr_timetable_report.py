@@ -37,18 +37,18 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
         return main_list
 
     def get_heading(self):
-        dayofWeek = [_(calendar.day_name[0]),
+        dayofWeek = [_(calendar.day_name[5]),
+                     _(calendar.day_name[6]),
+                     _(calendar.day_name[0]),
                      _(calendar.day_name[1]),
                      _(calendar.day_name[2]),
                      _(calendar.day_name[3]),
-                     _(calendar.day_name[4]),
-                     _(calendar.day_name[5]),
-                     _(calendar.day_name[6])]
+                     _(calendar.day_name[4])]
         return dayofWeek
 
     def get_object(self, data):
         data_list = []
-        for timetable_obj in self.env['op.session'].browse(
+        for timetable_obj in self.env['accr.session'].browse(
                 data['time_table_ids']):
             oldDate = pytz.UTC.localize(
                 fields.Datetime.from_string(timetable_obj.start_datetime))
@@ -59,8 +59,12 @@ class ReportAccrTimetableGenerate(models.AbstractModel):
                 'start_datetime': self._convert_to_local_timezone(
                     timetable_obj.start_datetime).strftime(
                     tools.DEFAULT_SERVER_DATETIME_FORMAT),
+                'end_datetime': self._convert_to_local_timezone(
+                    timetable_obj.end_datetime).strftime(
+                    tools.DEFAULT_SERVER_DATETIME_FORMAT),
                 'day': str(day),
-                'subject': timetable_obj.subject_id.name,
+                'session': timetable_obj.timing_id.name,
+                'type': timetable_obj.timing_id.timing_type,
             }
             data_list.append(timetable_data)
         ttdl = sorted(data_list, key=lambda k: k['sequence'])

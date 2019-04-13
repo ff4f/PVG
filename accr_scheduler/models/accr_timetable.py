@@ -18,12 +18,15 @@ class accrSession(models.Model):
     name = fields.Char(compute='_compute_name', string='Name', store=True)
     timing_id = fields.Many2one(
         'accr.timing', 'Timing', required=True, track_visibility="onchange")
+    timing_type = fields.Selection(
+        related='timing_id.timing_type', string='Type', readonly=True)
     start_datetime = fields.Datetime(
         'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
     end_datetime = fields.Datetime(
         'End Time', required=True)
-    section = fields.Many2one('x_student_residential_sections', 'Section', required=True)
+    section = fields.Many2one(
+        'x_student_residential_sections', 'Section', required=True)
     type = fields.Char(compute='_compute_day', string='Day', store=True)
     state = fields.Selection(
         [('draft', 'Draft'), ('confirm', 'Confirmed'),

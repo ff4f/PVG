@@ -18,3 +18,4 @@ class accrTiming(models.Model):
     am_pm = fields.Selection(
         [('am', 'AM'), ('pm', 'PM')], 'AM/PM', required=True)
     sequence = fields.Integer('Sequence')
+    timing_type = fields.Selection([('academic' , 'Academic'), ('non-academic', 'Non-Academic')], 'Type', required=True)
