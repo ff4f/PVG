@@ -43,7 +43,7 @@ class SessionReport(models.TransientModel):
             'accr_scheduler.report_timetable_generate')
         data = self.read(
             ['start_date', 'end_date', 'section', 'timing_type'])[0]
-        timing_type = str(self.read(['timing_type'])[0].selection)
+        timing_type = dict(self._fields['timing_type'].selection).get(self.type)
         if timing_type == 'all':
             time_table_ids = self.env['accr.session'].search(
                 [('section', '=', data['section'][0]),
