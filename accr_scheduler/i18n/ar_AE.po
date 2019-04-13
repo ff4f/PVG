@@ -207,6 +207,7 @@ msgstr "لا يمكن تحديد تاريخ الأنتهاءقبل تاريخ ا
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Friday"
 msgstr "الجمعة"
 
@@ -299,6 +300,7 @@ msgstr "دقيقة"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Monday"
 msgstr "الأثنين"
 
@@ -334,6 +336,7 @@ msgstr "تنفيذ"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Saturday"
 msgstr "السبت"
 
@@ -420,6 +423,7 @@ msgstr "منشئ جداول الطلاب"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Sunday"
 msgstr "الأحد"
 
@@ -452,6 +456,7 @@ msgstr "تواريخ المهام"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Thursday"
 msgstr "الخميس"
 
@@ -534,6 +539,7 @@ msgstr "اليوم"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Tuesday"
 msgstr "الثلاثاء"
 
@@ -552,6 +558,7 @@ msgstr "المستخدم"
 #. module: accr_scheduler
 #: selection:accr.gen.time.table.line,day:0
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.view_accr_generate_time_table_form
+#: selection:accr.session,type:0
 msgid "Wednesday"
 msgstr "الأربعاء"
 
