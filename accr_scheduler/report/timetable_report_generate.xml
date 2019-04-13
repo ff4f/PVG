@@ -70,12 +70,18 @@
                                 </table>
                                 <br></br>
                                 <div class="row text-center">
-                                    <b>From Date:</b>
-                                    <span t-esc="data['start_date']" />
-                                    <b>To Date:</b>
-                                    <span t-esc="data['end_date']" />
-                                    <b>Type:</b>
-                                    <span t-esc="data['timing_type']" />
+                                    <div class="col-4">
+                                        <b>From Date:</b>
+                                        <span t-esc="data['start_date']" />
+                                    </div>
+                                    <div class="col-4">
+                                        <b>To Date:</b>
+                                        <span t-esc="data['end_date']" />
+                                    </div>
+                                    <div class="col-4">
+                                        <b>Type:</b>
+                                        <span t-esc="data['timing_type']" />
+                                    </div>
                                 </div>
                                 <br></br>
                                 <table class="table table-bordered">
