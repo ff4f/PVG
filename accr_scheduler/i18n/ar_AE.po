@@ -52,28 +52,63 @@ msgstr "45"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Sunday"
+msgstr "الأحد"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Monday"
+msgstr "الأثنين"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Thursday"
+msgstr "الخميس"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<b>From Date:</b>"
-msgstr "ابتداءً من"
+msgstr "<b>ابتداءً من</b>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<b>Section:</b>"
-msgstr "القسم:"
+msgstr "<b>القسم:</b>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<b>To Date:</b>"
-msgstr "تهايةً في"
+msgstr "<b>تهايةً في</b>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<b>Type:</b>"
-msgstr "النوع"
+msgstr "<b>النوع</b>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<strong>Time Table</strong>"
-msgstr "جدول المواعيد"
+msgstr "<strong>جدول المواعيد</strong>"
 
 #. module: accr_scheduler
 #: selection:accr.timing,am_pm:0
