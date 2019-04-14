@@ -32,6 +32,7 @@ class accrSession(models.Model):
         [('draft', 'Draft'), ('confirm', 'Confirmed'),
          ('done', 'Done'), ('cancel', 'Canceled')],
         'Status', default='draft')
+    notes = fields.Text(string=u'Notes')
 
     @api.multi
     @api.depends('start_datetime')
