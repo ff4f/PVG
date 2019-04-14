@@ -54,26 +54,32 @@ msgstr "45"
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Saturday"
 msgstr "السبت"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Sunday"
 msgstr "الأحد"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Monday"
 msgstr "الأثنين"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Tuesday"
 msgstr "الثلاثاء"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Wednesday"
 msgstr "الأربعاء"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Thursday"
 msgstr "الخميس"
+
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Friday"
