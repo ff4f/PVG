@@ -86,12 +86,19 @@
                                 <br></br>
                                 <table class="table table-bordered">
                                     <thead>
-                                        <th class="text-left">Session </th>
-                                        <span t-foreach="get_heading()" t-as="n">
+                                        <th class="text-left">Session <br/></th>
+                                        <th class="text-left">Saturday</th>
+                                        <th class="text-left">Sunday</th>
+                                        <th class="text-left">Monday</th>
+                                        <th class="text-left">Tuesday</th>
+                                        <th class="text-left">Wednesday</th>
+                                        <th class="text-left">Thursday</th>
+                                        <th class="text-left">Friday</th>
+                                        <!-- <span t-foreach="get_heading()" t-as="n">
                                             <th class="text-center">
                                                 <span t-raw="n" />
                                             </th>
-                                        </span>
+                                        </span> -->
                                     </thead>
                                     <tbody>
                                         <tr t-foreach="get_object(data)" t-as="a">
@@ -99,7 +106,7 @@
                                                 <span t-raw="a['name'] if  a['name']  else ''" />
                                             </td>
                                             <td>
-                                                <span t-esc="a['line'].get('5',{'start_datetime':''})['start_datetime']" />
+                                                <span t-esc="(a['line'].get('5',{'start_datetime':''})['start_datetime']).strftime('%Y-%m-%d')" />
                                                 <br></br>
                                                 <span t-esc="a['line'].get('5',{'end_datetime':''})['end_datetime']" />
                                             </td>
