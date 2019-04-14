@@ -48,6 +48,9 @@
                             <field name="end_datetime"/>
                             <field name="type"/>
                         </group>
+                        <group>
+                            <field name="notes"/>
+                        </group>
                     </sheet>
                 </form>
             </field>
