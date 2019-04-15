@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class accrStudentNutritionDetails(models.Model):
     _name = "accr.student.nutrition.details"
@@ -9,12 +9,12 @@ class accrStudentNutritionDetails(models.Model):
         comodel_name='model.x_student',
         ondelete='set restrict',
     )
-    name = fields.Char('Name', related='student.display_name',)
+    name = fields.Char('Name', related='student.x_name',)
     age = fields.Integer('Age', related='student.x_studio_age',)
     diagnosis = fields.Char('Diagnosis', related='student.x_studio_diagnosis',)
     residential_section = fields.Char('Residential Section', related='student.x_studio_residential_section',)
     medications = fields.One2many('Medications', related='student.x_studio_field_jm5yW',)
-    food_preferences = fields.One2many('accr.food.preferences', 'student_nutrition_details', 'Food Preferences',)
+    food_preferences = fields.One2many('accr.food.preferences', 'student_nutrition_details', 'Food Preferences', related='student.food_prefernces',)
 
     height = fields.Integer('Height', required=True,)
     weight = fields.Integer('Weight', required=True,)
