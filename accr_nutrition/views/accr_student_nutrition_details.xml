@@ -40,7 +40,12 @@
                                 <field name="food_preferences" nolabel="1" context="{'default_student':student}"/>
                             </page>
                             <page string="medications">
-                                <field name="medications" nolabel="1" readonly="1" />
+                                <field name="medications" nolabel="1" readonly="1" >
+                                    <field name="x_studio_medications_type" />
+                                    <field name="x_studio_medications" />
+                                    <field name="create_uid" />
+                                    <field name="create_date" />
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
