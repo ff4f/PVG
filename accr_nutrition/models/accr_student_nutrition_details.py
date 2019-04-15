@@ -18,7 +18,3 @@ class accrStudentNutritionDetails(models.Model):
     requirements = fields.Char('Requirements', )
     physical_activity = fields.Char('Physical Activity', )
     water_intake = fields.Char('Water Intake', )
-
-
-
-    
