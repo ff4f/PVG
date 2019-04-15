@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="Nutrition Details">
                     <field name="student" />
-                    <!-- <field name="diagnosis" /> -->
+                    <field name="diagnosis" />
                     <field name="age" />
                 </tree>
             </field>
