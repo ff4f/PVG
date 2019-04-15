@@ -9,7 +9,7 @@ class accrStudentNutritionDetails(models.Model):
         comodel_name='model.x_student',
         ondelete='set restrict',
     )
-    name = fields.Char('Name', related='student.x_name',)
+    name = fields.Char('Name', related='student.display_name',)
     age = fields.Integer('Age', related='student.x_studio_age',)
     diagnosis = fields.Char('Diagnosis', related='student.x_studio_diagnosis',)
     residential_section = fields.Char('Residential Section', related='student.x_studio_residential_section',)
