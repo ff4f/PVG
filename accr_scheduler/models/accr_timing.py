@@ -6,7 +6,7 @@ class accrTiming(models.Model):
     _description = "Task Timing"
     _order = "sequence"
 
-    name = fields.Char('Name', size=16, required=True)
+    name = fields.Char('Name', required=True)
     hour = fields.Selection(
         [('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
          ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'),

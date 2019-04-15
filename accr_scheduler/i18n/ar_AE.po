@@ -52,23 +52,23 @@ msgstr "45"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
-msgid "all"
-msgstr "الكل"
+msgid "<span>all</span>"
+msgstr "<span>الكل</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
-msgid "general"
-msgstr "عام"
+msgid "<span>general</span>"
+msgstr "<span>عام</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
-msgid "academic"
-msgstr "أكاديمي"
+msgid "<span>academic</span>"
+msgstr "<span>أكاديمي</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
-msgid "non-academic"
-msgstr "لا اكاديمي"
+msgid "<span>non-academic</span>"
+msgstr "<span>لا اكاديمي</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
