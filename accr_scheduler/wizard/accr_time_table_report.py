@@ -23,7 +23,7 @@ class SessionReport(models.TransientModel):
         default=(datetime.today() + relativedelta(days=6 - datetime.date(
             datetime.today()).weekday())).strftime('%Y-%m-%d'))
     timing_type = fields.Selection(
-        [('all', 'All'), ('academic', 'Academic'), ('non-academic', 'Non-Academic')], 'Type', required=True)
+        [('all', 'All'), ('general', 'General'), ('academic', 'Academic'), ('non-academic', 'Non-Academic')], 'Type', required=True)
 
     @api.multi
     @api.constrains('start_date', 'end_date')
