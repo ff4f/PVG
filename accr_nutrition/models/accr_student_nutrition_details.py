@@ -10,10 +10,10 @@ class accrStudentNutritionDetails(models.Model):
         ondelete='set restrict',
     )
     name = fields.Char('Name', related='student.x_name',)
-    age = fields.Integer('Age', related='student.x_studio_age',)
-    diagnosis = fields.Char('Diagnosis', related='student.x_studio_diagnosis',)
-    residential_section = fields.Char('Residential Section', related='student.x_studio_residential_section',)
-    medications = fields.One2many('Medications', related='student.x_studio_field_jm5yW',)
+    age = fields.Integer(related='student.x_studio_age', string="Age", readonly=True,)
+    diagnosis = fields.Char(related='student.x_studio_diagnosis', string='Diagnosis', readonly=True,)
+    residential_section = fields.Many2one(related='student.x_studio_residential_section', string='Residential Section', readonly=True,)
+    medications = fields.One2many(related='student.x_studio_field_jm5yW', string='Medications', readonly=True,)
     food_preferences = fields.One2many('accr.food.preferences', 'student_nutrition_details', 'Food Preferences',)
 
     height = fields.Integer('Height', required=True,)
