@@ -52,6 +52,26 @@ msgstr "45"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "all"
+msgstr "الكل"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "general"
+msgstr "عام"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "academic"
+msgstr "أكاديمي"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "non-academic"
+msgstr "لا اكاديمي"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "Saturday"
 msgstr "السبت"
 
@@ -350,6 +370,12 @@ msgstr "الاسم"
 #: selection:accr.timing,timing_type:0
 msgid "Non-Academic"
 msgstr "غير اكاديمي"
+
+#. module: accr_scheduler
+#: selection:accr.time.table.report,timing_type:0
+#: selection:accr.timing,timing_type:0
+msgid "General"
+msgstr "عام"
 
 #. module: accr_scheduler
 #: selection:accr.timing,am_pm:0

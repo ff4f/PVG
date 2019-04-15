@@ -51,6 +51,14 @@ class SessionReport(models.TransientModel):
                  ('end_datetime', '<=', data['end_date'])],
                 order='start_datetime asc')
             data.update({'time_table_ids': time_table_ids.ids})
+        elif timing_type == 'general':
+            time_table_ids = self.env['accr.session'].search(
+                [('section', '=', data['section'][0]),
+                 ('start_datetime', '>=', data['start_date']),
+                 ('end_datetime', '<=', data['end_date']),
+                 ('timing_type', '=', 'general')],
+                order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
         elif timing_type == 'academic':
             time_table_ids = self.env['accr.session'].search(
                 [('section', '=', data['section'][0]),
