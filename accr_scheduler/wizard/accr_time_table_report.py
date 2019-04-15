@@ -23,7 +23,7 @@ class SessionReport(models.TransientModel):
         default=(datetime.today() + relativedelta(days=6 - datetime.date(
             datetime.today()).weekday())).strftime('%Y-%m-%d'))
     timing_type = fields.Selection(
-        [('all', 'All'), ('academic', 'Academic'), ('non-academic', 'Non-Academic')], 'Type', required=True)
+        [('all', 'All'), ('general', 'General'), ('academic', 'Academic'), ('non-academic', 'Non-Academic')], 'Type', required=True)
 
     @api.multi
     @api.constrains('start_date', 'end_date')
@@ -49,6 +49,14 @@ class SessionReport(models.TransientModel):
                 [('section', '=', data['section'][0]),
                  ('start_datetime', '>=', data['start_date']),
                  ('end_datetime', '<=', data['end_date'])],
+                order='start_datetime asc')
+            data.update({'time_table_ids': time_table_ids.ids})
+        elif timing_type == 'general':
+            time_table_ids = self.env['accr.session'].search(
+                [('section', '=', data['section'][0]),
+                 ('start_datetime', '>=', data['start_date']),
+                 ('end_datetime', '<=', data['end_date']),
+                 ('timing_type', '=', 'general')],
                 order='start_datetime asc')
             data.update({'time_table_ids': time_table_ids.ids})
         elif timing_type == 'academic':
