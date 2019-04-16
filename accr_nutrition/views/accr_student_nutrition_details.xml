@@ -10,6 +10,8 @@
                     <field name="student" />
                     <field name="diagnosis" />
                     <field name="age" />
+                    <field name="create_uid" />
+                    <field name="create_date" />
                 </tree>
             </field>
         </record>
@@ -21,6 +23,10 @@
             <field name="arch" type="xml">
                 <form string="Nutrition Details">
                     <sheet>
+                        <group col="4">
+                            <field name="create_date" nolabel="1" />
+                            <field name="create_uid" nolabel="1" />
+                        </group>
                         <group col="4">
                             <field name="student" select="1" />
                             <field name="diagnosis" readonly="1" />
