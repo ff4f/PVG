@@ -16,10 +16,8 @@ class accrStudentFoodPreferences(models.Model):
         [('Like', 'Like'), ('Dislike', 'Dislike')], string=u'Preference', required=True,)
     intolerance = fields.Boolean(string=u'Intolerance',)
 
-
-@api.multi
-@api.depends('student', 'food')
-def _compute_name(self):
-    for record in self:
-        record.name = record.student.display_name + \
-            ' - ' + record.food.display_name
+    @api.multi
+    @api.depends('student', 'food')
+    def _compute_name(self):
+        for record in self:
+            record.name = record.student.display_name + ' - ' + record.food.display_name
