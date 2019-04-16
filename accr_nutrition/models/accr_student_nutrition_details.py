@@ -22,7 +22,7 @@ class accrStudentNutritionDetails(models.Model):
     water_intake = fields.Char(string=u'Water Intake', )
 
     @api.multi
-    @api.depends('student, create_date')
+    @api.depends('student', 'create_date')
     def _compute_name(self):
         for record in self:
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
