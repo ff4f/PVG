@@ -6,6 +6,10 @@
             <t t-call="web.external_layout">
                 <div class="page">
                     <!-- Report header content -->
+                    <div class="row bg-primary">
+                        <div class="col-12">Nutrition Details</div>
+                    </div>
+
                     <t t-foreach="docs" t-as="o">
                         <!-- Report row content -->
                         <div class="row">
