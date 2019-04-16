@@ -37,7 +37,22 @@
                         </group>
                         <notebook>
                             <page string="Food Preferences">
-                                <field name="food_preferences" nolabel="1" context="{'default_student':student}"/>
+                                <field name="food_preferences" nolabel="1" context="{'default_student':student, 'default_student_nutrition_details':id}">
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" string="Food" />
+                                                <field name="preference" />
+                                                <field name="intolerance" />
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                    <tree>
+                                        <field name="name" string="Food" />
+                                        <field name="preference" />
+                                        <field name="intolerance" />
+                                    </tree>
+                                </field>
                             </page>
                             <page string="medications">
                                 <field name="medications" nolabel="1" readonly="1">
