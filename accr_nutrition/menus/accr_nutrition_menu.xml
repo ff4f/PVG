@@ -1,2 +1,7 @@
-<menuitem id="menu_students_nutrition" name="Students Nutrition" />
-<menuitem id="menu_accr_nutrition_details" name="Nutrition Details" parent="menu_students_nutrition" action="act_open_student_nutrition_details_view" />
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="menu_students_nutrition" name="Students Nutrition" />
+    <menuitem id="menu_accr_nutrition_details" name="Nutrition Details" parent="menu_students_nutrition" action="act_open_student_nutrition_details_view" />
+
+</odoo>
