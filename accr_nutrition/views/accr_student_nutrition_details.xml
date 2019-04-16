@@ -47,14 +47,15 @@
                                     <form>
                                         <sheet>
                                             <group>
-                                                <field name="student" />
                                                 <field name="food" />
                                                 <field name="preference" />
                                                 <field name="intolerance" />
                                             </group>
                                         </sheet>
                                     </form>
-                                    <tree>
+                                    <tree editable="bottom">
+                                        <field name="student" invisible="1" />
+                                        <field name="student_nutrition_details" invisible="1" />
                                         <field name="food" />
                                         <field name="preference" />
                                         <field name="intolerance" />
