@@ -41,14 +41,14 @@
                                     <form>
                                         <sheet>
                                             <group>
-                                                <field name="name" string="Food" />
+                                                <field name="food" />
                                                 <field name="preference" />
                                                 <field name="intolerance" />
                                             </group>
                                         </sheet>
                                     </form>
                                     <tree>
-                                        <field name="name" string="Food" />
+                                        <field name="food" />
                                         <field name="preference" />
                                         <field name="intolerance" />
                                     </tree>

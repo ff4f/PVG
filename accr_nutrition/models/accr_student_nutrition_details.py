@@ -4,7 +4,7 @@ class accrStudentNutritionDetails(models.Model):
     _name = "accr.student.nutrition.details"
     _description = "Student Nutrition Details"
     
-    student = fields.Many2one('x_student', string=u'Student', required=True, ondelete='set Restrict', )
+    student = fields.Many2one('x_student', string=u'Student', required=True, ondelete='set null', )
     name = fields.Char(related='student.display_name', string=u'Name', readonly=True, )
     age = fields.Integer(related='student.x_studio_age', string=u"Age", readonly=True, )
     diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', readonly=True, )
