@@ -47,6 +47,7 @@
                                     <form>
                                         <sheet>
                                             <group>
+                                                <field name="student" />
                                                 <field name="food" />
                                                 <field name="preference" />
                                                 <field name="intolerance" />
