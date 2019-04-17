@@ -17,5 +17,5 @@ class accrMealTiming(models.Model):
     am_pm = fields.Selection(
         [('am', 'AM'), ('pm', 'PM')], 'AM/PM', required=True)
     
-    meal_type = fields.Many2one('accr.meal.type', string=u"Meal Type", )
+    meal_type = fields.Many2one('accr.meal.type', string=u"Meal Type", required=True, )
     food = fields.Many2many('accr.food','accr_food_meal_timing_rel', 'accr_meal_timing_id', 'accr_food_id', string="Food", required=True, )
