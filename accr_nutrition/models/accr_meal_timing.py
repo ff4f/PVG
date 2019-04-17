@@ -9,7 +9,7 @@ class accrMealTiming(models.Model):
     hour = fields.Selection(
         [('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
          ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'),
-         ('11', '11'), ('12', '12')], 'Hours', required=True)
+         ('11', '11'), ('12', '12')], 'Hour', required=True)
     minute = fields.Selection(
         [('00', '00'), ('15', '15'), ('30', '30'), ('45', '45')], 'Minute',
         required=True)
@@ -22,6 +22,6 @@ class accrMealTiming(models.Model):
 
     @api.multi
     @api.depends('meal_type', 'hour', 'minute')
-    def _compute_name(self):
+    def _compute_name(self):    
         for record in self:
             record.name = record.student.display_name + ' - ' + record.hour.value + ':'+ record.minute.value
