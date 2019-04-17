@@ -35,3 +35,6 @@ student_food_intolerance_manager,StudentFoodIntoleranceManager,model_accr_studen
 
 meal_type_user,MealTypeUser,model_accr_meal_type,students_nutrition_group_user,1,0,0,0
 meal_type_manager,MealTypeManager,model_accr_meal_type,students_nutrition_group_manager,1,1,1,1
+
+meal_timing_user,MealTimingUser,model_accr_meal_timing,students_nutrition_group_user,1,0,0,0
+meal_timing_manager,MealTimingManager,model_accr_meal_timing,students_nutrition_group_manager,1,1,1,1
