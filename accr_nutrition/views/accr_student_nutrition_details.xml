@@ -55,7 +55,9 @@
                                     <tree editable="bottom">
                                         <field name="student" invisible="1" />
                                         <field name="nutrition_details" invisible="1" />
-                                        <field name="food" />
+                                        <field name="food_group" />
+                                        <!-- <field name="food" /> -->
+                                        <field name="foods" domain="[('food_group','=',food_group)]" context="{'default_food_group':food_group}" widget="many2many_tags" />
                                         <field name="preference" />
                                     </tree>
                                 </field>
