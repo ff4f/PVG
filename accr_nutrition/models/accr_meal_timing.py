@@ -24,4 +24,4 @@ class accrMealTiming(models.Model):
     @api.depends('meal_type', 'hour', 'minute')
     def _compute_name(self):    
         for record in self:
-            record.name = record.student.display_name + ' - ' + record.hour.value + ':'+ record.minute.value
+            record.name = record.meal_type.display_name + ' - ' + record.hour.value + ':'+ record.minute.value
