@@ -9,7 +9,7 @@ class accrStudentFoodPreferences(models.Model):
         'x_student', string=u'Student', required=True, ondelete='set null', )
     nutrition_details = fields.Many2one(
         'accr.student.nutrition.details', string=u'Nutrition Details',)
-    food = fields.Many2many('accr.food','accr_food_food_preferences_rel', 'food_preferences_id', 'accr_food_id', string="Foods", required=True, )
+    food = fields.Many2many('accr.food','accr_food_food_preferences_rel', 'food_preferences_id', 'accr_food_id', string="Food", required=True, )
     food_group = fields.Many2one('accr.food.group', string=u'Food Group', required=True, )
     name = fields.Char('Name', compute='_compute_name', )
     preference = fields.Selection(
