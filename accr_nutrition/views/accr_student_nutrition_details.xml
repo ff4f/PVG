@@ -43,7 +43,7 @@
                         </group>
                         <notebook>
                             <page string="Food Preferences">
-                                <field name="food_preferences" nolabel="1" context="{'default_student':student, 'default_student_nutrition_details':id}">
+                                <field name="food_preferences" nolabel="1" context="{'default_student':student, 'default_nutrition_details':id}">
                                     <form>
                                         <sheet>
                                             <group>
@@ -54,7 +54,7 @@
                                     </form>
                                     <tree editable="bottom">
                                         <field name="student" invisible="1" />
-                                        <field name="student_nutrition_details" invisible="1" />
+                                        <field name="nutrition_details" invisible="1" />
                                         <field name="food" />
                                         <field name="preference" />
                                     </tree>

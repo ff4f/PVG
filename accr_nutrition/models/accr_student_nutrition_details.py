@@ -12,8 +12,8 @@ class accrStudentNutritionDetails(models.Model):
     diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', readonly=True, store=False, )
     residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     medications = fields.One2many(related='student.x_studio_field_jm5yW', string=u'Medications', readonly=True, store=False, )
-    food_preferences = fields.One2many('accr.food.preferences', 'student_nutrition_details', string=u'Food Preferences', )
-    food_intolerance = fields.One2many('accr.food.intolerance', 'nutrition_details', string=u'Food Intolerance', )
+    food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_details', string=u'Food Preferences', )
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_details', string=u'Food Intolerance', )
 
     height = fields.Integer(string=u'Height', required=True, )
     weight = fields.Integer(string=u'Weight', required=True, )
