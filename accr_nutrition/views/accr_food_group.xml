@@ -37,9 +37,8 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Food Group">
-                    <field name="student" select="True" />
-                    <field name="residential_section" select="True" />
-                    <field name="food_preferences" select="True" />
+                    <field name="name" select="True" string="Food Group"/>
+                    <field name="food" select="True" />
                 </search>
             </field>
         </record>
