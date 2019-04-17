@@ -40,6 +40,7 @@
                             <field name="requirements" />
                             <field name="physical_activity" />
                             <field name="water_intake" />
+                            <field name="nutritional_needs" />
                         </group>
                         <notebook>
                             <page string="Food Preferences">
