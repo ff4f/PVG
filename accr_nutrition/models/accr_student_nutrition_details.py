@@ -17,10 +17,10 @@ class accrStudentNutritionDetails(models.Model):
 
     height = fields.Integer(string=u'Height', required=True, )
     weight = fields.Integer(string=u'Weight', required=True, )
-    diet = fields.Char(string=u'Diet', )
-    requirements = fields.Char(string=u'Requirements', )
-    physical_activity = fields.Char(string=u'Physical Activity', )
-    water_intake = fields.Char(string=u'Water Intake', )
+    diet = fields.Many2one('accr.diet', string=u'Diet', )
+    requirements = fields.Many2one('accr.nutrition.requirements', string=u'Requirements', )
+    physical_activity = fields.Many2one('accr.physical.activity', string=u'Physical Activity', )
+    water_intake = fields.Many2one('accr.water.intake', string=u'Water Intake', )
 
     @api.multi
     @api.depends('student', 'create_date')
