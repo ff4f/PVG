@@ -64,7 +64,7 @@
                                 <field name="food_preferences" nolabel="1" context="{'default_student':student, 'default_nutrition_details':id}">
                                     <tree editable="bottom">
                                         <field name="student" invisible="1" />
-                                        <field name="student_nutrition_details" invisible="1" />
+                                        <field name="nutrition_details" invisible="1" />
                                         <field name="food_type">
                                             <field name="intolerance">
                                             </tree>
