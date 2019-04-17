@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api, _
 
 
 class accrMealTiming(models.Model):
@@ -19,3 +19,9 @@ class accrMealTiming(models.Model):
     
     meal_type = fields.Many2one('accr.meal.type', string=u"Meal Type", required=True, )
     food = fields.Many2many('accr.food','accr_food_meal_timing_rel', 'accr_meal_timing_id', 'accr_food_id', string="Food", required=True, )
+
+    @api.multi
+    @api.depends('meal_type', 'hour', 'minute')
+    def _compute_name(self):
+        for record in self:
+            record.name = record.student.display_name + ' - ' + record.hour.value + ':'+ record.minute.value
