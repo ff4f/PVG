@@ -1,4 +1,5 @@
 from . import accr_food
+from . import accr_food_group
 from . import accr_intolerance
 from . import accr_diet
 from . import accr_physical_activity
