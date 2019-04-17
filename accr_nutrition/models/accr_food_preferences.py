@@ -14,7 +14,6 @@ class accrStudentFoodPreferences(models.Model):
     name = fields.Char('Name', compute='_compute_name', )
     preference = fields.Selection(
         [('Like', 'Like'), ('Dislike', 'Dislike')], string=u'Preference', required=True,)
-    intolerance = fields.Boolean(string=u'Intolerance',)
 
     @api.multi
     @api.depends('student', 'food')
