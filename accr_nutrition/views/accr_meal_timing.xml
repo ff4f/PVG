@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="Meal Timing" editable="bottom">
                     <field name="meal_type" />
-                    <field name="food" widget="many2many_tags"/>
+                    <field name="food" widget="many2many_tags" domain="[('meal_type','=',meal_type)]" context="{'default_meal_type':meal_type}"/>
                     <field name="hour" />
                     <field name="minute" />
                     <field name="am_pm" />
@@ -32,7 +32,7 @@
                             <field name="am_pm" />
                         </group>
                         <group col="4">
-                            <field name="food" widget="many2many_tags"/>
+                            <field name="food" widget="many2many_tags" domain="[('meal_type','=',meal_type)]" context="{'default_meal_type':meal_type}"/>
                         </group>
                     </sheet>
                 </form>
