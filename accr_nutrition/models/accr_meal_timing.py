@@ -5,7 +5,7 @@ class accrMealTiming(models.Model):
     _name = "accr.meal.timing"
     _description = "Meal Timing"
 
-    name = fields.Char(string=u"Meal Name")
+    name = fields.Char(string=u"Meal Name", required=True, )
     hour = fields.Selection(
         [('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
          ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'),
