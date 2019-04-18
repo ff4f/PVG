@@ -6,7 +6,7 @@
             <field name="model">accr.meal.timetable</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Sessions" default_order="start_datetime">
+                <tree string="Meal Timetable" default_order="start_datetime">
                     <field name="meal_id"/>
                     <field name="start_datetime"/>
                     <field name="end_datetime"/>
@@ -21,7 +21,7 @@
             <field name="model">accr.meal.timetable</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Session">
+                <form string="Meal">
                     <header>
                         <button type="object" name="lecture_confirm" states="draft" string="Confirm"/>
                         <button type="object" name="lecture_done" states="confirm" string="Done"/>

@@ -17,7 +17,7 @@ class accrMealTimetable(models.Model):
 
     name = fields.Char(compute='_compute_name', string='Name', store=True)
     meal_id = fields.Many2one(
-        'accr.meal.timing', 'Timing', required=True, track_visibility="onchange")
+        'accr.meal.timing', 'Meal', required=True, track_visibility="onchange")
     start_datetime = fields.Datetime(
         'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
@@ -43,7 +43,7 @@ class accrMealTimetable(models.Model):
     @api.depends('start_datetime')
     def _compute_name(self):
         for record in self:
-            if record.timing_id and record.start_datetime:
+            if record.meal_id and record.start_datetime:
                 record.name = str(record.meal_id.name)
 
     @api.multi
