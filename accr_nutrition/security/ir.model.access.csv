@@ -38,3 +38,6 @@ meal_type_manager,MealTypeManager,model_accr_meal_type,students_nutrition_group_
 
 meal_timing_user,MealTimingUser,model_accr_meal_timing,students_nutrition_group_user,1,0,0,0
 meal_timing_manager,MealTimingManager,model_accr_meal_timing,students_nutrition_group_manager,1,1,1,1
+
+meal_timetable_user,MealTimetableUser,model_accr_meal_timetable,students_nutrition_group_user,1,0,0,0
+meal_timetable_manager,MealTimetableManager,model_accr_meal_timetable,students_nutrition_group_manager,1,1,1,1
