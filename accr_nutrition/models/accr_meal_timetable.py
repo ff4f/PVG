@@ -18,6 +18,10 @@ class accrMealTimetable(models.Model):
     name = fields.Char(compute='_compute_name', string='Name', store=True)
     meal_id = fields.Many2one(
         'accr.meal.timing', 'Meal', required=True, track_visibility="onchange")
+    meal_type = fields.Many2one(
+        related='meal_id.meal_type', string=u"Meal Type", readonly=True, store=False, )
+    food = fields.Many2many(related='meal_id.food',
+                            string=u"Food", readonly=True, store=False, )
     start_datetime = fields.Datetime(
         'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
