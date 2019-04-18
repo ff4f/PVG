@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <record id="view_accr_gen_meal_time_table_line_tree" model="ir.ui.view">
-            <field name="name">accr.gen.time.table.line.tree</field>
-            <field name="model">accr.gen.time.table.line</field>
+            <field name="name">accr.gen.meal.time.table.line.tree</field>
+            <field name="model">accr.gen.meal.time.table.line</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Meal" editable="top">
@@ -14,8 +14,8 @@
         </record>
 
         <record id="view_accr_gen_meal_time_table_line_form" model="ir.ui.view">
-            <field name="name">accr.gen.time.table.line.form</field>
-            <field name="model">accr.gen.time.table.line</field>
+            <field name="name">accr.gen.meal.time.table.line.form</field>
+            <field name="model">accr.gen.meal.time.table.line</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Table Line">
@@ -26,8 +26,8 @@
         </record>
 
         <record id="view_accr_generate_meal_time_table_form" model="ir.ui.view">
-            <field name="name">accr.generate.time.table.form</field>
-            <field name="model">accr.generate.time.table</field>
+            <field name="name">accr.generate.meal.time.table.form</field>
+            <field name="model">accr.generate.meal.time.table</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Meals">
@@ -89,7 +89,7 @@
         <record model="ir.actions.act_window" id="act_open_accr_generate_meal_time_table_view">
             <field name="name">Generate Meals Timetable</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">accr.generate.time.table</field>
+            <field name="res_model">accr.generate.meal.time.table</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
