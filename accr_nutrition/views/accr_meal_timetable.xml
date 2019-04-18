@@ -86,7 +86,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <calendar string="Sessions" date_start="start_datetime" color="state" date_stop="end_datetime">
-                    <field name="meal_id"/>
+                    <field name="name"/>
                     <field name="type"/>
                 </calendar>
             </field>
