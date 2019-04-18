@@ -33,7 +33,7 @@
                 <form string="Meals">
                     <sheet>
                         <group>
-                            <field name="section"/>
+                            <!-- <field name="students"/> -->
                         </group>
                         <group col="4" colspan="4">
                             <field name="start_date"/>
