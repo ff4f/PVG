@@ -16,6 +16,7 @@
         'views/accr_meal_type.xml',        
         'views/accr_meal_timing.xml',
         'views/accr_meal_timetable.xml',
+        'wizard/accr_generate_meal_timetable_view.xml',
         'reports/accr_student_nutrition_details.xml',
         'menus/accr_nutrition_menu.xml',
     ],
