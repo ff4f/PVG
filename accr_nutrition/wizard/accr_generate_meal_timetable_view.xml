@@ -42,8 +42,15 @@
                         <group col="4" colspan="4">
                             <field name="diet" />
                         </group>
-                        <group col="4" colspan="4">
-                            <field name="students" />
+                        <group col="4" colspan="4" string="Students">
+                            <field name="students" nolabel="1">
+                                <tree>
+                                    <field name="x_studio_file_no" />
+                                    <field name="x_name" />
+                                    <field name="x_studio_diagnoses" />
+                                    <field name="x_studio_resident" />
+                                </tree>
+                            </field>
                         </group>
                         <notebook>
                             <page name="saturday" string="Saturday">
