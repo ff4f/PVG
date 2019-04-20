@@ -39,6 +39,12 @@
                             <field name="start_date"/>
                             <field name="end_date"/>
                         </group>
+                        <group col="4" colspan="4">
+                            <field name="diet" />
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="students" />
+                        </group>
                         <notebook>
                             <page name="saturday" string="Saturday">
                                 <group>
