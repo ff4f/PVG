@@ -15,26 +15,26 @@ class accrMealTimetable(models.Model):
     _name = "accr.meal.timetable"
     _description = "Meal Timetable"
 
-    name = fields.Char(compute='_compute_name', string='Name', store=True)
+    name = fields.Char(compute='_compute_name', string=u'Name', store=True)
     meal_id = fields.Many2one(
-        'accr.meal.timing', 'Meal', required=True, track_visibility="onchange")
+        'accr.meal.timing', string=u'Meal', required=True, track_visibility="onchange")
     meal_type = fields.Many2one(
         related='meal_id.meal_type', string=u"Meal Type", readonly=True, store=False, )
     food = fields.Many2many(related='meal_id.food',
                             string=u"Food", readonly=True, store=False, )
     start_datetime = fields.Datetime(
-        'Start Time', required=True,
+        string=u'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
     end_datetime = fields.Datetime(
-        'End Time', required=True)
-    students = fields.Many2many('x_student', 'x_student_meal_timetable_rel',
-                                'x_student_id', 'meal_id', string="Students", required=True, )
-    type = fields.Char(compute='_compute_day', string='Day', store=True)
+        string=u'End Time', required=True)
+    type = fields.Char(compute='_compute_day', string=u'Day', store=True)
     state = fields.Selection(
         [('draft', 'Draft'), ('confirm', 'Confirmed'),
          ('done', 'Done'), ('cancel', 'Canceled')],
         'Status', default='draft')
     notes = fields.Text(string=u'Notes')
+    diet = fields.Many2one('accr.diet', string=u'Diet', required=True,)
+    students = fields.Many2many(related='diet.students', string=u"Students", required=True, readonly=True, )
 
     @api.multi
     @api.depends('start_datetime')
