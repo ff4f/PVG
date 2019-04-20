@@ -86,7 +86,7 @@
             <field name="model">accr.meal.timetable</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <calendar string="Sessions" date_start="start_datetime" color="state" date_stop="end_datetime">
+                <calendar string="Meals Timetable" date_start="start_datetime" color="state" date_stop="end_datetime">
                     <field name="name"/>
                     <field name="type"/>
                 </calendar>
@@ -109,7 +109,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_accr_meal_timetable_view">
-            <field name="name">Sessions</field>
+            <field name="name">Meals Timetable</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">accr.meal.timetable</field>
             <field name="view_type">form</field>
