@@ -5,4 +5,4 @@ class accrDiet(models.Model):
 
     name = fields.Char(string=u'Diet')
     students = fields.Many2many('x_student', 'x_student_diet_rel',
-                                'x_student_id', 'diet_id', string="Students", required=True, )
+                                'diet_id', 'x_student_id', string="Students", required=True, )
