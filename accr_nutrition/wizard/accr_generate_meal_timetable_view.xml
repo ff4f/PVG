@@ -47,7 +47,7 @@
                                 <tree>
                                     <field name="x_studio_file_no" />
                                     <field name="x_name" />
-                                    <field name="x_studio_diagnoses" />
+                                    <field name="x_studio_diagnosis" />
                                     <field name="x_studio_resident" />
                                 </tree>
                             </field>
