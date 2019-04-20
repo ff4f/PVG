@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_meal_timetable_tree" model="ir.ui.view">
+            <field name="name">accr.meal.timetable.tree</field>
+            <field name="model">accr.meal.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Meals Timetable" default_order="start_datetime">
+                    <field name="meal_id"/>
+                    <field name="start_datetime"/>
+                    <field name="end_datetime"/>
+                    <field name="state"/>
+                    <field name="students"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_accr_meal_timetable_form" model="ir.ui.view">
+            <field name="name">accr.meal.timetable.form</field>
+            <field name="model">accr.meal.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Meal">
+                    <header>
+                        <button type="object" name="lecture_confirm" states="draft" string="Confirm"/>
+                        <button type="object" name="lecture_done" states="confirm" string="Done"/>
+                        <button type="object" name="lecture_draft" states="cancel" string="Set to Draft"/>
+                        <button type="object" name="lecture_cancel" states="draft,confirm" string="Cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+                            </group>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="meal_id"/>
+                            <field name="meal_type" />
+                            <field name="food" widget="many2many_tags" colspan="4"/>
+                            <field name="diet" />
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="start_datetime"/>
+                            <field name="end_datetime"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                        <notebook>
+                            <page string="students">
+                                <field name="students" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_accr_meal_timetable_search" model="ir.ui.view">
+            <field name="name">accr.meal.timetable.search</field>
+            <field name="model">accr.meal.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Meals Timetable">
+                    <field name="meal_id" select="True"/>
+                    <field name="start_datetime" select="True"/>
+                    <field name="end_datetime" select="True"/>
+                    <field name="type" select="True"/>
+                    <newline/>
+                    <filter string="Today" name="filter_session_today" domain="[('start_datetime', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('start_datetime', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="State" name="group_by_session_state" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Day" name="group_by_session_Day" domain="[]" context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_accr_meal_timetable_calendar" model="ir.ui.view">
+            <field name="name">accr.meal.timetable.calendar</field>
+            <field name="model">accr.meal.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <calendar string="Meals Timetable" date_start="start_datetime" color="state" date_stop="end_datetime">
+                    <field name="name"/>
+                    <field name="type"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="view_accr_meal_timetable_pivot" model="ir.ui.view">
+            <field name="name">accr.meal.timetable.pivot</field>
+            <field name="model">accr.meal.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <pivot string="Session Analysis">
+                    <field name="name"/>
+                    <field name="meal_id"/>
+                    <field name="start_datetime"/>
+                    <field name="end_datetime"/>
+                    <field name="type"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_meal_timetable_view">
+            <field name="name">Meals Timetable</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.meal.timetable</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,calendar,pivot</field>
+            <field name="search_view_id" ref="view_accr_meal_timetable_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_meal_timetable_view_form">
+            <field name="act_window_id" ref="act_open_accr_meal_timetable_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_meal_timetable_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_meal_timetable_view_tree">
+            <field name="act_window_id" ref="act_open_accr_meal_timetable_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_accr_meal_timetable_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_meal_timetable_view_pivot">
+            <field name="name">Session Analysis Pivot</field>
+            <field name="res_model">accr.meal.timetable</field>
+            <field name="view_mode">pivot</field>
+            <field name="view_id" ref="view_accr_meal_timetable_pivot"/>
+        </record>
+    </data>
+</odoo>
