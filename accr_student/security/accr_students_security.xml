@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <odoo>
     <record id="module_students_category" model="ir.module.category">
-        <field name="name">Students Scheduler</field>
+        <field name="name">ACCR Students</field>
     </record>
 
     <!-- Students Scheduler User Group -->
