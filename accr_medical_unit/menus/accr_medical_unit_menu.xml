@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="menu_medical_unit" name="Medical Unit" />
+    <menuitem id="menu_accr_medications" name="Medications" parent="menu_medical_unit" action="act_open_accr_mu_medications_view" sequence="1"/>
+    <menuitem id="menu_accr_medications_side_effects" name="Medications Side Effects" parent="menu_medical_unit" action="act_open_accr_mu_medications_side_effects_view" sequence="2"/>
+
+</odoo>

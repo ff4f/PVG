@@ -1,6 +1,6 @@
 {
     'name': 'ACCR Students Nutrition',
-    'depends': ['base'],
+    'depends': ['base', 'mail', 'accr.medical.unit'],
     'application': True,
     'author': 'ACCR',
 
