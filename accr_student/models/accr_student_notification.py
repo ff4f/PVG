@@ -2,6 +2,7 @@ from odoo import models, fields, _
 
 class accrStudentNotification(models.Model):
     _name="accr.student.notification"
+    _description = 'Student Passport and ID Expiration Notification'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     student = fields.Many2one('x_student', string=u'student', )
