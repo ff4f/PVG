@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="menu_accr_students_notifications" name="Notifications" parent="studio_customization.student_reg_26ee09f7-2460-49c7-93a4-e475a3c14a4c" />
+    <menuitem id="menu_accr_students_passport_id_notifications" name="Passport and ID Notifications" parent="menu_accr_students_notifications" action="act_open_accr_student_notification_view" />
+</odoo>
