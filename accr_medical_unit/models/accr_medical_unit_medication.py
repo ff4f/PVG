@@ -15,7 +15,7 @@ class accrMedicalUnitMedication(models.Model):
     duration_type = fields.Selection(string=u'-', selection=[('days', 'Days'), ('weeks', 'weeks'), ('months', 'Months')])
 
     @api.multi
-    @api.depends('start_datetime')
+    @api.depends('medicine')
     def _compute_name(self):
         for record in self:
             if record.medicine:
