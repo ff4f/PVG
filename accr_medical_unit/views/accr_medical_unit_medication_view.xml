@@ -6,7 +6,7 @@
             <field name="model">accr.medical.unit.medication</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Medications" eitable="bottom">
+                <tree string="Medications" editable="bottom">
                     <field name="medicine" />
                     <field name="dose" />
                     <field name="frequency" />
