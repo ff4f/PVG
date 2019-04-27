@@ -12,3 +12,4 @@ from . import accr_student_nutrition_details
 from . import accr_meal_type
 from . import accr_meal_timing
 from . import accr_meal_timetable
+from . import accr_medicine_food_intolerance
