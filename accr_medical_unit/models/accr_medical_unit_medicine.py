@@ -6,7 +6,7 @@ class accrMedicalUnitMedicine(models.Model):
     _name = "accr.medical.unit.medicine"
     _description = "ACCR Medical Unit Medicines"
 
-    name = fields.Char(string=u'Medicine')
+    name = fields.Char(string=u'Medicine', required=True)
     discription = fields.Text(string=u'Description')
     alternetive_medicines = fields.Many2many('accr.medical.unit.medicine', 'accr_medical_unit_medicines_rel',
                                                'medicine_1_id', 'medicine_2_id', string=u'Alternetive Medicines')
