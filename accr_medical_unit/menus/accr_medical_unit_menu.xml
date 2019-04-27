@@ -4,5 +4,6 @@
     <menuitem id="menu_medical_unit" name="Medical Unit" />
     <menuitem id="menu_accr_medicines" name="Medicines" parent="menu_medical_unit" action="act_open_accr_mu_medicines_view" sequence="1"/>
     <menuitem id="menu_accr_medicines_side_effects" name="Medicines Side Effects" parent="menu_medical_unit" action="act_open_accr_mu_medicines_side_effects_view" sequence="2"/>
+    <menuitem id="menu_accr_medications" name="Medications" parent="menu_medical_unit" action="act_open_accr_mu_medication_view" sequence="3"/>
 
 </odoo>

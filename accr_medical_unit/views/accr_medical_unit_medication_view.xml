@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_mu_medication_tree" model="ir.ui.view">
+            <field name="name">accr.medical.unit.medication.tree</field>
+            <field name="model">accr.medical.unit.medication</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Medications" eitable="bottom">
+                    <field name="medicine" />
+                    <field name="dose" />
+                    <field name="frequency" />
+                    <field name="duration" />
+                    <field name="duration_type" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_accr_mu_medication_form" model="ir.ui.view">
+            <field name="name">accr.medical.unit.medication.form</field>
+            <field name="model">accr.medical.unit.medication</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Medications">
+                    <sheet>
+                        <group col="4">
+                            <field name="medicine" colspan="4"/>
+                        </group>
+                        <group col="4">
+                            <field name="dose" colspan="1"/>
+                            <field name="frequency" colspan="1"/>
+                            <field name="duration" colspan="1"/>
+                            <field name="duration_type" colspan="1"/>
+                        </group>
+                        <group col="4" string="medicines">
+                            <field name="discription" colspan="4" />    
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_accr_mu_medication_search" model="ir.ui.view">
+            <field name="name">accr.medical.unit.medication.search</field>
+            <field name="model">accr.medical.unit.medication</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medications">
+                    <field name="medicine" select="True"/>
+                    <field name="discription" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_mu_medication_view">
+            <field name="name">Medications</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.medical.unit.medication</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accr_mu_medication_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_mu_medication_view_form">
+            <field name="act_window_id" ref="act_open_accr_mu_medication_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_mu_medication_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_mu_medication_view_tree">
+            <field name="act_window_id" ref="act_open_accr_mu_medication_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_accr_mu_medication_tree" />
+        </record>
+
+    </data>
+</odoo>
