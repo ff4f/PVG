@@ -7,11 +7,11 @@ class accrMedicalUnitMedication(models.Model):
     _description = "ACCR Medical Unit Medication"
 
     name = fields.Char(string=u'Medication', compute='_compute_name')
-    medicine = fields.Many2one('accr.medical.unit.medicine', string=u'Medicine')
+    medicine = fields.Many2one('accr.medical.unit.medicine', string=u'Medicine', required=True, )
     discription = fields.Text(string=u'Description')
-    dose = fields.Integer(string=u'Dose')
-    frequency = fields.Integer(string=u'Frequency/Day')
-    duration = fields.Integer(string=u'Duration')
+    dose = fields.Integer(string=u'Dose', required=True,)
+    frequency = fields.Integer(string=u'Frequency/Day', required=True,)
+    duration = fields.Integer(string=u'Duration', required=True,)
     duration_type = fields.Selection(string=u'-', selection=[('days', 'Days'), ('weeks', 'weeks'), ('months', 'Months')])
 
     @api.multi
