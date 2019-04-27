@@ -31,7 +31,7 @@
                             <field name="side_effects" nolabel="1" />
                         </group>
                         <group col="4" string="Alternetive medicines">
-                            <field name="alternetive_medicines" nolabel="1" domain="[['id','!=',id]]" context="{'default_alternetive_medicines': id}"/>
+                            <field name="alternetive_medicines" nolabel="1" domain="[['id','!=',id]]"/>
                         </group>
                     </sheet>
                 </form>
