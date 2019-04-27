@@ -43,7 +43,7 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_food_group_view">
+        <record model="ir.actions.act_window" id="act_open_accr_diet_view">
             <field name="name">Diet</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">accr.diet</field>
@@ -54,15 +54,15 @@
             <field name="context">{}</field>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_food_group_view_form">
-            <field name="act_window_id" ref="act_open_food_group_view" />
+        <record model="ir.actions.act_window.view" id="act_open_accr_diet_view_form">
+            <field name="act_window_id" ref="act_open_accr_diet_view" />
             <field name="sequence" eval="20" />
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_accr_diet_form" />
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_food_group_view_tree">
-            <field name="act_window_id" ref="act_open_food_group_view" />
+        <record model="ir.actions.act_window.view" id="act_open_accr_diet_view_tree">
+            <field name="act_window_id" ref="act_open_accr_diet_view" />
             <field name="sequence" eval="10" />
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_accr_diet_tree" />
