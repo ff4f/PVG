@@ -14,6 +14,7 @@ class accrMedicalUnitMedication(models.Model):
     duration = fields.Integer(string=u'Duration', required=True,)
     duration_type = fields.Selection(string=u'-', selection=[('days', 'Days'), ('weeks', 'weeks'), ('months', 'Months')])
     x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications')
+    x_medical_assessment = fields.Many2one('x_medical_assessment', string='x_medical_assessment')
 
     @api.multi
     @api.depends('medicine')
