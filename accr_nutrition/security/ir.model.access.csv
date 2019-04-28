@@ -6,8 +6,8 @@ food_manager,FoodManager,model_accr_food,students_nutrition_group_manager,1,1,1,
 food_group_user,FoodGroupUser,model_accr_food_group,students_nutrition_group_user,1,0,0,0
 food_group_manager,FoodGroupManager,model_accr_food_group,students_nutrition_group_manager,1,1,1,1
 
-intolerance_food_type_user,IntoleranceFoodTypeUser,model_accr_intolerance,students_nutrition_group_user,1,0,0,0
-intolerance_food_type_manager,IntoleranceFoodTypeManager,model_accr_intolerance,students_nutrition_group_manager,1,1,1,1
+food_type_user,FoodTypeUser,model_accr_food_type,students_nutrition_group_user,1,0,0,0
+food_type_manager,FoodTypeManager,model_food_type,students_nutrition_group_manager,1,1,1,1
 
 diet_user,DietUser,model_accr_diet,students_nutrition_group_user,1,0,0,0
 diet_manager,DietManager,model_accr_diet,students_nutrition_group_manager,1,1,1,1
