@@ -30,7 +30,7 @@
                             <field name="dose" colspan="1"/>
                             <field name="frequency" colspan="1"/>
                             <field name="start_date_time" />
-                            <field name="end_date_time" />
+                            <field name="end_date_time" />+
                         </group>
                         <group col="4" string="medicines">
                             <field name="discription" colspan="4" />
