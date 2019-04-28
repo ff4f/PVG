@@ -11,9 +11,15 @@ class accrMedicalUnitMedication(models.Model):
     discription = fields.Text(string=u'Description')
     dose = fields.Integer(string=u'Dose/mg', required=True,)
     frequency = fields.Integer(string=u'Frequency/Day', required=True,)
-    duration = fields.Integer(string=u'Duration', required=True,)
-    duration_type = fields.Selection(string=u'-', selection=[('days', 'Days'), ('weeks', 'weeks'), ('months', 'Months')])
+
+    # duration = fields.Integer(string=u'Duration', required=True,)
+    # duration_type = fields.Selection(string=u'-', selection=[('days', 'Days'), ('weeks', 'weeks'), ('months', 'Months')])
+
+    start_date_time = fields.Datetime(string=u'Start Time')
+    end_date_time = fields.Datetime(string=u'End Time')
+
     x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications')
+    student = fields.Many2one(related='x_medical_medications.x_studio_student', string=u"Student", )
 
     @api.multi
     @api.depends('medicine')
