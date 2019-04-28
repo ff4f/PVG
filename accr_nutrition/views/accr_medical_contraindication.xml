@@ -8,6 +8,8 @@
             <field name="arch" type="xml">
                 <tree string="Medical Contraindication" editable="bottom">
                     <field name="name" string="Medical Contraindication" />
+                    <field name="medicines" widget="many2many_tags" />
+                    <field name="food_types" widget="many2many_tags" />
                 </tree>
             </field>
         </record>
@@ -21,6 +23,12 @@
                     <sheet>
                         <group col="4">
                             <field name="name" string="Medical Contraindication" />
+                        </group>
+                        <group col="4">
+                            <field name="medicines" />
+                        </group>
+                        <group col="4">
+                            <field name="food_types" />
                         </group>
                     </sheet>
                 </form>
