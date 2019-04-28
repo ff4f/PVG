@@ -18,7 +18,7 @@ class accrMedicalUnitMedication(models.Model):
     start_date_time = fields.Datetime(string=u'Start Time', required=True,)
     end_date_time = fields.Datetime(string=u'End Time', required=True,)
 
-    x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications')
+    x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications', )
     student = fields.Many2one(related='x_medical_medications.x_studio_student', string=u"Student", )
 
     @api.multi

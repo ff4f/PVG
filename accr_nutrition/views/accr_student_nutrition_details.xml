@@ -72,6 +72,7 @@
                                 </field>
                             </page>
                             <page string="medications">
+                                <field name="medications" />
                             </page>
                         </notebook>
                     </sheet>
