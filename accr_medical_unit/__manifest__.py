@@ -1,5 +1,5 @@
 {
-    'name': 'ACCR Medical_unit',
+    'name': 'ACCR Medical Unit',
     'depends': ['base', 'mail'],
     'application': True,
     'author': 'ACCR',
