@@ -1,7 +1,6 @@
 from odoo import models, fields
 
 class x_student(models.Model):
-    
     _inherit = ['x_student']
 
     diet = students = fields.Many2many('x_student', 'x_student_diet_rel', 'x_student_id', 'diet_id', string="Diets", )
