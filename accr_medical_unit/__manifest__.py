@@ -1,6 +1,6 @@
 {
     'name': 'ACCR Medical Unit',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'studio_customization'],
     'application': True,
     'author': 'ACCR',
 
