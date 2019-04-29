@@ -8,9 +8,9 @@
     <menuitem id="menu_accr_meal_timetable" name="Meal Timetable" parent="menu_students_nutrition_Meals" action="act_open_accr_meal_timetable_view" sequence="2"/>
     <menuitem id="menu_accr_generate_meal_timetable" name="Generate Meals Time Table" parent="menu_students_nutrition_Meals" action="act_open_accr_generate_meal_time_table_view" sequence="3"/>
     <menuitem id="menu_accr_nutrition_diet" name="Diet" parent="menu_students_nutrition" action="act_open_accr_diet_view" sequence="3"/>
-    <menuitem id="menu_students_nutrition_settings" name="Settings" parent="menu_students_nutrition" sequence="10"/>
+    <!-- <menuitem id="menu_students_nutrition_settings" name="Settings" parent="menu_students_nutrition" sequence="10"/>
     <menuitem id="menu_accr_food_groups" name="Food Groups" parent="menu_students_nutrition_settings" action="act_open_food_group_view" sequence="1"/>
     <menuitem id="menu_accr_meal_type" name="Meal Types" parent="menu_students_nutrition_settings" action="act_open_meal_type_view" sequence="2"/>
-    <menuitem id="menu_accr_medical_contraindication" name="Medical Contraindication" parent="menu_students_nutrition_settings" action="act_open_medical_contraindication_view" sequence="3"/>
+    <menuitem id="menu_accr_medical_contraindication" name="Medical Contraindication" parent="menu_students_nutrition_settings" action="act_open_medical_contraindication_view" sequence="3"/> -->
 
 </odoo>
