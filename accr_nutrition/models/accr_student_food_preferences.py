@@ -6,7 +6,7 @@ class accrStudentFoodPreferences(models.Model):
     _description = "Food prefernces menu for student"
 
     student = fields.Many2one(
-        'x_student', string=u'Student', required=True, ondelete='set null', )
+        'x_student', string=u'Student', required=True, )
     nutrition_details = fields.Many2one(
         'accr.student.nutrition.details', string=u'Nutrition Details',)
     food = fields.Many2many('accr.food','accr_food_food_preferences_rel', 'food_preferences_id', 'accr_food_id', string="Food", required=True, )

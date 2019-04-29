@@ -72,14 +72,7 @@
                                 </field>
                             </page>
                             <page string="medications">
-                                <field name="medications" nolabel="1" readonly="1">
-                                    <tree>
-                                        <field name="x_studio_medications_type" />
-                                        <field name="x_studio_medications" />
-                                        <field name="create_uid" />
-                                        <field name="create_date" />
-                                    </tree>
-                                </field>
+                                <field name="medications" />
                             </page>
                         </notebook>
                     </sheet>

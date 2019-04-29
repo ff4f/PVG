@@ -1,6 +1,6 @@
 {
     'name': 'ACCR Students Nutrition',
-    'depends': ['base', 'mail', 'accr.medical.unit'],
+    'depends': ['base', 'mail', 'accr_medical_unit'],
     'application': True,
     'author': 'ACCR',
 
@@ -17,6 +17,7 @@
         'views/accr_meal_timing.xml',
         'views/accr_meal_timetable.xml',
         'views/accr_diet.xml',
+        'views/accr_medical_contraindication.xml',
         'wizard/accr_generate_meal_timetable_view.xml',
         'reports/accr_student_nutrition_details.xml',
         'menus/accr_nutrition_menu.xml',
