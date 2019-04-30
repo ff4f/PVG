@@ -31,7 +31,7 @@ class accrMedicalUnitMedication(models.Model):
 
     @api.multi
     @api.depends('medicaiotn_student')
-    def _compute_name(self):
+    def _compute_student(self):
         for record in self:
             if record.medicaiotn_student:
                 record.name = record.medicaiotn_student.id
