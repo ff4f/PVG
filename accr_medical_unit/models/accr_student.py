@@ -1,4 +1,4 @@
-from odoo import models, fields, 
+from odoo import models, fields
 
 class accrStudent(models.Model):
     _name = ['student']
