@@ -12,6 +12,8 @@
                     <field name="frequency" />
                     <field name="start_date_time" />
                     <field name="end_date_time" />
+                    <field name="student" invisible="1" />
+                    <field name="medicaiotn_student" invisible="1" />
                 </tree>
             </field>
         </record>
