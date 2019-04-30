@@ -34,4 +34,4 @@ class accrMedicalUnitMedication(models.Model):
     def _compute_student(self):
         for record in self:
             if record.medicaiotn_student:
-                record.name = record.medicaiotn_student
+                record.student = record.medicaiotn_student
