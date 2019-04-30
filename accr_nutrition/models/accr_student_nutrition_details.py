@@ -12,8 +12,8 @@ class accrStudentNutritionDetails(models.Model):
     diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', readonly=True, store=False, )
     residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_details', string=u'Food Preferences', )
-    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_details', string=u'Food Intolerance', )
-    medications = fields.One2many(related='student.x_medications', string=u'Medications', )
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_details', string=u'Food Intolerance', compute='_compute_medications_intolerance', )
+    medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
     height = fields.Integer(string=u'Height', required=True, )
     weight = fields.Integer(string=u'Weight', required=True, )
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True, )
@@ -27,3 +27,17 @@ class accrStudentNutritionDetails(models.Model):
     def _compute_name(self):
         for record in self:
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
+
+
+    @api.multi
+    @api.depends('medications', )
+    def _compute_medications_intolerance(self):
+        for record in self:
+            for medicine in record.medications:
+                for medical_contraindication in medicine.medical_contraindication:
+                    for food_type in medical_contraindication.food_type:
+                        record.food_intolerance.write(0, 0, {'student': record.student, 'nutrition_details': id, 'food_type': food_type})
+
+
+                
+
