@@ -105,7 +105,7 @@ class accrGenerateMealsTimeTable(models.TransientModel):
                                 'type': calendar.day_name[int(line.day)],
                                 'diet': record.diet.id,
                                 'student': student.id,
-                                'diet': record.diet,
+                                'diet': record.diet.id,
                                 'color': 4,
                         })
             return {'type': 'ir.actions.act_window_close'}
