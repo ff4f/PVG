@@ -50,3 +50,6 @@ medical_unit_medicine_manager,MedicalUnitMedicineManager,model_accr_medical_unit
 
 students_user,StudentsUser,model_x_student,students_nutrition_group_user,1,0,0,0
 students_manager,StudentsManager,model_x_student,students_nutrition_group_manager,1,1,1,1
+
+accr_students_user,accrStudenstUser,model_accr_student,students_nutrition_group_user,1,0,0,0
+accr_students_manager,accrStudentsManager,model_accr_student,students_nutrition_group_manager,1,1,1,1
