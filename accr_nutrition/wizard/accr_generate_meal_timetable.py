@@ -104,7 +104,8 @@ class accrGenerateMealsTimeTable(models.TransientModel):
                                 curr_end_date.strftime("%Y-%m-%d %H:%M:%S"),
                                 'type': calendar.day_name[int(line.day)],
                                 'diet': record.diet.id,
-                                'student': student,
+                                'student': student.id,
+                                'diet': record.diet,
                                 'color': 4,
                         })
             return {'type': 'ir.actions.act_window_close'}
