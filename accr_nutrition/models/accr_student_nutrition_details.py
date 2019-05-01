@@ -34,15 +34,12 @@ class accrStudentNutritionDetails(models.Model):
     def _compute_medications_intolerance(self):
         for record in self:
             food_types = []
-            current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            current_date = datetime.datetime.now()
             for medication in record.medications:
-                medication_last_date = fields.Date.from_string(medication.end_date_time)
-                if current_date > medication_last_date:
+                if current_date > medication.end_date_time:
                     medicine = medication.medicine
                     for medical_contraindication in medicine.medical_contraindication:
                         for food_type in medical_contraindication.food_types:
-                            # record.food_intolerance.write({'student': record.student, 'nutrition_details': record.id, 'food_type': food_type})
-                            # self.write({'food_intolerance': [(0,0, {'student': record.student, 'nutrition_details': record.id, 'food_type':food_type,})]})
                             food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
             
             record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
