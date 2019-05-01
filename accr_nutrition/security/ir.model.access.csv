@@ -47,3 +47,6 @@ medical_contraindication_manager,MedicalContraindicationManager,model_accr_medic
 
 medical_unit_medicine_user,medicalUnitMedicinenUser,model_accr_medical_unit_medicine,students_nutrition_group_user,1,0,0,0
 medical_unit_medicine_manager,MedicalUnitMedicineManager,model_accr_medical_unit_medicine,students_nutrition_group_manager,1,1,1,1
+
+students_user,StudentsUser,model_x_student,students_nutrition_group_user,1,0,0,0
+students_manager,StudentsManager,model_x_student,students_nutrition_group_manager,1,1,1,1
