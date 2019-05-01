@@ -18,6 +18,7 @@
         'views/accr_meal_timetable.xml',
         'views/accr_diet.xml',
         'views/accr_medical_contraindication.xml',
+        'views/accr_student_view.xml',
         'wizard/accr_generate_meal_timetable_view.xml',
         'reports/accr_student_nutrition_details.xml',
         'menus/accr_nutrition_menu.xml',
