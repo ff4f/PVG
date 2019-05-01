@@ -42,6 +42,7 @@
                             <field name="meal_type" />
                             <field name="food" widget="many2many_tags" colspan="4"/>
                             <field name="diet" />
+                            <field name="student" domain="[['id','in',students]]" />
                         </group>
                         <group colspan="4" col="4">
                             <field name="start_datetime"/>
@@ -50,11 +51,10 @@
                         </group>
                         <group>
                             <field name="notes"/>
-                            <field name="student" domain="[['id','in',students]]" />
                         </group>
-                        <notebook>
+                        <notebook invisible="1">
                             <page string="students">
-                                <field name="students" />
+                                <field name="students" invisible="1"/>
                             </page>
                         </notebook>
                     </sheet>
