@@ -17,7 +17,7 @@ class accrNutritionStudent(models.Model):
     student_medical_diagnosis = fields.Char(related='student.x_studio_medical_diagnosis', string=u'Medical Diagnosis', store=False, readonly=True, )
     student_diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', store=False, readonly=True, )
     student_guardians = fields.Many2many(related='student.x_guardians', string=u'Guardians', store=False, readonly=True, )
-    student_file_no = fields.Integer(related='student.x_studio_file_no', string=u'File No', store=False, readonly=True, )
+    student_file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', store=False, readonly=True, )
     student_admission_date = fields.Date(related='student.x_studio_joining_date', string=u'Admission Date', store=False, readonly=True, )
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     # student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
