@@ -34,10 +34,11 @@ class accrStudentNutritionDetails(models.Model):
     def _compute_medications_intolerance(self):
         for record in self:
             for medication in record.medications:
-                medicine = medication.medicine
-                for medical_contraindication in medicine.medical_contraindication:
-                    for food_type in medical_contraindication.food_types:
-                        record.food_intolerance.write(0, 0, {'student': record.student, 'nutrition_details': id, 'food_type': food_type})
+                medicines = medication.medicine
+                for medicine in medicines.medicine:
+                    for medical_contraindication in medicine:
+                        for food_type in medical_contraindication.food_types:
+                            record.food_intolerance.write(0, 0, {'student': record.student, 'nutrition_details': id, 'food_type': food_type})
 
 
                 
