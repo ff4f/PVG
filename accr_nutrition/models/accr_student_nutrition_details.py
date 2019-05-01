@@ -32,17 +32,17 @@ class accrStudentNutritionDetails(models.Model):
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
 
 
-    @api.multi
-    @api.depends('medications')
-    def _compute_medications_intolerance(self):
-        for record in self:
-            food_types = []
-            current_date = datetime.datetime.now()
-            for medication in record.medications:
-                if current_date < medication.end_date_time:
-                    medicine = medication.medicine
-                    for medical_contraindication in medicine.medical_contraindication:
-                        for food_type in medical_contraindication.food_types:
-                            food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
+    # @api.multi
+    # @api.depends('medications')
+    # def _compute_medications_intolerance(self):
+    #     for record in self:
+    #         food_types = []
+    #         current_date = datetime.datetime.now()
+    #         for medication in record.medications:
+    #             if current_date < medication.end_date_time:
+    #                 medicine = medication.medicine
+    #                 for medical_contraindication in medicine.medical_contraindication:
+    #                     for food_type in medical_contraindication.food_types:
+    #                         food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
             
-            record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
+    #         record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
