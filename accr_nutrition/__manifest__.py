@@ -1,6 +1,6 @@
 {
     'name': 'ACCR Students Nutrition',
-    'depends': ['base', 'mail', 'accr_medical_unit', 'studio_customization', 'web_studio'],
+    'depends': ['base', 'mail', 'accr_medical_unit', 'web_studio'],
     'application': True,
     'author': 'ACCR',
 
