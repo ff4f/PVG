@@ -95,16 +95,18 @@ class accrGenerateMealsTimeTable(models.TransientModel):
                             utc_dt, "%Y-%m-%d %H:%M:%S")
                         curr_end_date = curr_start_date + datetime.timedelta(
                             hours=line.meal_id.duration)
-                        self.env['accr.meal.timetable'].create({
-                            'meal_id': line.meal_id.id,
-                            'start_datetime':
-                            curr_start_date.strftime("%Y-%m-%d %H:%M:%S"),
-                            'end_datetime':
-                            curr_end_date.strftime("%Y-%m-%d %H:%M:%S"),
-                            'type': calendar.day_name[int(line.day)],
-                            'diet': record.diet.id,
-                            'students': record.students,
-                            'color': 4,
+                        for student in record.students:
+                            self.env['accr.meal.timetable'].create({
+                                'meal_id': line.meal_id.id,
+                                'start_datetime':
+                                curr_start_date.strftime("%Y-%m-%d %H:%M:%S"),
+                                'end_datetime':
+                                curr_end_date.strftime("%Y-%m-%d %H:%M:%S"),
+                                'type': calendar.day_name[int(line.day)],
+                                'diet': record.diet.id,
+                                'student': student.id,
+                                'diet': record.diet.id,
+                                'color': 4,
                         })
             return {'type': 'ir.actions.act_window_close'}
 

@@ -11,7 +11,7 @@
                     <field name="start_datetime"/>
                     <field name="end_datetime"/>
                     <field name="state"/>
-                    <field name="students"/>
+                    <field name="student"/>
                 </tree>
             </field>
         </record>
@@ -42,6 +42,7 @@
                             <field name="meal_type" />
                             <field name="food" widget="many2many_tags" colspan="4"/>
                             <field name="diet" />
+                            <field name="student" domain="[['id','in',students]]" />
                         </group>
                         <group colspan="4" col="4">
                             <field name="start_datetime"/>
@@ -51,9 +52,9 @@
                         <group>
                             <field name="notes"/>
                         </group>
-                        <notebook>
+                        <notebook invisible="1">
                             <page string="students">
-                                <field name="students" />
+                                <field name="students" invisible="1"/>
                             </page>
                         </notebook>
                     </sheet>

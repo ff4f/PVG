@@ -18,7 +18,7 @@ class accrMedicalUnitMedication(models.Model):
     start_date_time = fields.Datetime(string=u'Start Time', required=True,)
     end_date_time = fields.Datetime(string=u'End Time', required=True,)
 
-    x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications', )
+    x_medical_medications = fields.Many2one('x_medical_medications', string='x_medical_medications', required=True, )
     medicaiotn_student = fields.Many2one(related='x_medical_medications.x_studio_student', string=u"Student", store=False,  )
     student = fields.Many2one('x_student', string=u'Student', compute='_compute_student', required=True, )
 
@@ -31,7 +31,7 @@ class accrMedicalUnitMedication(models.Model):
 
     @api.multi
     @api.depends('medicaiotn_student')
-    def _compute_name(self):
+    def _compute_student(self):
         for record in self:
             if record.medicaiotn_student:
-                record.name = record.medicaiotn_student.id
+                record.student = record.medicaiotn_student

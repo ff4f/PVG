@@ -13,4 +13,6 @@ from . import accr_meal_type
 from . import accr_meal_timing
 from . import accr_meal_timetable
 from . import accr_medical_contraindication
-# from . import x_student
+from . import accr_medical_unit_medicine
+from . import accr_nutrition_student
+# from . import accr_student
