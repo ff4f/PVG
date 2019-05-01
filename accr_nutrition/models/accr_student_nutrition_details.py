@@ -40,6 +40,6 @@ class accrStudentNutritionDetails(models.Model):
                     for food_type in medical_contraindication.food_types:
                         # record.food_intolerance.write({'student': record.student, 'nutrition_details': record.id, 'food_type': food_type})
                         # self.write({'food_intolerance': [(0,0, {'student': record.student, 'nutrition_details': record.id, 'food_type':food_type,})]})
-                        food_types.append({'student': record.student, 'nutrition_details': record.id, 'food_type':food_type})
+                        food_types.append({'student': record.student, 'nutrition_details': record.id, 'food_type':food_type.id})
             
             self.env['accr.student.food.intolerance'].create(food_types)
