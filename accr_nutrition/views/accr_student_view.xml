@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="view_accr_student_nutrition_details_tree" model="ir.ui.view">
-            <field name="name">accr.student.nutrition.details.tree</field>
-            <field name="model">accr.student.nutrition.details</field>
+        <record id="view_accr_nutrition_student_tree" model="ir.ui.view">
+            <field name="name">accr.nutrition.student.tree</field>
+            <field name="model">accr.nutrition.student</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Students">
@@ -15,9 +15,9 @@
             </field>
         </record>
 
-        <record id="view_accr_student_nutrition_details_form" model="ir.ui.view">
-            <field name="name">accr.student.nutrition.details.form</field>
-            <field name="model">accr.student.nutrition.details</field>
+        <record id="view_accr_nutrition_student_form" model="ir.ui.view">
+            <field name="name">accr.nutrition.student.form</field>
+            <field name="model">accr.nutrition.student</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="Student">
@@ -40,7 +40,6 @@
                         
                         <notebook>
                             <page string="Food Preferences">
-                                <!-- <field name="food_preferences" nolabel="1" context="{'default_student':student, 'default_nutrition_details':id}"> -->
                                 <field name="food_preferences" nolabel="1" context="{'default_nutrition_student':id}">
                                     <form>
                                         <sheet>
@@ -78,42 +77,42 @@
             </field>
         </record>
 
-        <record id="view_accr_student_nutrition_details_search" model="ir.ui.view">
-            <field name="name">accr.student.nutrition.details.search</field>
-            <field name="model">accr.student.nutrition.details</field>
+        <record id="view_accr_nutrition_student_search" model="ir.ui.view">
+            <field name="name">accr.nutrition.student.search</field>
+            <field name="model">accr.nutrition.student</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Nutrition Details">
+                <search string="Students">
                     <field name="student" select="True" />
-                    <field name="residential_section" select="True" />
+                    <field name="student_residential_section" select="True" />
                     <field name="food_preferences" select="True" />
                 </search>
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_student_nutrition_details_view">
+        <record model="ir.actions.act_window" id="act_open_nutrition_student_view">
             <field name="name">Nutrition Details</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">accr.student.nutrition.details</field>
+            <field name="res_model">accr.nutrition.student</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_accr_student_nutrition_details_search"/>
+            <field name="search_view_id" ref="view_accr_nutrition_student_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_student_nutrition_details_view_form">
-            <field name="act_window_id" ref="act_open_student_nutrition_details_view" />
+        <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_form">
+            <field name="act_window_id" ref="act_open_nutrition_student_view" />
             <field name="sequence" eval="20" />
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_accr_student_nutrition_details_form" />
+            <field name="view_id" ref="view_accr_nutrition_student_form" />
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_student_nutrition_details_view_tree">
-            <field name="act_window_id" ref="act_open_student_nutrition_details_view" />
+        <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_tree">
+            <field name="act_window_id" ref="act_open_nutrition_student_view" />
             <field name="sequence" eval="10" />
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_accr_student_nutrition_details_tree" />
+            <field name="view_id" ref="view_accr_nutrition_student_tree" />
         </record>
 
     </data>
