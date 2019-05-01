@@ -9,7 +9,7 @@ class accrNutritionStudent(models.Model):
     name = fields.Char(string=u'Name', compute='_compute_name', )
 
     student = fields.Many2one('x_student', string=u'Student', required=True, index=True, )
-    student_photo = fields.Binary(related='studentx_studio_student_image', string=u'Photo', store=False, readonly=True, )
+    student_photo = fields.Binary(related='student.x_studio_student_image', string=u'Photo', store=False, readonly=True, )
     student_birth_date = fields.Date(related='student.x_studio_birthdate', string=u'Birth Date', store=False, readonly=True, )
     student_age = fields.Char(string=u'Age', compute='_compute_age', readonly=True,  )
     student_gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', store=False, readonly=True, )
