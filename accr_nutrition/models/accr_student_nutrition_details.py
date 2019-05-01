@@ -36,7 +36,7 @@ class accrStudentNutritionDetails(models.Model):
             food_types = []
             current_date = datetime.datetime.now()
             for medication in record.medications:
-                if current_date > medication.end_date_time:
+                if current_date < medication.end_date_time:
                     medicine = medication.medicine
                     for medical_contraindication in medicine.medical_contraindication:
                         for food_type in medical_contraindication.food_types:
