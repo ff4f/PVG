@@ -50,12 +50,13 @@
                         </group>
                         <group>
                             <field name="notes"/>
+                            <field name="student" domain="[['id','in',students]]">
                         </group>
-                        <notebook>
+                        <!-- <notebook>
                             <page string="students">
                                 <field name="students" />
                             </page>
-                        </notebook>
+                        </notebook> -->
                     </sheet>
                 </form>
             </field>
