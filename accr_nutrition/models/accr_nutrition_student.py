@@ -41,16 +41,16 @@ class accrNutritionStudent(models.Model):
             if record.student_birth_date:
                 record.student_age = str(nowdate.year - birthdate.year - ((nowdate.month, nowdate.day) < (birthdate.month, birthdate.day))) + ' years'
 
-    @api.onchange(student_medications)
-    def _compute_medications_intolerance(self):
-        for record in self:
-            food_types = []
-            current_date = datetime.datetime.now()
-            for medication in record.student_medications:
-                if current_date < medication.end_date_time:
-                    medicine = medication.medicine
-                    for medical_contraindication in medicine.medical_contraindication:
-                        for food_type in medical_contraindication.food_types:
-                            food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
+    # @api.onchange(student_medications)
+    # def _compute_medications_intolerance(self):
+    #     for record in self:
+    #         food_types = []
+    #         current_date = datetime.datetime.now()
+    #         for medication in record.student_medications:
+    #             if current_date < medication.end_date_time:
+    #                 medicine = medication.medicine
+    #                 for medical_contraindication in medicine.medical_contraindication:
+    #                     for food_type in medical_contraindication.food_types:
+    #                         food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
             
-            record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
+    #         record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
