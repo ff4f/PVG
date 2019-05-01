@@ -66,7 +66,7 @@
                                 </field>
                             </page>
                             <page string="medications">
-                                <field name="student_medications" />
+                                <!-- <field name="student_medications" /> -->
                             </page>
                             <page string="Assessments">
                                 <field name="nutrition_details" nolabel="1" />
