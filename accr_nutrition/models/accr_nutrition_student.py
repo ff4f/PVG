@@ -11,8 +11,7 @@ class accrNutritionStudent(models.Model):
     student = fields.Many2one('x_student', string=u'Student', required=True, index=True, store=True, )
     student_photo = fields.Binary(related='student.x_studio_student_image', string=u'Photo', store=False, readonly=True, )
     student_birth_date = fields.Date(related='student.x_studio_birthdate', string=u'Birth Date', store=False, readonly=True, )
-    student_age = fields.Char(string=u'Age', readonly=True,  )
-    # student_age = fields.Char(string=u'Age', compute='_compute_age', readonly=True,  )
+    student_age = fields.Char(string=u'Age', compute='_compute_age', readonly=True,  )
     student_gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', store=False, readonly=True, )
     student_nationality = fields.Many2one(related='student.x_studio_country', string=u'Nationality', store=False, readonly=True, )
     student_medical_diagnosis = fields.Char(related='student.x_studio_medical_diagnosis', string=u'Medical Diagnosis', store=False, readonly=True, )
@@ -23,7 +22,7 @@ class accrNutritionStudent(models.Model):
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
 
-    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', )
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_on_change_medications_intolerance' )
     nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', )
 
@@ -34,15 +33,18 @@ class accrNutritionStudent(models.Model):
             record.name = record.student.display_name
 
 
-    @api.onchange()
-    def _on_change_age(self):
+    @api.multi
+    @api.depends('student_birth_date')
+    def _compute_age(self):
         nowdate = datetime.datetime.today()
         birthdate = self.student_birth_date
         for record in self:
             if record.student_birth_date:
                 record.student_age = str(nowdate.year - birthdate.year - ((nowdate.month, nowdate.day) < (birthdate.month, birthdate.day))) + ' years'
 
-    @api.onchange(student_medications)
+    
+    @api.multi
+    @api.depends('student_medications')
     def _on_change_medications_intolerance(self):
         for record in self:
             food_types = []
