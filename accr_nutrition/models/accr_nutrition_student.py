@@ -54,6 +54,6 @@ class accrNutritionStudent(models.Model):
                     medicine = medication.medicine
                     for medical_contraindication in medicine.medical_contraindication:
                         for food_type in medical_contraindication.food_types:
-                            food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
+                            food_types.append({'nutrition_student': record.id, 'food_type':food_type.id})
             
             record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
