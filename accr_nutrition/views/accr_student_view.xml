@@ -60,6 +60,7 @@
                                 <field name="food_intolerance" nolabel="1" context="{'default_nutrition_student':id}">
                                     <tree editable="bottom">
                                         <field name="food_type" />
+                                        <field name="food" />
                                     </tree>
                                 </field>
                             </page>
