@@ -11,7 +11,8 @@ class accrNutritionStudent(models.Model):
     student = fields.Many2one('x_student', string=u'Student', required=True, index=True, store=False, )
     student_photo = fields.Binary(related='student.x_studio_student_image', string=u'Photo', store=False, readonly=True, )
     student_birth_date = fields.Date(related='student.x_studio_birthdate', string=u'Birth Date', store=False, readonly=True, )
-    student_age = fields.Char(string=u'Age', compute='_compute_age', readonly=True,  )
+    student_age = fields.Char(string=u'Age', readonly=True,  )
+    # student_age = fields.Char(string=u'Age', compute='_compute_age', readonly=True,  )
     student_gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', store=False, readonly=True, )
     student_nationality = fields.Many2one(related='student.x_studio_country', string=u'Nationality', store=False, readonly=True, )
     student_medical_diagnosis = fields.Char(related='student.x_studio_medical_diagnosis', string=u'Medical Diagnosis', store=False, readonly=True, )
@@ -42,7 +43,7 @@ class accrNutritionStudent(models.Model):
                 record.student_age = str(nowdate.year - birthdate.year - ((nowdate.month, nowdate.day) < (birthdate.month, birthdate.day))) + ' years'
 
     @api.onchange(student_medications)
-    def _compute_medications_intolerance(self):
+    def _on_change_medications_intolerance(self):
         for record in self:
             food_types = []
             current_date = datetime.datetime.now()
