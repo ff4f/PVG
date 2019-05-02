@@ -16,7 +16,7 @@ class accrStudentFoodPreferences(models.Model):
         [('Like', 'Like'), ('Dislike', 'Dislike')], string=u'Preference', required=True,)
 
     @api.multi
-    @api.depends('student', 'food')
+    @api.depends('student', 'food_group')
     def _compute_name(self):
         for record in self:
-            record.name = record.student.display_name + ' - ' + record.food_group.display_name + ' - ' + record.preference.Selection
+            record.name = record.student + ' - ' + record.food_group.display_name + ' - ' + record.preference.Selection
