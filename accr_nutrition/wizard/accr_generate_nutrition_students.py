@@ -7,13 +7,12 @@ class accrGenerateNutritionStudents(models.TransientModel):
 
 
     students = fields.Many2many('x_student', 'generate_get_students_rel', 'generate_id', 'student_id',  required=True, store=False )
-    nutrition_students = fields.Many2many('accr.nutrition.student', 'generate_set_nutrition_students_rel', 'generate_id', 'nutrition_student_id', store=False )
 
     @api.multi
     def act_gen_nutrition_students(self):
         for record in self:
             students = []
             for student in record.students:
-                students.append({'student': student.id})
-            self.env['accr.nutrition.student'].create(students)
+                # students.append({'student': student.id})
+                self.env['accr.nutrition.student'].create({'student': student.id})
             return {'type': 'ir.actions.act_window_close'}
