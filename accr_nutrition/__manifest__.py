@@ -21,7 +21,7 @@
         'views/accr_medical_contraindication.xml',
         'views/accr_student_view.xml',
         'wizard/accr_generate_meal_timetable_view.xml',
-        'wizard/accr_generate_nutrition_students.xml',
+        'wizard/accr_generate_nutrition_students_view.xml',
         'reports/accr_student_nutrition_details.xml',
         'menus/accr_nutrition_menu.xml',
     ],
