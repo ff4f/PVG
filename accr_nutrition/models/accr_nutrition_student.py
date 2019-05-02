@@ -22,7 +22,7 @@ class accrNutritionStudent(models.Model):
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
 
-    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_on_change_medications_intolerance' )
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_compute_medications_intolerance' )
     nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', )
 
@@ -45,7 +45,7 @@ class accrNutritionStudent(models.Model):
     
     @api.multi
     @api.depends('student_medications')
-    def _on_change_medications_intolerance(self):
+    def _compute_medications_intolerance(self):
         for record in self:
             food_types = []
             current_date = datetime.datetime.now()
