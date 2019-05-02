@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_generate_nutrition_students_form" model="ir.ui.view">
+            <field name="name">accr.generate.nutrition.students.form</field>
+            <field name="model">accr.generate.nutrition.students</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Meals">
+                    <sheet>
+                        <group>
+                            <field name="students" domain="[['stage','=','student']]"/>
+                        </group>
+                    </sheet>
+                    <footer groups="base.group_user">
+                        <button string="Proceed" type="object" name="act_gen_nutrition_students" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_generate_nutrition_students_view">
+            <field name="name">Generate Nutrition Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.generate.nutrition.students</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_generate_nutrition_students_view_form">
+            <field name="act_window_id" ref="act_open_accr_generate_nutrition_students_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_generate_nutrition_students_form"/>
+        </record>
+    </data>
+</odoo>
