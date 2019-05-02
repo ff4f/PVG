@@ -22,8 +22,8 @@ class accrStudentNutritionDetails(models.Model):
     water_intake = fields.Many2one('accr.water.intake', string=u'Water Intake', )
     nutritional_needs = fields.Many2one('accr.nutritional.needs', string=u'Nutritional Needs', )
     
-    nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Nutrition Student', )
-    student = fields.Many2one(related='nutrition_student.student', string=u'Student', )
+    nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
+    student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )
 
     @api.multi
     @api.depends('student', 'create_date')
