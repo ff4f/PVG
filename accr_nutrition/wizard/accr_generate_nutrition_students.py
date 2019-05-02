@@ -15,5 +15,5 @@ class accrGenerateNutritionStudents(models.TransientModel):
             students = []
             for student in record.students:
                 students.append({'student': student.id})
-            record.nutrition_students = self.env['accr.nutrition.student'].create(students)
+            self.env['accr.nutrition.student'].create(students)
             return {'type': 'ir.actions.act_window_close'}
