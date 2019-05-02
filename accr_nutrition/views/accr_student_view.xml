@@ -89,7 +89,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_nutrition_student_view">
-            <field name="name">Nutrition Details</field>
+            <field name="name">Students</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">accr.nutrition.student</field>
             <field name="view_type">form</field>
