@@ -45,4 +45,4 @@ class accrStudentNutritionDetails(models.Model):
     def _add_student_to_dite(self):
         for record in self:
             if record.student:
-                self.env['accr.diet'].write({'id': record.diet.id, 'students': [(6, 0,{'diet_id': record.diet.id, 'x_student_id': record.student.id} )]})
+                record.diet = self.env['accr.diet'].write({'id': record.diet.id, 'students': [(6, 0, {'diet_id': record.diet.id, 'x_student_id': record.student.id} )]})
