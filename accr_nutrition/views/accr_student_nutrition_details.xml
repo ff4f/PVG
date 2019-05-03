@@ -21,11 +21,11 @@
                 <form string="Nutrition Details">
                     <sheet>
                         <group col="4">
-                            <field name="student">
+                            <field name="student" />
                             <field name="diet" />
                         </group>
                         <group col="4" string="Nutritional Needs">
-                            <field name="needs_cho">
+                            <field name="needs_cho" />
                             <field name="needs_pro" />
                             <field name="needs_fats" />
                             <field name="needs_vit" />
@@ -36,7 +36,7 @@
                             <field name="requirement_kcal" colspan="2"/>
                         </group>
                         <group col="4">
-                            <field name="sleep_hours">
+                            <field name="sleep_hours" />
                             <field name="physical_activity" />
                             <field name="physiothrtapy" />
                             <field name="activity_level" />
