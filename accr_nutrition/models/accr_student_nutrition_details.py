@@ -46,4 +46,5 @@ class accrStudentNutritionDetails(models.Model):
         for record in self:
             if record.student:
                 diet = self.env['accr.diet'].search([('id','=',record.diet.id)])
-                diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
+                if diet:
+                    diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
