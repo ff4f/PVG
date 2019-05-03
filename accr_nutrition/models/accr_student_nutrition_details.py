@@ -28,7 +28,7 @@ class accrStudentNutritionDetails(models.Model):
     meal_frequency = fields.Integer(string=u"Meal Frequency")
     food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food')
     habits = fields.Char(string=u"Habits")
-    others = field.Text(string=u"Others")
+    others = fields.Text(string=u"Others")
     
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )

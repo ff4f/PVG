@@ -6,7 +6,7 @@
             <field name="model">accr.student.nutrition.details</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Nutrition Details">
+                <tree string="Nutrition Details" create='0' edit='0'>
                     <field name="student" />
                     <field name="diet" />
                 </tree>
