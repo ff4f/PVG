@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class accrBCA_BMR(models.Model):
+class accrBCABMR(models.Model):
     _name = 'accr.bca.bmr'
 
     bmr = fields.Char(string=u"BMR", required=True)
