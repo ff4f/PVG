@@ -12,6 +12,12 @@ food_type_manager,FoodTypeManager,model_accr_food_type,students_nutrition_group_
 food_textures_user,FoodTextureseUser,model_accr_food_textures,students_nutrition_group_user,1,0,0,0
 food_textures_manager,FoodTexturesManager,model_accr_food_textures,students_nutrition_group_manager,1,1,1,1
 
+bca_user,BCA_User,model_accr_bca,students_nutrition_group_user,1,0,0,0
+bca_manager,BCA_Manager,model_accr_bca,students_nutrition_group_manager,1,1,1,1
+
+bca_bmr_user,BCA_BMR_User,model_accr_bca_bmr,students_nutrition_group_user,1,0,0,0
+bca_bmr_manager,BCA_BMR_Manager,model_bca_bmr,students_nutrition_group_manager,1,1,1,1
+
 diet_user,DietUser,model_accr_diet,students_nutrition_group_user,1,0,0,0
 diet_manager,DietManager,model_accr_diet,students_nutrition_group_manager,1,1,1,1
 

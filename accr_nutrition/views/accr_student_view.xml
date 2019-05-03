@@ -105,6 +105,33 @@
                                     </form>
                                 </field>
                             </page>
+                            <page string="BCA">
+                                <field name="bca">
+                                    <tree edit="1" create="1">
+                                        <field name="actual_weight"/>
+                                        <field name="bmr"/>
+                                        <field name="fat_kg"/>
+                                        <field name="mucles_kg"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group col="4">
+                                                <field name="ideal_weight"/>
+                                                <field name="actual_weight"/>
+                                                <field name="bmr"/>
+                                                <field name="fat_kg"/>
+                                                <field name="fat_percentage"/>
+                                                <field name="mucles_kg"/>
+                                                <field name="lean_muscles"/>
+                                                <field name="fat_control_kg"/>
+                                                <field name="muscles_control_kg"/>
+                                                <field name="icw"/>
+                                                <field name="ecw"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

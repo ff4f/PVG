@@ -24,6 +24,7 @@ class accrNutritionStudent(models.Model):
 
     food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_compute_medications_intolerance', readonly=False )
     nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', )
+    bca = fields.One2many('accr.bca', 'nutrition_student', string="BCA", )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', )
 
     @api.multi
