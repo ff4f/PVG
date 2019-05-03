@@ -5,7 +5,7 @@ class accrBCA(models.Model):
 
     ideal_weight = fields.Float(string=u"Ideal weight")
     actual_weight = fields.Float(string=u"Actual weight")
-    bmr = fields.Many2one('accr_bca_bmr', string=u"BMR")
+    bmr = fields.Many2one('accr.bca.bmr', string=u"BMR")
     fat_kg = fields.Float(string=u"FAT.kg")
     fat_percentage = fields.Integer(string=u"FATS.%")
     mucles_kg = fields.Float(string=u"Mucles.kg")
