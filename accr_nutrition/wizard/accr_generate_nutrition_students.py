@@ -6,7 +6,7 @@ class accrGenerateNutritionStudents(models.TransientModel):
     _description = "Generate Nutrition Students"
 
 
-    students = fields.Many2many('x_student', 'generate_get_students_rel', 'generate_id', 'student_id',  required=True, store=False )
+    students = fields.Many2many('x_student', 'generate_get_students_rel', 'generate_id', 'student_id',  required=True, string=u"Students" )
 
     @api.multi
     def act_gen_nutrition_students(self):
