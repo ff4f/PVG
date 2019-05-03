@@ -45,7 +45,7 @@
                             <field name="habits" />
                         </group>
                         <group col="2">
-                            <field name="Others" colspan="2">
+                            <field name="Others" colspan="2" />
                         </group>
                     </sheet>
                 </form>
