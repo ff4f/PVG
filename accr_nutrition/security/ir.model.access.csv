@@ -9,6 +9,9 @@ food_group_manager,FoodGroupManager,model_accr_food_group,students_nutrition_gro
 food_type_user,FoodTypeUser,model_accr_food_type,students_nutrition_group_user,1,0,0,0
 food_type_manager,FoodTypeManager,model_accr_food_type,students_nutrition_group_manager,1,1,1,1
 
+food_textures_user,FoodTextureseUser,model_accr_food_textures,students_nutrition_group_user,1,0,0,0
+food_textures_manager,FoodTexturesManager,model_accr_food_textures,students_nutrition_group_manager,1,1,1,1
+
 diet_user,DietUser,model_accr_diet,students_nutrition_group_user,1,0,0,0
 diet_manager,DietManager,model_accr_diet,students_nutrition_group_manager,1,1,1,1
 
