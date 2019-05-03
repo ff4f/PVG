@@ -24,4 +24,4 @@ class accrBCA(models.Model):
     def _compute_name(self):
         for record in self:
             if record.student:
-                record.name = record.student.display_name + ' - ' + recrod.create_date.strftime("%Y-%m-%d")
+                record.name = record.student.display_name + ' - ' + record.create_date.strftime("%Y-%m-%d")
