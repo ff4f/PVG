@@ -38,3 +38,11 @@ class accrStudentNutritionDetails(models.Model):
     def _compute_name(self):
         for record in self:
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
+
+            
+
+    @api.onchange('diet')	
+    def _add_student_to_dite(self):
+        for record in self:
+            if record.student:
+                self.env['accr.diet'].create({'id': record.diet.id, 'students': record.student.id})
