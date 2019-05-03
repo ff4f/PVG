@@ -20,7 +20,7 @@ class accrBCA(models.Model):
     student = fields.Many2one(related='nutrition_student.student', string=u"Student")
 
     @api.multi
-    @api.depends('student')
+    @api.depends('student', 'create_date')
     def _compute_name(self):
         for record in self:
             if record.student:
