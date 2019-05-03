@@ -6,21 +6,29 @@ class accrStudentNutritionDetails(models.Model):
     _name = "accr.student.nutrition.details"
     _description = "Student Nutrition Details"
 
-    # student = fields.Many2one('x_student', string=u'Student', required=True, )
     name = fields.Char(compute='_compute_name', string=u'Name', readonly=True, )
-    # age = fields.Char(related='student.x_studio_age', string=u"Age", readonly=True, store=False, )
-    # diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', readonly=True, store=False, )
-    # residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
-    # food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_details', string=u'Food Preferences', )
-    # food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_details', string=u'Food Intolerance', compute='_compute_medications_intolerance' )
-    # medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
-    height = fields.Integer(string=u'Height', required=True, )
-    weight = fields.Integer(string=u'Weight', required=True, )
+    
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True, )
-    requirements = fields.Many2one('accr.nutrition.requirements', string=u'Requirements', )
+
+    # Nutritional Needs
+    needs_cho = fields.Integer(string=u"CHO")
+    needs_pro = fields.Integer(string=u"PRO")
+    needs_fats = fields.Integer(string=u"FATS")
+    needs_vit = fields.Char(string=u"VIT")
+    needs_min = fields.Char(string=u"MIN")
+    needs_wi = fields.Float(string=u"Water Intake")
+
+    # Nutritional Requirements KCAL per day: INTEGER
+    requirement_kcal = fields.Integer(string=u"Requirement KCAL per day")
+
+    sleep_hours = fields.Integer(string=u"Sleep Hours")
     physical_activity = fields.Many2one('accr.physical.activity', string=u'Physical Activity', )
-    water_intake = fields.Many2one('accr.water.intake', string=u'Water Intake', )
-    nutritional_needs = fields.Many2one('accr.nutritional.needs', string=u'Nutritional Needs', )
+    physiothrtapy = fields.Char(string=u"Physiothrtapy")
+    activity_level = fields.Char(string=u"Activity.level")
+    meal_frequency = fields.Integer(string=u"Meal Frequency")
+    food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food')
+    habits = fields.Char(string=u"Habits")
+    others = field.Text(string=u"Others")
     
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )
@@ -30,19 +38,3 @@ class accrStudentNutritionDetails(models.Model):
     def _compute_name(self):
         for record in self:
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
-
-
-    # @api.multi
-    # @api.depends('medications')
-    # def _compute_medications_intolerance(self):
-    #     for record in self:
-    #         food_types = []
-    #         current_date = datetime.datetime.now()
-    #         for medication in record.medications:
-    #             if current_date < medication.end_date_time:
-    #                 medicine = medication.medicine
-    #                 for medical_contraindication in medicine.medical_contraindication:
-    #                     for food_type in medical_contraindication.food_types:
-    #                         food_types.append({'student': record.student.id, 'nutrition_details': record.id, 'food_type':food_type.id})
-            
-    #         record.food_intolerance = self.env['accr.student.food.intolerance'].create(food_types)
