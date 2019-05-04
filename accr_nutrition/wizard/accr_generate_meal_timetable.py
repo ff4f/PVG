@@ -38,7 +38,7 @@ class accrGenerateMealsTimeTable(models.TransientModel):
         'Start Date', required=True, default=time.strftime('%Y-%m-01'))
     end_date = fields.Date('End Date', required=True)
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True,)
-    students = fields.Many2many(related='diet.students', string=u"Students", required=True, readonly=True, store=False )
+    students = fields.One2many(related='diet.students', string=u"Students", required=True, readonly=True, store=False )
 
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
