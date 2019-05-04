@@ -24,7 +24,7 @@
                             <field name="name" colspan="4"/>
                         </group>
                         <group col="4" string="Students">
-                            <field name="students" nolabel="1" widget="many2many_tags" />
+                            <field name="students" nolabel="1" widget="many2many" />
                         </group>
                     </sheet>
                 </form>
