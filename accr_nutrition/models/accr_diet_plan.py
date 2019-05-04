@@ -11,7 +11,7 @@ class accrDietPlan(models.Model):
 
     @api.multi
     @api.depends('diet', 'create_date')
-    def _compute_day(self):
+    def _compute_name(self):
         for record in self:
             if record.diet and record.create_date:
                 record.name = record.diet.display_name + ' - ' + record.create_date.strftime("%Y-%m-%d")
