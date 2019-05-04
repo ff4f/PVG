@@ -21,6 +21,9 @@ bca_bmr_manager,BCA_BMR_Manager,model_accr_bca_bmr,students_nutrition_group_mana
 diet_user,DietUser,model_accr_diet,students_nutrition_group_user,1,0,0,0
 diet_manager,DietManager,model_accr_diet,students_nutrition_group_manager,1,1,1,1
 
+diet_plan_user,DietPlanUser,model_accr_diet_plan,students_nutrition_group_user,1,0,0,0
+diet_plan_manager,DietPlanManager,model_accr_diet_plan,students_nutrition_group_manager,1,1,1,1
+
 nutrition_Physical_activity_user,NutritionPhysicalActivityUser,model_accr_physical_activity,students_nutrition_group_user,1,0,0,0
 nutrition_Physical_activity_manager,NutritionPhysicalActivityManager,model_accr_physical_activity,students_nutrition_group_manager,1,1,1,1
 

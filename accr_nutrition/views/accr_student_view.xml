@@ -37,6 +37,9 @@
                             <field name="student_medical_diagnosis" />
                             <field name="student_diagnosis" />
                         </group>
+                        <group col="2">
+                            <field name="diet" colspan="2" />
+                        </group>
 
                         <notebook>
                             <page string="Food Preferences">

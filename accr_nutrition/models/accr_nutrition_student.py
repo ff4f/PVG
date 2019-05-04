@@ -27,6 +27,8 @@ class accrNutritionStudent(models.Model):
     bca = fields.One2many('accr.bca', 'nutrition_student', string="BCA", )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', )
 
+    diet = fields.Many2one('accr.diet', string=u"Diet", )
+
     @api.multi
     @api.depends('student')
     def _compute_name(self):

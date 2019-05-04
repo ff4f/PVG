@@ -18,6 +18,7 @@
         'views/accr_meal_timing.xml',
         'views/accr_meal_timetable.xml',
         'views/accr_diet.xml',
+        'views/accr_diet_plan.xml',
         'views/accr_medical_contraindication.xml',
         'views/accr_student_view.xml',
         'views/accr_bca.xml',
