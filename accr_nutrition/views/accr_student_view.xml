@@ -132,6 +132,9 @@
                                     </form>
                                 </field>
                             </page>
+                            <page string="Nutrition Plans">
+                                <field name="nutrition_plan" />
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
