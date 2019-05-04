@@ -40,6 +40,9 @@
                         <group col="2">
                             <field name="diet" colspan="2" />
                         </group>
+                        <group col="2">
+                            <field name="follow_up" colspan="2" />
+                        </group>
 
                         <notebook>
                             <page string="Food Preferences">

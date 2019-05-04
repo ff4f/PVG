@@ -33,6 +33,8 @@ class accrNutritionStudent(models.Model):
 
     nutrition_plan = fields.One2many('accr.nutrition.plan', 'nutrition_student', string=u'Nutrition Plan')
 
+    follow_up = fields.Many2many('accr.nutrition.followup', 'accr_nutrition_student_followup_rel', 'nutrition_student_id', 'followup_id', string=u"Follow Up", )
+
     @api.multi
     @api.depends('student')
     def _compute_name(self):
