@@ -3,6 +3,7 @@ from . import accr_food_group
 from . import accr_food_type
 from . import accr_food_textures
 from . import accr_diet
+from . import accr_diet_plan
 from . import accr_physical_activity
 from . import accr_bca
 from . import accr_bca_bmr
