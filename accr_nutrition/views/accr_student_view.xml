@@ -138,6 +138,9 @@
                             <page string="Nutrition Plans">
                                 <field name="nutrition_plan" />
                             </page>
+                            <page string="Student Orientation">
+                                <field name="student_orientation" />
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
