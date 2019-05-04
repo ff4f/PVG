@@ -9,6 +9,7 @@
     <menuitem id="menu_accr_nutrition_assessment" name="Nutrition assessments" parent="menu_accr_nutrition_details" action="act_open_student_nutrition_details_view" sequence="1"/>
     <menuitem id="menu_accr_bca" name="BCA" parent="menu_accr_nutrition_details" action="act_open_accr_bca_view" sequence="2"/>
     <menuitem id="menu_accr_nutrition_plan" name="Nutrition Plans" parent="menu_accr_nutrition_details" action="act_open_accr_nutrition_plan_view" sequence="3"/>
+    <menuitem id="menu_accr_student_orientation" name="Student Orientation" parent="menu_accr_nutrition_details" action="act_open_accr_student_orientation_view" sequence="4"/>
     
     <menuitem id="menu_students_nutrition_Meals" name="Meals" parent="menu_students_nutrition" sequence="3"/>
     <menuitem id="menu_accr_meal_timing" name="Meal Timing" parent="menu_students_nutrition_Meals" action="act_open_accr_meal_timing_view" sequence="1"/>

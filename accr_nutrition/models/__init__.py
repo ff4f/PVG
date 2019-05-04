@@ -12,6 +12,7 @@ from . import accr_student_food_intolerance
 from . import accr_student_food_preferences
 from . import accr_student_nutrition_details
 from . import accr_nutrition_follow_up
+from . import accr_student_orientation
 from . import accr_meal_type
 from . import accr_meal_timing
 from . import accr_meal_timetable
