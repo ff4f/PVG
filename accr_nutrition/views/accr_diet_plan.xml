@@ -24,13 +24,17 @@
                             <field name="diet" colspan="4"/>
                         </group>
                         <group col="4" string="Meal Types">
-                            <field name="meal_types" nolabel="1" />
+                            <field name="meal_types" nolabel="1">
+                                <tree>
+                                    <field name="name" />
+                                </tree>
+                            </field>
                         </group>
                         <group col="4" string="Food">
-                            <field name="food" nolabel="1" />
+                            <field name="food" nolabel="1" domain="[['meal_type','in',meal_types]]"/>
                         </group>
                         <group col="4" string="Students">
-                            <field name="students" nolabel="1" />
+                            <field name="students" nolabel="1" readonly="1"/>
                         </group>
                     </sheet>
                 </form>
