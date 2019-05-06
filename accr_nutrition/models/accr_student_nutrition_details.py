@@ -40,12 +40,12 @@ class accrStudentNutritionDetails(models.Model):
         for record in self:
             record.name = record.student.display_name + ' - '+ record.create_date.strftime("%Y-%m-%d")
 
-    @api.multi
-    @api.depends('diet')
-    def _compute_student_diet(self):
-        for record in self:
-            if record.diet:
-                record.nutrtition_student_diet = record.diet
+    # @api.multi
+    # @api.depends('diet')
+    # def _compute_student_diet(self):
+    #     for record in self:
+    #         if record.diet:
+    #             record.nutrtition_student_diet = record.diet
 
             
 
@@ -57,7 +57,7 @@ class accrStudentNutritionDetails(models.Model):
     #             if diet and record.student:
     #                 diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
 
-    # @api.onchange('diet')
-    # def _change_student_diet(self):
-    #     for record in self:
-    #         record.nutrition_student.diet = record.diet.id
+    @api.onchange('diet')
+    def _change_student_diet(self):
+        for record in self:
+            record.nutrtition_student_diet = record.diet
