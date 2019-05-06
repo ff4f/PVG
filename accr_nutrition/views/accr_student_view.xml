@@ -82,7 +82,7 @@
                                     <form string="Nutrition Details">
                                         <sheet>
                                             <group col="2">
-                                                <field name="diet" colspan="2"/>
+                                                <field name="diet" colspan="2" readonly="1"/>
                                             </group>
                                             <group col="4" string="Nutritional Needs">
                                                 <field name="needs_cho" />
@@ -143,6 +143,11 @@
                             </page>
                         </notebook>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>

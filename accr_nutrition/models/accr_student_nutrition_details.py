@@ -32,7 +32,6 @@ class accrStudentNutritionDetails(models.Model):
     
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )
-    # nutrtition_student_diet = fields.Many2one(related='nutrition_student.diet', string=u'Student Diet', compute='_compute_student_diet', )
 
     @api.multi
     @api.depends('student', 'create_date')
@@ -57,6 +56,6 @@ class accrStudentNutritionDetails(models.Model):
     #             if diet and record.student:
     #                 diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
 
-    @api.onchange('diet')
-    def _change_student_diet(self):
-        self.nutrition_student.diet = self.diet
+    # @api.onchange('diet')
+    # def _change_student_diet(self):
+    #     self.nutrition_student.diet = self.diet
