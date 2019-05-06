@@ -8,7 +8,7 @@ class accrStudentNutritionDetails(models.Model):
 
     name = fields.Char(compute='_compute_name', string=u'Name', readonly=True, )
     
-    diet = fields.Many2one('accr.diet', string=u'Diet', required=True, )
+    diet = fields.Many2one('accr.diet', string=u'Current Diet', required=True, )
 
     # Nutritional Needs
     needs_cho = fields.Integer(string=u"CHO")
