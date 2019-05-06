@@ -49,6 +49,7 @@ class accrStudentNutritionDetails(models.Model):
     #             if diet and record.student:
     #                 diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
 
+    @api.multi
     @api.onchange
     def _change_student_diet(self):
         for record in self:
