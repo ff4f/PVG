@@ -59,5 +59,4 @@ class accrStudentNutritionDetails(models.Model):
 
     @api.onchange('diet')
     def _change_student_diet(self):
-        for record in self:
-            record.nutrtition_student_diet = record.diet
+        self.nutrtition_student_diet = self.diet
