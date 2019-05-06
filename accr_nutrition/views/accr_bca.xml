@@ -17,7 +17,7 @@
             <field name="model">accr.bca</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="BCA">
+                <form string="BCA" create="0" edit="0">
                     <sheet>
                         <group col="2">
                             <field name="student" colspan="2" />

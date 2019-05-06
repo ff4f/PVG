@@ -18,7 +18,7 @@
             <field name="model">accr.student.nutrition.details</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Nutrition Details">
+                <form string="Nutrition Details" create='0' edit='0'>
                     <sheet>
                         <group col="4">
                             <field name="student" />
