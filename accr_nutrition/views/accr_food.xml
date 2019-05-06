@@ -29,9 +29,8 @@
                             <field name="food_group" />
                             <field name="food_type" />
                             <field name="meal_type" />
-                            <field name="uom" domain="[('category_id','in',1,2,5)]"/>
+                            <field name="uom" domain="[('category_id','in',[1,2,5])]"/>
                             <field name="calories" />
-                            <field name="category_id" />
                         </group>
                     </sheet>
                 </form>

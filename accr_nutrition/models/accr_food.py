@@ -10,4 +10,3 @@ class accrFood(models.Model):
 
     uom = fields.Many2one('uom.uom', string=u'Unit of Measure', )
     calories = fields.Integer(string=u'Calories', )
-    category_id = fields.Integer(related='uom.category_id.id')
