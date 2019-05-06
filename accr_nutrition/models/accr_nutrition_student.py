@@ -4,6 +4,7 @@ from odoo import models, fields, api, _
 class accrNutritionStudent(models.Model):
     _name = 'accr.nutrition.student'
     _description = 'Student Nutrition Details'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _sql_constraints = [('student_unique', 'unique(student)', 'Can not be duplicate value for this field!')]
 
     name = fields.Char(string=u'Name', compute='_compute_name', )
