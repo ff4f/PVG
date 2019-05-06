@@ -9,7 +9,7 @@
                 <form string="Meals">
                     <sheet>
                         <group>
-                            <field name="students" domain="[['x_stage_id','=',3]]"/>
+                            <field name="students"/>
                         </group>
                     </sheet>
                     <footer groups="base.group_user">
