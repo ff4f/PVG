@@ -48,3 +48,9 @@ class accrStudentNutritionDetails(models.Model):
     #             diet = self.env['accr.diet'].search([('id','=',record.diet.id)])
     #             if diet and record.student:
     #                 diet.write({'students': [(0, 0, {'diet_id': diet.id, 'x_student_id': record.student.id})]})
+
+    @api.onchange
+    def _change_student_diet(self):
+        for record in self:
+            if record.diet:
+                record.nutrition_student.diet = record.diet
