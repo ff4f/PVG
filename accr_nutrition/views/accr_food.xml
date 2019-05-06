@@ -11,7 +11,7 @@
                     <field name="food_group" />
                     <field name="food_type" />
                     <field name="meal_type" />
-                    <filed name="uom" />
+                    <field name="uom" />
                     <field name="calories" />
                 </tree>
             </field>
@@ -29,7 +29,7 @@
                             <field name="food_group" />
                             <field name="food_type" />
                             <field name="meal_type" />
-                            <filed name="uom" />
+                            <field name="uom" />
                             <field name="calories" />
                         </group>
                     </sheet>
