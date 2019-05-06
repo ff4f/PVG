@@ -69,7 +69,7 @@
                                     </tree>
                                 </field>
                             </page>
-                            
+
                             <page string="Assessments">
                                 <field name="nutrition_details" nolabel="1" context="{'default_diet':diet}">
                                     <tree create='1' edit='1'>
@@ -132,17 +132,26 @@
                                     </form>
                                 </field>
                             </page>
-                            <page string="Nutrition Plans">
+                            <page string="Nutrition Plans" create="1" edit="1">
                                 <field name="nutrition_plan" />
                             </page>
-                            <page string="Student Orientation">
+                            <page string="Student Orientation" create="1" edit="1">
                                 <field name="student_orientation" />
                             </page>
                             <page string="Medications">
-                                <field name="student_medications" />
+                                <field name="student_medications">
+                                    <tree>
+                                        <fielt name="create_date" />
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Residential Notes">
-                                <field name="student_residential_daily_notes" />
+                                <field name="student_residential_daily_notes">
+                                    <tree>
+                                        <field name="x_studio_date_time" />
+                                        <field name="x_studio_notes" />
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
