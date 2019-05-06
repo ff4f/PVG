@@ -7,7 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Nutrition Details" create='0' edit='0'>
-                    <field name="student" />
+                    <field name="nutrition_student" />
                     <field name="diet" />
                 </tree>
             </field>
@@ -21,7 +21,7 @@
                 <form string="Nutrition Details" create='0' edit='0'>
                     <sheet>
                         <group col="4">
-                            <field name="student" />
+                            <field name="nutrition_student" />
                             <field name="diet" />
                         </group>
                         <group col="4" string="Nutritional Needs">
