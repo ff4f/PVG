@@ -62,18 +62,22 @@
                                 </field>
                             </page>
                             <page string="Food Intolerance">
-                                <field name="food_intolerance" nolabel="1" context="{'default_nutrition_student':id}">
-                                    <tree editable="bottom">
-                                        <field name="food_type" />
-                                        <field name="food" widget="many2many_tags" />
-                                    </tree>
-                                </field>
-                                <field name="medical_contraindication" nolabel="1" context="{'default_nutrition_student':id}">
-                                    <tree editable="bottom">
-                                        <field name="food_type" />
-                                        <field name="food" widget="many2many_tags" />
-                                    </tree>
-                                </field>
+                                <group string="Food Intolerance" colspa="2">
+                                    <field name="food_intolerance" nolabel="1" context="{'default_nutrition_student':id}">
+                                        <tree editable="bottom">
+                                            <field name="food_type" />
+                                            <field name="food" widget="many2many_tags" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Medical Contraindication" colspa="2">
+                                    <field name="medical_contraindication" nolabel="1" context="{'default_nutrition_student':id}">
+                                        <tree editable="bottom">
+                                            <field name="food_type" />
+                                            <field name="food" widget="many2many_tags" />
+                                        </tree>
+                                    </field>
+                                </group>
                             </page>
 
                             <page string="Assessments">
