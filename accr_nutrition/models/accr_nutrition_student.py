@@ -4,7 +4,7 @@ from odoo import models, fields, api, _
 class accrNutritionStudent(models.Model):
     _name = 'accr.nutrition.student'
     _description = 'Student Nutrition Details'
-    # _sql_constraints = [('student_unique', 'unique(student)', 'Can not be duplicate value for this field!')]
+    _sql_constraints = [('student_unique', 'unique(student)', 'Can not be duplicate value for this field!')]
 
     name = fields.Char(string=u'Name', compute='_compute_name', )
 
@@ -47,9 +47,9 @@ class accrNutritionStudent(models.Model):
     @api.multi
     @api.depends('student_birth_date')
     def _compute_age(self):
-        nowdate = datetime.datetime.today()
-        birthdate = self.student_birth_date
         for record in self:
+            nowdate = datetime.datetime.today()
+            birthdate = record.student_birth_date
             if record.student_birth_date:
                 record.student_age = str(nowdate.year - birthdate.year - ((nowdate.month, nowdate.day) < (birthdate.month, birthdate.day))) + ' years'
 
