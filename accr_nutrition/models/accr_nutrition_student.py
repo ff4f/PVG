@@ -23,14 +23,14 @@ class accrNutritionStudent(models.Model):
     student_file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', store=False, readonly=True, )
     student_admission_date = fields.Date(related='student.x_studio_joining_date', string=u'Admission Date', store=False, readonly=True, )
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
-    student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False)
+    student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False, track_visibility='onchange', )
 
-    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_compute_medications_intolerance', readonly=False )
-    nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', )
-    bca = fields.One2many('accr.bca', 'nutrition_student', string="BCA", )
-    food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', )
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_compute_medications_intolerance', readonly=False , track_visibility='onchange', )
+    nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', track_visibility='onchange', )
+    bca = fields.One2many('accr.bca', 'nutrition_student', string="BCA", track_visibility='onchange', )
+    food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', track_visibility='onchange', )
 
-    diet = fields.Many2one('accr.diet', string=u"Diet", )
+    diet = fields.Many2one('accr.diet', string=u"Diet", track_visibility='onchange', )
 
     nutrition_plan = fields.One2many('accr.nutrition.plan', 'nutrition_student', string=u'Nutrition Plan')
 
