@@ -132,18 +132,22 @@
                                     </form>
                                 </field>
                             </page>
-                            <page string="Nutrition Plans" create="1" edit="1">
-                                <field name="nutrition_plan" />
+                            <page string="Nutrition Plans">
+                                <field name="nutrition_plan">
+                                    <tree string="Caption" create="1" delete="1" edit="1" editable="top">
+                                        <field name="name" />
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Student Orientation" create="1" edit="1">
-                                <field name="student_orientation" />
-                            </page>
-                            <page string="Medications">
-                                <field name="student_medications">
-                                    <tree>
+                                <field name="student_orientation">
+                                    <tree string="Caption" create="1" delete="1" edit="1" editable="top">
                                         <field name="create_date" />
                                     </tree>
                                 </field>
+                            </page>
+                            <page string="Medications">
+                                <field name="student_medications"/>
                             </page>
                             <page string="Residential Notes">
                                 <field name="student_residential_daily_notes">
