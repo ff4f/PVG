@@ -11,6 +11,8 @@
                     <field name="food_group" />
                     <field name="food_type" />
                     <field name="meal_type" />
+                    <filed name="uom" />
+                    <field name="calories" />
                 </tree>
             </field>
         </record>
@@ -27,6 +29,8 @@
                             <field name="food_group" />
                             <field name="food_type" />
                             <field name="meal_type" />
+                            <filed name="uom" />
+                            <field name="calories" />
                         </group>
                     </sheet>
                 </form>
@@ -40,7 +44,7 @@
             <field name="arch" type="xml">
                 <search string="Food">
                     <field name="name" select="True" />
-                    <field name="food_group" select="True"  />
+                    <field name="food_group" select="True" />
                     <field name="food_type" select="True" />
                     <field name="meal_type" select="True" />
                 </search>
