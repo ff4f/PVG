@@ -29,6 +29,7 @@
                             <field name="food_group" />
                             <field name="food_type" />
                             <field name="meal_type" />
+                            <field name="measure" />
                             <field name="uom" domain="[('category_id','in',[1,2,5])]"/>
                             <field name="calories" />
                         </group>

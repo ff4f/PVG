@@ -8,5 +8,6 @@ class accrFood(models.Model):
     food_type = fields.Many2one('accr.food.type', string=u'Food Type', required=False, )
     meal_type = fields.Many2one('accr.meal.type', string=u"Meal Type", required=False, )
 
+    measure = fields.Integer(string=u'Measure', )
     uom = fields.Many2one('uom.uom', string=u'Unit of Measure', )
     calories = fields.Integer(string=u'Calories', )
