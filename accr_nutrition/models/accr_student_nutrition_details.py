@@ -5,6 +5,7 @@ from odoo import models, fields, api, _
 class accrStudentNutritionDetails(models.Model):
     _name = "accr.student.nutrition.details"
     _description = "Student Nutrition Details"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(compute='_compute_name', string=u'Name', readonly=True, )
     
