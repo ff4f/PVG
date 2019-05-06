@@ -26,8 +26,8 @@ class accrNutritionStudent(models.Model):
     student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False, track_visibility='always', )
     student_residential_daily_notes = fields.One2many(related='student.x_studio_residential_daily_notes', string=u'Residential Notes', store=False, readonly=True, track_visibility='onchange', )
 
-    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', readonly=False , track_visibility='onchange', )
-    medical_contraindication = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Medical Contraindication', compute='_compute_medications_intolerance', readonly=True , track_visibility='onchange',)
+    food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student_food_intolerance', string=u'Food Intolerance', readonly=False , track_visibility='onchange', )
+    medical_contraindication = fields.One2many('accr.student.food.intolerance', 'nutrition_student_medical_contraindication', string=u'Medical Contraindication', compute='_compute_medications_intolerance', readonly=True , track_visibility='onchange',)
     nutrition_details = fields.One2many('accr.student.nutrition.details', 'nutrition_student', string=u'Nutrition Assessment', track_visibility='onchange', )
     bca = fields.One2many('accr.bca', 'nutrition_student', string="BCA", track_visibility='onchange', )
     food_preferences = fields.One2many('accr.student.food.preferences', 'nutrition_student', string=u'Food Preferences', track_visibility='onchange', )
@@ -68,7 +68,7 @@ class accrNutritionStudent(models.Model):
                     medicine = medication.medicine
                     for medical_contraindication in medicine.medical_contraindication:
                         for food_type in medical_contraindication.food_types:
-                            food_types.append({'nutrition_student': record.id, 'food_type':food_type.id})
+                            food_types.append({'nutrition_student_medical_contraindication': record.id, 'food_type':food_type.id})
                             # record.food_intolerance.write({'nutrition_student': record.id, 'food_type': food_type.id})
             
             record.medical_contraindication = self.env['accr.student.food.intolerance'].create(food_types)
