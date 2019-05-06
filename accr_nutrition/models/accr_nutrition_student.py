@@ -23,7 +23,7 @@ class accrNutritionStudent(models.Model):
     student_file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', store=False, readonly=True, )
     student_admission_date = fields.Date(related='student.x_studio_joining_date', string=u'Admission Date', store=False, readonly=True, )
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
-    student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False, track_visibility='always', )
+    student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=True, track_visibility='always', )
     student_residential_daily_notes = fields.One2many(related='student.x_studio_residential_daily_notes', string=u'Residential Notes', store=False, readonly=True, track_visibility='onchange', )
 
     food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student', string=u'Food Intolerance', compute='_compute_medications_intolerance', readonly=False , track_visibility='onchange', )
