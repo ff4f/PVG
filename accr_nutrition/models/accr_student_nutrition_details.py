@@ -14,8 +14,8 @@ class accrStudentNutritionDetails(models.Model):
     needs_cho = fields.Integer(string=u"CHO")
     needs_pro = fields.Integer(string=u"PRO")
     needs_fats = fields.Integer(string=u"FATS")
-    needs_vit = fields.Char(string=u"VIT")
-    needs_min = fields.Char(string=u"MIN")
+    needs_vit = fields.Many2one('accr.nutrition.vit', string=u"VIT")
+    needs_min = fields.Many2one('accr.nutrition.min', string=u"MIN")
     needs_wi = fields.Float(string=u"Water Intake")
 
     # Nutritional Requirements KCAL per day: INTEGER
