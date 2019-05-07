@@ -8,7 +8,8 @@
             <field name="arch" type="xml">
                 <tree string="Diet Plan">
                     <field name="diet" />
-                    <field name="create_date" />
+                    <field name="start_date" />
+                    <field name="end_date" />
                 </tree>
             </field>
         </record>
@@ -23,20 +24,56 @@
                         <group col="4">
                             <field name="diet" colspan="4"/>
                         </group>
-                        <group col="4" string="Meal Types">
-                            <field name="meal_types" nolabel="1">
-                                <tree>
-                                    <field name="name" />
-                                </tree>
-                            </field>
-                        </group>
-                        <group col="4" string="Food">
-                            <field name="food" nolabel="1" domain="[['meal_type','in',meal_types]]"/>
-                        </group>
                         <group col="4" string="Students">
                             <field name="students" nolabel="1" readonly="1"/>
                         </group>
+                        <group col="4" colspan="4">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <notebook>
+                            <page name="saturday" string="Saturday">
+                                <group>
+                                    <field name="time_table_lines_6" nolabel="1" context="{'default_day': '5'}" editable="top"/>
+                                </group>
+                            </page>
+                            <page name="sunday" string="Sunday">
+                                <group>
+                                    <field name="time_table_lines_7" nolabel="1" context="{'default_day': '6'}" editable="bottom"/>
+                                </group>
+                            </page>
+                            <page name="monday" string="Monday">
+                                <group>
+                                    <field name="time_table_lines_1" nolabel="1" context="{'default_day': '0'}" editable="bottom"/>
+                                </group>
+                            </page>
+                            <page name="tuesday" string="Tuesday">
+                                <group>
+                                    <field name="time_table_lines_2" nolabel="1" context="{'default_day': '1'}" editable="bottom"/>
+                                </group>
+                            </page>
+                            <page name="wednesday" string="Wednesday">
+                                <group>
+                                    <field name="time_table_lines_3" nolabel="1" context="{'default_day': '2'}" editable="bottom"/>
+                                </group>
+                            </page>
+                            <page name="thursday" string="Thursday">
+                                <group>
+                                    <field name="time_table_lines_4" nolabel="1" context="{'default_day': '3'}" editable="bottom"/>
+                                </group>
+                            </page>
+                            <page name="friday" string="Friday">
+                                <group>
+                                    <field name="time_table_lines_5" nolabel="1" context="{'default_day': '4'}" editable="bottom"/>
+                                </group>
+                            </page>
+
+                        </notebook>
                     </sheet>
+                    <footer groups="base.group_user">
+                        <button string="Proceed" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object"/>
+                    </footer>
                 </form>
             </field>
         </record>
