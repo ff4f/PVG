@@ -53,11 +53,83 @@
                             <t t-set="ecw" t-value="bca.ecw" />
                         </t>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-3">
                                 <span>
                                     <Strong>Height: </Strong>
                                 </span>
                                 <span t-esc="height" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Ideal Weight: </Strong>
+                                </span>
+                                <span t-esc="ideal_weight" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Actual Weight: </Strong>
+                                </span>
+                                <span t-esc="actual_weight" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <span>
+                                    <Strong>BMR: </Strong>
+                                </span>
+                                <span t-esc="bmr" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>FAT.kg: </Strong>
+                                </span>
+                                <span t-esc="fat_kg" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>FAT &#37;: </Strong>
+                                </span>
+                                <span t-esc="fat_percentage" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Mucles.kg: </Strong>
+                                </span>
+                                <span t-esc="mucles_kg" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Lean Muscles: </Strong>
+                                </span>
+                                <span t-esc="lean_muscles" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Fat Control.kg: </Strong>
+                                </span>
+                                <span t-esc="fat_control_kg" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <span>
+                                    <Strong>Muscles Control.kg: </Strong>
+                                </span>
+                                <span t-esc="muscles_control_kg" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>ICW: </Strong>
+                                </span>
+                                <span t-esc="icw" />
+                            </div>
+                            <div class="col-3">
+                                <span>
+                                    <Strong>ECW: </Strong>
+                                </span>
+                                <span t-esc="ecw" />
                             </div>
                         </div>
                     </t>
