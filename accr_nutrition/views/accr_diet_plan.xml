@@ -44,7 +44,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -63,7 +63,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -82,7 +82,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -101,7 +101,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -120,7 +120,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -139,7 +139,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -158,7 +158,7 @@
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <field name="day">
+                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
