@@ -122,9 +122,14 @@
                                 <field name="bca">
                                     <tree edit="1" create="1">
                                         <field name="create_date"/>
+                                        <field name="height" />
+                                        <field name="actual_weight"/>
                                     </tree>
                                     <form>
                                         <sheet>
+                                            <group colspan="2">
+                                                <field name="height" />
+                                            </group>
                                             <group col="4">
                                                 <field name="ideal_weight"/>
                                                 <field name="actual_weight"/>

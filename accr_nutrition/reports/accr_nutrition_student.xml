@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<odoo>
+    <report id="accr_nutrition_student_report" string="Student Nutrition Report" model="accr.nutrition.student" report_type="qweb-pdf" name="accr_nutrition.report_accr_nutrition_student_report_template" />
+    <template id="report_accr_nutrition_student_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <!-- Report header content -->
+                    <br/>
+                    <br/>
+                    <div class="row bg-primary">
+                        <div class="col-12 h3" style="text-align: center;">
+                            <span>Student Nutrition Report</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <t t-foreach="docs" t-as="doc">
+                        <!-- Report row content -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <Strong>Student: </Strong>
+                                </span>
+                                <span t-field="doc.student"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>Student: </Strong>
+                                </span>
+                                <span t-field="doc.bca.height"/>
+                            </div>
+                        </div>
+                    </t>
+                    <!-- Report footer content -->
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -28,6 +28,7 @@
         # 'wizard/accr_generate_meal_timetable_view.xml',
         'wizard/accr_generate_nutrition_students_view.xml',
         'reports/accr_student_nutrition_details.xml',
+        'reports/accr_nutrition_student_report.xml',
         'menus/accr_nutrition_menu.xml',
     ],
 }

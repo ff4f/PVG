@@ -19,8 +19,9 @@
             <field name="arch" type="xml">
                 <form string="BCA" create="0" edit="0">
                     <sheet>
-                        <group col="2">
-                            <field name="student" colspan="2" />
+                        <group col="4">
+                            <field name="student" />
+                            <field name="height" />
                         </group>
                         <group col="4">
                             <field name="ideal_weight"/>
