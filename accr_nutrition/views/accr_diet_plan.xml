@@ -46,7 +46,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -65,7 +65,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -84,7 +84,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -103,7 +103,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -122,7 +122,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -141,7 +141,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
@@ -160,7 +160,7 @@
                                                 <field name="meal_type"/>
                                                 <!-- <field name="food"/> -->
                                                 <field name="day" />
-                                            </shet>
+                                            </sheet>
                                         </group>
                                     </field>
                                 </group>
