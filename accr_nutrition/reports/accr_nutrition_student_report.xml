@@ -27,9 +27,11 @@
                             </div>
                             <div class="col-6">
                                 <span>
-                                    <Strong>Student: </Strong>
+                                    <Strong>Height: </Strong>
                                 </span>
-                                <span t-field="doc.bca.height"/>
+                                <t t-set="height" t-value="0" />
+                                <t t-foreach="doc.bca" t-as="bca" t-set="height" t-value="bca.height" />
+                                <span t-esc="height" />
                             </div>
                         </div>
                     </t>
