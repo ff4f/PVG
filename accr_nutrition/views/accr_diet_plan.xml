@@ -67,13 +67,12 @@
                                     <field name="time_table_lines_5" nolabel="1" context="{'default_day': '4'}" editable="bottom"/>
                                 </group>
                             </page>
-
                         </notebook>
+                        <group colspan="4">
+                            <button string="Proceed" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
+                            <button special="cancel" string="Close" type="object"/>
+                        </group>
                     </sheet>
-                    <footer groups="base.group_user">
-                        <button string="Proceed" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
-                        <button special="cancel" string="Close" type="object"/>
-                    </footer>
                 </form>
             </field>
         </record>
