@@ -107,7 +107,7 @@ class accrGenerateMealTimetableLine(models.TransientModel):
     _rec_name = 'day'
 
     gen_meal_time_table = fields.Many2one(
-        'accr.generate.meal.time.table', 'Meals Time Table', required=True)
+        'accr.diet.plan', 'Meals Time Table', required=True)
     meal_id = fields.Many2one('accr.meal.timing', 'Meal Timing', required=True)
     day = fields.Selection([
         ('0', calendar.day_name[0]),
