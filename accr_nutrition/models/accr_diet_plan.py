@@ -119,4 +119,4 @@ class accrDietPlanTimetableLine(models.TransientModel):
         ('4', calendar.day_name[4]),
         ('5', calendar.day_name[5]),
         ('6', calendar.day_name[6]),
-    ], 'Day', required=True, readonly=True, )                
+    ], 'Day', required=True, )                
