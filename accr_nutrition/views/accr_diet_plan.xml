@@ -38,13 +38,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -57,13 +57,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -76,13 +76,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -95,13 +95,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -114,13 +114,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -133,13 +133,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
@@ -152,13 +152,13 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <field name="food"/>
+                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <group>
                                             <sheet>
                                                 <field name="meal_id"/>
                                                 <field name="meal_type"/>
-                                                <field name="food"/>
+                                                <!-- <field name="food"/> -->
                                                 <field name="day" />
                                             </shet>
                                         </group>
