@@ -157,7 +157,15 @@
                                 </field>
                             </page>
                             <page string="Meals Time Table">
-                                <field name="meals_timetable" />
+                                <field name="meals_timetable">
+                                    <tree string="Meals Timetable" default_order="start_datetime">
+                                        <field name="meal_id"/>
+                                        <field name="start_datetime"/>
+                                        <field name="end_datetime"/>
+                                        <field name="state"/>
+                                        <field name="student"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Medications">
                                 <field name="student_medications"/>
