@@ -163,7 +163,6 @@
                                         <field name="start_datetime"/>
                                         <field name="end_datetime"/>
                                         <field name="state"/>
-                                        <field name="student"/>
                                     </tree>
                                 </field>
                             </page>
