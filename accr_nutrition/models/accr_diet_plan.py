@@ -13,27 +13,27 @@ class accrDietPlan(models.Model):
     name = fields.Char(string=u'Diet Plan', required=True, compute="_compute_name", )
 
     time_table_lines = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines')
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines')
     time_table_lines_1 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines1',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines1',
         domain=[('day', '=', '0')])
     time_table_lines_2 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines2',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines2',
         domain=[('day', '=', '1')])
     time_table_lines_3 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines3',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines3',
         domain=[('day', '=', '2')])
     time_table_lines_4 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines4',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines4',
         domain=[('day', '=', '3')])
     time_table_lines_5 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines5',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines5',
         domain=[('day', '=', '4')])
     time_table_lines_6 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines6',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines6',
         domain=[('day', '=', '5')])
     time_table_lines_7 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines7',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines7',
         domain=[('day', '=', '6')])
     start_date = fields.Date(
         'Start Date', required=True, default=time.strftime('%Y-%m-01'))
@@ -101,13 +101,13 @@ class accrDietPlan(models.Model):
 
 
 
-class accrGenerateMealTimetableLine(models.TransientModel):
-    _name = 'accr.gen.meal.time.table.line'
-    _description = 'Generate Meal Time Table Lines'
+class accrDietPlanTimetableLine(models.TransientModel):
+    _name = 'accr.gen.diet.plan.line'
+    _description = 'Generate Diet Plan Time Table Lines'
     _rec_name = 'day'
 
-    gen_meal_time_table = fields.Many2one(
-        'accr.diet.plan', 'Meals Time Table', required=True)
+    gen_diet_plan_time_table = fields.Many2one(
+        'accr.diet.plan', 'Diet Plan', required=True)
     meal_id = fields.Many2one('accr.meal.timing', 'Meal Timing', required=True)
     day = fields.Selection([
         ('0', calendar.day_name[0]),
