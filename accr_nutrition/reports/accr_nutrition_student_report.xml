@@ -19,18 +19,32 @@
                     <t t-foreach="docs" t-as="doc">
                         <!-- Report row content -->
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <span>
                                     <Strong>Student: </Strong>
                                 </span>
                                 <span t-field="doc.student"/>
                             </div>
+                        </div>
+                        <t t-foreach="doc.bca" t-as="bca" t-set="height" t-value="bca.height">
+                            <t t-set="height" t-value="bca.height"/>
+                            <t t-set="ideal_weight" t-value="bca.ideal_weight" />
+                            <t t-set="actual_weight" t-value="bca.ideal_weight" />
+                            <t t-set="bmr" t-value="bca.bmr.display_name" />
+                            <t t-set="fat_kg" t-value="bca.fat_kg" />
+                            <t t-set="fat_percentage" t-value="bca.fat_percentage" />
+                            <t t-set="mucles_kg" t-value="bca,mucles_kg" />
+                            <t t-set="lean_muscles" t-value="bca.lean_muscles" />
+                            <t t-set="fat_control_kg" t-value="bca.fat_control_kg" />
+                            <t t-set="muscles_control_kg" t-value="bca.muscles_control_kg" />
+                            <t t-set="icw" t-value="bca.icw" />
+                            <t t-set="ecw" t-value="bca.ecw" />
+                        </t>
+                        <div class="row">
                             <div class="col-6">
                                 <span>
                                     <Strong>Height: </Strong>
                                 </span>
-                                <t t-set="height" t-value="0" />
-                                <t t-foreach="doc.bca" t-as="bca" t-set="height" t-value="bca.height" />
                                 <span t-esc="height" />
                             </div>
                         </div>
