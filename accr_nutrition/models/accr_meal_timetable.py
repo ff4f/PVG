@@ -35,7 +35,7 @@ class accrMealTimetable(models.Model):
     notes = fields.Text(string=u'Notes')
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True,)
     students = fields.One2many(related='diet.students', string=u"Students", required=True, readonly=True, )
-    student = fields.Many2one('x_student', string=u'Student')
+    student = fields.Many2one('accr.nutrition.student', string=u'Student')
 
     @api.multi
     @api.depends('start_datetime')
