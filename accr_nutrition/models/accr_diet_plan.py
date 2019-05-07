@@ -107,8 +107,11 @@ class accrDietPlanTimetableLine(models.TransientModel):
     _rec_name = 'day'
 
     gen_diet_plan_time_table = fields.Many2one(
-        'accr.diet.plan', 'Diet Plan', required=True)
+        'accr.diet.plan', 'Diet Plan', )
     meal_id = fields.Many2one('accr.meal.timing', 'Meal Timing', required=True)
+    meal_type = fields.fields.Many2one(related='meal_id.meal_type', string=u'Meal Type', required=True, )
+    food = fields.Many2many(related='meal_type.food', string="Food", required=True, )
+
     day = fields.Selection([
         ('0', calendar.day_name[0]),
         ('1', calendar.day_name[1]),
@@ -117,4 +120,4 @@ class accrDietPlanTimetableLine(models.TransientModel):
         ('4', calendar.day_name[4]),
         ('5', calendar.day_name[5]),
         ('6', calendar.day_name[6]),
-    ], 'Day', required=True)                
+    ], 'Day', required=True, readonly=True, )                

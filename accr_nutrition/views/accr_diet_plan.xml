@@ -34,37 +34,135 @@
                         <notebook>
                             <page name="saturday" string="Saturday">
                                 <group>
-                                    <field name="time_table_lines_6" nolabel="1" context="{'default_day': '5'}" editable="top"/>
+                                    <field name="time_table_lines_6" nolabel="1" context="{'default_day': '5'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="sunday" string="Sunday">
                                 <group>
-                                    <field name="time_table_lines_7" nolabel="1" context="{'default_day': '6'}" editable="bottom"/>
+                                    <field name="time_table_lines_7" nolabel="1" context="{'default_day': '6'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="monday" string="Monday">
                                 <group>
-                                    <field name="time_table_lines_1" nolabel="1" context="{'default_day': '0'}" editable="bottom"/>
+                                    <field name="time_table_lines_1" nolabel="1" context="{'default_day': '0'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="tuesday" string="Tuesday">
                                 <group>
-                                    <field name="time_table_lines_2" nolabel="1" context="{'default_day': '1'}" editable="bottom"/>
+                                    <field name="time_table_lines_2" nolabel="1" context="{'default_day': '1'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="wednesday" string="Wednesday">
                                 <group>
-                                    <field name="time_table_lines_3" nolabel="1" context="{'default_day': '2'}" editable="bottom"/>
+                                    <field name="time_table_lines_3" nolabel="1" context="{'default_day': '2'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="thursday" string="Thursday">
                                 <group>
-                                    <field name="time_table_lines_4" nolabel="1" context="{'default_day': '3'}" editable="bottom"/>
+                                    <field name="time_table_lines_4" nolabel="1" context="{'default_day': '3'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                             <page name="friday" string="Friday">
                                 <group>
-                                    <field name="time_table_lines_5" nolabel="1" context="{'default_day': '4'}" editable="bottom"/>
+                                    <field name="time_table_lines_5" nolabel="1" context="{'default_day': '4'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                            <field name="food"/>
+                                        </tree>
+                                        <group>
+                                            <sheet>
+                                                <field name="meal_id"/>
+                                                <field name="meal_type"/>
+                                                <field name="food"/>
+                                                <field name="day" />
+                                            </shet>
+                                        </group>
+                                    </field>
                                 </group>
                             </page>
                         </notebook>
