@@ -38,15 +38,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -59,15 +56,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -80,15 +74,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -101,15 +92,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -122,15 +110,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -143,15 +128,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -164,15 +146,12 @@
                                         <tree>
                                             <field name="meal_id"/>
                                             <field name="meal_type"/>
-                                            <!-- <field name="food"/> -->
                                         </tree>
                                         <form>
                                             <sheet>
                                                 <group colspan="4">
                                                     <field name="meal_id"/>
                                                     <field name="meal_type"/>
-                                                    <!-- <field name="food"/> -->
-                                                    <field name="day" />
                                                 </group>
                                             </sheet>
                                         </form>
@@ -181,8 +160,7 @@
                             </page>
                         </notebook>
                         <group colspan="4">
-                            <button string="Proceed" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
-                            <button special="cancel" string="Close" type="object"/>
+                            <button string="Generate Diet Time Table" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
                         </group>
                     </sheet>
                 </form>
