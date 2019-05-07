@@ -40,6 +40,8 @@ class accrNutritionStudent(models.Model):
 
     student_orientation = fields.One2many('accr.student.orientation', 'nutrition_student', string=u'Student Orientation', )
 
+    meals_timetable = fields.One2many('accr.meal.timetable', 'student', string="Meals Time Table", )
+
     @api.multi
     @api.depends('student')
     def _compute_name(self):
