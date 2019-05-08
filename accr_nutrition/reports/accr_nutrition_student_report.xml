@@ -48,40 +48,40 @@
                              {key: 'mucles_kg', values: [] }, {key: 'lean_muscles', values: [] }, {key: 'fat_control_kg', values: [] }, 
                              {key: 'muscles_control_kg', values: [] }, {key: 'icw', values: [] }, {key: 'ecw', values: [] }];
                              graph_record_sequence = 0;
-                            <t t-foreach="doc.bca" t-as="bca" t-set="height" t-value="bca.height">
+                            <t t-foreach="doc.bca" t-as="bca">
                                 <t t-set="height" t-value="bca.height"/>
-                                height = <t t-esc="height" />
+                                height = <t t-esc="height" />;
                                 graph_records[0].values.push({x: graph_record_sequence, y: height });
                                 <t t-set="ideal_weight" t-value="bca.ideal_weight" />
-                                ideal_weight = <t t-esc="ideal_weight" />
+                                ideal_weight = <t t-esc="ideal_weight" />;
                                 graph_records[1].values.push({x: graph_record_sequence, y: ideal_weight });
                                 <t t-set="actual_weight" t-value="bca.actual_weight" />
-                                actual_weight = <t t-esc="actual_weight" />
+                                actual_weight = <t t-esc="actual_weight" />;
                                 graph_records[2].values.push({x: graph_record_sequence, y: actual_weight });
                                 <t t-set="bmr" t-value="bca.bmr.display_name" />
                                 <t t-set="fat_kg" t-value="bca.fat_kg" />
-                                fat_kg = <t t-esc="fat_kg" />
+                                fat_kg = <t t-esc="fat_kg" />;
                                 graph_records[3].values.push({x: graph_record_sequence, y: fat_kg });
                                 <t t-set="fat_percentage" t-value="bca.fat_percentage" />
-                                fat_percentage = <t t-esc="fat_percentage" />
+                                fat_percentage = <t t-esc="fat_percentage" />;
                                 graph_records[4].values.push({x: graph_record_sequence, y: fat_percentage });
                                 <t t-set="mucles_kg" t-value="bca,mucles_kg" />
-                                mucles_kg = <t t-esc="mucles_kg" />
+                                mucles_kg = <t t-esc="mucles_kg" />;
                                 graph_records[5].values.push({x: graph_record_sequence, y: mucles_kg });
                                 <t t-set="lean_muscles" t-value="bca.lean_muscles" />
-                                lean_muscles = <t t-esc="lean_muscles" />
+                                lean_muscles = <t t-esc="lean_muscles" />;
                                 graph_records[6].values.push({x: graph_record_sequence, y: lean_muscles });
                                 <t t-set="fat_control_kg" t-value="bca.fat_control_kg" />
-                                fat_control_kg = <t t-esc="fat_control_kg" />
+                                fat_control_kg = <t t-esc="fat_control_kg" />;
                                 graph_records[7].values.push({x: graph_record_sequence, y: fat_control_kg });
                                 <t t-set="muscles_control_kg" t-value="bca.muscles_control_kg" />
-                                muscles_control_kg = <t t-esc="muscles_control_kg" />
+                                muscles_control_kg = <t t-esc="muscles_control_kg" />;
                                 graph_records[8].values.push({x: graph_record_sequence, y: muscles_control_kg });
                                 <t t-set="icw" t-value="bca.icw" />
-                                icw = <t t-esc="icw" />
+                                icw = <t t-esc="icw" />;
                                 graph_records[9].values.push({x: graph_record_sequence, y: icw });
                                 <t t-set="ecw" t-value="bca.ecw" />
-                                iecwcw = <t t-esc="ecw" />
+                                iecwcw = <t t-esc="ecw" />;
                                 graph_records[10].values.push({x: graph_record_sequence, y: ecw });
 
                                 graph_record_sequence += 1;
