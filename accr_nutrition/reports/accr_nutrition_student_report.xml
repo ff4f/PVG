@@ -46,7 +46,7 @@
                             graph_records = [];
                             <t t-foreach="doc.bca" t-as="bca">
                                 <t t-set="bca_report_name" t-value="bca.report_name"/>
-                                bca_report_name = String(<t t-esc="bca_report_name"/>);
+                                bca_report_name = <t t-esc="bca_report_name"/>;
                                 <t t-set="height" t-value="bca.height"/>
                                 height = <t t-esc="height" /> ;
                                 <t t-set="ideal_weight" t-value="bca.ideal_weight" />
