@@ -140,9 +140,9 @@
                         <t t-set="improvement" t-value="" />
                         <t t-set="Recomendations" t-value="" />
                         <t t-foreach="doc.nutrition_plan" t-as="nutrition_plan">
-                            <t t-set="nutrition_plan.plan_desc" t-value="" />
-                            <t t-set="nutrition_plan.improvement" t-value="" />
-                            <t t-set="nutrition_plan.Recomendations" t-value="" />
+                            <t t-set="plan_desc" t-value="nutrition_plan.plan_desc" />
+                            <t t-set="improvement" t-value="nutrition_plan.improvement" />
+                            <t t-set="Recomendations" t-value="nutrition_plan.Recomendations" />
                         </t>
                         <div class="row">
                             <div class="col-12">
@@ -174,6 +174,30 @@
                                     <Strong>Recomendations: </Strong>
                                 </span>
                                 <span t-esc="Recomendations" />
+                            </div>
+                        </div>
+                        <hr/>
+                        <h3>Student Orientation</h3>
+                        <t t-set="desc" t-value="" />
+                        <t t-set="individual_awareness" t-value="" />
+                        <t t-foreach="doc.student_orientation" t-as="student_orientation">
+                            <t t-set="desc" t-value="student_orientation.desc" />
+                            <t t-set="individual_awareness" t-value="student_orientation.individual_awareness" />
+                        </t>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Description: </Strong>
+                                </span>
+                                <span t-esc="desc" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Individual Awareness: </Strong>
+                                </span>
+                                <span t-esc="individual_awareness" />
                             </div>
                         </div>
 
