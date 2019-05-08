@@ -82,5 +82,5 @@ class accrMealTimetable(models.Model):
             foods = []
             for food in record.meal_type.food:
                 foods.append({'meal_timetable_id': record.id, 'food_id': food.id})
-            record.food.create(0, 0, {foods})
+            record.food.create(foods)
                 
