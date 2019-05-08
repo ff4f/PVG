@@ -213,7 +213,7 @@
                                     <Strong>Follow Up: </Strong>
                                 </span>
                                 <t t-foreach="doc.follow_up" t-as="follow_up">
-                                    <span t-feild="follow_up.display_name">, </span>
+                                    <span t-field="follow_up.display_name">, </span>
                                 </t>
                             </div>
                         </div>
@@ -223,13 +223,13 @@
                                 <span>
                                     <Strong>Created By: </Strong>
                                 </span>
-                                <span t-feild="doc.create_uid"/>
+                                <span t-field="doc.create_uid"/>
                             </div>
                             <div class="col-6">
                                 <span>
                                     <Strong>Created On: </Strong>
                                 </span>
-                                <span t-feild="doc.create_date"/>
+                                <span t-field="doc.create_date"/>
                             </div>
                         </div>
                     </t>
