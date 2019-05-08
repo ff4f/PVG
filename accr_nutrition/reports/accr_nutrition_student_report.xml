@@ -217,6 +217,21 @@
                                 </t>
                             </div>
                         </div>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <Strong>Created By: </Strong>
+                                </span>
+                                <span t-feild="doc.create_uid"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>Created On: </Strong>
+                                </span>
+                                <span t-feild="doc.create_date"/>
+                            </div>
+                        </div>
                     </t>
 
                     <!-- Report footer content -->
