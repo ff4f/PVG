@@ -87,7 +87,9 @@
                                         values: true
                                     })
                                     ;
-
+                                    
+                                    chart.showValues = true;
+                                    
                                     d3.select('#chart_bca svg')
                                         .datum(graph_records)
                                         .call(chart);
