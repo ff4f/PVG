@@ -197,7 +197,13 @@
                                 <span>
                                     <Strong>Individual Awareness: </Strong>
                                 </span>
-                                <span t-esc="individual_awareness" />
+                                <t t-if="individual_awareness == true">
+                                    <i class="fa fa-check"></i>
+                                </t>
+                                <t t-else="">
+                                    <i class="fa fa-remove"></i>
+                                </t>
+                                <!-- <span t-esc="individual_awareness" /> -->
                             </div>
                         </div>
 
