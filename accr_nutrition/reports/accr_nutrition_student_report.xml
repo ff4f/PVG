@@ -89,12 +89,6 @@
                                     .transitionDuration(350)
                                     ;
 
-                                    chart.xAxis
-                                        .tickFormat(d3.format(',f'));
-
-                                    chart.yAxis
-                                        .tickFormat(d3.format(',.1f'));
-
                                     d3.select('#chart_bca svg')
                                         .datum(graph_records)
                                         .transition().duration(350)
