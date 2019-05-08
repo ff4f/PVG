@@ -84,12 +84,11 @@
                                     .showControls(false)
                                     .staggerLabels(false)
                                     .options({
-                                        values: true
+                                        showValues: true,
+                                        tooltips: false 
                                     })
                                     ;
                                     
-                                    chart.showValues = true;
-
                                     d3.select('#chart_bca svg')
                                         .datum(graph_records)
                                         .call(chart);
@@ -179,6 +178,7 @@
                                 <span t-esc="ecw" />
                             </div>
                         </div>
+                        <br/>
                         <div id="chart_bca">
                             <svg style="height: 500px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                         </div>
