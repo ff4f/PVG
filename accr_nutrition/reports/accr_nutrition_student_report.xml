@@ -213,7 +213,7 @@
                                     <Strong>Follow Up: </Strong>
                                 </span>
                                 <t t-foreach="doc.follow_up" t-as="follow_up">
-                                    <span t-field="follow_up.display_name">.
+                                    <span t-field="follow_up.display_name"/>.
                                 </t>
                             </div>
                         </div>
