@@ -81,10 +81,10 @@
                                 var chart = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
-                                    .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
                                     .showControls(false)
-                                    .showValues(true)
-                                    .tooltips(false)
+                                    .options({
+                                        showValues: true
+                                    })
                                     ;
 
                                     d3.select('#chart_bca svg')
