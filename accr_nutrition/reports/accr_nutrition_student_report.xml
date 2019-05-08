@@ -47,7 +47,7 @@
                              graph_record_sequence = 0;
                             <t t-foreach="doc.bca" t-as="bca">
                                 <t t-set="bca_date" t-value="bca.create_date"/>
-                                bca_date = <t t-esc="bca_date"/>
+                                bca_date = String(<t t-esc="bca_date"/>);
                                 <t t-set="height" t-value="bca.height"/>
                                 height = <t t-esc="height" /> ;
                                 <t t-set="ideal_weight" t-value="bca.ideal_weight" />
