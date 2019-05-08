@@ -6,11 +6,12 @@
             <field name="model">accr.food</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Food">
+                <tree string="Food" editable="top">
                     <field name="name" />
                     <field name="food_group" />
                     <field name="food_type" />
                     <field name="meal_type" />
+                    <field name="measure" />
                     <field name="uom" />
                     <field name="calories" />
                 </tree>
