@@ -26,7 +26,7 @@
                                 <span t-field="doc.student"/>
                             </div>
                         </div>
-                        </hr>
+                        <hr/>
                         <h3>BCA</h3>
                         <t t-set="height" t-value="0" />
                         <t t-set="ideal_weight" t-value="0.0" />
@@ -134,7 +134,7 @@
                                 <span t-esc="ecw" />
                             </div>
                         </div>
-                        </hr>
+                        <hr/>
                         <h3>Nutrition Plan</h3>
                         <t t-set="plan_desc" t-value="" />
                         <t t-set="improvement" t-value="" />
@@ -178,7 +178,7 @@
                         </div>
 
                     </t>
-                    
+
                     <!-- Report footer content -->
                 </div>
             </t>
