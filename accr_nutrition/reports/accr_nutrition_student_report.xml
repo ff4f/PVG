@@ -87,8 +87,6 @@
                                     
                                     d3.select('#chart_bca svg')
                                         .datum(graph_records)
-                                        .tooltips(false)
-                                        .showValues(true)
                                         .call(chart);
 
                                     nv.utils.windowResize(chart.update);
