@@ -84,5 +84,8 @@ class accrMealTimetable(models.Model):
 
     @api.onchange('meal_type')
     def onchange_meal_type(self):
+        foods = []
+        for food in self.meal_type.food:
+            foods.append(food.id)
         self.food = [(6, 0, foods)]
                 
