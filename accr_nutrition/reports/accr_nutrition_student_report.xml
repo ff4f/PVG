@@ -46,8 +46,8 @@
                             graph_records = [];
                              graph_record_sequence = 0;
                             <t t-foreach="doc.bca" t-as="bca">
-                                <t t-set="bca_date" t-value="bca.create_date"/>
-                                bca_date = String(<t t-esc="bca_date"/>);
+                                <t t-set="bca_report_name" t-value="bca.report_name"/>
+                                bca_report_name = <t t-esc="bca_date"/>;
                                 <t t-set="height" t-value="bca.height"/>
                                 height = <t t-esc="height" /> ;
                                 <t t-set="ideal_weight" t-value="bca.ideal_weight" />
@@ -72,7 +72,7 @@
                                 <t t-set="ecw" t-value="bca.ecw" />
                                 ecw = <t t-esc="ecw" />;
 
-                                graph_records.push({key: bca_date, values: [{"label": "Height", "value": height}, {"label": "Ideal Weight", "value": ideal_weight}, 
+                                graph_records.push({key: bca_report_name, values: [{"label": "Height", "value": height}, {"label": "Ideal Weight", "value": ideal_weight}, 
                                 {"label": "Actual Weight", "value": actual_weight}, {"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}, 
                                 {"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}, {"label": "FAT Control.kg", "value": fat_control_kg}, 
                                 {"label": "Muscles Control.kg", "value": muscles_control_kg}, {"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]})

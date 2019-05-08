@@ -4,6 +4,7 @@ class accrBCA(models.Model):
     _name = 'accr.bca'
 
     name = fields.Char(string=u"Name", compute="_compute_name")
+    report_name = fields.Char(string=u"Report Name", compute="_compute_report_name")
     height = fields.Integer(string=u"Height", )
     ideal_weight = fields.Float(string=u"Ideal weight")
     actual_weight = fields.Float(string=u"Actual weight")
@@ -26,3 +27,9 @@ class accrBCA(models.Model):
         for record in self:
             if record.student:
                 record.name = record.student.display_name + ' - ' + record.create_date.strftime("%Y-%m-%d")
+
+    @api.multi
+    @api.depends('create_date')
+    def _compute_report_name(self):
+        for record in self:
+            record.report_name = record.create_date.strftime("%Y-%m-%d")
