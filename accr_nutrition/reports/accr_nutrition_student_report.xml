@@ -65,7 +65,7 @@
                                 <t t-set="fat_percentage" t-value="bca.fat_percentage" />
                                 fat_percentage = <t t-esc="fat_percentage" />;
                                 graph_records[4].values.push({x: graph_record_sequence, y: fat_percentage });
-                                <t t-set="mucles_kg" t-value="bca,mucles_kg" />
+                                <t t-set="mucles_kg" t-value="bca.mucles_kg" />
                                 mucles_kg = <t t-esc="mucles_kg" />;
                                 graph_records[5].values.push({x: graph_record_sequence, y: mucles_kg });
                                 <t t-set="lean_muscles" t-value="bca.lean_muscles" />
