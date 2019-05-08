@@ -73,19 +73,20 @@ class accrMealTimetable(models.Model):
                 'End Time cannot be set before Start Time.'))
 
     
-    # @api.multi
-    # @api.depends('meal_type')
-    # def _compute_food(self):
-    #     for record in self:
-    #         foods = []
-    #         for food in record.meal_type.food:
-    #             foods.append(food.id)
-    #         record.food = [(0, 0, foods)]
+    @api.multi
+    @api.depends('meal_type')
+    def _compute_food(self):
+        for record in self:
+            foods = []
+            for food in record.meal_type.food:
+                foods.append(food.id)
+                record.food = [(0, 0, {food.id})]
+            # record.food = [(0, 0, foods)]
 
-    @api.onchange('meal_type')
-    def onchange_meal_type(self):
-        foods = []
-        for food in self.meal_type.food:
-            foods.append(food.id)
-        self.food = [(6, 0, foods)]
+    # @api.onchange('meal_type')
+    # def onchange_meal_type(self):
+    #     foods = []
+    #     for food in self.meal_type.food:
+    #         foods.append(food.id)
+    #     self.food = [(6, 0, foods)]
                 
