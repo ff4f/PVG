@@ -20,7 +20,7 @@ class accrMealTimetable(models.Model):
         'accr.meal.timing', string=u'Meal', required=True, track_visibility="onchange")
     meal_type = fields.Many2one(
         related='meal_id.meal_type', string=u"Meal Type", readonly=True, store=False, )
-    food = fields.Many2many('accr.food', 'meal_timetable_food_rel', 'meal_timetable_id', 'food_id', string="Food", compute="_compute_food", required=True, readonly=False, )                            
+    food = fields.Many2many('accr.food', 'meal_timetable_food_rel', 'meal_timetable_id', 'food_id', string="Food", compute="_compute_food", required=True, readonly=False, store=True, )                            
     start_datetime = fields.Datetime(
         string=u'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
@@ -76,15 +76,12 @@ class accrMealTimetable(models.Model):
     @api.multi
     @api.depends('meal_type')
     def _compute_food(self):
-        foods = []
-        for food in self.meal_id.food:
-            self.food = [(0, 0, {'food_id': food.id})]
-        # for record in self:
-        #     foods = []
-        #     for food in record.meal_type.food:
-        #         foods.append(food.id)
-        #         record.food = [(0, 0, {'food_id': food.id})]
-        #     # record.food = [(0, 0, foods)]
+        for record in self:
+            foods = []
+            for food in record.meal_id.food:
+                # foods.append(food.id)
+                record.food = [(0, 0, {'meal_timetable_id': record.id, 'food_id': food.id})]
+            # record.food = [(0, 0, foods)]
 
     # @api.onchange('meal_type')
     # def onchange_meal_type(self):
