@@ -26,6 +26,8 @@
                                 <span t-field="doc.student"/>
                             </div>
                         </div>
+                        </hr>
+                        <h3>BCA</h3>
                         <t t-set="height" t-value="0" />
                         <t t-set="ideal_weight" t-value="0.0" />
                         <t t-set="actual_weight" t-value="0.0" />
@@ -53,19 +55,19 @@
                             <t t-set="ecw" t-value="bca.ecw" />
                         </t>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Height: </Strong>
                                 </span>
                                 <span t-esc="height" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Ideal Weight: </Strong>
                                 </span>
                                 <span t-esc="ideal_weight" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Actual Weight: </Strong>
                                 </span>
@@ -73,19 +75,19 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>BMR: </Strong>
                                 </span>
                                 <span t-esc="bmr" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>FAT.kg: </Strong>
                                 </span>
                                 <span t-esc="fat_kg" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>FAT &#37;: </Strong>
                                 </span>
@@ -93,19 +95,19 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Mucles.kg: </Strong>
                                 </span>
                                 <span t-esc="mucles_kg" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Lean Muscles: </Strong>
                                 </span>
                                 <span t-esc="lean_muscles" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Fat Control.kg: </Strong>
                                 </span>
@@ -113,26 +115,70 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>Muscles Control.kg: </Strong>
                                 </span>
                                 <span t-esc="muscles_control_kg" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>ICW: </Strong>
                                 </span>
                                 <span t-esc="icw" />
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span>
                                     <Strong>ECW: </Strong>
                                 </span>
                                 <span t-esc="ecw" />
                             </div>
                         </div>
+                        </hr>
+                        <h3>Nutrition Plan</h3>
+                        <t t-set="plan_desc" t-value="" />
+                        <t t-set="improvement" t-value="" />
+                        <t t-set="Recomendations" t-value="" />
+                        <t t-foreach="doc.nutrition_plan" t-as="nutrition_plan">
+                            <t t-set="nutrition_plan.plan_desc" t-value="" />
+                            <t t-set="nutrition_plan.improvement" t-value="" />
+                            <t t-set="nutrition_plan.Recomendations" t-value="" />
+                        </t>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Plan Description: </Strong>
+                                </span>
+                                <span t-esc="plan_desc" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Plan Description: </Strong>
+                                </span>
+                                <span t-esc="plan_desc" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Improvement: </Strong>
+                                </span>
+                                <span t-esc="improvement" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <Strong>Recomendations: </Strong>
+                                </span>
+                                <span t-esc="Recomendations" />
+                            </div>
+                        </div>
+
                     </t>
+                    
                     <!-- Report footer content -->
                 </div>
             </t>
