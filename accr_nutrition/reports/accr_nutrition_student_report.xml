@@ -101,8 +101,6 @@
                                             chart.yAxis
                                                 .tickFormat(d3.format(',.1f'));
 
-                                            graph_records_2 = [{ key: 'No Response', values: [] }, { key: 'Physical F-Help', values: [{ x: 2, y: 4 }, { x: 5, y: 6 }] }, { key: 'Physical P-Help', values: [{ x: 0, y: 5 }, { x: 3, y: 3 }] }, { key: 'Modeling', values: [] },
-                                            { ke: 'Virbal F-Help', values: [] }, { key: 'Virbal P-Help', values: [] }, { key: 'Geature', values: [] }, { key: 'Indepindant', values: [] }];
                                             d3.select('#chart_bca svg')
                                                 .datum(graph_records)
                                                 .transition().duration(350)
@@ -193,7 +191,7 @@
                                 <span t-esc="ecw" />
                             </div>
                         </div>
-                        <div t-att-id="chart_bca">
+                        <div id="chart_bca">
                             <svg style="height: 500px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                         </div>
                         <hr/>
