@@ -80,7 +80,7 @@ class accrMealTimetable(models.Model):
             foods = []
             for food in record.meal_type.food:
                 foods.append(food.id)
-                record.food = [(0, 0, {food.id})]
+                record.food = [(0, 0, {'meal_timetable_id': record.id, 'food_id': food.id})]
             # record.food = [(0, 0, foods)]
 
     # @api.onchange('meal_type')
