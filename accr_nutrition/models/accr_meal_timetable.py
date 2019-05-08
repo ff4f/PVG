@@ -20,7 +20,7 @@ class accrMealTimetable(models.Model):
         'accr.meal.timing', string=u'Meal', required=True, track_visibility="onchange")
     meal_type = fields.Many2one(
         related='meal_id.meal_type', string=u"Meal Type", readonly=True, store=False, )
-    food = fields.Many2many('accr.food', 'meal_timetable_food_rel', 'meal_timetable_id', 'food_id', string="Food", required=True, readonly=False, )                            
+    food = fields.Many2many('accr.food', 'meal_timetable_food_rel', 'meal_timetable_id', 'food_id', string="Food", compute="_compute_food", required=True, readonly=False, )                            
     start_datetime = fields.Datetime(
         string=u'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
