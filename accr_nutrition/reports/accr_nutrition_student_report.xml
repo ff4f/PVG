@@ -81,7 +81,7 @@
                                 icw = <t t-esc="icw" />;
                                 graph_records[9].values.push({x: graph_record_sequence, y: icw });
                                 <t t-set="ecw" t-value="bca.ecw" />
-                                iecwcw = <t t-esc="ecw" />;
+                                ecw = <t t-esc="ecw" />;
                                 graph_records[10].values.push({x: graph_record_sequence, y: ecw });
 
                                 graph_record_sequence += 1;
