@@ -43,77 +43,67 @@
                         <t t-set="icw" t-value="0" />
                         <t t-set="ecw" t-value="0" />
                         <script type="text/javascript">
-                            graph_records = [{ key: 'Height', values: [] }, {key: 'Ideal Weight', values: []},
-                             {key: 'Actual Weight', values: [] }, {key: 'FAT.kg', values: [] }, {key: 'FAT./%', values: [] }, 
-                             {key: 'Mucles.kg', values: [] }, {key: 'Lean Muscles', values: [] }, {key: 'FAT Control_kg', values: [] }, 
-                             {key: 'Muscles Control_kg', values: [] }, {key: 'ICW', values: [] }, {key: 'ECW', values: [] }];
+                            graph_records = [];
                              graph_record_sequence = 0;
                             <t t-foreach="doc.bca" t-as="bca">
+                                <t t-set="bca_date" t-value="bca.create_date"/>
+                                bca_date = <t t-esc="bca_date"/>
                                 <t t-set="height" t-value="bca.height"/>
                                 height = <t t-esc="height" /> ;
-                                graph_records[0].values.push({x: graph_record_sequence, y: height });
                                 <t t-set="ideal_weight" t-value="bca.ideal_weight" />
                                 ideal_weight = <t t-esc="ideal_weight" />;
-                                graph_records[1].values.push({x: graph_record_sequence, y: ideal_weight });
                                 <t t-set="actual_weight" t-value="bca.actual_weight" />
                                 actual_weight = <t t-esc="actual_weight" />;
-                                graph_records[2].values.push({x: graph_record_sequence, y: actual_weight });
                                 <t t-set="bmr" t-value="bca.bmr.display_name" />
                                 <t t-set="fat_kg" t-value="bca.fat_kg" />
                                 fat_kg = <t t-esc="fat_kg" />;
-                                graph_records[3].values.push({x: graph_record_sequence, y: fat_kg });
                                 <t t-set="fat_percentage" t-value="bca.fat_percentage" />
                                 fat_percentage = <t t-esc="fat_percentage" />;
-                                graph_records[4].values.push({x: graph_record_sequence, y: fat_percentage });
                                 <t t-set="mucles_kg" t-value="bca.mucles_kg" />
                                 mucles_kg = <t t-esc="mucles_kg" />;
-                                graph_records[5].values.push({x: graph_record_sequence, y: mucles_kg });
                                 <t t-set="lean_muscles" t-value="bca.lean_muscles" />
                                 lean_muscles = <t t-esc="lean_muscles" />;
-                                graph_records[6].values.push({x: graph_record_sequence, y: lean_muscles });
                                 <t t-set="fat_control_kg" t-value="bca.fat_control_kg" />
                                 fat_control_kg = <t t-esc="fat_control_kg" />;
-                                graph_records[7].values.push({x: graph_record_sequence, y: fat_control_kg });
                                 <t t-set="muscles_control_kg" t-value="bca.muscles_control_kg" />
                                 muscles_control_kg = <t t-esc="muscles_control_kg" />;
-                                graph_records[8].values.push({x: graph_record_sequence, y: muscles_control_kg });
                                 <t t-set="icw" t-value="bca.icw" />
                                 icw = <t t-esc="icw" />;
-                                graph_records[9].values.push({x: graph_record_sequence, y: icw });
                                 <t t-set="ecw" t-value="bca.ecw" />
                                 ecw = <t t-esc="ecw" />;
-                                graph_records[10].values.push({x: graph_record_sequence, y: ecw });
+
+                                graph_records.push({key: bca_date, values: [{"label": "Height", "value": height}, {"label": "Ideal Weight", "value": ideal_weight}, 
+                                {"label": "Actual Weight", "value": actual_weight}, {"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}, 
+                                {"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}, {"label": "FAT Control.kg", "value": fat_control_kg}, 
+                                {"label": "Muscles Control.kg", "value": muscles_control_kg}, {"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]})
 
                                 graph_record_sequence += 1;
                             </t>
                             nv.addGraph(function () {
-                                            var chart = nv.models.multiBarChart()
-                                                // .duration(350)
-                                                .reduceXTicks(true)   //If 'false', every single x-axis tick label will be rendered.
-                                                .rotateLabels(0)      //Angle to rotate x-axis labels.
-                                                .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode. 
-                                                .groupSpacing(0.1)    //Distance between each group of bars.
-                                                .x(function(d) { return d.label })    //Specify the data accessors.
-                                                .y(function(d) { return d.value })
-                                                .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-                                                .showValues(true)       //...instead, show the bar value right on top of each bar.
-                                                ;
+                                var chart = nv.models.multiBarChart()
+                                    .x(function(d) { return d.label })    //Specify the data accessors.
+                                    .y(function(d) { return d.value })
+                                    .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+                                    .tooltips(false)        //Don't show tooltips
+                                    .showValues(true)       //...instead, show the bar value right on top of each bar.
+                                    .transitionDuration(350)
+                                    ;
 
-                                            chart.xAxis
-                                                .tickFormat(d3.format(',f'));
+                                    chart.xAxis
+                                        .tickFormat(d3.format(',f'));
 
-                                            chart.yAxis
-                                                .tickFormat(d3.format(',.1f'));
+                                    chart.yAxis
+                                        .tickFormat(d3.format(',.1f'));
 
-                                            d3.select('#chart_bca svg')
-                                                .datum(graph_records)
-                                                .transition().duration(350)
-                                                .call(chart);
+                                    d3.select('#chart_bca svg')
+                                        .datum(graph_records)
+                                        .transition().duration(350)
+                                        .call(chart);
 
-                                            nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart.update);
 
-                                            return chart;
-                                        });
+                                    return chart;
+                                });
                         </script>
                         <div class="row">
                             <div class="col-4">
