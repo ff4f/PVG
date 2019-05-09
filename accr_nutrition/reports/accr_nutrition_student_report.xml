@@ -157,7 +157,7 @@
                                     ;
                                     
                                     d3.select('#chart_fats svg')
-                                        .datum(graph_record_fats)
+                                        .datum(graph_records_fats)
                                         .call(charchart_fatst);
 
                                     nv.utils.windowResize(chart_fats.update);
@@ -174,7 +174,7 @@
                                     ;
                                     
                                     d3.select('#chart_muscles svg')
-                                        .datum(graph_record_muscles)
+                                        .datum(graph_records_muscles)
                                         .call(chart_muscles);
 
                                     nv.utils.windowResize(chart_muscles.update);
@@ -299,6 +299,10 @@
                             </div>
                         </div>
                         <br/>
+                        <div id="chart">
+                            <svg style="height: 300px; width: 100%; text-align: left!important; direction: ltr;"></svg>
+                        </div>
+                        <br/>
                         <div class="row">
                             <div class="col-4">
                                 <div id="chart_height">
@@ -322,7 +326,7 @@
                                     <svg style="height: 300px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                 </div>
                             </div>
-                            <div class="col-4">icw_ecw
+                            <div class="col-4">
                                 <div id="chart_fats_muscles_control">
                                     <svg style="height: 300px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                 </div>
