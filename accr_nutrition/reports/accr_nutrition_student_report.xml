@@ -87,7 +87,7 @@
                                 graph_record_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
                                 {"label": "Actual Weight", "value": actual_weight}]});
 
-                                graph_record_fats.push({key: bca_report_name, values: [{{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
+                                graph_record_fats.push({key: bca_report_name, values: [{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
 
                                 graph_record_muscles.push({key: bca_report_name, values:[{"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}]});
 
