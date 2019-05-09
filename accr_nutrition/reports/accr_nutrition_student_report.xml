@@ -107,7 +107,6 @@
                                     
                                     d3.select('#chart_bca svg')
                                         .datum(graph_records)
-                                        .staggerLabels(false)
                                         .call(chart);
 
                                     nv.utils.windowResize(chart.update);
