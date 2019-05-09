@@ -324,7 +324,7 @@
                             </div>
                         </div>
                         <br/>
-                        <hr/>
+                        <br/>
                         <h3>Nutrition Plan</h3>
                         <t t-set="plan_desc" t-value="" />
                         <t t-set="improvement" t-value="" />
