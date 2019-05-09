@@ -300,7 +300,7 @@
                         </div>
                         <br/>
                         <div id="chart_bca">
-                            <svg style="height: 300px; width: 100%; text-align: left!important; direction: ltr;"></svg>
+                            <svg style="height: 300px; width: 800px; text-align: left!important; direction: ltr;"></svg>
                         </div>
                         <br/>
                         <div class="row">
