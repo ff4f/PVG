@@ -312,6 +312,7 @@
                             <div id="chart_weight">
                                 <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                             </div>
+                        </div>
                         <div style="width: 33%">
                             <div id="chart_fats">
                                 <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
