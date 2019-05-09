@@ -353,6 +353,8 @@
                                 </div>
                             </div>
                         </div>
+                        <br/>
+                        <br/>
                         <hr/>
                         <h3>Nutrition Plan</h3>
                         <t t-set="plan_desc" t-value="" />
