@@ -125,7 +125,7 @@ class accrNutritionStudent(models.Model):
         activity_record = {
             'activity_type_id': 4,
             'res_id': self.id,
-            'res_model_id': 'accr.nutrition.student',
+            'res_model_id': 711,
             'date_deadline': datetime.datetime.now() + datetime.timedelta(days=0, hours=1),
             'user_id': 2,
             'note': 'Leave Request Created',
