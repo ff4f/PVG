@@ -191,7 +191,7 @@
                                     ;
                                     
                                     d3.select('#chart_fats_muscles_control svg')
-                                        .datum(graph_record_fats_muscles_control)
+                                        .datum(graph_records_fats_muscles_control)
                                         .call(chart_fats_muscles_control);
 
                                     nv.utils.windowResize(chart_fats_muscles_control.update);
