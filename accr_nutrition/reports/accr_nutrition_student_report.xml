@@ -43,7 +43,7 @@
                         <t t-set="icw" t-value="0" />
                         <t t-set="ecw" t-value="0" />
                         <script type="text/javascript">
-                            graph_records = [];
+                            <!-- graph_records = []; -->
                             graph_records_height = [];
                             graph_records_weight = [];
                             graph_records_fats = [];
@@ -77,10 +77,10 @@
                                 <t t-set="ecw" t-value="bca.ecw" />
                                 ecw = <t t-esc="ecw" />;
 
-                                graph_records.push({key: bca_report_name, values: [{"label": "Height", "value": height}, {"label": "Ideal Weight", "value": ideal_weight}, 
+                                <!-- graph_records.push({key: bca_report_name, values: [{"label": "Height", "value": height}, {"label": "Ideal Weight", "value": ideal_weight}, 
                                 {"label": "Actual Weight", "value": actual_weight}, {"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}, 
                                 {"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}, {"label": "FAT Control.kg", "value": fat_control_kg}, 
-                                {"label": "Muscles Control.kg", "value": muscles_control_kg}, {"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
+                                {"label": "Muscles Control.kg", "value": muscles_control_kg}, {"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]}); -->
 
                                 graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height}]});
 
@@ -97,7 +97,7 @@
                                 graph_records_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
 
                             </t>
-                            nv.addGraph(function () {
+                            <!-- nv.addGraph(function () {
                                 var chart = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
@@ -114,7 +114,7 @@
                                     nv.utils.windowResize(chart.update);
 
                                     return chart;
-                                });
+                                }); -->
 
                                 nv.addGraph(function () {
                                 var chart_height = nv.models.multiBarChart()
@@ -313,9 +313,9 @@
                             </div>
                         </div>
                         <br/>
-                        <div id="chart_bca">
+                        <!-- <div id="chart_bca">
                             <svg style="height: 300px; width: 800px; text-align: left!important; direction: ltr;"></svg>
-                        </div>
+                        </div> -->
                         <br/>
                         <div class="row">
                             <div class="col-4">
@@ -334,8 +334,6 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <br/>
                         <div class="row">
                             <div class="col-4">
                                 <div id="chart_muscles">
