@@ -103,6 +103,9 @@
                                     .y(function(d) { return d.value })
                                     .showControls(false)
                                     .staggerLabels(false)
+                                    .showXAxis(true)
+                                    .showYAxis(true)
+                                    .useInteractiveGuideline(true)
                                     ;
                                     
                                     d3.select('#chart_bca svg')
