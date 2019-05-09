@@ -158,7 +158,7 @@
                                     
                                     d3.select('#chart_fats svg')
                                         .datum(graph_records_fats)
-                                        .call(charchart_fatst);
+                                        .call(chart_fats);
 
                                     nv.utils.windowResize(chart_fats.update);
 

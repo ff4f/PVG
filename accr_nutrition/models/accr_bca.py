@@ -32,4 +32,4 @@ class accrBCA(models.Model):
     @api.depends('create_date')
     def _compute_report_name(self):
         for record in self:
-            record.report_name = 'date '+ record.create_date.strftime("%Y_%m_%d")
+            record.report_name = record.create_date.strftime("%Y_%m_%d")
