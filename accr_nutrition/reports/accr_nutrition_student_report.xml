@@ -82,10 +82,10 @@
                                 {"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}, {"label": "FAT Control.kg", "value": fat_control_kg}, 
                                 {"label": "Muscles Control.kg", "value": muscles_control_kg}, {"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
 
-                                graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height});
+                                graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height}]});
 
                                 graph_record_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
-                                {"label": "Actual Weight", "value": actual_weight});
+                                {"label": "Actual Weight", "value": actual_weight}]});
 
                                 graph_record_fats.push({key: bca_report_name, values: [{{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
 
@@ -94,7 +94,7 @@
                                 graph_record_fats_muscles_control.push({key: bca_report_name, values:[{"label": "FAT Control.kg", "value": fat_control_kg}, 
                                 {"label": "Muscles Control.kg", "value": muscles_control_kg}]});
 
-                                graph_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]})
+                                graph_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
 
                             </t>
                             nv.addGraph(function () {
@@ -115,7 +115,7 @@
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_height = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -124,15 +124,15 @@
                                     
                                     d3.select('#chart_height svg')
                                         .datum(graph_records_height)
-                                        .call(chart);
+                                        .call(chart_height);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_height.update);
 
-                                    return chart;
+                                    return chart_height;
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_weight = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -141,15 +141,15 @@
                                     
                                     d3.select('#chart_weight svg')
                                         .datum(graph_records_weight)
-                                        .call(chart);
+                                        .call(chart_weight);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_weight.update);
 
-                                    return chart;
+                                    return chart_weight;
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_fats = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -158,15 +158,15 @@
                                     
                                     d3.select('#chart_fats svg')
                                         .datum(graph_record_fats)
-                                        .call(chart);
+                                        .call(charchart_fatst);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_fats.update);
 
-                                    return chart;
+                                    return chart_fats;
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_muscles = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -175,15 +175,15 @@
                                     
                                     d3.select('#chart_muscles svg')
                                         .datum(graph_record_muscles)
-                                        .call(chart);
+                                        .call(chart_muscles);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_muscles.update);
 
-                                    return chart;
+                                    return chart_muscles;
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_fats_muscles_control = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -192,15 +192,15 @@
                                     
                                     d3.select('#chart_fats_muscles_control svg')
                                         .datum(graph_record_fats_muscles_control)
-                                        .call(chart);
+                                        .call(chart_fats_muscles_control);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_fats_muscles_control.update);
 
-                                    return chart;
+                                    return chart_fats_muscles_control;
                                 });
 
                                 nv.addGraph(function () {
-                                var chart = nv.models.multiBarChart()
+                                var chart_icw_ecw = nv.models.multiBarChart()
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
@@ -209,11 +209,11 @@
                                     
                                     d3.select('#chart_icw_ecw svg')
                                         .datum(graph_icw_ecw)
-                                        .call(chart);
+                                        .call(chart_icw_ecw);
 
-                                    nv.utils.windowResize(chart.update);
+                                    nv.utils.windowResize(chart_icw_ecw.update);
 
-                                    return chart;
+                                    return chart_icw_ecw;
                                 });
 
 
