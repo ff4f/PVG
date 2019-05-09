@@ -299,7 +299,7 @@
                             </div>
                         </div>
                         <br/>
-                        <div id="chart">
+                        <div id="chart_bca">
                             <svg style="height: 300px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                         </div>
                         <br/>
