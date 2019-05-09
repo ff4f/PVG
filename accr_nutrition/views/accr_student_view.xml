@@ -185,7 +185,12 @@
                                         </field>
                                     </page>
                                     <page string="Leave Requests">
-                                        <field name="student_leave_requests"/>
+                                        <field name="student_leave_requests">
+                                            <tree>
+                                                <field name="x_studio_leave_date"/>
+                                                <field name="x_studio_back_date"/>
+                                            </tree>
+                                        </field>
                                     </page>
                                 </notebook>
                             </page>
