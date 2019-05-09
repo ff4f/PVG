@@ -84,17 +84,17 @@
 
                                 graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height}]});
 
-                                graph_record_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
+                                graph_records_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
                                 {"label": "Actual Weight", "value": actual_weight}]});
 
-                                graph_record_fats.push({key: bca_report_name, values: [{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
+                                graph_records_fats.push({key: bca_report_name, values: [{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
 
-                                graph_record_muscles.push({key: bca_report_name, values:[{"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}]});
+                                graph_records_muscles.push({key: bca_report_name, values:[{"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}]});
 
-                                graph_record_fats_muscles_control.push({key: bca_report_name, values:[{"label": "FAT Control.kg", "value": fat_control_kg}, 
+                                graph_records_fats_muscles_control.push({key: bca_report_name, values:[{"label": "FAT Control.kg", "value": fat_control_kg}, 
                                 {"label": "Muscles Control.kg", "value": muscles_control_kg}]});
 
-                                graph_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
+                                graph_records_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
 
                             </t>
                             nv.addGraph(function () {
@@ -208,7 +208,7 @@
                                     ;
                                     
                                     d3.select('#chart_icw_ecw svg')
-                                        .datum(graph_icw_ecw)
+                                        .datum(graph_records_icw_ecw)
                                         .call(chart_icw_ecw);
 
                                     nv.utils.windowResize(chart_icw_ecw.update);
