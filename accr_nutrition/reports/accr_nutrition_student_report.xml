@@ -45,11 +45,11 @@
                         <script type="text/javascript">
                             graph_records = [];
                             graph_records_height = [];
-                            graph_record_weight = [];
-                            graph_record_fats = [];
-                            graph_record_muscles = [];
-                            graph_record_fats_muscles_control = [];
-                            graph_icw_ecw = [];
+                            graph_records_weight = [];
+                            graph_records_fats = [];
+                            graph_records_muscles = [];
+                            graph_records_fats_muscles_control = [];
+                            graph_records_icw_ecw = [];
                             <t t-foreach="doc.bca" t-as="bca">
                                 <t t-set="bca_report_name" t-value="bca.report_name"/>
                                 bca_report_name = '<t t-esc="bca_report_name"/>';
