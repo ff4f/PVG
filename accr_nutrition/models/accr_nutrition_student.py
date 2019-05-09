@@ -117,9 +117,7 @@ class accrNutritionStudent(models.Model):
 
     @api.onchange('student_leave_requests')
     def onchange_leave_requests(self):
-        cr.execute("""SELECT id FROM ir_model FWHERE model = %s""",
-                   (str(self._name),))
-        info = cr.dictfetchall()
+        info = self._cr.dictfetchall()
         if info:
             model_id = info[0]['id']
         activity_record = {
