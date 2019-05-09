@@ -306,34 +306,34 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_height">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
                                     </td>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_weight">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
                                     </td>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_fats">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_muscles">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
                                     </td>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_fats_muscles_control">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
                                     </td>
-                                    <td style="width: 33%">
+                                    <td>
                                         <div id="chart_icw_ecw">
                                             <svg style="height: 200px; width: 100%; text-align: left!important; direction: ltr;"></svg>
                                         </div>
