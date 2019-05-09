@@ -102,6 +102,7 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
+                                    .staggerLabels(true)
                                     .wrapLabels(true)
                                     .rotateLabels(30)
                                     .useInteractiveGuideline(true)
