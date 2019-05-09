@@ -103,7 +103,8 @@
                                     .y(function(d) { return d.value })
                                     .showControls(false)
                                     .rotateLabels(30)
-                                    .isOrdinal(true)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_bca svg')
