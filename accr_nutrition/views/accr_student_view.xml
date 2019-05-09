@@ -188,55 +188,55 @@
                                         <field name="student_leave_requests"/>
                                     </page>
                                 </notebook>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
 
-                            </notebook>
-                        </sheet>
-                        <div class="oe_chatter">
-                            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                            <field name="activity_ids" widget="mail_activity"/>
-                            <field name="message_ids" widget="mail_thread"/>
-                        </div>
-                    </form>
-                </field>
-            </record>
+        <record id="view_accr_nutrition_student_search" model="ir.ui.view">
+            <field name="name">accr.nutrition.student.search</field>
+            <field name="model">accr.nutrition.student</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Students">
+                    <field name="student" select="True" />
+                    <field name="student_residential_section" select="True" />
+                    <field name="food_preferences" select="True" />
+                </search>
+            </field>
+        </record>
 
-            <record id="view_accr_nutrition_student_search" model="ir.ui.view">
-                <field name="name">accr.nutrition.student.search</field>
-                <field name="model">accr.nutrition.student</field>
-                <field name="priority" eval="8" />
-                <field name="arch" type="xml">
-                    <search string="Students">
-                        <field name="student" select="True" />
-                        <field name="student_residential_section" select="True" />
-                        <field name="food_preferences" select="True" />
-                    </search>
-                </field>
-            </record>
+        <record model="ir.actions.act_window" id="act_open_nutrition_student_view">
+            <field name="name">Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.nutrition.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accr_nutrition_student_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
 
-            <record model="ir.actions.act_window" id="act_open_nutrition_student_view">
-                <field name="name">Students</field>
-                <field name="type">ir.actions.act_window</field>
-                <field name="res_model">accr.nutrition.student</field>
-                <field name="view_type">form</field>
-                <field name="view_mode">tree,form</field>
-                <field name="search_view_id" ref="view_accr_nutrition_student_search"/>
-                <field name="domain">[]</field>
-                <field name="context">{}</field>
-            </record>
+        <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_form">
+            <field name="act_window_id" ref="act_open_nutrition_student_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_nutrition_student_form" />
+        </record>
 
-            <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_form">
-                <field name="act_window_id" ref="act_open_nutrition_student_view" />
-                <field name="sequence" eval="20" />
-                <field name="view_mode">form</field>
-                <field name="view_id" ref="view_accr_nutrition_student_form" />
-            </record>
+        <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_tree">
+            <field name="act_window_id" ref="act_open_nutrition_student_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_accr_nutrition_student_tree" />
+        </record>
 
-            <record model="ir.actions.act_window.view" id="act_open_nutrition_student_view_tree">
-                <field name="act_window_id" ref="act_open_nutrition_student_view" />
-                <field name="sequence" eval="10" />
-                <field name="view_mode">tree</field>
-                <field name="view_id" ref="view_accr_nutrition_student_tree" />
-            </record>
-
-        </data>
-    </odoo>
+    </data>
+</odoo>
