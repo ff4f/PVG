@@ -121,7 +121,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_height svg')
@@ -138,7 +140,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_weight svg')
@@ -155,7 +159,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_fats svg')
@@ -172,7 +178,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_muscles svg')
@@ -189,7 +197,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_fats_muscles_control svg')
@@ -206,7 +216,9 @@
                                     .x(function(d) { return d.label })    //Specify the data accessors.
                                     .y(function(d) { return d.value })
                                     .showControls(false)
-                                    .staggerLabels(false)
+                                    .rotateLabels(30)
+                                    .reduceXTicks(false)
+                                    .groupSpacing(0.3)
                                     ;
                                     
                                     d3.select('#chart_icw_ecw svg')
@@ -322,6 +334,7 @@
                                 </div>
                             </div>
                         </div>
+                        <br/>
                         <br/>
                         <div class="row">
                             <div class="col-4">
