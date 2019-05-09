@@ -25,6 +25,7 @@ class accrNutritionStudent(models.Model):
     student_residential_section = fields.Many2one(related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
     student_medications = fields.One2many(related='student.x_medications', string=u'Medications', store=False, track_visibility='always', )
     student_residential_daily_notes = fields.One2many(related='student.x_studio_residential_daily_notes', string=u'Residential Notes', store=False, readonly=True, track_visibility='onchange', )
+    student_leave_requests = fields.One2many(related="student.x_leave_requests", string=u"Leave Requests", )
 
     food_intolerance = fields.One2many('accr.student.food.intolerance', 'nutrition_student_food_intolerance', string=u'Food Intolerance', readonly=False , track_visibility='onchange', )
     medical_contraindication = fields.One2many('accr.student.food.intolerance', 'nutrition_student_medical_contraindication', string=u'Medical Contraindication', compute='_compute_medications_intolerance', readonly=True , track_visibility='onchange',)
