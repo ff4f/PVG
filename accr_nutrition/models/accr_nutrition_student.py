@@ -132,4 +132,4 @@ class accrNutritionStudent(models.Model):
             'summary': 'Leave Request Created'
         }
 
-        env['mail_activity'].create(activity_record)
+        self.env['mail_activity'].create(activity_record)
