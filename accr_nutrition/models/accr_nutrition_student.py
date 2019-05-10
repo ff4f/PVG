@@ -115,16 +115,16 @@ class accrNutritionStudent(models.Model):
             #         }]],
             #     })
 
-    @api.onchange('student_leave_requests')
-    def onchange_leave_requests(self):
-        activity_record = {
-            'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
-            'res_id': self.id,
-            'res_model_id': self.env['ir.model'].search([('model', '=', 'accr.nutrition.student')], limit=1).id,
-            'date_deadline': datetime.datetime.now() + datetime.timedelta(days=0, hours=1),
-            'user_id': 2,
-            'note': 'Leave Request Created',
-            'summary': 'Leave Request Created'
-        }
+    # @api.onchange('student_leave_requests')
+    # def onchange_leave_requests(self):
+    #     activity_record = {
+    #         'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
+    #         'res_id': self.id,
+    #         'res_model_id': self.env['ir.model'].search([('model', '=', 'accr.nutrition.student')], limit=1).id,
+    #         'date_deadline': datetime.datetime.now() + datetime.timedelta(days=0, hours=1),
+    #         'user_id': 2,
+    #         'note': 'Leave Request Created',
+    #         'summary': 'Leave Request Created'
+    #     }
 
-        self.env['mail.activity'].create(activity_record)
+    #     self.env['mail.activity'].create(activity_record)
