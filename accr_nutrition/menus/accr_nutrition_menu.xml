@@ -27,6 +27,6 @@
 
     <menuitem id="menu_accr_generate_nutrition_students" name="Generate Nutrition Students" parent="menu_students_nutrition_settings" action="act_open_accr_generate_nutrition_students_view" sequence="6"/>
 
-    <menuitem id="menu_accr_nutritionnotification" name="Notifications" parent="menu_students_nutrition" action="act_open_accr_nutrition_student_notification_view" sequence="11"/>
+    <menuitem id="menu_accr_nutritionnotification" name="Notifications" parent="menu_students_nutrition" action="act_open_accr_nutrition_notification_view" sequence="11"/>
 
 </odoo>
