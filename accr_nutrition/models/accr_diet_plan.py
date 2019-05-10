@@ -6,39 +6,49 @@ import time
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
+class accrDietPlan(models.Model):
+    _name = 'accr.diet.plan'
+    _description = "create and edit diet plans and generate meals timetable"
 
-class accrGenerateMealsTimeTable(models.TransientModel):
-    _name = "accr.generate.meal.time.table"
-    _description = "Generate Meals Timetable"
+    name = fields.Char(string=u'Diet Plan', required=True, compute="_compute_name", )
 
     time_table_lines = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines')
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines')
     time_table_lines_1 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines1',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines1',
         domain=[('day', '=', '0')])
     time_table_lines_2 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines2',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines2',
         domain=[('day', '=', '1')])
     time_table_lines_3 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines3',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines3',
         domain=[('day', '=', '2')])
     time_table_lines_4 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines4',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines4',
         domain=[('day', '=', '3')])
     time_table_lines_5 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines5',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines5',
         domain=[('day', '=', '4')])
     time_table_lines_6 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines6',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines6',
         domain=[('day', '=', '5')])
     time_table_lines_7 = fields.One2many(
-        'accr.gen.meal.time.table.line', 'gen_meal_time_table', 'Time Table Lines7',
+        'accr.gen.diet.plan.line', 'gen_diet_plan_time_table', 'Diet Plan Time Table Lines7',
         domain=[('day', '=', '6')])
     start_date = fields.Date(
         'Start Date', required=True, default=time.strftime('%Y-%m-01'))
     end_date = fields.Date('End Date', required=True)
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True,)
     students = fields.One2many(related='diet.students', string=u"Students", required=True, readonly=True, store=False )
+
+    @api.multi
+    @api.depends('diet', 'create_date')
+    def _compute_name(self):
+        for record in self:
+            if record.diet and record.create_date:
+                record.name = record.diet.display_name + ' - ' + record.create_date.strftime("%Y-%m-%d")
+            elif record.diet:
+                record.name = record.diet.display_name
 
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
@@ -90,14 +100,17 @@ class accrGenerateMealsTimeTable(models.TransientModel):
             return {'type': 'ir.actions.act_window_close'}
 
 
-class accrGenerateMealTimetableLine(models.TransientModel):
-    _name = 'accr.gen.meal.time.table.line'
-    _description = 'Generate Meal Time Table Lines'
+
+class accrDietPlanTimetableLine(models.TransientModel):
+    _name = 'accr.gen.diet.plan.line'
+    _description = 'Generate Diet Plan Time Table Lines'
     _rec_name = 'day'
 
-    gen_meal_time_table = fields.Many2one(
-        'accr.generate.meal.time.table', 'Meals Time Table', required=True)
+    gen_diet_plan_time_table = fields.Many2one(
+        'accr.diet.plan', 'Diet Plan', )
     meal_id = fields.Many2one('accr.meal.timing', 'Meal Timing', required=True)
+    meal_type = fields.Many2one(related='meal_id.meal_type', string=u'Meal Type', required=True, )
+
     day = fields.Selection([
         ('0', calendar.day_name[0]),
         ('1', calendar.day_name[1]),
@@ -106,4 +119,4 @@ class accrGenerateMealTimetableLine(models.TransientModel):
         ('4', calendar.day_name[4]),
         ('5', calendar.day_name[5]),
         ('6', calendar.day_name[6]),
-    ], 'Day', required=True)
+    ], 'Day', required=True, )                

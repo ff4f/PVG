@@ -4,5 +4,4 @@ class accrDiet(models.Model):
     _name = 'accr.diet'
 
     name = fields.Char(string=u'Diet', required=True,)
-    students = fields.Many2many('x_student', 'x_student_diet_rel',
-                                'diet_id', 'x_student_id', string="Students", required=False, )
+    students = fields.One2many('accr.nutrition.student', 'diet', string="Students", required=False, )

@@ -45,10 +45,10 @@
                         <group col="4" colspan="4" string="Students">
                             <field name="students" nolabel="1">
                                 <tree>
-                                    <field name="x_studio_file_no" />
-                                    <field name="x_name" />
-                                    <field name="x_studio_diagnosis" />
-                                    <field name="x_studio_resident" />
+                                    <field name="student_file_no" />
+                                    <field name="student_name" />
+                                    <field name="student_diagnosis" />
+                                    <field name="student_resident" />
                                 </tree>
                             </field>
                         </group>

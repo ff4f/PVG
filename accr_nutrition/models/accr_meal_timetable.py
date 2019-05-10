@@ -20,8 +20,7 @@ class accrMealTimetable(models.Model):
         'accr.meal.timing', string=u'Meal', required=True, track_visibility="onchange")
     meal_type = fields.Many2one(
         related='meal_id.meal_type', string=u"Meal Type", readonly=True, store=False, )
-    food = fields.Many2many(related='meal_id.food',
-                            string=u"Food", readonly=True, store=False, )
+    food = fields.Many2many('accr.food', 'meal_timetable_food_rel', 'meal_timetable_id', 'food_id', string="Food", compute="_compute_food", required=True, readonly=False, store=True, )                            
     start_datetime = fields.Datetime(
         string=u'Start Time', required=True,
         default=lambda self: fields.Datetime.now())
@@ -34,8 +33,8 @@ class accrMealTimetable(models.Model):
         'Status', default='draft')
     notes = fields.Text(string=u'Notes')
     diet = fields.Many2one('accr.diet', string=u'Diet', required=True,)
-    students = fields.Many2many(related='diet.students', string=u"Students", required=True, readonly=True, )
-    student = fields.Many2one('x_student', string=u'Student')
+    students = fields.One2many(related='diet.students', string=u"Students", required=True, readonly=True, )
+    student = fields.Many2one('accr.nutrition.student', string=u'Student')
 
     @api.multi
     @api.depends('start_datetime')
@@ -72,3 +71,15 @@ class accrMealTimetable(models.Model):
         if self.start_datetime > self.end_datetime:
             raise ValidationError(_(
                 'End Time cannot be set before Start Time.'))
+
+    
+    @api.multi
+    @api.depends('meal_type')
+    def _compute_food(self):
+        for record in self:
+            foods = []
+            for food in record.meal_id.food:
+                foods.append(food.id)
+                # record.food = [(0, 0, {'meal_timetable_id': record.id, 'food_id': food.id})]
+            record.food = [(6, 0, foods)]
+                

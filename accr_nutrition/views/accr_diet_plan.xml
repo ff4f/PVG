@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_diet_plan_tree" model="ir.ui.view">
+            <field name="name">accr.diet.plan.tree</field>
+            <field name="model">accr.diet.plan</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Diet Plan">
+                    <field name="diet" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_accr_diet_plan_form" model="ir.ui.view">
+            <field name="name">accr.diet.plan.form</field>
+            <field name="model">accr.diet.plan</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Diet Plan">
+                    <sheet>
+                        <group col="4">
+                            <field name="diet" colspan="4"/>
+                        </group>
+                        <group col="4" string="Students">
+                            <field name="students" nolabel="1" readonly="1"/>
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <notebook>
+                            <page name="saturday" string="Saturday">
+                                <group>
+                                    <field name="time_table_lines_6" nolabel="1" context="{'default_day': '5'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="sunday" string="Sunday">
+                                <group>
+                                    <field name="time_table_lines_7" nolabel="1" context="{'default_day': '6'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="monday" string="Monday">
+                                <group>
+                                    <field name="time_table_lines_1" nolabel="1" context="{'default_day': '0'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="tuesday" string="Tuesday">
+                                <group>
+                                    <field name="time_table_lines_2" nolabel="1" context="{'default_day': '1'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="wednesday" string="Wednesday">
+                                <group>
+                                    <field name="time_table_lines_3" nolabel="1" context="{'default_day': '2'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="thursday" string="Thursday">
+                                <group>
+                                    <field name="time_table_lines_4" nolabel="1" context="{'default_day': '3'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="friday" string="Friday">
+                                <group>
+                                    <field name="time_table_lines_5" nolabel="1" context="{'default_day': '4'}">
+                                        <tree>
+                                            <field name="meal_id"/>
+                                            <field name="meal_type"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <group colspan="4">
+                                                    <field name="meal_id"/>
+                                                    <field name="meal_type"/>
+                                                    <field name="day" />
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group colspan="4">
+                            <button string="Generate Diet Time Table" type="object" name="act_gen_meal_time_table" class="oe_highlight"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_accr_diet_plan_search" model="ir.ui.view">
+            <field name="name">accr.diet.plan.search</field>
+            <field name="model">accr.diet.plan</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Diet Plan">
+                    <field name="diet" select="True"/>
+                    <field name="students" select="True" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_diet_plan_view">
+            <field name="name">Diet Plan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.diet.plan</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accr_diet_plan_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_diet_plan_view_form">
+            <field name="act_window_id" ref="act_open_accr_diet_plan_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_diet_plan_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_diet_plan_view_tree">
+            <field name="act_window_id" ref="act_open_accr_diet_plan_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_accr_diet_plan_tree" />
+        </record>
+
+    </data>
+</odoo>
