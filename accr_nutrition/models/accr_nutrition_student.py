@@ -9,8 +9,7 @@ class accrNutritionStudent(models.Model):
     _sql_constraints = [('student_unique', 'unique(student)',
                          'Can not be duplicate value for this field!')]
 
-    name = fields.Char(string=u'Name', compute='_compute_name', readonly=True )
-    id = fields.Integer(string=u'ID', compute='_compute_id', readonly=True, )
+    name = fields.Char(string=u'Name', compute='_compute_name', readonly=True, )
 
     student = fields.Many2one('x_student', string=u'Student', required=True,
                               index=True, store=True, track_visibility='onchange', )
@@ -78,12 +77,6 @@ class accrNutritionStudent(models.Model):
     def _compute_name(self):
         for record in self:
             record.name = record.student.display_name
-    
-    @api.multi
-    @api.depends('student')
-    def _compute_id(self):
-        for record in self:
-            record.id = record.student.id
 
     @api.multi
     @api.depends('student_birth_date')
