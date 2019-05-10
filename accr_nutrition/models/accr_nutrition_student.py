@@ -9,7 +9,7 @@ class accrNutritionStudent(models.Model):
     _sql_constraints = [('student_unique', 'unique(student)',
                          'Can not be duplicate value for this field!')]
 
-    name = fields.Char(string=u'Name', compute='_compute_name', )
+    name = fields.Char(string=u'Name', compute='_compute_name', readonly=True )
 
     student = fields.Many2one('x_student', string=u'Student', required=True,
                               index=True, store=True, track_visibility='onchange', )
