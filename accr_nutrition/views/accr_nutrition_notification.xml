@@ -2,9 +2,9 @@
 <odoo>
     <data>
 
-        <record id="view_accr_nutrition_student_notification_tree" model="ir.ui.view">
-            <field name="name">accr.nutrition.student.notification.tree</field>
-            <field name="model">accr.nutrition.student.notification</field>
+        <record id="view_accr_nutrition_notification_tree" model="ir.ui.view">
+            <field name="name">accr.nutrition.notification.tree</field>
+            <field name="model">accr.nutrition.notification</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Students" default_order="passport_expiration_date">
@@ -14,9 +14,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_accr_nutrition_student_notification_kanban">
-            <field name="name">accr.nutrition.student.notification.kanban</field>
-            <field name="model">accr.nutrition.student.notification</field>
+        <record model="ir.ui.view" id="view_accr_nutrition_notification_kanban">
+            <field name="name">accr.nutrition.notification.kanban</field>
+            <field name="model">accr.nutrition.notification</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_small_column">
                     <field name="student"/>
@@ -55,9 +55,9 @@
             </field>
         </record>
 
-        <record id="view_accr_nutrition_student_notification_form" model="ir.ui.view">
-            <field name="name">accr.nutrition.student.notification.form</field>
-            <field name="model">accr.nutrition.student.notification</field>
+        <record id="view_accr_nutrition_notification_form" model="ir.ui.view">
+            <field name="name">accr.nutrition.notification.form</field>
+            <field name="model">accr.nutrition.notification</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Student">
@@ -80,10 +80,10 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_accr_nutrition_student_notification_view">
+        <record model="ir.actions.act_window" id="act_open_accr_nutrition_notification_view">
             <field name="name">Students Notifications</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">accr.nutrition.student.notification</field>
+            <field name="res_model">accr.nutrition.notification</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,kanban</field>
             <!-- <field name="search_view_id" ref="view_op_session_search"/> -->
@@ -91,24 +91,24 @@
             <field name="context">{}</field>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_student_notification_view_tree">
-            <field name="act_window_id" ref="act_open_accr_nutrition_student_notification_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_notification_view_tree">
+            <field name="act_window_id" ref="act_open_accr_nutrition_notification_view"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_accr_nutrition_student_notification_tree"/>
+            <field name="view_id" ref="view_accr_nutrition_notification_tree"/>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_student_notification_view_form">
-            <field name="act_window_id" ref="act_open_accr_nutrition_student_notification_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_notification_view_form">
+            <field name="act_window_id" ref="act_open_accr_nutrition_notification_view"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_accr_nutrition_student_notification_form"/>
+            <field name="view_id" ref="view_accr_nutrition_notification_form"/>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_student_notification_view_kanban">
-            <field name="act_window_id" ref="act_open_accr_nutrition_student_notification_view"/>
+        <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_notification_view_kanban">
+            <field name="act_window_id" ref="act_open_accr_nutrition_notification_view"/>
             <field name="view_mode">kanban</field>
-            <field name="view_id" ref="view_accr_nutrition_student_notification_kanban"/>
+            <field name="view_id" ref="view_accr_nutrition_notification_kanban"/>
         </record>
 
     </data>

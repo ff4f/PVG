@@ -21,5 +21,5 @@ from . import accr_medical_unit_medicine
 from . import accr_nutrition_student
 from . import accr_nutrition_details_min
 from . import accr_nutrition_details_vit
-from . import accr_nutrition_student_notification
+from . import accr_nutrition_notification
 # from . import accr_student

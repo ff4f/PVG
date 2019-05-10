@@ -1,8 +1,8 @@
 from odoo import models, fields, _
 
 class accrNutritiontNotification(models.Model):
-    _name="accr.nutrition.student.notification"
-    _description = 'Student Nutrition Notification'
+    _name="accr.nutrition.notification"
+    _description = 'Nutrition Notifications'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     student = fields.Many2one('accr.nutrition.student', string=u'student', )
