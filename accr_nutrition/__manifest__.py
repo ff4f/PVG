@@ -25,7 +25,7 @@
         'views/accr_bca.xml',
         'views/accr_food.xml',
         'views/accr_student_orientation.xml',
-        'views/accr_nutrition_notification.xml'
+        'views/accr_nutrition_notification.xml',
         # 'wizard/accr_generate_meal_timetable_view.xml',
         'wizard/accr_generate_nutrition_students_view.xml',
         'reports/accr_student_nutrition_details.xml',
