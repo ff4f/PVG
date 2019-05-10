@@ -125,7 +125,8 @@ class accrNutritionStudent(models.Model):
         activity_record = {
             'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
             'res_id': self.id,
-            'res_model_id': self.env['ir.model'].search([('model', '=', 'accr.nutrition.student')], limit=1).id,
+            # 'res_model_id': self.env['ir.model'].search([('model', '=', 'accr.nutrition.student')], limit=1).id,
+            'res_model_id': 711,
             'date_deadline': datetime.datetime.now() + datetime.timedelta(days=0, hours=1),
             'user_id': 2,
             'note': 'Leave Request Created',
