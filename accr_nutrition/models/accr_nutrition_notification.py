@@ -5,6 +5,6 @@ class accrNutritiontNotification(models.Model):
     _description = 'Nutrition Notifications'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    student = fields.Many2one('accr.nutrition.student', string=u'student', readonly=True, )
+    student = fields.Many2one('accr.nutrition.student', string=u'student', readonly=True, required=False, )
     color = fields.Integer(string=u'Color')
     message = fields.Text(string=u'Message', readonly=True, )
