@@ -7,6 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Students">
+                    <field name="id" />
                     <field name="student" />
                     <field name="student_diagnosis" />
                     <field name="student_age" />
