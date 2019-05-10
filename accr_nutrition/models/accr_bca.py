@@ -19,7 +19,7 @@ class accrBCA(models.Model):
     ecw = fields.Integer(string=u"ECW")
 
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u"Student")
-    student = fields.Many2one(related='nutrition_student.student', string=u"Student")
+    student = fields.Many2one(related='nutrition_student.student', string=u"X Student")
 
     @api.multi
     @api.depends('student', 'create_date')
