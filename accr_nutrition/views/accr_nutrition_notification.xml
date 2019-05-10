@@ -7,7 +7,7 @@
             <field name="model">accr.nutrition.notification</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Students" default_order="passport_expiration_date">
+                <tree string="Students" default_order="create_date desc">
                     <field name="student"/>
                     <field name="message"/>
                 </tree>
