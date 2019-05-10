@@ -123,7 +123,7 @@ class accrNutritionStudent(models.Model):
         # if info:
         #     model_id = info[0]['id']
         activity_record = {
-            'activity_type_id': 18,
+            'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
             'res_id': self.id,
             'res_model_id': self.env['ir.model'].search([('model', '=', 'accr.nutrition.student')], limit=1).id,
             'date_deadline': datetime.datetime.now() + datetime.timedelta(days=0, hours=1),
