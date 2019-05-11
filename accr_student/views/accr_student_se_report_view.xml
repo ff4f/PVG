@@ -6,7 +6,7 @@
             <field name="model">accr.student.se.report</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Diet">
+                <tree string="Reports">
                     <field name="student" />
                     <field name="create_date" />
                 </tree>
@@ -18,13 +18,13 @@
             <field name="model">accr.student.se.report</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Diet">
+                <form string="Reports">
                     <sheet>
                         <group col="4">
                             <field name="student" colspan="4"/>
                         </group>
-                        <group col="4" string="Students">
-                            <field name="last_plan" />
+                        <group col="4">
+                            <field name="plan" domain="[('x_studio_student','=',student.id)]"/>
                         </group>
                     </sheet>
                 </form>
@@ -36,15 +36,15 @@
             <field name="model">accr.student.se.report</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Diet">
-                    <field name="student" select="True" string="Diet"/>
-                    <field name="file_no" select="True" string="Diet"/>
+                <search string="Reprots">
+                    <field name="student" select="True" string="Student Name"/>
+                    <field name="file_no" select="True" string="File No"/>
                 </search>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="act_open_accr_student_se_report_view">
-            <field name="name">Diet</field>
+            <field name="name">Reports</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">accr.student.se.report</field>
             <field name="view_type">form</field>

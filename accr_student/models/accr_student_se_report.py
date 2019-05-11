@@ -14,9 +14,9 @@ class accrStudentSEReport(models.Model):
     diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', )
     file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', )
     gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', )
-    plans = fields.One2many(related='student.x_studio_se_long_term_plan', string=u'Plans', )
     
-    last_plan = fields.Many2one('x_se_long_term_plan', string=u'Last Plan', compute='_compute_plan', readonly=True, required=True, )
+    plan = fields.Many2one('x_se_long_term_plan', string=u'Last Plan', compute='_compute_plan', readonly=True, required=True, )
+    plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
 
 
 
@@ -29,14 +29,5 @@ class accrStudentSEReport(models.Model):
                 record.name = record.student.display_name + ' - ' + record.create_date.strftime("%Y-%m-%d")
             elif record.diet:
                 record.name = record.student.display_name
-
-    @api.multi
-    @api.depends('student', 'create_date')
-    def _compute_plan(self):
-        for record in self:
-            _plans = []
-            for plan in record.plans:
-                _plans.append(plan.id)
-            self.last_plan = _plans[:-1]
 
     
