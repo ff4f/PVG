@@ -66,13 +66,13 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Nutrition Notification">
-                    <field name="student" select="True" string="Studemt"/>
+                    <field name="student" select="True" string="Student"/>
                     <field name="notification_domain" select="True" string="Notification Type"/>
                 </search>
                 <group expand="0" string="Group By...">
-                        <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'student'}"/>
-                        <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'notification_domain'}"/>
-                    </group>
+                    <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'student'}"/>
+                    <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'notification_domain'}"/>
+                </group>
             </field>
         </record>
 
@@ -87,6 +87,9 @@
                             <h1>
                                 <field name="student"/>
                             </h1>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="notification_domain" />
                         </group>
                         <group colspan="4" col="4">
                             <field name="message" />
