@@ -1,4 +1,4 @@
-from odoo import models, fields, _
+from odoo import models, fields, api, _
 
 class accrNutritiontNotification(models.Model):
     _name="accr.nutrition.notification"
