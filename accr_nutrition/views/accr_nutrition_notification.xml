@@ -11,6 +11,7 @@
                     <field name="student"/>
                     <field name="notification_domain" />
                     <field name="message"/>
+                    <field name="create_date"/>
                 </tree>
             </field>
         </record>
@@ -49,6 +50,10 @@
                                         <li>
                                             <b>Message:</b>
                                             <field name="message"/>
+                                        </li>
+                                        <li>
+                                            <b>Message:</b>
+                                            <field name="create_date"/>
                                         </li>
                                     </div>
                                     <div class="oe_clear"></div>
@@ -90,10 +95,13 @@
                             </h1>
                         </group>
                         <group colspan="4" col="4">
-                            <field name="notification_domain" />
+                            <field name="notification_domain" colspan="4"/>
                         </group>
                         <group colspan="4" col="4">
-                            <field name="message" />
+                            <field name="message" colspan="4"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="create_date" colspan="4"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
