@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="Diet">
                     <field name="student" />
-                    <field name="stcreate_date" />
+                    <field name="create_date" />
                 </tree>
             </field>
         </record>
