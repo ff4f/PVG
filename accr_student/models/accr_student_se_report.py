@@ -22,7 +22,7 @@ class accrStudentSEReport(models.Model):
 
 
     @api.multi
-    @api.depends('sudent', 'create_date')
+    @api.depends('student', 'create_date')
     def _compute_name(self):
         for record in self:
             if record.student and record.create_date:
@@ -31,7 +31,7 @@ class accrStudentSEReport(models.Model):
                 record.name = record.student.display_name
 
     @api.multi
-    @api.depends('sudent', 'create_date')
+    @api.depends('student', 'create_date')
     def _compute_plan(self):
         _last_plan = self.env['x_se_long_term_plan'].search([('x_studio_student','=',self.env['x_student'].id)], order='id desc', limit=1)[1]
         self.last_plan = _last_plan
