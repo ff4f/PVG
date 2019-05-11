@@ -33,7 +33,10 @@ class accrStudentSEReport(models.Model):
     @api.multi
     @api.depends('student', 'create_date')
     def _compute_plan(self):
-        _last_plan = self.env['x_se_long_term_plan'].search([('x_studio_student','=',self.env['x_student'].id)], order='id desc', limit=1)[1]
-        self.last_plan = _last_plan
+        for record in self:
+            _plans = []
+            for plan in record.plans:
+                _plans.append(plan.id)
+            self.last_plan = _plans[:-1]
 
     
