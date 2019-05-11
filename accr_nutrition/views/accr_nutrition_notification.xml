@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <tree string="Students" default_order="create_date desc">
                     <field name="student"/>
+                    <field name="notification_domain" />
                     <field name="message"/>
                 </tree>
             </field>
@@ -42,6 +43,10 @@
                                     </div>
                                     <div class="oe_kanban_left">
                                         <li>
+                                            <b>Type:</b>
+                                            <field name="notification_domain"/>
+                                        </li>
+                                        <li>
                                             <b>Message:</b>
                                             <field name="message"/>
                                         </li>
@@ -52,6 +57,22 @@
                         </t>
                     </templates>
                 </kanban>
+            </field>
+        </record>
+
+        <record id="view_accr_nutrition_notification_search" model="ir.ui.view">
+            <field name="name">accr.nutrition.notification.search</field>
+            <field name="model">accr.nutrition.notification</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Nutrition Notification">
+                    <field name="student" select="True" string="Studemt"/>
+                    <field name="notification_domain" select="True" string="Notification Type"/>
+                </search>
+                <group expand="0" string="Group By...">
+                        <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'Student'}"/>
+                        <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'Notification Type'}"/>
+                    </group>
             </field>
         </record>
 
@@ -86,7 +107,7 @@
             <field name="res_model">accr.nutrition.notification</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree</field>
-            <!-- <field name="search_view_id" ref="view_op_session_search"/> -->
+            <field name="search_view_id" ref="view_accr_nutrition_notification_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
