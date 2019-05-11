@@ -4,6 +4,6 @@
     <menuitem id="menu_accr_students_notifications" name="Notifications" parent="studio_customization.student_reg_26ee09f7-2460-49c7-93a4-e475a3c14a4c" />
     <menuitem id="menu_accr_students_passport_id_notifications" name="Passport and ID Notifications" parent="menu_accr_students_notifications" action="act_open_accr_student_notification_view" />
 
-    <menuitem id="menu_accr_student_se_report" name="Special Education Report" parent="	studio_customization.assessment_planning__e66a9e08-f151-404b-8a5e-e4791a8821da" action="act_open_accr_student_se_report_view" />
+    <menuitem id="menu_accr_student_se_report" name="Special Education Report" parent="studio_customization.assessment_planning__e66a9e08-f151-404b-8a5e-e4791a8821da" action="act_open_accr_student_se_report_view" />
 
 </odoo>
