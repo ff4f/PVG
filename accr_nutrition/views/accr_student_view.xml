@@ -173,8 +173,21 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Medications">
-                                <field name="student_medications"/>
+                            <page string="Medical Infos">
+                                <notebook>
+                                    <page string="Medical Assessment">
+                                        <field name="student_medical_assessment"/>
+                                    </page>
+                                    <page string="Hospital Visits">
+                                        <field name="student_hospital_visit"/>
+                                    </page>
+                                    <page string="Medical Investigations">
+                                        <field name="student_medical_investigations"/>
+                                    </page>
+                                    <page string="Medications">
+                                        <field name="student_medications"/>
+                                    </page>
+                                </notebook>
                             </page>
                             <page string="Residential Infos">
                                 <notebook>

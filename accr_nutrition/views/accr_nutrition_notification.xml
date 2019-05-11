@@ -9,7 +9,9 @@
             <field name="arch" type="xml">
                 <tree string="Students" default_order="create_date desc">
                     <field name="student"/>
+                    <field name="notification_domain" />
                     <field name="message"/>
+                    <field name="create_date"/>
                 </tree>
             </field>
         </record>
@@ -42,8 +44,16 @@
                                     </div>
                                     <div class="oe_kanban_left">
                                         <li>
+                                            <b>Type:</b>
+                                            <field name="notification_domain"/>
+                                        </li>
+                                        <li>
                                             <b>Message:</b>
                                             <field name="message"/>
+                                        </li>
+                                        <li>
+                                            <b>Message:</b>
+                                            <field name="create_date"/>
                                         </li>
                                     </div>
                                     <div class="oe_clear"></div>
@@ -52,6 +62,23 @@
                         </t>
                     </templates>
                 </kanban>
+            </field>
+        </record>
+
+        <record id="view_accr_nutrition_notification_search" model="ir.ui.view">
+            <field name="name">accr.nutrition.notification.search</field>
+            <field name="model">accr.nutrition.notification</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Nutrition Notification">
+                    <field name="student" select="True" string="Student"/>
+                    <field name="notification_domain" select="True" string="Notification Type"/>
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'student'}"/>
+                        <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'notification_domain'}"/>
+                    </group>
+                </search>
             </field>
         </record>
 
@@ -68,7 +95,13 @@
                             </h1>
                         </group>
                         <group colspan="4" col="4">
-                            <field name="message" />
+                            <field name="notification_domain" colspan="4"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="message" colspan="4"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="create_date" colspan="4"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
@@ -86,7 +119,7 @@
             <field name="res_model">accr.nutrition.notification</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree</field>
-            <!-- <field name="search_view_id" ref="view_op_session_search"/> -->
+            <field name="search_view_id" ref="view_accr_nutrition_notification_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
