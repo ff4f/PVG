@@ -6,7 +6,7 @@ class accrStudentSEReport(models.Model):
 
     name = fields.Char(string=u'Name', compute='_compute_name', )
 
-    sudent = fields.Many2one('x_student', string=u'Student', )
+    student = fields.Many2one('x_student', string=u'Student', )
     name = fields.Char(related='student.x_name', string=u'Name', )
     arabic_name = fields.Char(related='student.x_studio_name_ar', string=u'Arabic Name', )
     joining_date = fields.Date(related='student.x_studio_joining_date', string=u'Joining Date', )
