@@ -10,7 +10,7 @@ class accrStudentSEReport(models.Model):
     name = fields.Char(related='student.x_name', string=u'Name', )
     arabic_name = fields.Char(related='student.x_studio_name_ar', string=u'Arabic Name', )
     joining_date = fields.Date(related='student.x_studio_joining_date', string=u'Joining Date', )
-    birth_date = fields.Date(related='student.x_studio_birth_date', string=u'Birth Date')
+    birth_date = fields.Date(related='student.x_studio_birthdate', string=u'Birth Date')
     diagnosis = fields.Text(related='student.x_studio_diagnosis', string=u'Diagnosis', )
     file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', )
     gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', )
