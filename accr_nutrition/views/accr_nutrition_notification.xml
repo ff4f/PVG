@@ -70,8 +70,8 @@
                     <field name="notification_domain" select="True" string="Notification Type"/>
                 </search>
                 <group expand="0" string="Group By...">
-                        <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'Student'}"/>
-                        <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'Notification Type'}"/>
+                        <filter string="Student" name="group_by_student" domain="[]" context="{'group_by':'student'}"/>
+                        <filter string="Notification Type" name="group_by_notification_domain" domain="[]" context="{'group_by':'notification_domain'}"/>
                     </group>
             </field>
         </record>
