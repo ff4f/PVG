@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <report id="accr_student_special_education_student_report" string="Student Special Education Report" model="accr.student.se.report" report_type="qweb-html" name="accr_student.report_accr_student_se_report_template" />
+    <report id="accr_student_special_education_report" string="Student Special Education Report" model="accr.student.se.report" report_type="qweb-html" name="accr_student.report_accr_student_se_report_template" />
     <template id="report_accr_student_se_report_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
