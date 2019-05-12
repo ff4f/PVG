@@ -15,7 +15,7 @@ class accrStudentSEReport(models.Model):
     file_no = fields.Char(related='student.x_studio_file_no', string=u'File No', )
     gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', )
     
-    plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, compute='_compute_plan', required=True, )
+    plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
     plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
 
     desc = fields.Text(string=u'Description', )
