@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_accr_student_se_report_tree" model="ir.ui.view">
+            <field name="name">accr.student.se.report.tree</field>
+            <field name="model">accr.student.se.report</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Reports">
+                    <field name="student" />
+                    <field name="create_date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_accr_student_se_report_form" model="ir.ui.view">
+            <field name="name">accr.student.se.report.form</field>
+            <field name="model">accr.student.se.report</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Reports">
+                    <sheet>
+                        <group col="4">
+                            <field name="student" create="0"/>
+                            <field name="file_no" />
+                        </group>
+                        <group col="4">
+                            <field name="plan" domain="[('x_studio_student','=',student)]" widget="selection"/>
+                            <field name="plan_date" />
+                        </group>
+                        <group col="4">
+                            <field name="desc" colspan="4"/>
+                        </group>
+                        <group col="4">
+                            <field name="plan_categories" colspan="4"/>
+                        </group>
+                        <group col="4">
+                            <field name="plan_response_forms" colspan="4"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_accr_student_se_report_search" model="ir.ui.view">
+            <field name="name">accr.student.se.report.search</field>
+            <field name="model">accr.student.se.report</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Reprots">
+                    <field name="student" select="True" string="Student Name"/>
+                    <field name="file_no" select="True" string="File No"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_accr_student_se_report_view">
+            <field name="name">Reports</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accr.student.se.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accr_student_se_report_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_student_se_report_view_form">
+            <field name="act_window_id" ref="act_open_accr_student_se_report_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_accr_student_se_report_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_student_se_report_view_tree">
+            <field name="act_window_id" ref="act_open_accr_student_se_report_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_accr_student_se_report_tree" />
+        </record>
+
+    </data>
+</odoo>

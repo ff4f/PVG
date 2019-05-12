@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 students_notification_user,StudentsNotificationUser,model_accr_student_notification,students_group_user,1,0,0,0
 students_notification_manager,StudentsNotificationManager,model_accr_student_notification,students_group_manager,1,1,1,1
+
+students_se_report_user,StudentsSEReportUser,model_accr_student_se_report,students_group_user,1,0,0,0
+students_se_report_manager,StudentsSEReportManager,model_accr_student_se_report,students_group_manager,1,1,1,1
