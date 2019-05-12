@@ -25,7 +25,7 @@
                                 <span>
                                     <Strong>Name: </Strong>
                                 </span>
-                                <span t-field="doc.Name"/>
+                                <span t-field="doc.name"/>
                             </div>
                             <div class="col-6">
                                 <span>
