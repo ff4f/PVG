@@ -74,12 +74,12 @@
                         <h4>Categoires of Plan</h4>
                         <t t-forecah="doc.plan.x_studio_categories" t-as="category">
                             <div class="row">
-                                <div class="col-2">
+                                <!-- <div class="col-2">
                                     <t t-set="category_name" t-value="category.x_studio_se_category.x_name"/>
                                     <h5 t-esc="category_name"/>
-                                </div>
+                                </div> -->
                                 <div class="col-10">
-                                    <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
+                                    <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form">
                                         <span t-field="response_form.x_studio_plan_long_term_goals"/>
                                     </t>
                                 </div>
