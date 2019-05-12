@@ -75,7 +75,7 @@
                         <t t-forecah="doc.plan_categories" t-as="category">
                             <div class="row">
                                 <div class="col-2">
-                                    <h4 t-field="category.x_studio_se_category.x_name"/>
+                                    <span t-field="category.x_studio_se_category.x_name"/>
                                 </div>
                                 <div class="col-10">
                                     <t t-foreach="doc.plan_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
