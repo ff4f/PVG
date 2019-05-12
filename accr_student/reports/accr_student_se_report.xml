@@ -72,7 +72,7 @@
                         </div>
                         <hr/>
                         <h3>Categoires of Plan</h3>
-                        <t t-forecah="doc.plan_categories" t-as="category">
+                        <!-- <t t-forecah="doc.plan_categories" t-as="category">
                             <div class="row">
                                 <div class="col-2">
                                     <span t-field="category.x_studio_se_category.x_name"/>
@@ -83,7 +83,7 @@
                                     </t>
                                 </div>
                             </div>
-                        </t>
+                        </t> -->
                     </t>
                 </div>
             </t>
