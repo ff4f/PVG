@@ -21,7 +21,7 @@
                 <form string="Reports">
                     <sheet>
                         <group col="4">
-                            <field name="student" />
+                            <field name="student" create="0"/>
                             <field name="file_no" />
                         </group>
                         <group col="4">
