@@ -1,6 +1,6 @@
 from . import accr_food
 from . import accr_food_group
-from . import accr_food_type
+from . import accr_food_ingredients
 from . import accr_food_textures
 from . import accr_diet
 from . import accr_diet_plan

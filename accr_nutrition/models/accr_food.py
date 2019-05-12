@@ -5,7 +5,7 @@ class accrFood(models.Model):
 
     name = fields.Char(string=u'Food', required=True, )
     food_group = fields.Many2one('accr.food.group', string=u'Food Group', required=False, )
-    food_type = fields.Many2one('accr.food.type', string=u'Food Type', required=False, )
+    food_ingredients = fields.Many2one('accr.food.ingredients', string=u'Food Ingredients', required=False, )
     meal_type = fields.Many2one('accr.meal.type', string=u"Meal Type", required=False, )
 
     measure = fields.Integer(string=u'Measure', )
