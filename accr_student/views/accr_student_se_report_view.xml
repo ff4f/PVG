@@ -24,7 +24,7 @@
                             <field name="student" colspan="4"/>
                         </group>
                         <group col="4">
-                            <field name="plan" domain="[('x_studio_student','=',student.id)]"/>
+                            <field name="plan" domain="[('x_studio_student','=',student)]"/>
                         </group>
                     </sheet>
                 </form>
