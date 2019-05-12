@@ -8,7 +8,7 @@ class accrStudentFoodIntolerance(models.Model):
     # student = fields.Many2one('x_student', string=u'Student', required=True, )
     nutrition_student_food_intolerance = fields.Many2one('accr.nutrition.student', string=u'Student', )
     nutrition_student_medical_contraindication = fields.Many2one('accr.nutrition.student', string=u'Student', )
-    food = fields.One2many(related='food_ingredients.food', string=u'Food', )
+    food = fields.Many2many(related='food_ingredients.food', string=u'Food', )
     
 
     @api.multi
