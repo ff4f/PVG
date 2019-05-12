@@ -82,7 +82,7 @@
                                         <span t-field="response_form.x_studio_plan_long_term_goals"/>
                                     </t>
                                 </div>
-                            </dib>
+                            </div>
                         </t>
                     </t>
                 </t>
