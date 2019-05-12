@@ -18,6 +18,8 @@ class accrStudentSEReport(models.Model):
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, compute='_compute_plan', required=True, )
     plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
 
+    desc = fields.Text(string=u'Description', )
+
 
 
 
