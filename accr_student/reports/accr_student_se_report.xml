@@ -72,7 +72,7 @@
                         </div>
                         <hr/>
                         <h4>Categoires of Plan</h4>
-                        <t t-forecah="doc.plan.x_studio_categories" t-as="category" t-if="category">
+                        <t t-foreach="doc.plan.x_studio_categories" t-as="category" t-if="category">
                             <div class="row">
                                 <div class="col-2">
                                     <h5 t-field="category.x_studio_se_category"/>
