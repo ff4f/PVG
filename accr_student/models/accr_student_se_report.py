@@ -18,6 +18,9 @@ class accrStudentSEReport(models.Model):
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
     plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
 
+    plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
+    plan_response_forms = fields.One2many(related='plan.x_studio_response_forms', string=u'Plan Response Forms', )
+
     desc = fields.Text(string=u'Description', )
 
 
