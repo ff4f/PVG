@@ -22,9 +22,11 @@
                     <sheet>
                         <group col="4">
                             <field name="student" colspan="4"/>
+                            <field name="file_no" />
                         </group>
                         <group col="4">
                             <field name="plan" domain="[('x_studio_student','=',student)]"/>
+                            <field name="plan_date" />
                         </group>
                     </sheet>
                 </form>
