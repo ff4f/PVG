@@ -6,7 +6,7 @@
             <field name="model">accr.meal.type</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Meal Type" editable="bottom">
+                <tree string="Meal Type" editable="top">
                     <field name="name" string="Meal Type" />
                     <field name="food" widget="many2many_tags" />
                 </tree>
@@ -24,7 +24,7 @@
                             <field name="name" string="Meal Type" />
                         </group>
                         <group col="4">
-                            <field name="food" />
+                            <field name="food" widget="many2many_tags" />
                         </group>
                     </sheet>
                 </form>

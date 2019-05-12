@@ -8,9 +8,9 @@
             <field name="arch" type="xml">
                 <tree string="Food" editable="top">
                     <field name="name" />
-                    <field name="food_group" />
-                    <field name="food_ingredients" />
-                    <field name="meal_type" />
+                    <field name="food_group" widget="many2many_tags" />
+                    <field name="food_ingredients" widget="many2many_tags" />
+                    <field name="meal_type" widget="many2many_tags" />
                     <field name="measure" />
                     <field name="uom" />
                     <field name="calories" />
@@ -27,9 +27,9 @@
                     <sheet>
                         <group col="4">
                             <field name="name" />
-                            <field name="food_group" />
-                            <field name="food_ingredients" />
-                            <field name="meal_type" />
+                            <field name="food_group" widget="many2many_tags" />
+                            <field name="food_ingredients" widget="many2many_tags" />
+                            <field name="meal_type" widget="many2many_tags" />
                             <field name="measure" />
                             <field name="uom" domain="[('category_id','in',[1,2,5])]"/>
                             <field name="calories" />
