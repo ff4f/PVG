@@ -86,6 +86,7 @@
             <field name="act_window_id" ref="act_open_student_nutrition_details_view" />
             <field name="sequence" eval="10" />
             <field name="view_mode">tree</field>
+            <field name="limit">0</field>
             <field name="view_id" ref="view_accr_student_nutrition_details_tree" />
         </record>
 

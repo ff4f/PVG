@@ -138,6 +138,7 @@
             <field name="name">Session Analysis Pivot</field>
             <field name="res_model">accr.meal.timetable</field>
             <field name="view_mode">pivot</field>
+            <field name="limit">0</field>
             <field name="view_id" ref="view_accr_meal_timetable_pivot"/>
         </record>
     </data>
