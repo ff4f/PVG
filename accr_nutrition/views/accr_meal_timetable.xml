@@ -37,12 +37,14 @@
                                 </h1>
                             </group>
                         </group>
+                        <group col="2">
+                            <field name="student" domain="[['id','in',students]]" colsnap="4" />
+                        </group>
                         <group colspan="4" col="4">
                             <field name="meal_id"/>
                             <field name="meal_type" />
                             <field name="food" widget="many2many_tags" colspan="4"/>
                             <field name="diet" />
-                            <field name="student" domain="[['id','in',students]]" />
                         </group>
                         <group colspan="4" col="4">
                             <field name="start_datetime"/>
