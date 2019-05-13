@@ -79,10 +79,14 @@
                                 </div>
                                 <div class="col-10">
                                     <ul>
+                                        <t t-set="long_term_goal" t-value=""/>
                                         <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
-                                            <li>
-                                                <span t-field="response_form.x_studio_plan_long_term_goals" />
-                                            </li>
+                                            <t t-if="long_term_goal != response_form.x_studio_plan_long_term_goals">
+                                                <li>
+                                                    <span t-field="response_form.x_studio_plan_long_term_goals" />
+                                                    <t t-set="long_term_goal" t-value="response_form.x_studio_plan_long_term_goals"/>
+                                                </li>
+                                            </t>
                                         </t>
                                     </ul>
 
