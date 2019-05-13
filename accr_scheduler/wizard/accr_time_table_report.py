@@ -34,7 +34,7 @@ class SessionReport(models.TransientModel):
             if end_date < start_date:
                 raise ValidationError(_('End Date cannot be set before \
                 Start Date.'))
-            elif end_date > (start_date + timedelta(days=31)):
+            elif end_date > (start_date + timedelta(days=6)):
                 raise ValidationError(_("Select date range for a week!"))
 
     @api.multi
