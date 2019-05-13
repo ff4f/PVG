@@ -37,12 +37,14 @@
                                 </h1>
                             </group>
                         </group>
+                        <group col="2">
+                            <field name="student" domain="[['id','in',students]]" colsnap="4" />
+                        </group>
                         <group colspan="4" col="4">
                             <field name="meal_id"/>
                             <field name="meal_type" />
                             <field name="food" widget="many2many_tags" colspan="4"/>
                             <field name="diet" />
-                            <field name="student" domain="[['id','in',students]]" />
                         </group>
                         <group colspan="4" col="4">
                             <field name="start_datetime"/>
@@ -138,7 +140,7 @@
             <field name="name">Session Analysis Pivot</field>
             <field name="res_model">accr.meal.timetable</field>
             <field name="view_mode">pivot</field>
-            <field name="limit">0</field>
+            <field name="limit">1000</field>
             <field name="view_id" ref="view_accr_meal_timetable_pivot"/>
         </record>
     </data>

@@ -141,7 +141,7 @@
         <record model="ir.actions.act_window.view" id="act_open_accr_nutrition_notification_view_kanban">
             <field name="act_window_id" ref="act_open_accr_nutrition_notification_view"/>
             <field name="view_mode">kanban</field>
-            <field name="limit">0</field>
+            <field name="limit">1000</field>
             <field name="view_id" ref="view_accr_nutrition_notification_kanban"/>
         </record>
 
