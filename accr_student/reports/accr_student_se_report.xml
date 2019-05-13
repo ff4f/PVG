@@ -81,7 +81,7 @@
                                     <ul>
                                         <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
                                             <li>
-                                                <span t-field="response_form.x_studio_plan_long_term_goals"/>
+                                                <span t-field="response_form.x_studio_plan_long_term_goals" />
                                             </li>
                                         </t>
                                     </ul>
