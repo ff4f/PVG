@@ -129,21 +129,28 @@
                                     </tree>
                                     <form>
                                         <sheet>
-                                            <group colspan="2">
+                                            <group col="2">
                                                 <field name="height" />
                                             </group>
                                             <group col="4">
-                                                <field name="ideal_weight"/>
+                                                <field name="icw"/>
+                                                <field name="icw_normal_range"/>
+                                                <field name="ecw"/>
+                                                <field name="ecw_normal_range"/>
+                                            </group>
+                                            <group col="4">
+
                                                 <field name="actual_weight"/>
-                                                <field name="bmr"/>
+                                                <field name="ideal_weight"/>
+                                                <field name="lean_muscles"/>
+                                                <field name="mucles_kg"/>
                                                 <field name="fat_kg"/>
                                                 <field name="fat_percentage"/>
-                                                <field name="mucles_kg"/>
-                                                <field name="lean_muscles"/>
+                                                <field name="bmi"/>
+                                                <field name="bmr"/>
+                                                <field name="weight_control_kg"/>
                                                 <field name="fat_control_kg"/>
                                                 <field name="muscles_control_kg"/>
-                                                <field name="icw"/>
-                                                <field name="ecw"/>
                                             </group>
                                         </sheet>
                                     </form>
