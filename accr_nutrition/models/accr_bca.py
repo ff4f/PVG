@@ -16,7 +16,11 @@ class accrBCA(models.Model):
     fat_control_kg = fields.Float(string=u"Fat Control.KG")
     muscles_control_kg = fields.Float(string=u"Muscles Control.KG")
     icw = fields.Float(string=u"ICW.L")
+    icw_normal_range = fields.Char(string=u"Normal Range", )
     ecw = fields.Float(string=u"ECW.L")
+    ecw_normal_range = fields.Char(string=u"Normal Range", )
+    bmi = fields.Float(string=u"BMI")
+    weight_control = fields.Float(string=u"Weight Control.kg", )
 
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u"Student")
     student = fields.Many2one(related='nutrition_student.student', string=u"X Student")
