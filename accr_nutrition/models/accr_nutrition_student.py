@@ -76,6 +76,8 @@ class accrNutritionStudent(models.Model):
     meals_timetable = fields.One2many(
         'accr.meal.timetable', 'student', string="Meals Time Table", )
 
+    info_done = fields.Boolean(string=u'Done', )
+
     @api.multi
     @api.depends('student')
     def _compute_name(self):
