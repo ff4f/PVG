@@ -115,6 +115,11 @@ class accrGenerateSessionLine(models.TransientModel):
     gen_time_table = fields.Many2one(
         'accr.generate.time.table', 'Time Table', required=True)
     timing_id = fields.Many2one('accr.timing', 'Timing', required=True)
+    timint_hour = fields.Selection(related='timing_id.hour', string=u'Hour', readonly=True, )
+    timint_minute = fields.Selection(related='timing_id.minute', string=u'Minute', readonly=True, )
+    timint_am_pm = fields.Selection(related='timing_id.am_pm', string=u'AP / PM', readonly=True, )
+    timint_duration = fields.Float(related='timing_id.duration', string=u'Duration', readonly=True, )
+    timing_type = fields.Selection(related='timing_id.timing_type', string=u'Type', readonly=True, )
     day = fields.Selection([
         ('0', calendar.day_name[0]),
         ('1', calendar.day_name[1]),
