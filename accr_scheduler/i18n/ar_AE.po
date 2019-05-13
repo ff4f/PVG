@@ -62,13 +62,18 @@ msgstr "<span>عام</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
+msgid "<span>nutrition</span>"
+msgstr "<span>غذائي</span>"
+
+#. module: accr_scheduler
+#: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<span>academic</span>"
-msgstr "<span>أكاديمي</span>"
+msgstr "<span>منهجي</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
 msgid "<span>non-academic</span>"
-msgstr "<span>لا اكاديمي</span>"
+msgstr "<span>لا منهجي</span>"
 
 #. module: accr_scheduler
 #: model_terms:ir.ui.view,arch_db:accr_scheduler.timetable_report_generate
@@ -144,7 +149,7 @@ msgstr "صباحاً/مساءً"
 #: selection:accr.time.table.report,timing_type:0
 #: selection:accr.timing,timing_type:0
 msgid "Academic"
-msgstr "أكاديمي"
+msgstr "منهجي"
 
 #. module: accr_scheduler
 #: selection:accr.time.table.report,timing_type:0
