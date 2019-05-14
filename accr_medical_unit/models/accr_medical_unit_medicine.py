@@ -25,5 +25,5 @@ class accrMedicalUnitMedicine(models.Model):
                     [('id', '=', alt_medicine.id)])
                 # medicine.name = 'medice 22'
                 # medicine.write({'alternetive_medicines': [(0, 0, {'medicine_1_id': medicine.id, 'medicine_2_id': record.id})]})
-                medicine.write({'alternetive_medicines':[(4, record)]})
+                medicine.write({'alternetive_medicines':[(6, 0, [{'medicine_1_id': medicine.id, 'medicine_2_id': record.id}])]})
                 # raise ValidationError(_('medicine name is:' + medicine.name))
