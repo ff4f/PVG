@@ -139,7 +139,7 @@
                                                             graph_records[0].values.push({"label": "No Response", "value": <t t-esc="independent"/>});
                                                         </t>
                                                         nv.addGraph(function () {
-                                                            var <t t-esc="long_term_goal"/> = nv.models.multiBarChart()
+                                                            var <t t-esc="long_term_goal"/> = nv.models.discreteBarChart()
                                                                 .x(function(d) { return d.label })    //Specify the data accessors.
                                                                 .y(function(d) { return d.value })
                                                                 .showControls(false)
