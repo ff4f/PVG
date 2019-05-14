@@ -21,9 +21,8 @@ class accrMedicalUnitMedicine(models.Model):
     def _onchange_alternetive_medicines(self):
         for record in self:
             for alt_medicine in record.alternetive_medicines:
-                medicine = self.env['accr.medical.unit.medicine'].search([('id', '=', alt_medicine.id)])
-                medicine_rel = []
-                medicine_rel.append({'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
-        medicine.write({'alternetive_medicines':[(6, 0, medicine_rel)]})
-        # raise ValidationError(_('medicine name is:' + medicine.name))
-
+                medicine = self.env['accr.medical.unit.medicine'].search(
+                    [('id', '=', alt_medicine.id)])
+                medicine = medicine.write({'alternetive_medicines':[(6, 0, [{'medicine_1_id': medicine.id, 'medicine_2_id': record.id}])]})
+                # raise ValidationError(_('medicine name is:' + medicine.name))
+                
