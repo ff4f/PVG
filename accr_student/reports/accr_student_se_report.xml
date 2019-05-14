@@ -87,7 +87,7 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <t t-if="long_term_goal_id != response_form.x_studio_plan_long_term_goals.id">
-                                                    <span t-field="response_form.x_studio_plan_long_term_goalsx_name" />
+                                                    <span t-field="response_form.x_studio_plan_long_term_goals.x_name" />
                                                     <t t-set="long_term_goal_id" t-value="response_form.x_studio_plan_long_term_goals.id"/>
                                                     <t t-set="long_term_goal_name" t-value="long_term_goal_name+long_term_goal_id"/>
                                                 </t>
