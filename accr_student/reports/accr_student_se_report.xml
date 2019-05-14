@@ -91,7 +91,7 @@
                                                 </t>
                                             </div>
                                             <div class="col-8">
-                                                <t t-if="long_term_goal == response_form.x_studio_plan_long_term_goals or long_term_goal == ''">
+                                                <t t-if="long_term_goal == response_form.x_studio_plan_long_term_goals.x_name or long_term_goal == ''">
                                                     <t t-set="no_response" t-value="0"/>
                                                     <t t-set="physical_fh" t-value="0"/>
                                                     <t t-set="physical_ph" t-value="0"/>
