@@ -7,9 +7,9 @@
     <menuitem id="menu_accr_medications" name="Medication Records" parent="menu_medical_unit" action="act_open_accr_mu_medication_view" sequence="3"/>
 
 
-    <menuitem id="menu_accr_medications" name="Medication Record" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medication_view" sequence="501"/>
-    <menuitem id="menu_accr_medicines" name="Drug Precautions" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medicines_view" sequence="502"/>
-    <menuitem id="menu_accr_medicines_side_effects" name="Medicines Side Effects" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medicines_side_effects_view" sequence="503"/>
+    <menuitem id="menu_accr_medications" name="Drugs Records" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medication_view" sequence="501"/>
+    <menuitem id="menu_accr_medicines" name="Drugs Precautions" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medicines_view" sequence="502"/>
+    <menuitem id="menu_accr_medicines_side_effects" name="Drugs Side Effects" parent="studio_customization.assessment_planning__e8b6b6e0-7751-428d-b6b7-17c20d3089d3" action="act_open_accr_mu_medicines_side_effects_view" sequence="503"/>
 
 
 </odoo>

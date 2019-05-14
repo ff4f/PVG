@@ -14,5 +14,15 @@ class accrMedicalUnitMedicine(models.Model):
                                     'accr_medical_unit_medicines_side_effects_rel', 'medicine_id', 'side_effects_id', string=u'Side Effects')
 
     drug_interaction = fields.Many2many('accr.medical.unit.medicine', 'accr_medical_unit_drug_interaction_rel',
-                                               'drug_1_id', 'drug_2_id', string=u'Drug Interaction')                                
+                                               'drug_1_id', 'drug_2_id', string=u'Drug Interaction')              
+
+
+    @api.onchange('alternetive_medicines')
+    def _onchange_alternetive_medicines(self):
+        for record in self:
+            for medicine in record.alternetive_medicines:
+                medicine.alternetive_medicines.write(0, 0, {'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
+    
+    
+                      
 
