@@ -1,4 +1,5 @@
 from odoo import models, fields, api,  _
+from odoo.exceptions import ValidationError,UserError
 
 
 class accrMedicalUnitMedicine(models.Model):
@@ -24,6 +25,7 @@ class accrMedicalUnitMedicine(models.Model):
                 medicine = self.env['accr.medical.unit.medicine'].search([('id','=',alt_medicine.id)])
                 medicine.name = 'medice 22'
                 medicine.alternetive_medicines.write(0,0, {'medicine_2_id': record.id})
+                raise ValidationError(_('medicine name is:' + medicine.name))
             
     
     
