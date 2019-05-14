@@ -13,3 +13,6 @@ class accrMedicalUnitMedicine(models.Model):
     side_effects = fields.Many2many('accr.medical.unit.medicine.side.effects',
                                     'accr_medical_unit_medicines_side_effects_rel', 'medicine_id', 'side_effects_id', string=u'Side Effects')
 
+    drug_interaction = fields.Many2many('accr.medical.unit.medicine', 'accr_medical_unit_drug_interaction_rel',
+                                               'drug_1_id', 'drug_2_id', string=u'Drug Interaction')                                
+
