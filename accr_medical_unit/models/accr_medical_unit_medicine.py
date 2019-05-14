@@ -21,7 +21,8 @@ class accrMedicalUnitMedicine(models.Model):
     def _onchange_alternetive_medicines(self):
         for record in self:
             for medicine in record.alternetive_medicines:
-                medicine.alternetive_medicines.write(0, 0, {'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
+                # medicine.alternetive_medicines.write(0, 0, {'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
+                self.env['accr.medical.unit.medicine'].write(0, 0, {'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
     
     
                       
