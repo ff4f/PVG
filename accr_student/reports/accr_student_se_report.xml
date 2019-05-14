@@ -85,9 +85,9 @@
                                     <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
                                         <div class="row">
                                             <div class="col-4">
-                                                <t t-if="long_term_goal != response_form.x_studio_plan_long_term_goals">
+                                                <t t-if="long_term_goal != response_form.x_studio_plan_long_term_goals.x_name">
                                                     <span t-field="response_form.x_studio_plan_long_term_goals" />
-                                                    <t t-set="long_term_goal" t-value="response_form.x_studio_plan_long_term_goals"/>
+                                                    <t t-set="long_term_goal" t-value="response_form.x_studio_plan_long_term_goals.x_name"/>
                                                 </t>
                                             </div>
                                             <div class="col-8">
@@ -121,22 +121,22 @@
                                                             graph_records[0].values.push({"label": "No Response", "value": <t t-esc="physical_fh"/>});
                                                         </t>
                                                         <t t-if="physical_ph > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="physical_ph"/>});
+                                                            graph_records[0].values.push({"label": "physical_ph", "value": <t t-esc="physical_ph"/>});
                                                         </t>
                                                         <t t-if="modeling > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="modeling"/>});
+                                                            graph_records[0].values.push({"label": "modeling", "value": <t t-esc="modeling"/>});
                                                         </t>
                                                         <t t-if="verbal_fh > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="verbal_fh"/>});
+                                                            graph_records[0].values.push({"label": "verbal_fh", "value": <t t-esc="verbal_fh"/>});
                                                         </t>
                                                         <t t-if="verbal_ph > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="verbal_ph"/>});
+                                                            graph_records[0].values.push({"label": "verbal_ph", "value": <t t-esc="verbal_ph"/>});
                                                         </t>
                                                         <t t-if="gesture > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="gesture"/>});
+                                                            graph_records[0].values.push({"label": "gesture", "value": <t t-esc="gesture"/>});
                                                         </t>
                                                         <t t-if="independent > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="independent"/>});
+                                                            graph_records[0].values.push({"label": "independent", "value": <t t-esc="independent"/>});
                                                         </t>
                                                         nv.addGraph(function () {
                                                             var <t t-esc="long_term_goal"/> = nv.models.discreteBarChart()
