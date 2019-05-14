@@ -79,19 +79,21 @@
                                 </div>
                                 <div class="col-10">
 
-                                    <t t-set="long_term_goal" t-value=""/>
+                                    <t t-set="long_term_goal_id" t-value=""/>
+                                    <t t-set="long_term_goal_name" t-value="goal"/>
 
 
                                     <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
                                         <div class="row">
                                             <div class="col-4">
-                                                <t t-if="long_term_goal != response_form.x_studio_plan_long_term_goals.x_name">
-                                                    <span t-field="response_form.x_studio_plan_long_term_goals" />
-                                                    <t t-set="long_term_goal" t-value="response_form.x_studio_plan_long_term_goals.x_name"/>
+                                                <t t-if="long_term_goal_id != response_form.x_studio_plan_long_term_goals.id">
+                                                    <span t-field="response_form.x_studio_plan_long_term_goalsx_name" />
+                                                    <t t-set="long_term_goal_id" t-value="response_form.x_studio_plan_long_term_goals.id"/>
+                                                    <t t-set="long_term_goal_name" t-value="long_term_goal_name+long_term_goal_id"/>
                                                 </t>
                                             </div>
                                             <div class="col-8">
-                                                <t t-if="long_term_goal == response_form.x_studio_plan_long_term_goals.x_name or long_term_goal == ''">
+                                                <t t-if="long_term_goal_id == response_form.x_studio_plan_long_term_goals.id or long_term_goal_id == ''">
                                                     <t t-set="no_response" t-value="0"/>
                                                     <t t-set="physical_fh" t-value="0"/>
                                                     <t t-set="physical_ph" t-value="0"/>
@@ -113,7 +115,7 @@
                                                         </t>
                                                     </t>
                                                     <script type="text/javascript">
-                                                        grapg_records = [{key: <t t-esc="long_term_goal"/>, values: []}]
+                                                        grapg_records = [{key: <t t-esc="long_term_goal_name"/>, values: []}]
                                                         <t t-if="no_response > 0">
                                                             graph_records[0].values.push({"label": "No Response", "value": <t t-esc="no_response"/>});
                                                         </t>
@@ -139,7 +141,7 @@
                                                             graph_records[0].values.push({"label": "independent", "value": <t t-esc="independent"/>});
                                                         </t>
                                                         nv.addGraph(function () {
-                                                            var <t t-esc="long_term_goal"/> = nv.models.discreteBarChart()
+                                                            var <t t-esc="long_term_goal_name"/> = nv.models.discreteBarChart()
                                                                 .x(function(d) { return d.label })    //Specify the data accessors.
                                                                 .y(function(d) { return d.value })
                                                                 .showControls(false)
@@ -148,16 +150,16 @@
                                                                 .groupSpacing(0.3)
                                                             ;
                                     
-                                                            d3.select('#<t t-esc="long_term_goal"/> svg')
+                                                            d3.select('#<t t-esc="long_term_goal_name"/> svg')
                                                                 .datum(graph_records)
-                                                                .call(<t t-esc="long_term_goal"/>);
+                                                                .call(<t t-esc="long_term_goal_name"/>);
 
-                                                            nv.utils.windowResize(<t t-esc="long_term_goal"/>.update);
+                                                            nv.utils.windowResize(<t t-esc="long_term_goal_name"/>.update);
 
-                                                            return <t t-esc="long_term_goal"/>;
+                                                            return <t t-esc="long_term_goal_name"/>;
                                                             });
                                                     </script>
-                                                    <div t-att-id="long_term_goal">
+                                                    <div t-att-id="long_term_goal_name">
                                                         <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
                                                     </div>
                                                 </t>
