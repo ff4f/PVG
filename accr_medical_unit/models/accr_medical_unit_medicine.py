@@ -22,8 +22,8 @@ class accrMedicalUnitMedicine(models.Model):
         for record in self:
             for alt_medicine in record.alternetive_medicines:
                 medicine = self.env['accr.medical.unit.medicine'].search([('id','=',alt_medicine.id)])
-                medicine.write({'alternetive_medicines': {'medicine_2_id': record.id}})
-                medicine.write({'name': 'medicine22'})
+                medicine.name = 'medice 22'
+                medicine.alternetive_medicines.write(0,0, {'medicine_2_id': record.id})
             
     
     
