@@ -23,8 +23,8 @@ class accrMedicalUnitMedicine(models.Model):
         for record in self:
             for alt_medicine in record.alternetive_medicines:
                 medicine = self.env['accr.medical.unit.medicine'].search([('id','=',alt_medicine.id)])
-                medicine.name = 'medice 22'
-                medicine.alternetive_medicines.write({'medicine_2_id': record.id})
+                # medicine.name = 'medice 22'
+                medicine.alternetive_medicines.write({'medicine_1_id': medicine.id, 'medicine_2_id': record.id})
                 # raise ValidationError(_('medicine name is:' + medicine.name))
             
     
