@@ -102,7 +102,7 @@
                                                     <t t-set="independent" t-value="0"/>
                                                     <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
                                                         <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
-                                                            <t t-if="response_row.x_studio_help_type == 01" t-set="no_response" t-value="no_response + 1"/>
+                                                            <t t-if="response_row.x_studio_help_type == '01''" t-set="no_response" t-value="no_response + 1"/>
                                                             <t t-if="response_row.x_studio_help_type == 02" t-set="physical_fh" t-value="physical_fh + 1"/>
                                                             <t t-if="response_row.x_studio_help_type == 01" t-set="physical_ph" t-value="physical_ph + 1"/>
                                                             <t t-if="response_row.x_studio_help_type == 01" t-set="modeling" t-value="modeling + 1"/>
