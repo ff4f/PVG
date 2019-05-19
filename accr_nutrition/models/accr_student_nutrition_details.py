@@ -11,12 +11,12 @@ class accrStudentNutritionDetails(models.Model):
     diet = fields.Many2one('accr.diet', string=u'Current Diet', required=True, )
 
     # Nutritional Needs
-    needs_cho = fields.Integer(string=u"CHO")
-    needs_pro = fields.Integer(string=u"PRO")
-    needs_fats = fields.Integer(string=u"FATS")
+    needs_cho = fields.Integer(string=u"CHO %")
+    needs_pro = fields.Integer(string=u"PRO %")
+    needs_fats = fields.Integer(string=u"FATS %")
     needs_vit = fields.Many2one('accr.nutrition.vit', string=u"VIT")
     needs_min = fields.Many2one('accr.nutrition.min', string=u"MIN")
-    needs_wi = fields.Float(string=u"Water Intake")
+    needs_wi = fields.Float(string=u"Water Intake .L")
 
     # Nutritional Requirements KCAL per day: INTEGER
     requirement_kcal = fields.Integer(string=u"Requirement KCAL per day")
