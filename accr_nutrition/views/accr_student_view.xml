@@ -132,6 +132,9 @@
                                             <group col="2">
                                                 <field name="height" />
                                             </group>
+                                            <group col="2">
+                                                <field name="bca_date" />
+                                            </group>
                                             <group col="4">
                                                 <field name="icw"/>
                                                 <field name="icw_normal_range"/>
