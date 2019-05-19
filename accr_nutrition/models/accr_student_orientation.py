@@ -8,6 +8,7 @@ class accrStudentOrientation(models.Model):
     individual_awareness = fields.Boolean(string=u'Individual Awareness', )
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u"Student")
     student_name = fields.Char(related='nutrition_student.student_name', string='Student Name')
+    date = fields.Date(string=u"Date", )
 
     @api.multi
     @api.depends('nutrition_student', 'create_date')

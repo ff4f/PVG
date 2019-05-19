@@ -29,6 +29,8 @@ class accrStudentNutritionDetails(models.Model):
     food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food')
     habits = fields.Char(string=u"Habits")
     others = fields.Text(string=u"Others")
+
+    date = fields.Date(string=u"Date", )
     
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )

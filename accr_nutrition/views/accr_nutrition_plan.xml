@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="Nutrition Plan" create='0' edit='0'>
                     <field name="name" />
+                    <field name="date" />
                 </tree>
             </field>
         </record>
@@ -21,6 +22,7 @@
                     <sheet>
                         <group col="4">
                             <field name="nutrition_student" colspan="4"/>
+                            <field name="date" />
                         </group>
                         <group col="4">
                             <field name="plan_desc" colspan="4"/>

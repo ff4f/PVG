@@ -8,6 +8,7 @@ class accrNutritionPlan(models.Model):
     plan_desc = fields.Text(string=u'Plan Description', )
     improvement = fields.Text(string=u'Improvement', )
     Recomendations = fields.Text(string=u'Recomendations', )
+    date = fields.Date(string=u"Date", )
 
 
     @api.multi

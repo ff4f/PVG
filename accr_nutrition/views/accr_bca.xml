@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="BCA" create="0" edit="0">
                     <field name="student" />
+                    <field name="bca_date" />
                 </tree>
             </field>
         </record>
