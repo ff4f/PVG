@@ -7,7 +7,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Session Line" editable="top">
-                    <field name="day"   ="1"/>
+                    <field name="day" readonly="1"/>
                     <field name="timing_id"/>
                 </tree>
             </field>
