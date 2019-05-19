@@ -5,7 +5,7 @@ class accrBCA(models.Model):
 
     name = fields.Char(string=u"Name", compute="_compute_name")
     report_name = fields.Char(string=u"Report Name", compute="_compute_report_name")
-    height = fields.Integer(string=u"Height.cm", )
+    height = fields.Float(string=u"Height.cm", )
     ideal_weight = fields.Float(string=u"Ideal weight.kg")
     actual_weight = fields.Float(string=u"Actual weight.kg")
     bmr = fields.Many2one('accr.bca.bmr', string=u"BMR")
