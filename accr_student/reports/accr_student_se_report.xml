@@ -6,7 +6,7 @@
             <t t-call="web.external_layout">
                 <div class="page">
                     <!-- Report header content -->
-                    <script type="text/javascript" src="/web/static/lib/nvd3/d3.v3.js" />
+                    <script type="text/javascript" src="/web/static/lib/nvd3/d3.v3.js"/>
                     <script type="text/javascript" src="/web/static/lib/nvd3/nv.d3.js"/>
                     <br/>
                     <br/>
@@ -79,96 +79,125 @@
                                 </div>
                                 <div class="col-10">
 
-                                    <t t-set="long_term_goal_id" t-value=""/>
-                                    <t t-set="long_term_goal_name" t-value="goal"/>
+                                    <t t-foreach="category.x_studio_educational_plans" t-as="educational_plan">
+                                        <t t-set="long_term_goal_id" t-value="educational_plan.x_studio_long_term_goal.id"/>
+                                        <t t-set="long_term_goal_name" t-value="educational_plan.x_studio_long_term_goal.x_name"/>
+                                        <t t-set="chart_name" t-value="'g_'+str(long_term_goal_id)"/>
+                                        <t t-set="chart_gr_name" t-value="'gr_'+str(long_term_goal_id)"/>
 
+                                        <t t-set="no_response" t-value="0"/>
+                                        <t t-set="physical_fh" t-value="0"/>
+                                        <t t-set="physical_ph" t-value="0"/>
+                                        <t t-set="modeling" t-value="0"/>
+                                        <t t-set="verbal_fh" t-value="0"/>
+                                        <t t-set="verbal_ph" t-value="0"/>
+                                        <t t-set="gesture" t-value="0"/>
+                                        <t t-set="independent" t-value="0"/>
 
-                                    <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_category == category">
+                                        <t t-set="response_form_exist" t-value="0"/>
+
+                                        <t t-foreach="doc.plan.x_studio_response_forms" t-as="response_form" t-if="response_form.x_studio_plan_long_term_goals.x_studio_long_term_goal.id == long_term_goal_id">
+                                            
+                                            <t t-if="long_term_goal_id != response_form.x_studio_plan_long_term_goals.id or long_term_goal_id == ''">
+                                                <t t-set="response_form_exist" t-value="1"/>
+                                                
+                                                
+                                                <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
+                                                    <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
+                                                        <t t-if="response_row.x_studio_help_type_no == 1" t-set="no_response" t-value="no_response + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 2" t-set="physical_fh" t-value="physical_fh + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 3" t-set="physical_ph" t-value="physical_ph + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 4" t-set="modeling" t-value="modeling + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 5" t-set="verbal_fh" t-value="verbal_fh + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 6" t-set="verbal_ph" t-value="verbal_ph + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 7" t-set="gesture" t-value="gesture + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 8" t-set="independent" t-value="independent + 1"/>
+                                                    </t>
+                                                </t>
+                                                
+
+                                            </t>
+                                            <t t-elif="long_term_goal_id == response_form.x_studio_plan_long_term_goals.id ">
+                                                <t t-set="response_form_exist" t-value="1"/>
+
+                                                <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
+                                                    <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
+                                                        <t t-if="response_row.x_studio_help_type_no == 1" t-set="no_response" t-value="no_response + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 2" t-set="physical_fh" t-value="physical_fh + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 3" t-set="physical_ph" t-value="physical_ph + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 4" t-set="modeling" t-value="modeling + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 5" t-set="verbal_fh" t-value="verbal_fh + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 6" t-set="verbal_ph" t-value="verbal_ph + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 7" t-set="gesture" t-value="gesture + 1"/>
+                                                        <t t-if="response_row.x_studio_help_type_no == 8" t-set="independent" t-value="independent + 1"/>
+                                                    </t>
+                                                </t>
+
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="response_form_exist" t-value="0"/>
+                                            </t>
+                                        </t>
+
+                                        <t t-if="response_form_exist == 1">
                                         <div class="row">
                                             <div class="col-4">
-                                                <t t-if="long_term_goal_id != response_form.x_studio_plan_long_term_goals.id">
-                                                    <span t-field="response_form.x_studio_plan_long_term_goals.x_name" />
-                                                    <t t-set="long_term_goal_id" t-value="response_form.x_studio_plan_long_term_goals.id"/>
-                                                    <t t-set="long_term_goal_name" t-value="long_term_goal_name+long_term_goal_id"/>
-                                                </t>
+                                                <span t-esc="long_term_goal_name"/>
                                             </div>
                                             <div class="col-8">
-                                                <t t-if="long_term_goal_id == response_form.x_studio_plan_long_term_goals.id or long_term_goal_id == ''">
-                                                    <t t-set="no_response" t-value="0"/>
-                                                    <t t-set="physical_fh" t-value="0"/>
-                                                    <t t-set="physical_ph" t-value="0"/>
-                                                    <t t-set="modeling" t-value="0"/>
-                                                    <t t-set="verbal_fh" t-value="0"/>
-                                                    <t t-set="verbal_ph" t-value="0"/>
-                                                    <t t-set="gesture" t-value="0"/>
-                                                    <t t-set="independent" t-value="0"/>
-                                                    <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
-                                                        <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
-                                                            <t t-if="response_row.x_studio_help_type_no == 1" t-set="no_response" t-value="no_response + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 2" t-set="physical_fh" t-value="physical_fh + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 3" t-set="physical_ph" t-value="physical_ph + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 4" t-set="modeling" t-value="modeling + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 5" t-set="verbal_fh" t-value="verbal_fh + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 6" t-set="verbal_ph" t-value="verbal_ph + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 7" t-set="gesture" t-value="gesture + 1"/>
-                                                            <t t-if="response_row.x_studio_help_type_no == 8" t-set="independent" t-value="independent + 1"/>
-                                                        </t>
-                                                    </t>
-                                                    <script type="text/javascript">
-                                                        grapg_records = [{key: <t t-esc="long_term_goal_name"/>, values: []}]
-                                                        <t t-if="no_response > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="no_response"/>});
-                                                        </t>
-                                                        <t t-if="physical_fh > 0">
-                                                            graph_records[0].values.push({"label": "No Response", "value": <t t-esc="physical_fh"/>});
-                                                        </t>
-                                                        <t t-if="physical_ph > 0">
-                                                            graph_records[0].values.push({"label": "physical_ph", "value": <t t-esc="physical_ph"/>});
-                                                        </t>
-                                                        <t t-if="modeling > 0">
-                                                            graph_records[0].values.push({"label": "modeling", "value": <t t-esc="modeling"/>});
-                                                        </t>
-                                                        <t t-if="verbal_fh > 0">
-                                                            graph_records[0].values.push({"label": "verbal_fh", "value": <t t-esc="verbal_fh"/>});
-                                                        </t>
-                                                        <t t-if="verbal_ph > 0">
-                                                            graph_records[0].values.push({"label": "verbal_ph", "value": <t t-esc="verbal_ph"/>});
-                                                        </t>
-                                                        <t t-if="gesture > 0">
-                                                            graph_records[0].values.push({"label": "gesture", "value": <t t-esc="gesture"/>});
-                                                        </t>
-                                                        <t t-if="independent > 0">
-                                                            graph_records[0].values.push({"label": "independent", "value": <t t-esc="independent"/>});
-                                                        </t>
-                                                        nv.addGraph(function () {
-                                                            var <t t-esc="long_term_goal_name"/> = nv.models.discreteBarChart()
-                                                                .x(function(d) { return d.label })    //Specify the data accessors.
-                                                                .y(function(d) { return d.value })
-                                                                .showControls(false)
-                                                                .rotateLabels(30)
-                                                                .reduceXTicks(false)
-                                                                .groupSpacing(0.3)
-                                                            ;
-                                    
-                                                            d3.select('#<t t-esc="long_term_goal_name"/> svg')
-                                                                .datum(graph_records)
-                                                                .call(<t t-esc="long_term_goal_name"/>);
-
-                                                            nv.utils.windowResize(<t t-esc="long_term_goal_name"/>.update);
-
-                                                            return <t t-esc="long_term_goal_name"/>;
-                                                            });
-                                                    </script>
-                                                    <div t-att-id="long_term_goal_name">
-                                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
-                                                    </div>
-                                                </t>
+                                                <div t-att-id="chart_name">
+                                                    <svg style="height: 300px; width: 600px; text-align: left!important; direction: ltr;"/>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <script type="text/javascript">
+                                            <t t-esc="chart_gr_name"/> = [{key: "Goal", values: []}];
+                                            <t t-if="no_response != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "No Response", "value": <t t-esc="no_response"/>});
+                                            </t>
+                                            <t t-if="physical_fh != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Physical Fh", "value": <t t-esc="physical_fh"/>});
+                                            </t>
+                                            <t t-if="physical_ph != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Physical Ph", "value": <t t-esc="physical_ph"/>});
+                                            </t>
+                                            <t t-if="modeling != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Modeling", "value": <t t-esc="modeling"/>});
+                                            </t>
+                                            <t t-if="verbal_fh != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Verbal Fh", "value": <t t-esc="verbal_fh"/>});
+                                            </t>
+                                            <t t-if="verbal_ph != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Verbal Ph", "value": <t t-esc="verbal_ph"/>});
+                                            </t>
+                                            <t t-if="gesture != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Gesture", "value": <t t-esc="gesture"/>});
+                                            </t>
+                                            <t t-if="independent != 0">
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Independent", "value": <t t-esc="independent"/>});
+                                            </t>
+                                            nv.addGraph(function () {
+                                                var <t t-esc="chart_name"/> = nv.models.discreteBarChart()
+                                                    .x(function(d) { return d.label })    //Specify the data accessors.
+                                                    .y(function(d) { return d.value })
+                                                    .showValues(true)
+                                                ;
+                                                            
+                                                _chart_name = '<t t-esc="chart_name"/>'
+                                                d3.select('#'+_chart_name+' svg')
+                                                    .datum(<t t-esc="chart_gr_name"/>)
+                                                    .call(<t t-esc="chart_name"/>);
+
+                                                nv.utils.windowResize(<t t-esc="chart_name"/>.update);
+
+                                                return <t t-esc="chart_name"/>;
+                                                });
+                                        </script>
                                     </t>
 
-
-
+                                        
+                                    </t>
                                 </div>
                             </div>
                         </t>
