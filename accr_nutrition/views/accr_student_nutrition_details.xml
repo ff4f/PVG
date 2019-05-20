@@ -6,7 +6,7 @@
             <field name="model">accr.student.nutrition.details</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Nutrition Details" create='0' edit='0'>
+                <tree string="Nutrition Details" create='1' edit='1'>
                     <field name="nutrition_student" />
                     <field name="diet" />
                     <field name="date" />
@@ -19,7 +19,7 @@
             <field name="model">accr.student.nutrition.details</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Nutrition Details" create='0' edit='0'>
+                <form string="Nutrition Details" create='1' edit='1'>
                     <sheet>
                         <group col="4">
                             <field name="nutrition_student" />

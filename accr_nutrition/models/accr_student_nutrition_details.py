@@ -8,31 +8,31 @@ class accrStudentNutritionDetails(models.Model):
 
     name = fields.Char(compute='_compute_name', string=u'Name', readonly=True, )
     
-    diet = fields.Many2one('accr.diet', string=u'Current Diet', required=True, )
+    diet = fields.Many2one('accr.diet', string=u'Current Diet', required=True, copy=True, )
 
     # Nutritional Needs
-    needs_cho = fields.Integer(string=u"CHO %")
-    needs_pro = fields.Integer(string=u"PRO %")
-    needs_fats = fields.Integer(string=u"FATS %")
-    needs_vit = fields.Many2one('accr.nutrition.vit', string=u"VIT")
-    needs_min = fields.Many2one('accr.nutrition.min', string=u"MIN")
+    needs_cho = fields.Integer(string=u"CHO %", copy=True, )
+    needs_pro = fields.Integer(string=u"PRO %", copy=True, )
+    needs_fats = fields.Integer(string=u"FATS %", copy=True, )
+    needs_vit = fields.Many2one('accr.nutrition.vit', string=u"VIT", copy=True, )
+    needs_min = fields.Many2one('accr.nutrition.min', string=u"MIN", copy=True, )
     needs_wi = fields.Float(string=u"Water Intake .L")
 
     # Nutritional Requirements KCAL per day: INTEGER
-    requirement_kcal = fields.Integer(string=u"Requirement KCAL per day")
+    requirement_kcal = fields.Integer(string=u"Requirement KCAL per day", copy=True, )
 
-    sleep_hours = fields.Integer(string=u"Sleep Hours")
-    physical_activity = fields.Many2one('accr.physical.activity', string=u'Physical Activity', )
-    physiothrtapy = fields.Char(string=u"Physiothrtapy")
-    activity_level = fields.Many2one("accr.activity.level", string=u"Activity.level")
-    meal_frequency = fields.Integer(string=u"Meal Frequency")
-    food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food')
-    habits = fields.Char(string=u"Habits")
-    others = fields.Text(string=u"Others")
+    sleep_hours = fields.Integer(string=u"Sleep Hours", copy=True, )
+    physical_activity = fields.Many2one('accr.physical.activity', string=u'Physical Activity', copy=True, )
+    physiothrtapy = fields.Char(string=u"Physiothrtapy", copy=True, )
+    activity_level = fields.Many2one("accr.activity.level", string=u"Activity.level", copy=True, )
+    meal_frequency = fields.Integer(string=u"Meal Frequency", copy=True, )
+    food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food', copy=True, )
+    habits = fields.Char(string=u"Habits", copy=True, )
+    others = fields.Text(string=u"Others", copy=True, )
 
-    date = fields.Date(string=u"Date", )
+    date = fields.Date(string=u"Date", required=True, )
     
-    nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', )
+    nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', copy=True, )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )
 
     @api.multi
