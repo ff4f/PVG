@@ -91,7 +91,7 @@
                                     <form string="Nutrition Details">
                                         <sheet>
                                             <group col="2">
-                                                <field name="nutrition_student" />
+                                                <field name="nutrition_student" invisible="1" />
                                                 <field name="student" invisible="1" />
                                                 <field name="diet" colspan="2" readonly="1"/>
                                                 <field name="date" />
