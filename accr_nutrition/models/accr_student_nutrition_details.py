@@ -24,7 +24,7 @@ class accrStudentNutritionDetails(models.Model):
     sleep_hours = fields.Integer(string=u"Sleep Hours")
     physical_activity = fields.Many2one('accr.physical.activity', string=u'Physical Activity', )
     physiothrtapy = fields.Char(string=u"Physiothrtapy")
-    activity_level = fields.Char(string=u"Activity.level")
+    activity_level = fields.Many2one("accr.activity.level", string=u"Activity.level")
     meal_frequency = fields.Integer(string=u"Meal Frequency")
     food_textures = fields.Many2one('accr.food.textures', string=u'Textures of food')
     habits = fields.Char(string=u"Habits")

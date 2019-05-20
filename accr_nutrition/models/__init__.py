@@ -22,4 +22,5 @@ from . import accr_nutrition_student
 from . import accr_nutrition_details_min
 from . import accr_nutrition_details_vit
 from . import accr_nutrition_notification
+from . import accr_activity_level
 # from . import accr_student
