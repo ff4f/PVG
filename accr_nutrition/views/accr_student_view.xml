@@ -93,7 +93,7 @@
                                             <group col="2">
                                                 <field name="diet" colspan="2" readonly="1"/>
                                                 <field name="date" />
-                                                <field name="student" invisible="1">
+                                                <field name="student" invisible="1" />
                                             </group>
                                             <group col="4" string="Nutritional Needs">
                                                 <field name="needs_cho" />
