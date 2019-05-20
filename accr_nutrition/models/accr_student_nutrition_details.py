@@ -34,6 +34,7 @@ class accrStudentNutritionDetails(models.Model):
     
     nutrition_student = fields.Many2one('accr.nutrition.student', string=u'Student', copy=True, )
     student = fields.Many2one(related='nutrition_student.student', string=u'X Student', )
+    physiotherapy_program = fields.Many2one(related='student.x_physiotherapy_program', string=u'Physiotherapy Program', )
 
     @api.multi
     @api.depends('student', 'create_date')

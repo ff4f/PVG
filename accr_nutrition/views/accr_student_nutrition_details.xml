@@ -40,7 +40,7 @@
                         <group col="4">
                             <field name="sleep_hours" />
                             <field name="physical_activity" />
-                            <field name="physiothrtapy" />
+                            <field name="physiotherapy_program" widget="many2one" />
                             <field name="activity_level" />
                             <field name="meal_frequency" />
                             <field name="food_textures" />
