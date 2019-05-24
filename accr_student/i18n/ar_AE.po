@@ -1,0 +1,627 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* accr_student
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 22:53+0000\n"
+"PO-Revision-Date: 2019-05-24 22:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_notification_kanban
+msgid "<b>ID Expiration Date:</b>"
+msgstr "<b>تاريخ انتهاء الهوية:</b>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_notification_kanban
+msgid "<b>Passport Expiration Date:</b>"
+msgstr "<b>تاريخ انتهاء جواز السفر:</b>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "<span>Acheived</span>"
+msgstr "<span>تحقق؟</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "<span>Notes</span>"
+msgstr "<span>ملاحظات</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "<span>Skill</span>"
+msgstr "<span>المهارة</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "<span>Student Special Education Report</span>"
+msgstr "<span>تقرير التربية الخاصة</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "<span>الحالة</span>"
+msgstr "<span>الحالة</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "<span>المهارة</span>"
+msgstr "<span>المهارة</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "<span>تقرير التربية الخاصة</span>"
+msgstr "<span>تقرير التربية الخاصة</span>"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "<span>ملاحظات</span>"
+msgstr "<span>ملاحظات</span>"
+
+#. module: accr_student
+#: model:ir.module.category,name:accr_student.module_students_category
+msgid "ACCR Students"
+msgstr ""
+
+#. module: accr_student
+#: selection:accr.student.se.report.s.goal,goal_achieved:0
+msgid "Achieved"
+msgstr "تحقق"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__arabic_name
+msgid "Arabic Name"
+msgstr "اسم الطالب بالعربية"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Arabic Name:"
+msgstr "اسم الطالب بالعربية"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Birth Date:"
+msgstr "تاريخ الميلاد"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Categoires"
+msgstr "المجالات"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__report_categories
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__report_category
+msgid "Categories"
+msgstr "المجالات"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__report_category_category
+msgid "Category"
+msgstr "الفئة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__create_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__create_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__create_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__create_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__create_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__create_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__create_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__create_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__desc
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Description"
+msgstr "الوصف"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__diagnosis
+msgid "Diagnosis"
+msgstr "التشخيص"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Diagnosis:"
+msgstr "التشخيص"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__display_name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__display_name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__display_name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__display_name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__educational_plan
+msgid "Educational Plan"
+msgstr "الخطة التعليمية"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__file_no
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_search
+msgid "File No"
+msgstr "رقم الملف"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "File_no:"
+msgstr "رقم الملف"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__gander
+msgid "Gander"
+msgstr "الجنس"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Gander:"
+msgstr "الجنس"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__goal_achieved
+msgid "Goal Achieved ?"
+msgstr "تحقق الهدف؟"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__id
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__id
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__id
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__id
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__id_expiration_date
+msgid "ID Expiration Date"
+msgstr "تاريخ انتهاء الهوية"
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__joining_date
+msgid "Joining Date"
+msgstr "تاريخ الألتحاق"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Joining Date:"
+msgstr "تاريخ الألتحاق"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification____last_update
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report____last_update
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category____last_update
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal____last_update
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__write_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__write_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__write_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__write_uid
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__write_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__write_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__write_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__write_date
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__educational_plan
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__report_l_goal
+msgid "Long Term Goal"
+msgstr "الهدف طويل المدي"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__report_l_goals
+msgid "Long Term Goals"
+msgstr "الاهداف طويلة المدي"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: accr_student
+#: model:res.groups,name:accr_student.students_group_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__name
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Name:"
+msgstr "الاسم:"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: accr_student
+#: selection:accr.student.se.report.s.goal,goal_achieved:0
+msgid "Not Achieved"
+msgstr "لم يتحقق"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: accr_student
+#: model:ir.ui.menu,name:accr_student.menu_accr_students_notifications
+msgid "Notifications"
+msgstr "إشعارات"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الاخطاء"
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_student
+#: selection:accr.student.notification,activity_state:0
+msgid "Overdue"
+msgstr "المستحقات المتأخرة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__passport_expiration_date
+msgid "Passport Expiration Date"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.ui.menu,name:accr_student.menu_accr_students_passport_id_notifications
+msgid "Passport and ID Notifications"
+msgstr "تاريخ انتهاء جواز السفر"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__plan
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__plan
+msgid "Plan"
+msgstr "الخطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__plan_categories
+msgid "Plan Categories"
+msgstr "مجالات الخطط التربوية"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__plan_date
+msgid "Plan Create Date"
+msgstr "تاريخ انشاء الخظة"
+
+#. module: accr_student
+#: selection:accr.student.notification,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__report_category
+msgid "Report Category"
+msgstr "مجال الخطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__report
+msgid "Report_plan"
+msgstr "تقرير الخطة"
+
+#. module: accr_student
+#: model:ir.actions.act_window,name:accr_student.act_open_accr_student_se_report_view
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_form
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_tree
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_search
+msgid "Reprots"
+msgstr "التقارير"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_user_id
+msgid "Responsible User"
+msgstr "المسئول"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__response_forms
+msgid "Resposen Forms"
+msgstr "نماذج الاستجابة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__short_term_goal
+msgid "Short Term Goal"
+msgstr "الهدف قصير المدي"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__short_term_goals
+msgid "Short Term Goals"
+msgstr "الاهداف قصيرة المدي"
+
+#. module: accr_student
+#: model:ir.ui.menu,name:accr_student.menu_accr_student_se_report
+msgid "Special Education Report"
+msgstr "تقرير التربية الخاصة"
+
+#. module: accr_student
+#: model:ir.model.fields,help:accr_student.field_accr_student_notification__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_notification_form
+msgid "Student"
+msgstr "الطالب"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_search
+msgid "Student Name"
+msgstr "اسم الطالب"
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_notification
+msgid "Student Passport and ID Expiration Notification"
+msgstr "اشعار انتهاء الهوية و حواز السفر"
+
+#. module: accr_student
+#: model:ir.actions.report,name:accr_student.accr_student_special_education_report
+#: model:ir.model,name:accr_student.model_accr_student_se_report
+msgid "Student Special Education Report"
+msgstr "تقرير التربية الخاصة"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_notification_tree
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: accr_student
+#: model:ir.actions.act_window,name:accr_student.act_open_accr_student_notification_view
+msgid "Students Notifications"
+msgstr "اشعارات الطلاب"
+
+#. module: accr_student
+#: selection:accr.student.notification,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_student
+#: model:res.groups,name:accr_student.students_group_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_se_report_categories
+msgid "accr.student.se.report.categories"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_se_report_category
+msgid "accr.student.se.report.category"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_se_report_l_goal
+msgid "accr.student.se.report.l.goal"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_se_report_lgoals
+msgid "accr.student.se.report.lgoals"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model,name:accr_student.model_accr_student_se_report_s_goal
+msgid "accr.student.se.report.s.goal"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__student
+msgid "student"
+msgstr "الطالب"
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "اسم الطالب بالانجليزية:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "اسم الطالب:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "التشخيص:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "التقرير الوصفي"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "الجنس:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "المجالات"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "تاريخ الالتحاق:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "تاريخ الميلاد:"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.actions.report,name:accr_student.accr_student_special_education_report_ar
+msgid "تقرير التربية الخاصة"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "رقم الملف:"
+msgstr ""
+

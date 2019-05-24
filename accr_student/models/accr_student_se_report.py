@@ -18,10 +18,12 @@ class accrStudentSEReport(models.Model):
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
     plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
 
-    plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
-    plan_response_forms = fields.One2many(related='plan.x_studio_response_forms', string=u'Plan Response Forms', )
+#     plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
+#     plan_response_forms = fields.One2many(related='plan.x_studio_response_forms', string=u'Plan Response Forms', )
 
     desc = fields.Text(string=u'Description', )
+    
+    report_categories = fields.One2many('accr.student.se.report.category', 'report', string=u'Categories', readonly=False, )
 
 
 
@@ -35,4 +37,45 @@ class accrStudentSEReport(models.Model):
             elif record.diet:
                 record.name = record.student.display_name
 
+    
+class accrStudentSEReportCategories(models.Model):
+    _name = 'accr.student.se.report.category'
+    
+    name = fields.Char(string=u'Name',)
+    report = fields.Many2one('accr.student.se.report', string=u'Report_plan',)
+    plan = fields.Many2one(related='report.plan', string=u'Plan')
+    plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
+    report_category = fields.Many2one('x_se_plan_categories', string=u'Categories', required=True, )
+    report_l_goals = fields.One2many('accr.student.se.report.l.goal', 'report_category', string=u'Long Term Goals', )
+    
+class accrStudentSEReportLGoals(models.Model):
+    _name = 'accr.student.se.report.l.goal'
+    
+    name = fields.Char(string=u'Name', )
+    report_category = fields.Many2one('accr.student.se.report.category', name='ReportCategory', )
+    report_category_category = fields.Many2one(related='report_category.report_category', string=u'Category', )
+    educational_plan = fields.Many2one('x_se_plan_long_term_goals', string='Long Term Goal', )
+    short_term_goals = fields.One2many('accr.student.se.report.s.goal', 'report_l_goal', string=u'Short Term Goals', readonly=False )
+    
+class accrStudentSEReportSGoals(models.Model):
+    _name = 'accr.student.se.report.s.goal'
+    
+    report_l_goal = fields.Many2one('accr.student.se.report.l.goal', string='Long Term Goal', )
+    educational_plan = fields.Many2one(related='report_l_goal.educational_plan', string=u'Educational Plan', )
+    short_term_goal = fields.Many2one('x_se_plan_short_term_goals', string=u'Short Term Goal', )
+    response_forms = fields.Many2many('x_se_response_form', 'accr_student_se_report_s_goal_response_forms', 'report_s_goal_id', 'response_form_id', string=u'Resposen Forms', )
+    
+    goal_achieved =  fields.Selection([('Achieved', 'Achieved'), ('Not Achieved', 'Not Achieved'), ], string=u'Goal Achieved ?', default='Achieved')
+    notes = fields.Text(string=u'Notes')
+    
+#     @api.multi
+#     @api.depends('short_term_goal')
+#     def _compute_response_forms(self):
+#         for record in self:
+#             plan_response_forms = self.env['x_se_response_form'].search([('x_studio_plan_short_term_goals','=',record.short_term_goal.id)])
+#             response_forms = []
+#             for plan_response_form in plan_response_forms:
+#                 response_forms.append({'report_s_goal_id': record.id, 'response_form_id': plan_response_form.id})
+#             record.response_forms = record.response_forms.write(response_forms)
+    
     
