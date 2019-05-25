@@ -71,14 +71,13 @@
                             </div>
                         </div>
                         <hr/>
-                        <div class="row">
+                        <div class="row" style="page-break-after:always">
                             <dic class="col-12">
                                 <h4>Description</h4>
                                 <br/>
                                 <span t-field="doc.desc"/>
                             </dic>
                         </div>
-                        <hr/>
                         <h4>Categoires</h4>
                         <t t-foreach="doc.report_categories" t-as="category" t-if="category">
                             <div class="row" style="border-style: groove;">
