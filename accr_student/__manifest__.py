@@ -14,6 +14,7 @@
         'views/accr_students_notifications_view.xml',
         'views/accr_student_se_report_view.xml',
         'reports/accr_student_se_report.xml',
+        'reports/accr_student_se_report_ar.xml',
         'menus/accr_students_menu.xml',
     ],
 }
