@@ -180,28 +180,28 @@
                                         <script type="text/javascript">
                                             <t t-esc="chart_gr_name"/> = [{key: "Goal", values: []}];
                                             <t t-if="no_response != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "لا استجابة", "value": <t t-esc="no_response"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "No Response", "value": <t t-esc="no_response"/>});
                                             </t>
                                             <t t-if="physical_fh != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "جسدية كلية", "value": <t t-esc="physical_fh"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Physical Fh", "value": <t t-esc="physical_fh"/>});
                                             </t>
                                             <t t-if="physical_ph != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "جسدية لفظية", "value": <t t-esc="physical_ph"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Physical Ph", "value": <t t-esc="physical_ph"/>});
                                             </t>
                                             <t t-if="modeling != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "تقليد", "value": <t t-esc="modeling"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Modeling", "value": <t t-esc="modeling"/>});
                                             </t>
                                             <t t-if="verbal_fh != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "لفظية كلية", "value": <t t-esc="verbal_fh"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Verbal Fh", "value": <t t-esc="verbal_fh"/>});
                                             </t>
                                             <t t-if="verbal_ph != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "لفظية جزئية", "value": <t t-esc="verbal_ph"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Verbal Ph", "value": <t t-esc="verbal_ph"/>});
                                             </t>
                                             <t t-if="gesture != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "ايمائي", "value": <t t-esc="gesture"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Gesture", "value": <t t-esc="gesture"/>});
                                             </t>
                                             <t t-if="independent != 0">
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "مستقل", "value": <t t-esc="independent"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": "Independent", "value": <t t-esc="independent"/>});
                                             </t>
                                             nv.addGraph(function () {
                                                 var <t t-esc="chart_name"/> = nv.models.discreteBarChart()
