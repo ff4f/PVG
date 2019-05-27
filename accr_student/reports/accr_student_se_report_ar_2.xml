@@ -262,6 +262,7 @@
                                                     .groupSpacing(0.3)
                                                     .useInteractiveGuideline(true)
                                                     .clipEdge(true)
+                                                    .tooltip.fixedTop(50)
                                                 ;
                                                             
                                                 _chart_name = '<t t-esc="chart_name"/>'
