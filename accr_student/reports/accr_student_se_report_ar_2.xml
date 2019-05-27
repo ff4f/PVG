@@ -205,6 +205,9 @@
                                                                         </t>
                                                                     </t>
                                                                 </t>
+                                                                <t t-else="">
+                                                                    <t t-set="last_try_date" t-value=""/>
+                                                                </t>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
                                                                     <t t-if="last_try_date and last_try_date != ''">
                                                                         <span>
