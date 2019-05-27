@@ -11,6 +11,12 @@
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
+    <record id="students_group_teacher" model="res.groups">
+        <field name="name">Teacher</field>
+        <field name="category_id" ref="module_students_category"/>
+        <field name="implied_ids" eval="[(4, ref('students_group_user'))]"/>
+    </record>
+
     <!-- Students Scheduler Manager Group -->
     <record id="students_group_manager" model="res.groups">
         <field name="name">Manager</field>

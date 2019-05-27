@@ -58,6 +58,7 @@ class accrStudentSEReportLGoals(models.Model):
     report_category_category = fields.Many2one(related='report_category.report_category', string=u'Category', )
     educational_plan = fields.Many2one('x_se_plan_long_term_goals', string='Long Term Goal', )
     short_term_goals = fields.One2many('accr.student.se.report.s.goal', 'report_l_goal', string=u'Short Term Goals', readonly=False )
+    notes = fields.Text(string=u'Notes')
     
 class accrStudentSEReportSGoals(models.Model):
     _name = 'accr.student.se.report.s.goal'
@@ -68,7 +69,7 @@ class accrStudentSEReportSGoals(models.Model):
     short_term_goal = fields.Many2one('x_se_plan_short_term_goals', string=u'Short Term Goal', )
     response_forms = fields.Many2many('x_se_response_form', 'accr_student_se_report_s_goal_response_forms', 'report_s_goal_id', 'response_form_id', string=u'Resposen Forms', )
     
-    goal_achieved =  fields.Selection([('Achieved', 'Achieved'), ('Not Achieved', 'Not Achieved'), ], string=u'Goal Achieved ?', default='Achieved')
+    goal_achieved =  fields.Selection([('Achieved', 'Achieved'), ('Achieved With Help', 'Achieved With Help'), ('Not Achieved', 'Not Achieved'), ], string=u'Goal Achieved ?', default='Achieved')
     notes = fields.Text(string=u'Notes')
     
 #     @api.multi

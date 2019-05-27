@@ -143,6 +143,7 @@
                                                 var lst_try_date = '<t t-esc="last_try_date"/>';
                                                 lst_try_date = lst_try_date.slice(0, 10)
                                                 var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ lst_try_date;
+                                                short_term_goal_name = '<t t-esc="short_term_goal_sequence"/>';
                                                 
                                                 <t t-esc="chart_gr_name"/>[0].values.push({"label": short_term_goal_name, "value": <t t-esc="no_response"/>});
                                                 <t t-esc="chart_gr_name"/>[1].values.push({"label": short_term_goal_name, "value": <t t-esc="physical_fh"/>});
@@ -167,20 +168,24 @@
                                                             <th style="width: 5%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>مسلسل</span>
                                                             </th>
-                                                            <th style=" width: 50%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
+                                                            <th style=" width: 40%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>المهارة</span>
                                                             </th>
                                                             <th style="width: 10%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
-                                                                <span>الحالة</span>
+                                                                <span>التحقق</span>
                                                             </th>
-                                                            <th style="width: 35%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
+                                                            <th style="width: 15%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
+                                                                <span>تاريخ التحقق</span>
+                                                            </th>
+                                                            <th style="width: 30%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                 <span>ملاحظات</span>
                                                             </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <t t-set="short_term_goal_no" t-value="0"/>
-                                                        <t t-foreach="report_l_goal.short_term_goals" t-as="short_term_goal">
+                                                        <t t-set="last_try_date" t-value=""/>
+                                                        <t t-foreach="report_l_goal.short_term_goals.sorted(key=lambda r: r.sequence)" t-as="short_term_goal">
                                                             <tr>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
                                                                     <t t-set="short_term_goal_no" t-value="short_term_goal_no + 1"/>
@@ -190,7 +195,37 @@
                                                                     <span t-field="short_term_goal.short_term_goal"/>
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
-                                                                    <span t-field="short_term_goal.goal_achieved"/>
+                                                                    <t t-if="short_term_goal.goal_achieved == 'Achieved'">
+                                                                        <span>تحقق</span>
+                                                                    </t>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                        <span>تحقق بمساعدة</span>
+                                                                    </t>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Not Achieved'">
+                                                                        <span>لم يتحقق</span>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <span t-field="short_term_goal.goal_achieved"/>
+                                                                    </t>
+                                                                </td>
+                                                                <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                    <t t-foreach="short_term_goal.response_forms" t-as="response_form">
+                                                                        <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
+                                                                            <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
+                                                                                <t t-set="last_try_date" t-value="str(response_row.x_studio_date_time).split(' ')"/>
+                                                                            </t>
+                                                                        </t>
+                                                                    </t>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <t t-set="last_try_date" t-value=""/>
+                                                                </t>
+                                                                <td style="border-right-style: groove; border-bottom-style: groove;">
+                                                                    <t t-if="last_try_date and last_try_date != ''">
+                                                                        <span>
+                                                                            <t t-esc="last_try_date[0]"/>
+                                                                        </span>
+                                                                    </t>
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                     <span t-field="short_term_goal.notes"/>
@@ -202,14 +237,20 @@
                                             </div>
                                         </div>
                                         <br/>
-                                        <div class="row" style="page-break-after:always;">
+                                        <div class="row">
                                             <div class="col-12">
                                                 <div t-att-id="chart_name">
-                                                    <svg style="height: 500px; width: 800px; text-align: left!important; direction: ltr;"/>
+                                                    <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="row" style="page-break-after:always;">
+                                            <div class="col-12">
+                                                <span>ملاحظات</span>
+                                                <br/>
+                                                <span t-field="report_l_goal.notes" />
+                                            </div>
+                                        </div>
                                         <script type="text/javascript">
                                             nv.addGraph(function () {
                                                 var <t t-esc="chart_name"/> = nv.models.multiBarChart()
@@ -219,8 +260,19 @@
                                                     .rotateLabels(0)
                                                     .reduceXTicks(false)
                                                     .groupSpacing(0.3)
+                                                    .useInteractiveGuideline(true)
+                                                    .clipEdge(true)
                                                 ;
-                                                            
+
+                                                <t t-esc="chart_name"/>.xAxis
+                                                    .axisLabel("Goal No")
+                                                ;
+
+                                                <t t-esc="chart_name"/>.yAxis
+                                                    .axisLabel("Count of Attempts")
+                                                    .ticks(10)
+                                                ;
+
                                                 _chart_name = '<t t-esc="chart_name"/>'
                                                 d3.select('#'+_chart_name+' svg')
                                                     .datum(<t t-esc="chart_gr_name"/>)
