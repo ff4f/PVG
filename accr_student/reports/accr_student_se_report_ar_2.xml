@@ -211,7 +211,9 @@
                                         </div>
                                         <div class="row" style="page-break-after:always;">
                                             <div class="col-12">
-                                            <span t-field="report_l_goal.notes" />
+                                                <span>ملاحظات</span>
+                                                <br/>
+                                                <span t-field="report_l_goal.notes" />
                                             </div>
                                         </div>
                                         <script type="text/javascript">
