@@ -200,15 +200,15 @@
                                                                     <t t-foreach="short_term_goal.response_forms" t-as="response_form">
                                                                         <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
                                                                             <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
-                                                                                <t t-set="last_try_date" t-value="response_row.x_studio_date_time.split(' ')[0]"/>
+                                                                                <t t-set="last_try_date" t-value="response_row.x_studio_date_time.split(' ')"/>
                                                                             </t>
                                                                         </t>
                                                                     </t>
                                                                 </t>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
-                                                                    <t t-if="last_try_date != ''">
+                                                                    <t t-if="last_try_date and last_try_date != ''">
                                                                         <span>
-                                                                            <t t-esc="last_try_date"/>
+                                                                            <t t-esc="last_try_date[0]"/>
                                                                         </span>
                                                                     </t>
                                                                 </td>
