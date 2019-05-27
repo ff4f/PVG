@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <report id="accr_student_special_education_report_ar_2" string="تقرير التربية الخاصة 2" model="accr.student.se.report" report_type="qweb-pdf" paperformat="base.paperformat_us" name="accr_student.report_accr_student_se_report_ar_2_template" />
+    <report id="accr_student_special_education_report_ar_2" string="تقرير التربية الخاصة 2" model="accr.student.se.report" report_type="qweb-html" paperformat="base.paperformat_us" name="accr_student.report_accr_student_se_report_ar_2_template" />
     <template id="report_accr_student_se_report_ar_2_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
