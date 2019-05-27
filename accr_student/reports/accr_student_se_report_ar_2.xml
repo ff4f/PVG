@@ -266,13 +266,11 @@
 
                                                 <t t-esc="chart_name"/>.xAxis
                                                     .axisLabel("Goal No")
-                                                    .tickFormat(d3.format(',.6f'))
                                                 ;
 
                                                 <t t-esc="chart_name"/>.yAxis
                                                     .axisLabel("Count of Attempts")
-                                                    .axisLabelDistance(-2)
-                                                    .tickFormat(d3.format(',.01f'))
+                                                    .ticks(10)
                                                 ;
 
                                                 _chart_name = '<t t-esc="chart_name"/>'
