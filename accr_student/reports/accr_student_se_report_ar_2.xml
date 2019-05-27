@@ -264,7 +264,10 @@
                                                     .clipEdge(true)
                                                 ;
 
-                                                <t t-esc="chart_name"/>.yAxis..axisLabelDistance(-5);
+                                                <t t-esc="chart_name"/>.yAxis
+                                                    .axisLabel("Count of tries")
+                                                    .axisLabelDistance(-5)
+                                                    .tickFormat(d3.format(',.01f'))
 
                                                 _chart_name = '<t t-esc="chart_name"/>'
                                                 d3.select('#'+_chart_name+' svg')
