@@ -198,14 +198,11 @@
                                                                     <t t-if="short_term_goal.goal_achieved == 'Achieved'">
                                                                         <span><t t-esc="تحقق"/></span>
                                                                     </t>
-                                                                    <t t-elif="short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                    <t t-if="short_term_goal.goal_achieved == 'Achieved With Help'">
                                                                         <span><t t-esc="تحقق بمساعدة"/></span>
                                                                     </t>
-                                                                    <t t-elif="short_term_goal.goal_achieved == 'Not Achieved'">
+                                                                    <t t-if="short_term_goal.goal_achieved == 'Not Achieved'">
                                                                         <span><t t-esc="لم يتحقق"/></span>
-                                                                    </t>
-                                                                    <t t-else="">
-                                                                        <span t-field="short_term_goal.goal_achieved"/>
                                                                     </t>
                                                                 </td>
                                                                 <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
