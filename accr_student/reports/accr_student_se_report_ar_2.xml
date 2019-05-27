@@ -196,13 +196,16 @@
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
                                                                     <t t-if="short_term_goal.goal_achieved == 'Achieved'">
-                                                                        <span><t t-esc="تحقق"/></span>
+                                                                        <span>تحقق</span>
                                                                     </t>
-                                                                    <t t-if="short_term_goal.goal_achieved == 'Achieved With Help'">
-                                                                        <span><t t-esc="تحقق بمساعدة"/></span>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                        <span>تحقق بمساعدة</span>
                                                                     </t>
-                                                                    <t t-if="short_term_goal.goal_achieved == 'Not Achieved'">
-                                                                        <span><t t-esc="لم يتحقق"/></span>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Not Achieved'">
+                                                                        <span>لم يتحقق</span>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <span t-field="short_term_goal.goal_achieved"/>
                                                                     </t>
                                                                 </td>
                                                                 <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
