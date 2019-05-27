@@ -200,7 +200,7 @@
                                                                     <t t-foreach="short_term_goal.response_forms" t-as="response_form">
                                                                         <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
                                                                             <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
-                                                                                <t t-set="last_try_date" t-value="str(response_row.x_studio_date_time)  .split(' ')"/>
+                                                                                <t t-set="last_try_date" t-value="str(response_row.x_studio_date_time).split(' ')"/>
                                                                             </t>
                                                                         </t>
                                                                     </t>
