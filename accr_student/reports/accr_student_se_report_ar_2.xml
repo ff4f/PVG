@@ -142,14 +142,14 @@
 
                                                 var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ '<t t-esc="last_try_date"/>' 
                                                 
-                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="no_response"/>});
-                                                <t t-esc="chart_gr_name"/>[1].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="physical_fh"/>});
-                                                <t t-esc="chart_gr_name"/>[2].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="physical_ph"/>});
-                                                <t t-esc="chart_gr_name"/>[3].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="modeling"/>});
-                                                <t t-esc="chart_gr_name"/>[4].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="verbal_fh"/>});
-                                                <t t-esc="chart_gr_name"/>[5].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="verbal_ph"/>});
-                                                <t t-esc="chart_gr_name"/>[6].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="gesture"/>});
-                                                <t t-esc="chart_gr_name"/>[7].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="independent"/>});
+                                                <t t-esc="chart_gr_name"/>[0].values.push({"label": short_term_goal_name, "value": <t t-esc="no_response"/>});
+                                                <t t-esc="chart_gr_name"/>[1].values.push({"label": short_term_goal_name, "value": <t t-esc="physical_fh"/>});
+                                                <t t-esc="chart_gr_name"/>[2].values.push({"label": short_term_goal_name, "value": <t t-esc="physical_ph"/>});
+                                                <t t-esc="chart_gr_name"/>[3].values.push({"label": short_term_goal_name, "value": <t t-esc="modeling"/>});
+                                                <t t-esc="chart_gr_name"/>[4].values.push({"label": short_term_goal_name, "value": <t t-esc="verbal_fh"/>});
+                                                <t t-esc="chart_gr_name"/>[5].values.push({"label": short_term_goal_name, "value": <t t-esc="verbal_ph"/>});
+                                                <t t-esc="chart_gr_name"/>[6].values.push({"label": short_term_goal_name, "value": <t t-esc="gesture"/>});
+                                                <t t-esc="chart_gr_name"/>[7].values.push({"label": short_term_goal_name, "value": <t t-esc="independent"/>});
                                             </t>
                                         </script>
                                         <div class="row">
