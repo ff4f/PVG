@@ -240,7 +240,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div t-att-id="chart_name">
-                                                    <svg style="height: 500px; width: 750px; text-align: left!important; direction: ltr;"/>
+                                                    <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
                                                 </div>
                                             </div>
                                         </div>
