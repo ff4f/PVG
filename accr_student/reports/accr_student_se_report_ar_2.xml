@@ -259,8 +259,8 @@
                                                     .showControls(false)
                                                     .rotateLabels(0)
                                                     .reduceXTicks(false)
-                                                    .forceY([0,2])
                                                     .groupSpacing(0.3)
+                                                    .chart.forceY([0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30])
                                                 ;
                                                             
                                                 _chart_name = '<t t-esc="chart_name"/>'
