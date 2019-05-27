@@ -140,7 +140,7 @@
                                                     </t>
                                                 </t>
 
-                                                <t t-set="short_term_goal_name" t-value="short_term_goal_sequence + last_try_date">
+                                                <t t-set="short_term_goal_name" t-value="short_term_goal_sequence + last_try_date"/>
 
                                                 <t t-esc="chart_gr_name"/>[0].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="no_response"/>});
                                                 <t t-esc="chart_gr_name"/>[1].values.push({"label": '<t t-esc="short_term_goal_name"/>', "value": <t t-esc="physical_fh"/>});
