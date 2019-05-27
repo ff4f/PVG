@@ -263,7 +263,9 @@
                                                     .useInteractiveGuideline(true)
                                                     .clipEdge(true)
                                                 ;
-                                                            
+
+                                                <t t-esc="chart_name"/>.yAxis..axisLabelDistance(-5);
+
                                                 _chart_name = '<t t-esc="chart_name"/>'
                                                 d3.select('#'+_chart_name+' svg')
                                                     .datum(<t t-esc="chart_gr_name"/>)
