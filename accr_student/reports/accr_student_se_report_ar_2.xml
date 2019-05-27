@@ -265,7 +265,7 @@
                                                 ;
 
                                                 <t t-esc="chart_name"/>.xAxis
-                                                    .axisLabel("SHort Term Goal Number")
+                                                    .axisLabel("Goal No")
                                                     .tickFormat(d3.format(',.6f'))
                                                 ;
 
