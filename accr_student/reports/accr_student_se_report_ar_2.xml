@@ -140,8 +140,9 @@
                                                     </t>
                                                 </t>
 
-                                                vat lst_try_date = <t t-esc="last_try_date"/>;
-                                                var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ lst_try_date.getYear()+'-'+lst_try_date.getMonth()+'-'lst_try_date.getDay();
+                                                vat lst_try_date = '<t t-esc="last_try_date"/>';
+                                                lst_try_date = lst_try_date.slice(0, 10)
+                                                var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ lst_try_date;
                                                 
                                                 <t t-esc="chart_gr_name"/>[0].values.push({"label": short_term_goal_name, "value": <t t-esc="no_response"/>});
                                                 <t t-esc="chart_gr_name"/>[1].values.push({"label": short_term_goal_name, "value": <t t-esc="physical_fh"/>});
