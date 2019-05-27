@@ -92,8 +92,8 @@
                                         <t t-set="chart_name" t-value="'g_'+str(long_term_goal_id)"/>
                                         <t t-set="chart_gr_name" t-value="'gr_'+str(long_term_goal_id)"/>
                                         
+                                        <t t-set="no_response_str" t-value="لا استجابة"/>
                                         <script type="text/javascript">
-                                            <t t-set="no_response_str" t-value="لا استجابة"/>
                                             <t t-esc="chart_gr_name"/> = [{ key: <t t-esc="no_response_str"/>, values: [] }, { key: 'Physical Full-Help', values: [] }, { key: 'Physical Partial-Help', values: [] }, { key: 'Modeling', values: [] },
                                         { key: 'Virbal Full-Help', values: [] }, { key: 'Virbal Partial-Help', values: [] }, { key: 'Geature', values: [] }, { key: 'Indepindant', values: [] }];
                                             
