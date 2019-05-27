@@ -206,7 +206,7 @@
                                                                     </t>
                                                                 </t>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
-                                                                    <t t-if="last_try_date = ''">
+                                                                    <t t-if="last_try_date != ''">
                                                                         <span>
                                                                             <t t-esc="last_try_date"/>
                                                                         </span>
