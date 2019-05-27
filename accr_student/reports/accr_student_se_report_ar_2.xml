@@ -259,6 +259,7 @@
                                                     .showControls(false)
                                                     .rotateLabels(0)
                                                     .reduceXTicks(false)
+                                                    .forceY([0,2])
                                                     .groupSpacing(0.3)
                                                 ;
                                                             
