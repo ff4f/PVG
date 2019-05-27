@@ -42,6 +42,7 @@ class accrStudentSEReportCategories(models.Model):
     _name = 'accr.student.se.report.category'
     
     name = fields.Char(string=u'Name',)
+    sequence = fields.Integer(string=u'Sequence',)
     report = fields.Many2one('accr.student.se.report', string=u'Report_plan',)
     plan = fields.Many2one(related='report.plan', string=u'Plan')
     plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
@@ -52,6 +53,7 @@ class accrStudentSEReportLGoals(models.Model):
     _name = 'accr.student.se.report.l.goal'
     
     name = fields.Char(string=u'Name', )
+    sequence = fields.Integer(string=u'Sequence',)
     report_category = fields.Many2one('accr.student.se.report.category', name='ReportCategory', )
     report_category_category = fields.Many2one(related='report_category.report_category', string=u'Category', )
     educational_plan = fields.Many2one('x_se_plan_long_term_goals', string='Long Term Goal', )
@@ -61,6 +63,7 @@ class accrStudentSEReportSGoals(models.Model):
     _name = 'accr.student.se.report.s.goal'
     
     report_l_goal = fields.Many2one('accr.student.se.report.l.goal', string='Long Term Goal', )
+    sequence = fields.Integer(string=u'Sequence',)
     educational_plan = fields.Many2one(related='report_l_goal.educational_plan', string=u'Educational Plan', )
     short_term_goal = fields.Many2one('x_se_plan_short_term_goals', string=u'Short Term Goal', )
     response_forms = fields.Many2many('x_se_response_form', 'accr_student_se_report_s_goal_response_forms', 'report_s_goal_id', 'response_form_id', string=u'Resposen Forms', )
