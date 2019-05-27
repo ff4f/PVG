@@ -167,19 +167,23 @@
                                                             <th style="width: 5%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>مسلسل</span>
                                                             </th>
-                                                            <th style=" width: 50%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
+                                                            <th style=" width: 45%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>المهارة</span>
                                                             </th>
                                                             <th style="width: 10%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
-                                                                <span>الحالة</span>
+                                                                <span>التحقق</span>
                                                             </th>
-                                                            <th style="width: 35%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
+                                                            <th style="width: 10%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
+                                                                <span>تاريخ التحقق</span>
+                                                            </th>
+                                                            <th style="width: 30%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                 <span>ملاحظات</span>
                                                             </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <t t-set="short_term_goal_no" t-value="0"/>
+                                                        <t t-set="last_try_date" t-value=""/>
                                                         <t t-foreach="report_l_goal.short_term_goals.sorted(key=lambda r: r.sequence)" t-as="short_term_goal">
                                                             <tr>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
@@ -191,6 +195,22 @@
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
                                                                     <span t-field="short_term_goal.goal_achieved"/>
+                                                                </td>
+                                                                <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                    <t t-foreach="short_term_goal.response_forms" t-as="response_form">
+                                                                        <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
+                                                                            <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
+                                                                                <t t-set="last_try_date" t-value="response_row.x_studio_date_time"/>
+                                                                            </t>
+                                                                        </t>
+                                                                    </t>
+                                                                </t>
+                                                                <td style="border-right-style: groove; border-bottom-style: groove;">
+                                                                    <t t-if="last_try_date">
+                                                                        <span>
+                                                                            <t t-esc="last_try_date"/>
+                                                                        </span>
+                                                                    </t>
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                     <span t-field="short_term_goal.notes"/>
