@@ -195,7 +195,18 @@
                                                                     <span t-field="short_term_goal.short_term_goal"/>
                                                                 </td>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
-                                                                    <span t-field="short_term_goal.goal_achieved"/>
+                                                                    <t t-if="short_term_goal.goal_achieved == 'Achieved'">
+                                                                        <span><t t-esc="تحقق"/></span>
+                                                                    </t>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                        <span><t t-esc="تحقق بمساعدة"/></span>
+                                                                    </t>
+                                                                    <t t-elif="short_term_goal.goal_achieved == 'Not Achieved'">
+                                                                        <span><t t-esc="لم يتحقق"/></span>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <span t-field="short_term_goal.goal_achieved"/>
+                                                                    </t>
                                                                 </td>
                                                                 <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
                                                                     <t t-foreach="short_term_goal.response_forms" t-as="response_form">
