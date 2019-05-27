@@ -273,7 +273,7 @@
                                                     .axisLabel("Count of Attempts")
                                                     .axisLabelDistance(-2)
                                                     .tickFormat(d3.format(',.01f'))
-                                                ك
+                                                ;
 
                                                 _chart_name = '<t t-esc="chart_name"/>'
                                                 d3.select('#'+_chart_name+' svg')
