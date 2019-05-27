@@ -106,7 +106,7 @@
                                             <t t-set="independent" t-value="0"/>
                                             
                                             <t t-set="short_term_goal_sequence" t-value="0"/>
-                                            <t t-foreach="report_l_goal.short_term_goals" t-as="short_term_goal">
+                                            <t t-foreach="report_l_goal.short_term_goals.sorted(key=lambda r: r.sequence)" t-as="short_term_goal">
                                                 
                                                 <t t-set="no_response" t-value="0"/>
                                                 <t t-set="physical_fh" t-value="0"/>
