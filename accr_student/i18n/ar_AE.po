@@ -365,6 +365,11 @@ msgid "Not Achieved"
 msgstr "لم يتحقق"
 
 #. module: accr_student
+#: selection:accr.student.se.report.s.goal,goal_achieved:0
+msgid "Achieved With Help"
+msgstr "تحقق بمساعدة"
+
+#. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__notes
 msgid "Notes"
 msgstr "ملاحظات"
@@ -476,6 +481,11 @@ msgstr "الهدف قصير المدي"
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__short_term_goals
 msgid "Short Term Goals"
 msgstr "الاهداف قصيرة المدي"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__notes
+msgid "Notes"
+msgstr "ملاحظات"
 
 #. module: accr_student
 #: model:ir.ui.menu,name:accr_student.menu_accr_student_se_report

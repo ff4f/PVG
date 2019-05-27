@@ -93,7 +93,7 @@
                                         <t t-set="chart_gr_name" t-value="'gr_'+str(long_term_goal_id)"/>
                                         
                                         <script type="text/javascript">
-                                            <t t-esc="chart_gr_name"/> = [{ key: 'لا_استجابة', values: [] }, { key: 'Physical Full-Help', values: [] }, { key: 'Physical Partial-Help', values: [] }, { key: 'Modeling', values: [] },
+                                            <t t-esc="chart_gr_name"/> = [{ key: 'No Response', values: [] }, { key: 'Physical Full-Help', values: [] }, { key: 'Physical Partial-Help', values: [] }, { key: 'Modeling', values: [] },
                                         { key: 'Virbal Full-Help', values: [] }, { key: 'Virbal Partial-Help', values: [] }, { key: 'Geature', values: [] }, { key: 'Indepindant', values: [] }];
                                             
                                             <t t-set="no_response" t-value="0"/>
@@ -180,7 +180,7 @@
                                                     </thead>
                                                     <tbody>
                                                         <t t-set="short_term_goal_no" t-value="0"/>
-                                                        <t t-foreach="report_l_goal.short_term_goals" t-as="short_term_goal">
+                                                        <t t-foreach="report_l_goal.short_term_goals.sorted(key=lambda r: r.sequence)" t-as="short_term_goal">
                                                             <tr>
                                                                 <td style="border-right-style: groove; border-bottom-style: groove;">
                                                                     <t t-set="short_term_goal_no" t-value="short_term_goal_no + 1"/>
@@ -202,14 +202,18 @@
                                             </div>
                                         </div>
                                         <br/>
-                                        <div class="row" style="page-break-after:always;">
+                                        <div class="row">
                                             <div class="col-12">
                                                 <div t-att-id="chart_name">
                                                     <svg style="height: 500px; width: 800px; text-align: left!important; direction: ltr;"/>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="row" style="page-break-after:always;">
+                                            <div class="col-12">
+                                            <span t-field="report_l_goal.notes" />
+                                            </div>
+                                        </div>
                                         <script type="text/javascript">
                                             nv.addGraph(function () {
                                                 var <t t-esc="chart_name"/> = nv.models.multiBarChart()

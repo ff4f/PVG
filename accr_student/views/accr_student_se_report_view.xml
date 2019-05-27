@@ -84,6 +84,9 @@
                                                                 </form>
                                                             </field>
                                                         </group>
+                                                        <group>
+                                                            <field name="notes"/>
+                                                        </group>
                                                     </sheet>
                                                 </form>
                                             </field>
