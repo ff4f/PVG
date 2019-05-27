@@ -117,7 +117,7 @@
                                                 <t t-set="gesture" t-value="0"/>
                                                 <t t-set="independent" t-value="0"/>
 
-                                                <!-- <t t-set="last_try_date" t-value=""/> -->
+                                                <t t-set="last_try_date" t-value=""/>
                                                 
                                                 <t t-set="short_term_goal_sequence" t-value="short_term_goal_sequence + 1"/>
                                             
@@ -135,15 +135,15 @@
                                                             <t t-if="response_row.x_studio_help_type_no == 7" t-set="gesture" t-value="gesture + 1"/>
                                                             <t t-if="response_row.x_studio_help_type_no == 8" t-set="independent" t-value="independent + 1"/>
 
-                                                            <!-- <t t-set="last_try_date" t-value="response_row.x_studio_date_time"/> -->
+                                                            <t t-set="last_try_date" t-value="response_row.x_studio_date_time"/>
                                                         </t>
                                                     </t>
                                                 </t>
 
-                                                <!-- var lst_try_date = '<t t-esc="last_try_date"/>';
+                                                var lst_try_date = '<t t-esc="last_try_date"/>';
                                                 lst_try_date = lst_try_date.slice(0, 10)
-                                                var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ lst_try_date; -->
-                                                var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/>';
+                                                var short_term_goal_name = '<t t-esc="short_term_goal_sequence"/> - '+ lst_try_date;
+                                                short_term_goal_name = '<t t-esc="short_term_goal_sequence"/>';
                                                 
                                                 <t t-esc="chart_gr_name"/>[0].values.push({"label": short_term_goal_name, "value": <t t-esc="no_response"/>});
                                                 <t t-esc="chart_gr_name"/>[1].values.push({"label": short_term_goal_name, "value": <t t-esc="physical_fh"/>});
