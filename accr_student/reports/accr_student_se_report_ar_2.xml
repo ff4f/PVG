@@ -236,21 +236,24 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <br/>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div t-att-id="chart_name">
-                                                    <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="page-break-after:always;">
-                                            <div class="col-12">
-                                                <span>ملاحظات</span>
-                                                <br/>
-                                                <span t-field="report_l_goal.notes" />
-                                            </div>
-                                        </div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div t-att-id="chart_name">
+                                                            <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>ملاحظات</span>
+                                                        <br/>
+                                                        <span t-field="report_l_goal.notes" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                         <script type="text/javascript">
                                             nv.addGraph(function () {
                                                 var <t t-esc="chart_name"/> = nv.models.multiBarChart()
