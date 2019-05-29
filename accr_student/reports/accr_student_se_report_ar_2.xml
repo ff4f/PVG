@@ -232,18 +232,23 @@
                                                                 </td>
                                                             </tr>
                                                         </t>
-                                                        <tr>
-                                                            <div t-att-id="chart_name">
-                                                                <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
-                                                            </div>
-                                                        </tr>
-                                                        <tr>
-                                                            <span>ملاحظات</span>
-                                                            <br/>
-                                                            <span t-field="report_l_goal.notes" />
-                                                        </tr>
                                                     </tbody>
                                                 </table>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div t-att-id="chart_name">
+                                                    <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="page-break-after:always;">
+                                            <div class="col-12">
+                                                <span>ملاحظات</span>
+                                                <br/>
+                                                <span t-field="report_l_goal.notes" />
                                             </div>
                                         </div>
                                         <script type="text/javascript">
