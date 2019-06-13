@@ -50,7 +50,7 @@
                             graph_records_fats_muscles_control = [];
                             graph_records_icw_ecw = [];
                             <t t-foreach="doc.bca" t-as="bca">
-                                <t t-set="bca_report_name" t-value="bca.report_name"/>
+                                <t t-set="bca_report_name" t-value="bca.bca_date"/>
                                 bca_report_name = '<t t-esc="bca_report_name"/>';
                                 <t t-set="height" t-value="bca.height"/>
                                 height = <t t-esc="height" /> ;
