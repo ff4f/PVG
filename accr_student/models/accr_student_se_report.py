@@ -78,10 +78,5 @@ class accrStudentSEReportSGoals(models.Model):
         for record in self:
             if record['short_term_goal']:
                 plan_response_forms = self.env['x_se_response_form'].search([('x_studio_plan_short_term_goals','=',record.short_term_goal.id)])
-                response_forms = []
                 for plan_response_form in plan_response_forms:
-                    response_forms.append({'report_s_goal_id': record.id, 'response_form_id': plan_response_form.id})
                     record.response_forms = [(4, plan_response_form.id)]
-#                 record.response_forms = record.response_forms.write(response_forms)
-    
-    
