@@ -67,19 +67,21 @@ class accrStudentSEReportSGoals(models.Model):
     sequence = fields.Integer(string=u'Sequence',)
     educational_plan = fields.Many2one(related='report_l_goal.educational_plan', string=u'Educational Plan', )
     short_term_goal = fields.Many2one('x_se_plan_short_term_goals', string=u'Short Term Goal', )
-    response_forms = fields.Many2many('x_se_response_form', 'accr_student_se_report_s_goal_response_forms', 'report_s_goal_id', 'response_form_id', string=u'Resposen Forms', )
+    response_forms = fields.Many2many('x_se_response_form', 'accr_student_se_report_s_goal_response_forms', 'report_s_goal_id', 'response_form_id', string=u'Resposen Forms', compute='_compute_response_forms', readonly=False, )
     
     goal_achieved =  fields.Selection([('Achieved', 'Achieved'), ('Achieved With Help', 'Achieved With Help'), ('Not Achieved', 'Not Achieved'), ], string=u'Goal Achieved ?', default='Achieved')
     notes = fields.Text(string=u'Notes')
     
-#     @api.multi
-#     @api.depends('short_term_goal')
-#     def _compute_response_forms(self):
-#         for record in self:
-#             plan_response_forms = self.env['x_se_response_form'].search([('x_studio_plan_short_term_goals','=',record.short_term_goal.id)])
-#             response_forms = []
-#             for plan_response_form in plan_response_forms:
-#                 response_forms.append({'report_s_goal_id': record.id, 'response_form_id': plan_response_form.id})
-#             record.response_forms = record.response_forms.write(response_forms)
+    @api.multi
+    @api.depends('short_term_goal')
+    def _compute_response_forms(self):
+        for record in self:
+            if record['short_term_goal']:
+                plan_response_forms = self.env['x_se_response_form'].search([('x_studio_plan_short_term_goals','=',record.short_term_goal.id)])
+                response_forms = []
+                for plan_response_form in plan_response_forms:
+                    response_forms.append({'report_s_goal_id': record.id, 'response_form_id': plan_response_form.id})
+                    record.response_forms = [(4, plan_response_form.id)]
+#                 record.response_forms = record.response_forms.write(response_forms)
     
     
