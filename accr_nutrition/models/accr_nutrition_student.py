@@ -46,7 +46,7 @@ class accrNutritionStudent(models.Model):
     student_medical_assessment = fields.One2many(related='student.x_studio_field_qswg8', string='Medical Assessment', store=False, readonly=True, track_visibility='onchange', )
 
     student_residential_daily_notes = fields.One2many(
-        related='student.x_studio_residential_daily_notes', string=u'Residential Notes', store=False, readonly=True, track_visibility='onchange', )
+        related='student.x_section_daily_notes', string=u'Residential Notes', store=False, readonly=True, track_visibility='onchange', )
     student_leave_requests = fields.One2many(
         related="student.x_leave_requests", string=u"Leave Requests", readonly=True, store=False, track_visibility='onchange', )
 
