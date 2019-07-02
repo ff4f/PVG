@@ -1,5 +1,5 @@
 {
-    'name': 'ACCR Students Resdiential',
+    'name': 'ACCR Resdiential',
     'depends': ['base', 'mail'],
     'application': True,
     'author': 'ACCR',
