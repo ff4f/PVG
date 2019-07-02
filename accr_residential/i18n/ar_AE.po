@@ -1,0 +1,265 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* accr_residential
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-02 13:52+0000\n"
+"PO-Revision-Date: 2019-07-02 13:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accr_residential
+#: model:ir.module.category,name:accr_residential.module_accr_residential_category
+msgid "ACCR Residential"
+msgstr ""
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__date_time
+msgid "Date & Time"
+msgstr "الوقت و التاريخ"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: accr_residential
+#: model:res.groups,name:accr_residential.accr_residential_group_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الاخطاء"
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_residential
+#: selection:accr.residential.nm.notification,activity_state:0
+msgid "Overdue"
+msgstr "المستحقات المتأخرة"
+
+#. module: accr_residential
+#: selection:accr.residential.nm.notification,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: accr_residential
+#: model_terms:ir.ui.view,arch_db:accr_residential.view_accr_residential_nm_notification_form
+#: model_terms:ir.ui.view,arch_db:accr_residential.view_accr_residential_nm_notification_tree
+msgid "Resdiential Notifications for Nutrition and Medical Sections"
+msgstr "ملاحظات السكن الداخلي لقسمي التغذية و الطبي"
+
+#. module: accr_residential
+#: model:ir.model,name:accr_residential.model_accr_residential_nm_notification
+msgid "Resdintial Notifications for Medical and Nutrition"
+msgstr "ملاحظات السكن الداخلي لقسمي التغذية و الطبي"
+
+#. module: accr_residential
+#: model:ir.actions.act_window,name:accr_residential.act_open_accr_residential_nm_notification_view
+#: model:ir.ui.menu,name:accr_residential.menu_accr_residential_nm_notifications
+msgid "Residential Notification for Nutrition and Medical Sections"
+msgstr "ملاحظات السكن الداخلي لقسمي التغذية و الطبي"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__section
+msgid "Section"
+msgstr "القسم"
+
+#. module: accr_residential
+#: model:ir.model.fields,help:accr_residential.field_accr_residential_nm_notification__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__students
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__name
+msgid "Subject"
+msgstr "الموضوع"
+
+#. module: accr_residential
+#: selection:accr.residential.nm.notification,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: accr_residential
+#: model:ir.model.fields,field_description:accr_residential.field_accr_residential_nm_notification__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_residential
+#: model:res.groups,name:accr_residential.accr_residential_group_user
+msgid "User"
+msgstr "المستخدم"
+

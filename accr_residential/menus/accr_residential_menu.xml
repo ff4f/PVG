@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="menu_accr_residential_nm_notifications" name="Residential Notification for Nutrition and Medical Sections" parent="studio_customization.residential_notes_5c744fdd-4f11-494c-8d32-a961c2a665e7" action="act_open_accr_residential_nm_notification_view" />
+
+</odoo>
