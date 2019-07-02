@@ -9,7 +9,7 @@
     ],
 
     'data': [
-        'security/students_scheduler_security.xml',
+        'security/students_residential_security.xml',
         'security/ir.model.access.csv',
         'views/residential_nm_notification_view.xml',
     ],
