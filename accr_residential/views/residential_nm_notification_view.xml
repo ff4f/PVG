@@ -82,6 +82,9 @@
                                     </div>
                                     <div class="oe_kanban_left">
                                         <li>
+                                            <field name="section" />
+                                        </li>
+                                        <li>
                                             <field name="notes" />
                                         </li>
                                     </div>
