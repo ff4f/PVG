@@ -7,7 +7,7 @@ class accrResidentialNMNotification(models.Model):
 
     name = fields.Char(string=u'Subject', )
     date_time = fields.Datetime(string=u'Date & Time', default=fields.Datetime.now,)
-    notes = fields.Text(string=u'field_name',)
+    notes = fields.Text(string=u'Notes',)
     
     section = fields.Many2one(string=u'Section', comodel_name='x_student_residential_sections', ondelete='set null',)
     students = fields.Many2many(string=u'Students', comodel_name='x_student', relation='student_residential_nm_notification_rel', column1='student_id', column2='residential_nm_notification_id',)
