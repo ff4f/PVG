@@ -10,7 +10,7 @@ class accrResidentialNMNotification(models.Model):
     notes = fields.Text(string=u'field_name',)
     
     section = fields.Many2one(string=u'Section', comodel_name='x_student_residential_sections', ondelete='set null',)
-    students = fields.Many2many(string=u'Students', comodel_name='x_student', relation='x_student.residential_nm_notification_rel', column1='student_id', column2='residential_nm_notification_id',)
+    students = fields.Many2many(string=u'Students', comodel_name='x_student', relation='student_residential_nm_notification_rel', column1='student_id', column2='residential_nm_notification_id',)
     
     
     
