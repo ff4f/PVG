@@ -11,6 +11,6 @@ class accrResidentialNMNotification(models.Model):
     
     section = fields.Many2one(string=u'Section', comodel_name='x_student_residential_sections', ondelete='set null', required=True, )
     students = fields.Many2many(string=u'Students', comodel_name='x_student', relation='student_residential_nm_notification_rel', column1='student_id', column2='residential_nm_notification_id',)
-    
+    color = fields.Integer(string=u'Color')
     
     

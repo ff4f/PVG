@@ -54,12 +54,52 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_accr_residential_nm_notification_kanban">
+            <field name="name">accr.residential.nm.notification.kanban</field>
+            <field name="model">accr.residential.nm.notification</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column">
+                    <field name="section"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <div class="oe_kanban_left">
+                                        <li>
+                                            <field name="notes" />
+                                        </li>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_open_accr_residential_nm_notification_view">
             <field name="name">Residential Notification for Nutrition and Medical Sections</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">accr.residential.nm.notification</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,kanban</field>
             <!-- <field name="search_view_id" ref="view_op_session_search"/> -->
             <field name="domain">[]</field>
             <field name="context">{}</field>
@@ -77,6 +117,12 @@
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_accr_residential_nm_notification_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_accr_residential_nm_notification_view_kanban">
+            <field name="act_window_id" ref="act_open_accr_residential_nm_notification_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_accr_residential_nm_notification_kanban"/>
         </record>
 
     </data>
