@@ -27,11 +27,11 @@
                     <sheet>
                         <group>
                             <h1>
-                                <field name="subject"/>
+                                <field name="name"/>
                             </h1>
                         </group>
                         <group>
-                            <field name="name"/>
+                            <field name="section"/>
                             <field name="date_time"/>
                         </group>
                         <group>
