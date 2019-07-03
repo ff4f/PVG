@@ -414,12 +414,15 @@
                                 <span>
                                     <Strong>Created By: </Strong>
                                 </span>
-                                <span t-field="doc.create_uid"/>
+                                <br/>
+                                <!-- <span t-field="doc.create_uid"/> -->
+                                <span>Nutrition Manager: Engy</span>
                             </div>
                             <div class="col-6">
                                 <span>
                                     <Strong>Created On: </Strong>
                                 </span>
+                                <br/>
                                 <span t-field="doc.create_date"/>
                             </div>
                         </div>

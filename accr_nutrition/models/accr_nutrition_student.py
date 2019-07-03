@@ -11,8 +11,7 @@ class accrNutritionStudent(models.Model):
 
     name = fields.Char(string=u'Name', compute='_compute_name', readonly=True, )
 
-    student = fields.Many2one('x_student', string=u'Student', required=True,
-                              index=True, store=True, track_visibility='onchange', )
+    student = fields.Many2one('x_student', string=u'Student', required=True, store=True, )
     student_name = fields.Char(
         related='student.x_name', string=u'Student Name', store=False, readonly=True, )
     student_resident = fields.Boolean(
