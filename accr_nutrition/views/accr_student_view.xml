@@ -28,7 +28,7 @@
                             <field name="student_photo" widget='image' />
                         </group>
                         <group col="4" string="General Info">
-                            <field name="student" domain="['&',[x_stage_id','=',3],['x_nutrition_details','=',False]]" />
+                            <field name="student" domain="['&amp;',[x_stage_id','=',3],['x_nutrition_details','=',False]]" />
                             <field name="student_gander" />
                             <field name="student_birth_date" />
                             <field name="student_age" />
