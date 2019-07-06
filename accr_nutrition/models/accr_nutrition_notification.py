@@ -6,7 +6,7 @@ class accrNutritiontNotification(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(sting=u'Name', compute='_compute_name', )
-    student = fields.Many2one('accr.nutrition.student', string=u'student', required=True, readonly=True, )
+    student = fields.Many2one('accr.nutrition.student', string=u'student', required=False, readonly=True, )
     color = fields.Integer(string=u'Color')
     message = fields.Text(string=u'Message', readonly=True, )
     notification_domain = fields.Selection(string=u'Notification Type', selection=[('leave_request', 'Leave Request'), ('residential_notes', 'Residential Notes'), ('hospital_visit', 'Hospital Visit'), ('medical_assessment', 'Medical Assessment'), ('new_student', 'New Student')], readonly=True, )
