@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
-    <report id="accr_student_special_education_report_ar_2" string="Special Education Final Report With Achievement Date" model="accr.student.se.report" report_type="qweb-pdf" name="accr_student.report_accr_student_se_report_ar_2_template" />
-    <template id="report_accr_student_se_report_ar_2_template">
+    <report id="accr_student_special_education_report_ar_3" string="Special Education Final Report Without Achievement Date" model="accr.student.se.report" report_type="qweb-pdf" name="accr_student.report_accr_student_se_report_ar_3_template" />
+    <template id="report_accr_student_se_report_ar_3_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <div class="page" style="direction: rtl; text-align: right;">
@@ -168,16 +168,13 @@
                                                             <th style="width: 5%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>مسلسل</span>
                                                             </th>
-                                                            <th style=" width: 40%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
+                                                            <th style=" width: 45%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>المهارة</span>
                                                             </th>
                                                             <th style="width: 10%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
                                                                 <span>التحقق</span>
                                                             </th>
-                                                            <th style="width: 15%; text-align:center; border-right-style: groove; border-bottom-style: groove;">
-                                                                <span>تاريخ التحقق</span>
-                                                            </th>
-                                                            <th style="width: 30%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
+                                                            <th style="width: 40%; text-align:center; border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                 <span>ملاحظات</span>
                                                             </th>
                                                         </tr>
@@ -208,7 +205,7 @@
                                                                         <span t-field="short_term_goal.goal_achieved"/>
                                                                     </t>
                                                                 </td>
-                                                                <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
+                                                                <!-- <t t-if="short_term_goal.goal_achieved == 'Achieved' or short_term_goal.goal_achieved == 'Achieved With Help'">
                                                                     <t t-foreach="short_term_goal.response_forms" t-as="response_form">
                                                                         <t t-foreach="response_form.x_studio_attempts_table" t-as="attempts_table">
                                                                             <t t-foreach="attempts_table.x_studio_response_form_row" t-as="response_row">
@@ -226,7 +223,7 @@
                                                                             <t t-esc="last_try_date[0]"/>
                                                                         </span>
                                                                     </t>
-                                                                </td>
+                                                                </td> -->
                                                                 <td style="border-right-style: groove; border-bottom-style: groove; border-left-style: groove;">
                                                                     <span t-field="short_term_goal.notes"/>
                                                                 </td>
