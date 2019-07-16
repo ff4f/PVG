@@ -2,836 +2,835 @@
 <odoo>
     <report id="accr_nutrition_student_report" string="Student Nutrition Report" model="accr.nutrition.student" report_type="qweb-pdf" name="accr_nutrition.report_accr_nutrition_student_report_template" />
     <template id="report_accr_nutrition_student_report_template">
-    <t t-foreach="docs" t-as="doc">
         <t t-call="web.html_container">
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <!-- Report header content -->
-                    <script type="text/javascript" src="/web/static/lib/nvd3/d3.v3.js" />
-                    <script type="text/javascript" src="/web/static/lib/nvd3/nv.d3.js"/>
-                    <br/>
-                    <br/>
-                    <div class="row bg-primary">
-                        <div class="col-12 h3" style="text-align: center;">
-                            <span>Student Nutrition Report</span>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-
-                    
-                        <!-- Report row content -->
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Student: </Strong>
-                                </span>
-                                <span t-field="doc.student"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <!-- Report header content -->
+                        <script type="text/javascript" src="/web/static/lib/nvd3/d3.v3.js" />
+                        <script type="text/javascript" src="/web/static/lib/nvd3/nv.d3.js"/>
+                        <br/>
+                        <br/>
+                        <div class="row bg-primary">
+                            <div class="col-12 h3" style="text-align: center;">
+                                <span>Student Nutrition Report</span>
                             </div>
                         </div>
-                        <hr/>
-                        <h3>BCA</h3>
-                        <t t-set="height" t-value="0" />
-                        <t t-set="ideal_weight" t-value="0.0" />
-                        <t t-set="actual_weight" t-value="0.0" />
-                        <t t-set="bmr" t-value="" />
-                        <t t-set="fat_kg" t-value="0.0" />
-                        <t t-set="fat_percentage" t-value="0" />
-                        <t t-set="mucles_kg" t-value="0.0" />
-                        <t t-set="lean_muscles" t-value="0" />
-                        <t t-set="fat_control_kg" t-value="0.0" />
-                        <t t-set="muscles_control_kg" t-value="0.0" />
-                        <t t-set="icw" t-value="0" />
-                        <t t-set="ecw" t-value="0" />
-                        <script type="text/javascript">
-                            graph_records_height = [];
-                            graph_records_weight = [];
-                            graph_records_fats = [];
-                            graph_records_muscles = [];
-                            graph_records_fats_muscles_control = [];
-                            graph_records_icw_ecw = [];
-                            <t t-foreach="doc.bca.sorted(key=lambda b: b.bca_date)" t-as="bca">
-                                <t t-set="bca_report_name" t-value="bca.bca_date"/>
-                                bca_report_name = '<t t-esc="bca_report_name"/>';
-                                <t t-set="height" t-value="bca.height"/>
-                                height = <t t-esc="height" /> ;
-                                <t t-set="ideal_weight" t-value="bca.ideal_weight" />
-                                ideal_weight = <t t-esc="ideal_weight" />;
-                                <t t-set="actual_weight" t-value="bca.actual_weight" />
-                                actual_weight = <t t-esc="actual_weight" />;
-                                <t t-set="bmr" t-value="bca.bmr.display_name" />
-                                <t t-set="fat_kg" t-value="bca.fat_kg" />
-                                fat_kg = <t t-esc="fat_kg" />;
-                                <t t-set="fat_percentage" t-value="bca.fat_percentage" />
-                                fat_percentage = <t t-esc="fat_percentage" />;
-                                <t t-set="mucles_kg" t-value="bca.mucles_kg" />
-                                mucles_kg = <t t-esc="mucles_kg" />;
-                                <t t-set="lean_muscles" t-value="bca.lean_muscles" />
-                                lean_muscles = <t t-esc="lean_muscles" />;
-                                <t t-set="fat_control_kg" t-value="bca.fat_control_kg" />
-                                fat_control_kg = <t t-esc="fat_control_kg" />;
-                                <t t-set="muscles_control_kg" t-value="bca.muscles_control_kg" />
-                                muscles_control_kg = <t t-esc="muscles_control_kg" />;
-                                <t t-set="icw" t-value="bca.icw" />
-                                icw = <t t-esc="icw" />;
-                                <t t-set="ecw" t-value="bca.ecw" />
-                                ecw = <t t-esc="ecw" />;
+                        <br/>
+                        <br/>
 
-                                graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height}]});
+                        
+                            <!-- Report row content -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Student: </Strong>
+                                    </span>
+                                    <span t-field="doc.student"/>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h3>BCA</h3>
+                            <t t-set="height" t-value="0" />
+                            <t t-set="ideal_weight" t-value="0.0" />
+                            <t t-set="actual_weight" t-value="0.0" />
+                            <t t-set="bmr" t-value="" />
+                            <t t-set="fat_kg" t-value="0.0" />
+                            <t t-set="fat_percentage" t-value="0" />
+                            <t t-set="mucles_kg" t-value="0.0" />
+                            <t t-set="lean_muscles" t-value="0" />
+                            <t t-set="fat_control_kg" t-value="0.0" />
+                            <t t-set="muscles_control_kg" t-value="0.0" />
+                            <t t-set="icw" t-value="0" />
+                            <t t-set="ecw" t-value="0" />
+                            <script type="text/javascript">
+                                graph_records_height = [];
+                                graph_records_weight = [];
+                                graph_records_fats = [];
+                                graph_records_muscles = [];
+                                graph_records_fats_muscles_control = [];
+                                graph_records_icw_ecw = [];
+                                <t t-foreach="doc.bca.sorted(key=lambda b: b.bca_date)" t-as="bca">
+                                    <t t-set="bca_report_name" t-value="bca.bca_date"/>
+                                    bca_report_name = '<t t-esc="bca_report_name"/>';
+                                    <t t-set="height" t-value="bca.height"/>
+                                    height = <t t-esc="height" /> ;
+                                    <t t-set="ideal_weight" t-value="bca.ideal_weight" />
+                                    ideal_weight = <t t-esc="ideal_weight" />;
+                                    <t t-set="actual_weight" t-value="bca.actual_weight" />
+                                    actual_weight = <t t-esc="actual_weight" />;
+                                    <t t-set="bmr" t-value="bca.bmr.display_name" />
+                                    <t t-set="fat_kg" t-value="bca.fat_kg" />
+                                    fat_kg = <t t-esc="fat_kg" />;
+                                    <t t-set="fat_percentage" t-value="bca.fat_percentage" />
+                                    fat_percentage = <t t-esc="fat_percentage" />;
+                                    <t t-set="mucles_kg" t-value="bca.mucles_kg" />
+                                    mucles_kg = <t t-esc="mucles_kg" />;
+                                    <t t-set="lean_muscles" t-value="bca.lean_muscles" />
+                                    lean_muscles = <t t-esc="lean_muscles" />;
+                                    <t t-set="fat_control_kg" t-value="bca.fat_control_kg" />
+                                    fat_control_kg = <t t-esc="fat_control_kg" />;
+                                    <t t-set="muscles_control_kg" t-value="bca.muscles_control_kg" />
+                                    muscles_control_kg = <t t-esc="muscles_control_kg" />;
+                                    <t t-set="icw" t-value="bca.icw" />
+                                    icw = <t t-esc="icw" />;
+                                    <t t-set="ecw" t-value="bca.ecw" />
+                                    ecw = <t t-esc="ecw" />;
 
-                                graph_records_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
-                                {"label": "Actual Weight", "value": actual_weight}]});
+                                    graph_records_height.push({key: bca_report_name, values: [{"label": "Height", "value": height}]});
 
-                                graph_records_fats.push({key: bca_report_name, values: [{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
+                                    graph_records_weight.push({key: bca_report_name, values: [{"label": "Ideal Weight", "value": ideal_weight}, 
+                                    {"label": "Actual Weight", "value": actual_weight}]});
 
-                                graph_records_muscles.push({key: bca_report_name, values:[{"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}]});
+                                    graph_records_fats.push({key: bca_report_name, values: [{"label": "Fat.kg", "value": fat_kg}, {"label": "Fat./%", "value": fat_percentage}]});
 
-                                graph_records_fats_muscles_control.push({key: bca_report_name, values:[{"label": "FAT Control.kg", "value": fat_control_kg}, 
-                                {"label": "Muscles Control.kg", "value": muscles_control_kg}]});
+                                    graph_records_muscles.push({key: bca_report_name, values:[{"label": "Mucles.kg", "value": mucles_kg}, {"label": "Lean Muscles", "value": lean_muscles}]});
 
-                                graph_records_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
+                                    graph_records_fats_muscles_control.push({key: bca_report_name, values:[{"label": "FAT Control.kg", "value": fat_control_kg}, 
+                                    {"label": "Muscles Control.kg", "value": muscles_control_kg}]});
 
+                                    graph_records_icw_ecw.push({key: bca_report_name, values:[{"label": "ICW", "value": icw}, {"label": "ECW", "value": ecw}]});
+
+                                </t>
+
+                                    nv.addGraph(function () {
+                                    var chart_height = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_height svg')
+                                            .datum(graph_records_height)
+                                            .call(chart_height);
+
+                                        nv.utils.windowResize(chart_height.update);
+
+                                        return chart_height;
+                                    });
+
+                                    nv.addGraph(function () {
+                                    var chart_weight = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_weight svg')
+                                            .datum(graph_records_weight)
+                                            .call(chart_weight);
+
+                                        nv.utils.windowResize(chart_weight.update);
+
+                                        return chart_weight;
+                                    });
+
+                                    nv.addGraph(function () {
+                                    var chart_fats = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_fats svg')
+                                            .datum(graph_records_fats)
+                                            .call(chart_fats);
+
+                                        nv.utils.windowResize(chart_fats.update);
+
+                                        return chart_fats;
+                                    });
+
+                                    nv.addGraph(function () {
+                                    var chart_muscles = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_muscles svg')
+                                            .datum(graph_records_muscles)
+                                            .call(chart_muscles);
+
+                                        nv.utils.windowResize(chart_muscles.update);
+
+                                        return chart_muscles;
+                                    });
+
+                                    nv.addGraph(function () {
+                                    var chart_fats_muscles_control = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_fats_muscles_control svg')
+                                            .datum(graph_records_fats_muscles_control)
+                                            .call(chart_fats_muscles_control);
+
+                                        nv.utils.windowResize(chart_fats_muscles_control.update);
+
+                                        return chart_fats_muscles_control;
+                                    });
+
+                                    nv.addGraph(function () {
+                                    var chart_icw_ecw = nv.models.multiBarChart()
+                                        .x(function(d) { return d.label })    //Specify the data accessors.
+                                        .y(function(d) { return d.value })
+                                        .showControls(false)
+                                        .rotateLabels(30)
+                                        .reduceXTicks(false)
+                                        .groupSpacing(0.3)
+                                        ;
+                                        
+                                        d3.select('#chart_icw_ecw svg')
+                                            .datum(graph_records_icw_ecw)
+                                            .call(chart_icw_ecw);
+
+                                        nv.utils.windowResize(chart_icw_ecw.update);
+
+                                        return chart_icw_ecw;
+                                    });
+
+
+                            </script>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Height: </Strong>
+                                    </span>
+                                    <span t-esc="height" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Ideal Weight: </Strong>
+                                    </span>
+                                    <span t-esc="ideal_weight" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Actual Weight: </Strong>
+                                    </span>
+                                    <span t-esc="actual_weight" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>BMR: </Strong>
+                                    </span>
+                                    <span t-esc="bmr" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>FAT.kg: </Strong>
+                                    </span>
+                                    <span t-esc="fat_kg" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>FAT &#37;: </Strong>
+                                    </span>
+                                    <span t-esc="fat_percentage" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Mucles.kg: </Strong>
+                                    </span>
+                                    <span t-esc="mucles_kg" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Lean Muscles: </Strong>
+                                    </span>
+                                    <span t-esc="lean_muscles" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Fat Control.kg: </Strong>
+                                    </span>
+                                    <span t-esc="fat_control_kg" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>Muscles Control.kg: </Strong>
+                                    </span>
+                                    <span t-esc="muscles_control_kg" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>ICW: </Strong>
+                                    </span>
+                                    <span t-esc="icw" />
+                                </div>
+                                <div class="col-4">
+                                    <span>
+                                        <Strong>ECW: </Strong>
+                                    </span>
+                                    <span t-esc="ecw" />
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="chart_height">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div id="chart_weight">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div id="chart_fats">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="chart_muscles">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div id="chart_fats_muscles_control">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div id="chart_icw_ecw">
+                                        <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <h3>Nutrition Plan</h3>
+                            <t t-set="plan_desc" t-value="" />
+                            <t t-set="improvement" t-value="" />
+                            <t t-set="Recomendations" t-value="" />
+                            <t t-foreach="doc.nutrition_plan" t-as="nutrition_plan">
+                                <t t-set="plan_desc" t-value="nutrition_plan.plan_desc" />
+                                <t t-set="improvement" t-value="nutrition_plan.improvement" />
+                                <t t-set="Recomendations" t-value="nutrition_plan.Recomendations" />
                             </t>
-
-                                nv.addGraph(function () {
-                                var chart_height = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_height svg')
-                                        .datum(graph_records_height)
-                                        .call(chart_height);
-
-                                    nv.utils.windowResize(chart_height.update);
-
-                                    return chart_height;
-                                });
-
-                                nv.addGraph(function () {
-                                var chart_weight = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_weight svg')
-                                        .datum(graph_records_weight)
-                                        .call(chart_weight);
-
-                                    nv.utils.windowResize(chart_weight.update);
-
-                                    return chart_weight;
-                                });
-
-                                nv.addGraph(function () {
-                                var chart_fats = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_fats svg')
-                                        .datum(graph_records_fats)
-                                        .call(chart_fats);
-
-                                    nv.utils.windowResize(chart_fats.update);
-
-                                    return chart_fats;
-                                });
-
-                                nv.addGraph(function () {
-                                var chart_muscles = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_muscles svg')
-                                        .datum(graph_records_muscles)
-                                        .call(chart_muscles);
-
-                                    nv.utils.windowResize(chart_muscles.update);
-
-                                    return chart_muscles;
-                                });
-
-                                nv.addGraph(function () {
-                                var chart_fats_muscles_control = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_fats_muscles_control svg')
-                                        .datum(graph_records_fats_muscles_control)
-                                        .call(chart_fats_muscles_control);
-
-                                    nv.utils.windowResize(chart_fats_muscles_control.update);
-
-                                    return chart_fats_muscles_control;
-                                });
-
-                                nv.addGraph(function () {
-                                var chart_icw_ecw = nv.models.multiBarChart()
-                                    .x(function(d) { return d.label })    //Specify the data accessors.
-                                    .y(function(d) { return d.value })
-                                    .showControls(false)
-                                    .rotateLabels(30)
-                                    .reduceXTicks(false)
-                                    .groupSpacing(0.3)
-                                    ;
-                                    
-                                    d3.select('#chart_icw_ecw svg')
-                                        .datum(graph_records_icw_ecw)
-                                        .call(chart_icw_ecw);
-
-                                    nv.utils.windowResize(chart_icw_ecw.update);
-
-                                    return chart_icw_ecw;
-                                });
-
-
-                        </script>
-                        <div class="row">
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Height: </Strong>
-                                </span>
-                                <span t-esc="height" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Ideal Weight: </Strong>
-                                </span>
-                                <span t-esc="ideal_weight" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Actual Weight: </Strong>
-                                </span>
-                                <span t-esc="actual_weight" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <span>
-                                    <Strong>BMR: </Strong>
-                                </span>
-                                <span t-esc="bmr" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>FAT.kg: </Strong>
-                                </span>
-                                <span t-esc="fat_kg" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>FAT &#37;: </Strong>
-                                </span>
-                                <span t-esc="fat_percentage" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Mucles.kg: </Strong>
-                                </span>
-                                <span t-esc="mucles_kg" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Lean Muscles: </Strong>
-                                </span>
-                                <span t-esc="lean_muscles" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Fat Control.kg: </Strong>
-                                </span>
-                                <span t-esc="fat_control_kg" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <span>
-                                    <Strong>Muscles Control.kg: </Strong>
-                                </span>
-                                <span t-esc="muscles_control_kg" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>ICW: </Strong>
-                                </span>
-                                <span t-esc="icw" />
-                            </div>
-                            <div class="col-4">
-                                <span>
-                                    <Strong>ECW: </Strong>
-                                </span>
-                                <span t-esc="ecw" />
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-4">
-                                <div id="chart_height">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Plan Description: </Strong>
+                                    </span>
+                                    <span t-esc="plan_desc" />
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div id="chart_weight">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Plan Description: </Strong>
+                                    </span>
+                                    <span t-esc="plan_desc" />
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div id="chart_fats">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Improvement: </Strong>
+                                    </span>
+                                    <span t-esc="improvement" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <div id="chart_muscles">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Recomendations: </Strong>
+                                    </span>
+                                    <span t-esc="Recomendations" />
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div id="chart_fats_muscles_control">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <hr/>
+                            <h3>Student Orientation</h3>
+                            <t t-set="desc" t-value="" />
+                            <t t-set="individual_awareness" t-value="" />
+                            <t t-foreach="doc.student_orientation" t-as="student_orientation">
+                                <t t-set="desc" t-value="student_orientation.desc" />
+                                <t t-set="individual_awareness" t-value="student_orientation.individual_awareness" />
+                            </t>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Description: </Strong>
+                                    </span>
+                                    <span t-esc="desc" />
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div id="chart_icw_ecw">
-                                    <svg style="height: 300px; width: 275px; text-align: left!important; direction: ltr;"></svg>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Individual Awareness: </Strong>
+                                    </span>
+                                    <t t-if="individual_awareness == true">
+                                        <i class="fa fa-check"></i>
+                                    </t>
+                                    <t t-else="">
+                                        <i class="fa fa-remove"></i>
+                                    </t>
+                                    <!-- <span t-esc="individual_awareness" /> -->
                                 </div>
                             </div>
-                        </div>
-                        <br/>
-                        <br/>
-                        <h3>Nutrition Plan</h3>
-                        <t t-set="plan_desc" t-value="" />
-                        <t t-set="improvement" t-value="" />
-                        <t t-set="Recomendations" t-value="" />
-                        <t t-foreach="doc.nutrition_plan" t-as="nutrition_plan">
-                            <t t-set="plan_desc" t-value="nutrition_plan.plan_desc" />
-                            <t t-set="improvement" t-value="nutrition_plan.improvement" />
-                            <t t-set="Recomendations" t-value="nutrition_plan.Recomendations" />
-                        </t>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Plan Description: </Strong>
-                                </span>
-                                <span t-esc="plan_desc" />
+                            <hr/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <Strong>Follow Up: </Strong>
+                                    </span>
+                                    <t t-foreach="doc.follow_up" t-as="follow_up">
+                                        <span t-field="follow_up.display_name"/>
+                                    </t>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Plan Description: </Strong>
-                                </span>
-                                <span t-esc="plan_desc" />
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span>
+                                        <Strong>Created By: </Strong>
+                                    </span>
+                                    <br/>
+                                    <!-- <span t-field="doc.create_uid"/> -->
+                                    <span>Nutrition Manager: Engy</span>
+                                </div>
+                                <div class="col-6">
+                                    <span>
+                                        <Strong>Created On: </Strong>
+                                    </span>
+                                    <br/>
+                                    <span t-field="doc.create_date"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Improvement: </Strong>
-                                </span>
-                                <span t-esc="improvement" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Recomendations: </Strong>
-                                </span>
-                                <span t-esc="Recomendations" />
-                            </div>
-                        </div>
-                        <hr/>
-                        <h3>Student Orientation</h3>
-                        <t t-set="desc" t-value="" />
-                        <t t-set="individual_awareness" t-value="" />
-                        <t t-foreach="doc.student_orientation" t-as="student_orientation">
-                            <t t-set="desc" t-value="student_orientation.desc" />
-                            <t t-set="individual_awareness" t-value="student_orientation.individual_awareness" />
-                        </t>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Description: </Strong>
-                                </span>
-                                <span t-esc="desc" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Individual Awareness: </Strong>
-                                </span>
-                                <t t-if="individual_awareness == true">
-                                    <i class="fa fa-check"></i>
-                                </t>
-                                <t t-else="">
-                                    <i class="fa fa-remove"></i>
-                                </t>
-                                <!-- <span t-esc="individual_awareness" /> -->
-                            </div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col-12">
-                                <span>
-                                    <Strong>Follow Up: </Strong>
-                                </span>
-                                <t t-foreach="doc.follow_up" t-as="follow_up">
-                                    <span t-field="follow_up.display_name"/>
-.
-                                </t>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col-6">
-                                <span>
-                                    <Strong>Created By: </Strong>
-                                </span>
-                                <br/>
-                                <!-- <span t-field="doc.create_uid"/> -->
-                                <span>Nutrition Manager: Engy</span>
-                            </div>
-                            <div class="col-6">
-                                <span>
-                                    <Strong>Created On: </Strong>
-                                </span>
-                                <br/>
-                                <span t-field="doc.create_date"/>
-                            </div>
-                        </div>
-                    
+                        
 
-                    <!-- Report footer content -->
+                        <!-- Report footer content -->
 
 
-                    <style>
-                        .table th {
-                            border-top: 2px solid #dddddd !important;
-                        }
-                        .table th {
-                            border-right: 2px solid #dddddd !important;
-                        }
-                        .table tr {
-                            border-left: 2px solid #dddddd !important;
-                        }
-                        .table td {
-                            border-right: 2px solid #dddddd !important;
-                        }
-                        .table td {
-                            border-top: 0 !important;
-                        }
-                        .table td {
-                            border-bottom: 0 !important;
-                        }
-                        .table {
-                            border-bottom: 2px solid #dddddd !important;
-                        }
-                        .table th {
-                            text-align: right !important;
-                        }
-                        .table td {
-                            text-align: right !important;
-                        }
-                        .condition {
-                            border-top: 2px solid #dddddd !important;
-                        }
-                        .chartWrap {
-                            margin: 0;
-                            padding: 0;
-                            overflow: hidden;
-                        }
-                        .nv-brush .extent {
-                            fill-opacity: .125;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .nv-legend .nv-series {
-                            cursor: pointer;
-                        }
+                        <style>
+                            .table th {
+                                border-top: 2px solid #dddddd !important;
+                            }
+                            .table th {
+                                border-right: 2px solid #dddddd !important;
+                            }
+                            .table tr {
+                                border-left: 2px solid #dddddd !important;
+                            }
+                            .table td {
+                                border-right: 2px solid #dddddd !important;
+                            }
+                            .table td {
+                                border-top: 0 !important;
+                            }
+                            .table td {
+                                border-bottom: 0 !important;
+                            }
+                            .table {
+                                border-bottom: 2px solid #dddddd !important;
+                            }
+                            .table th {
+                                text-align: right !important;
+                            }
+                            .table td {
+                                text-align: right !important;
+                            }
+                            .condition {
+                                border-top: 2px solid #dddddd !important;
+                            }
+                            .chartWrap {
+                                margin: 0;
+                                padding: 0;
+                                overflow: hidden;
+                            }
+                            .nv-brush .extent {
+                                fill-opacity: .125;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .nv-legend .nv-series {
+                                cursor: pointer;
+                            }
 
-                        .nvd3 .nv-legend .disabled circle {
-                            fill-opacity: 0;
-                        }
-                        .nvd3 .nv-axis {
-                            pointer-events: none;
-                        }
-                        .nvd3 .nv-axis path {
-                            fill: none;
-                            stroke: #000;
-                            stroke-opacity: .75;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .nv-axis path.domain {
-                            stroke-opacity: .75;
-                        }
-                        .nvd3 .nv-axis.nv-x path.domain {
-                            stroke-opacity: 0;
-                        }
-                        .nvd3 .nv-axis line {
-                            fill: none;
-                            stroke: #e5e5e5;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .nv-axis .zero line,
-                        .nvd3 .nv-axis line.zero {
-                            stroke-opacity: .75;
-                        }
-                        .nvd3 .nv-axis .nv-axisMaxMin text {
-                            font-weight: bold;
-                        }
-                        .nvd3 .x .nv-axis .nv-axisMaxMin text,
-                        .nvd3 .x2 .nv-axis .nv-axisMaxMin text,
-                        .nvd3 .x3 .nv-axis .nv-axisMaxMin text {
-                            text-anchor: middle
-                        }
-                        .nv-brush .resize path {
-                            fill: #eee;
-                            stroke: #666;
-                        }
-                        .nvd3 .nv-bars .negative rect {
-                            zfill: brown;
-                        }
-                        .nvd3 .nv-bars rect {
-                            zfill: steelblue;
-                            fill-opacity: .75;
+                            .nvd3 .nv-legend .disabled circle {
+                                fill-opacity: 0;
+                            }
+                            .nvd3 .nv-axis {
+                                pointer-events: none;
+                            }
+                            .nvd3 .nv-axis path {
+                                fill: none;
+                                stroke: #000;
+                                stroke-opacity: .75;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .nv-axis path.domain {
+                                stroke-opacity: .75;
+                            }
+                            .nvd3 .nv-axis.nv-x path.domain {
+                                stroke-opacity: 0;
+                            }
+                            .nvd3 .nv-axis line {
+                                fill: none;
+                                stroke: #e5e5e5;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .nv-axis .zero line,
+                            .nvd3 .nv-axis line.zero {
+                                stroke-opacity: .75;
+                            }
+                            .nvd3 .nv-axis .nv-axisMaxMin text {
+                                font-weight: bold;
+                            }
+                            .nvd3 .x .nv-axis .nv-axisMaxMin text,
+                            .nvd3 .x2 .nv-axis .nv-axisMaxMin text,
+                            .nvd3 .x3 .nv-axis .nv-axisMaxMin text {
+                                text-anchor: middle
+                            }
+                            .nv-brush .resize path {
+                                fill: #eee;
+                                stroke: #666;
+                            }
+                            .nvd3 .nv-bars .negative rect {
+                                zfill: brown;
+                            }
+                            .nvd3 .nv-bars rect {
+                                zfill: steelblue;
+                                fill-opacity: .75;
 
-                            transition: fill-opacity 250ms linear;
-                            -moz-transition: fill-opacity 250ms linear;
-                            -webkit-transition: fill-opacity 250ms linear;
-                        }
-                        .nvd3 .nv-bars rect.hover {
-                            fill-opacity: 1;
-                        }
-                        .nvd3 .nv-bars .hover rect {
-                            fill: lightblue;
-                        }
-                        .nvd3 .nv-bars text {
-                            fill: rgba(0, 0, 0, 0);
-                        }
-                        .nvd3 .nv-bars .hover text {
-                            fill: rgba(0, 0, 0, 1);
-                        }
-                        .nvd3 .nv-multibar .nv-groups rect,
-                        .nvd3 .nv-multibarHorizontal .nv-groups rect,
-                        .nvd3 .nv-discretebar .nv-groups rect {
-                            stroke-opacity: 0;
+                                transition: fill-opacity 250ms linear;
+                                -moz-transition: fill-opacity 250ms linear;
+                                -webkit-transition: fill-opacity 250ms linear;
+                            }
+                            .nvd3 .nv-bars rect.hover {
+                                fill-opacity: 1;
+                            }
+                            .nvd3 .nv-bars .hover rect {
+                                fill: lightblue;
+                            }
+                            .nvd3 .nv-bars text {
+                                fill: rgba(0, 0, 0, 0);
+                            }
+                            .nvd3 .nv-bars .hover text {
+                                fill: rgba(0, 0, 0, 1);
+                            }
+                            .nvd3 .nv-multibar .nv-groups rect,
+                            .nvd3 .nv-multibarHorizontal .nv-groups rect,
+                            .nvd3 .nv-discretebar .nv-groups rect {
+                                stroke-opacity: 0;
 
-                            transition: fill-opacity 250ms linear;
-                            -moz-transition: fill-opacity 250ms linear;
-                            -webkit-transition: fill-opacity 250ms linear;
-                        }
-                        .nvd3 .nv-multibar .nv-groups rect:hover,
-                        .nvd3 .nv-multibarHorizontal .nv-groups rect:hover,
-                        .nvd3 .nv-discretebar .nv-groups rect:hover {
-                            fill-opacity: 1;
-                        }
-                        .nvd3 .nv-discretebar .nv-groups text,
-                        .nvd3 .nv-multibarHorizontal .nv-groups text {
-                            font-weight: bold;
-                            fill: rgba(0, 0, 0, 1);
-                            stroke: rgba(0, 0, 0, 0);
-                        }
-                        .nvd3.nv-pie path {
-                            stroke-opacity: 0;
-                            transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
-                            -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
-                            -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+                                transition: fill-opacity 250ms linear;
+                                -moz-transition: fill-opacity 250ms linear;
+                                -webkit-transition: fill-opacity 250ms linear;
+                            }
+                            .nvd3 .nv-multibar .nv-groups rect:hover,
+                            .nvd3 .nv-multibarHorizontal .nv-groups rect:hover,
+                            .nvd3 .nv-discretebar .nv-groups rect:hover {
+                                fill-opacity: 1;
+                            }
+                            .nvd3 .nv-discretebar .nv-groups text,
+                            .nvd3 .nv-multibarHorizontal .nv-groups text {
+                                font-weight: bold;
+                                fill: rgba(0, 0, 0, 1);
+                                stroke: rgba(0, 0, 0, 0);
+                            }
+                            .nvd3.nv-pie path {
+                                stroke-opacity: 0;
+                                transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+                                -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+                                -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
 
-                        }
-                        .nvd3.nv-pie .nv-slice text {
-                            stroke: #000;
-                            stroke-width: 0;
-                        }
-                        .nvd3.nv-pie path {
-                            stroke: #fff;
-                            stroke-width: 1px;
-                            stroke-opacity: 1;
-                        }
-                        .nvd3.nv-pie .hover path {
-                            fill-opacity: .7;
-                        }
+                            }
+                            .nvd3.nv-pie .nv-slice text {
+                                stroke: #000;
+                                stroke-width: 0;
+                            }
+                            .nvd3.nv-pie path {
+                                stroke: #fff;
+                                stroke-width: 1px;
+                                stroke-opacity: 1;
+                            }
+                            .nvd3.nv-pie .hover path {
+                                fill-opacity: .7;
+                            }
 
-                        .nvd3.nv-pie .nv-label {
-                            pointer-events: none;
-                        }
-                        .nvd3.nv-pie .nv-label rect {
-                            fill-opacity: 0;
-                            stroke-opacity: 0;
-                        }
-                        .nvd3 .nv-groups path.nv-line {
-                            fill: none;
-                            stroke-width: 1.5px;
-                        }
-                        .nvd3 .nv-groups path.nv-line.nv-thin-line {
-                            stroke-width: 1px;
-                        }
-                        .nvd3 .nv-groups path.nv-area {
-                            stroke: none;
-                        }
-                        .nvd3 .nv-line.hover path {
-                            stroke-width: 6px;
-                        }
-                        .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
-                            fill-opacity: 0;
-                            stroke-opacity: 0;
-                        }
-                        .nvd3.nv-scatter.nv-single-point .nv-groups .nv-point {
-                            fill-opacity: .5 !important;
-                            stroke-opacity: .5 !important;
-                        }
-                        .with-transitions .nvd3 .nv-groups .nv-point {
-                            transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
-                            -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
-                            -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                            .nvd3.nv-pie .nv-label {
+                                pointer-events: none;
+                            }
+                            .nvd3.nv-pie .nv-label rect {
+                                fill-opacity: 0;
+                                stroke-opacity: 0;
+                            }
+                            .nvd3 .nv-groups path.nv-line {
+                                fill: none;
+                                stroke-width: 1.5px;
+                            }
+                            .nvd3 .nv-groups path.nv-line.nv-thin-line {
+                                stroke-width: 1px;
+                            }
+                            .nvd3 .nv-groups path.nv-area {
+                                stroke: none;
+                            }
+                            .nvd3 .nv-line.hover path {
+                                stroke-width: 6px;
+                            }
+                            .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
+                                fill-opacity: 0;
+                                stroke-opacity: 0;
+                            }
+                            .nvd3.nv-scatter.nv-single-point .nv-groups .nv-point {
+                                fill-opacity: .5 !important;
+                                stroke-opacity: .5 !important;
+                            }
+                            .with-transitions .nvd3 .nv-groups .nv-point {
+                                transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                                -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                                -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
 
-                        }
-                        .nvd3.nv-scatter .nv-groups .nv-point.hover,
-                        .nvd3 .nv-groups .nv-point.hover {
-                            stroke-width: 7px;
-                            fill-opacity: .95 !important;
-                            stroke-opacity: .95 !important;
-                        }
-                        .nvd3 .nv-point-paths path {
-                            stroke: #aaa;
-                            stroke-opacity: 0;
-                            fill: #eee;
-                            fill-opacity: 0;
-                        }
-                        .nvd3 .nv-indexLine {
-                            cursor: ew-resize;
-                        }
-                        .nvd3 .nv-distribution {
-                            pointer-events: none;
-                        }
-                        .nvd3 .nv-groups .nv-point.hover {
-                            stroke-width: 20px;
-                            stroke-opacity: .5;
-                        }
+                            }
+                            .nvd3.nv-scatter .nv-groups .nv-point.hover,
+                            .nvd3 .nv-groups .nv-point.hover {
+                                stroke-width: 7px;
+                                fill-opacity: .95 !important;
+                                stroke-opacity: .95 !important;
+                            }
+                            .nvd3 .nv-point-paths path {
+                                stroke: #aaa;
+                                stroke-opacity: 0;
+                                fill: #eee;
+                                fill-opacity: 0;
+                            }
+                            .nvd3 .nv-indexLine {
+                                cursor: ew-resize;
+                            }
+                            .nvd3 .nv-distribution {
+                                pointer-events: none;
+                            }
+                            .nvd3 .nv-groups .nv-point.hover {
+                                stroke-width: 20px;
+                                stroke-opacity: .5;
+                            }
 
-                        .nvd3 .nv-scatter .nv-point.hover {
-                            fill-opacity: 1;
-                        }
-                        .nvd3.nv-stackedarea path.nv-area {
-                            fill-opacity: .7;
-                            stroke-opacity: 0;
-                            transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
-                            -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
-                            -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
-                        }
+                            .nvd3 .nv-scatter .nv-point.hover {
+                                fill-opacity: 1;
+                            }
+                            .nvd3.nv-stackedarea path.nv-area {
+                                fill-opacity: .7;
+                                stroke-opacity: 0;
+                                transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+                                -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+                                -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+                            }
 
-                        .nvd3.nv-stackedarea path.nv-area.hover {
-                            fill-opacity: .9;
-                        }
-                        .nvd3.nv-stackedarea .nv-groups .nv-point {
-                            stroke-opacity: 0;
-                            fill-opacity: 0;
-                        }
-                        .nvd3.nv-linePlusBar .nv-bar rect {
-                            fill-opacity: .75;
-                        }
+                            .nvd3.nv-stackedarea path.nv-area.hover {
+                                fill-opacity: .9;
+                            }
+                            .nvd3.nv-stackedarea .nv-groups .nv-point {
+                                stroke-opacity: 0;
+                                fill-opacity: 0;
+                            }
+                            .nvd3.nv-linePlusBar .nv-bar rect {
+                                fill-opacity: .75;
+                            }
 
-                        .nvd3.nv-linePlusBar .nv-bar rect:hover {
-                            fill-opacity: 1;
-                        }
-                        .nvd3.nv-bullet {
-                            font: 10px sans-serif;
-                        }
-                        .nvd3.nv-bullet .nv-measure {
-                            fill-opacity: .8;
-                        }
-                        .nvd3.nv-bullet .nv-measure:hover {
-                            fill-opacity: 1;
-                        }
-                        .nvd3.nv-bullet .nv-marker {
-                            stroke: #000;
-                            stroke-width: 2px;
-                        }
-                        .nvd3.nv-bullet .nv-markerTriangle {
-                            stroke: #000;
-                            fill: #fff;
-                            stroke-width: 1.5px;
-                        }
-                        .nvd3.nv-bullet .nv-tick line {
-                            stroke: #666;
-                            stroke-width: .5px;
-                        }
-                        .nvd3.nv-bullet .nv-range.nv-s0 {
-                            fill: #eee;
-                        }
-                        .nvd3.nv-bullet .nv-range.nv-s1 {
-                            fill: #ddd;
-                        }
-                        .nvd3.nv-bullet .nv-range.nv-s2 {
-                            fill: #ccc;
-                        }
-                        .nvd3.nv-bullet .nv-title {
-                            font-size: 14px;
-                            font-weight: bold;
-                        }
-                        .nvd3.nv-bullet .nv-subtitle {
-                            fill: #999;
-                        }
-                        .nvd3.nv-bullet .nv-range {
-                            fill: #bababa;
-                            fill-opacity: .4;
-                        }
-                        .nvd3.nv-bullet .nv-range:hover {
-                            fill-opacity: .7;
-                        }
-                        .nvd3.nv-sparkline path {
-                            fill: none;
-                        }
-                        .nvd3.nv-sparklineplus g.nv-hoverValue {
-                            pointer-events: none;
-                        }
-                        .nvd3.nv-sparklineplus .nv-hoverValue line {
-                            stroke: #333;
-                            stroke-width: 1.5px;
-                        }
-                        .nvd3.nv-sparklineplus,
-                        .nvd3.nv-sparklineplus g {
-                            pointer-events: all;
-                        }
-                        .nvd3 .nv-hoverArea {
-                            fill-opacity: 0;
-                            stroke-opacity: 0;
-                        }
-                        .nvd3.nv-sparklineplus .nv-xValue,
-                        .nvd3.nv-sparklineplus .nv-yValue {
-                            stroke-width: 0;
-                            font-size: .9em;
-                            font-weight: normal;
-                        }
+                            .nvd3.nv-linePlusBar .nv-bar rect:hover {
+                                fill-opacity: 1;
+                            }
+                            .nvd3.nv-bullet {
+                                font: 10px sans-serif;
+                            }
+                            .nvd3.nv-bullet .nv-measure {
+                                fill-opacity: .8;
+                            }
+                            .nvd3.nv-bullet .nv-measure:hover {
+                                fill-opacity: 1;
+                            }
+                            .nvd3.nv-bullet .nv-marker {
+                                stroke: #000;
+                                stroke-width: 2px;
+                            }
+                            .nvd3.nv-bullet .nv-markerTriangle {
+                                stroke: #000;
+                                fill: #fff;
+                                stroke-width: 1.5px;
+                            }
+                            .nvd3.nv-bullet .nv-tick line {
+                                stroke: #666;
+                                stroke-width: .5px;
+                            }
+                            .nvd3.nv-bullet .nv-range.nv-s0 {
+                                fill: #eee;
+                            }
+                            .nvd3.nv-bullet .nv-range.nv-s1 {
+                                fill: #ddd;
+                            }
+                            .nvd3.nv-bullet .nv-range.nv-s2 {
+                                fill: #ccc;
+                            }
+                            .nvd3.nv-bullet .nv-title {
+                                font-size: 14px;
+                                font-weight: bold;
+                            }
+                            .nvd3.nv-bullet .nv-subtitle {
+                                fill: #999;
+                            }
+                            .nvd3.nv-bullet .nv-range {
+                                fill: #bababa;
+                                fill-opacity: .4;
+                            }
+                            .nvd3.nv-bullet .nv-range:hover {
+                                fill-opacity: .7;
+                            }
+                            .nvd3.nv-sparkline path {
+                                fill: none;
+                            }
+                            .nvd3.nv-sparklineplus g.nv-hoverValue {
+                                pointer-events: none;
+                            }
+                            .nvd3.nv-sparklineplus .nv-hoverValue line {
+                                stroke: #333;
+                                stroke-width: 1.5px;
+                            }
+                            .nvd3.nv-sparklineplus,
+                            .nvd3.nv-sparklineplus g {
+                                pointer-events: all;
+                            }
+                            .nvd3 .nv-hoverArea {
+                                fill-opacity: 0;
+                                stroke-opacity: 0;
+                            }
+                            .nvd3.nv-sparklineplus .nv-xValue,
+                            .nvd3.nv-sparklineplus .nv-yValue {
+                                stroke-width: 0;
+                                font-size: .9em;
+                                font-weight: normal;
+                            }
 
-                        .nvd3.nv-sparklineplus .nv-yValue {
-                            stroke: #f66;
-                        }
-                        .nvd3.nv-sparklineplus .nv-maxValue {
-                            stroke: #2ca02c;
-                            fill: #2ca02c;
-                        }
-                        .nvd3.nv-sparklineplus .nv-minValue {
-                            stroke: #d62728;
-                            fill: #d62728;
-                        }
-                        .nvd3.nv-sparklineplus .nv-currentValue {
-                            font-weight: bold;
-                            font-size: 1.1em;
-                        }
-                        .nvd3.nv-ohlcBar .nv-ticks .nv-tick {
-                            stroke-width: 2px;
-                        }
-                        .nvd3.nv-ohlcBar .nv-ticks .nv-tick.hover {
-                            stroke-width: 4px;
-                        }
-                        .nvd3.nv-ohlcBar .nv-ticks .nv-tick.positive {
-                            stroke: #2ca02c;
-                        }
-                        .nvd3.nv-ohlcBar .nv-ticks .nv-tick.negative {
-                            stroke: #d62728;
-                        }
-                        .nvd3.nv-historicalStockChart .nv-axis .nv-axislabel {
-                            font-weight: bold;
-                        }
-                        .nvd3.nv-historicalStockChart .nv-dragTarget {
-                            fill-opacity: 0;
-                            stroke: none;
-                            cursor: move;
-                        }
-                        .nvd3 .nv-brush .extent {
-                            fill-opacity: 0 !important;
-                        }
+                            .nvd3.nv-sparklineplus .nv-yValue {
+                                stroke: #f66;
+                            }
+                            .nvd3.nv-sparklineplus .nv-maxValue {
+                                stroke: #2ca02c;
+                                fill: #2ca02c;
+                            }
+                            .nvd3.nv-sparklineplus .nv-minValue {
+                                stroke: #d62728;
+                                fill: #d62728;
+                            }
+                            .nvd3.nv-sparklineplus .nv-currentValue {
+                                font-weight: bold;
+                                font-size: 1.1em;
+                            }
+                            .nvd3.nv-ohlcBar .nv-ticks .nv-tick {
+                                stroke-width: 2px;
+                            }
+                            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.hover {
+                                stroke-width: 4px;
+                            }
+                            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.positive {
+                                stroke: #2ca02c;
+                            }
+                            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.negative {
+                                stroke: #d62728;
+                            }
+                            .nvd3.nv-historicalStockChart .nv-axis .nv-axislabel {
+                                font-weight: bold;
+                            }
+                            .nvd3.nv-historicalStockChart .nv-dragTarget {
+                                fill-opacity: 0;
+                                stroke: none;
+                                cursor: move;
+                            }
+                            .nvd3 .nv-brush .extent {
+                                fill-opacity: 0 !important;
+                            }
 
-                        .nvd3 .nv-brushBackground rect {
-                            stroke: #000;
-                            stroke-width: .4;
-                            fill: #fff;
-                            fill-opacity: .7;
-                        }
-                        .nvd3.nv-indentedtree .name {
-                            margin-left: 5px;
-                        }
-                        .nvd3.nv-indentedtree .clickable {
-                            color: #08C;
-                            cursor: pointer;
-                        }
-                        .nvd3.nv-indentedtree span.clickable:hover {
-                            color: #005580;
-                            text-decoration: underline;
-                        }
-                        .nvd3.nv-indentedtree .nv-childrenCount {
-                            display: inline-block;
-                            margin-left: 5px;
-                        }
-                        .nvd3.nv-indentedtree .nv-treeicon {
-                            cursor: pointer;
-                        }
+                            .nvd3 .nv-brushBackground rect {
+                                stroke: #000;
+                                stroke-width: .4;
+                                fill: #fff;
+                                fill-opacity: .7;
+                            }
+                            .nvd3.nv-indentedtree .name {
+                                margin-left: 5px;
+                            }
+                            .nvd3.nv-indentedtree .clickable {
+                                color: #08C;
+                                cursor: pointer;
+                            }
+                            .nvd3.nv-indentedtree span.clickable:hover {
+                                color: #005580;
+                                text-decoration: underline;
+                            }
+                            .nvd3.nv-indentedtree .nv-childrenCount {
+                                display: inline-block;
+                                margin-left: 5px;
+                            }
+                            .nvd3.nv-indentedtree .nv-treeicon {
+                                cursor: pointer;
+                            }
 
-                        .nvd3.nv-indentedtree .nv-treeicon.nv-folded {
-                            cursor: pointer;
-                        }
-                        .nvd3 .background path {
-                            fill: none;
-                            stroke: #ccc;
-                            stroke-opacity: .4;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .foreground path {
-                            fill: none;
-                            stroke: steelblue;
-                            stroke-opacity: .7;
-                        }
-                        .nvd3 .brush .extent {
-                            fill-opacity: .3;
-                            stroke: #fff;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .axis line,
-                        .axis path {
-                            fill: none;
-                            stroke: #000;
-                            shape-rendering: crispEdges;
-                        }
-                        .nvd3 .axis text {
-                            text-shadow: 0 1px 0 #fff;
-                        }
-                        .nvd3 .nv-interactiveGuideLine {
-                            pointer-events: none;
-                        }
-                        .nvd3 line.nv-guideline {
-                            stroke: #ccc;
-                        }
-        </style>
-                </div>
+                            .nvd3.nv-indentedtree .nv-treeicon.nv-folded {
+                                cursor: pointer;
+                            }
+                            .nvd3 .background path {
+                                fill: none;
+                                stroke: #ccc;
+                                stroke-opacity: .4;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .foreground path {
+                                fill: none;
+                                stroke: steelblue;
+                                stroke-opacity: .7;
+                            }
+                            .nvd3 .brush .extent {
+                                fill-opacity: .3;
+                                stroke: #fff;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .axis line,
+                            .axis path {
+                                fill: none;
+                                stroke: #000;
+                                shape-rendering: crispEdges;
+                            }
+                            .nvd3 .axis text {
+                                text-shadow: 0 1px 0 #fff;
+                            }
+                            .nvd3 .nv-interactiveGuideLine {
+                                pointer-events: none;
+                            }
+                            .nvd3 line.nv-guideline {
+                                stroke: #ccc;
+                            }
+                        </style>
+                    </div>
+                </t>
             </t>
-        </t>
         </t>
     </template>
 
