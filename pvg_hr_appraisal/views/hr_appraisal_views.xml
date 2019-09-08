@@ -9,22 +9,22 @@
                 <attribute name="col">6</attribute>
             </xpath>
             <xpath expr="//field[@name='appraisal_manager_survey_id']" position="after">
-                <field name="appraisal_manager_survey_goal" attrs="{'invisible':[('appraisal_by_manager','=',False)]}"
+                <field name="appraisal_manager_survey_goal" attrs="{'invisible':[('appraisal_by_manager','=',False)]}" readonly="false"
                        colspan="1"/>
                 <span attrs="{'invisible':[('appraisal_by_manager','=',False)]}">%</span>
             </xpath>
             <xpath expr="//field[@name='appraisal_self_survey_id']" position="after">
-                <field name="appraisal_self_survey_goal" attrs="{'invisible':[('appraisal_self','=',False)]}"
+                <field name="appraisal_self_survey_goal" attrs="{'invisible':[('appraisal_self','=',False)]}" readonly="false"
                        colspan="1"/>
                 <span attrs="{'invisible':[('appraisal_self','=',False)]}">%</span>
             </xpath>
             <xpath expr="//field[@name='appraisal_collaborators_survey_id']" position="after">
-                <field name="appraisal_collaborators_survey_goal"
+                <field name="appraisal_collaborators_survey_goal" readonly="false"
                        attrs="{'invisible':[('appraisal_by_collaborators','=',False)]}" colspan="1"/>
                 <span attrs="{'invisible':[('appraisal_by_collaborators','=',False)]}">%</span>
             </xpath>
             <xpath expr="//field[@name='appraisal_colleagues_survey_id']" position="after">
-                <field name="appraisal_colleagues_survey_goal"
+                <field name="appraisal_colleagues_survey_goal" readonly="false"
                        attrs="{'invisible':[('appraisal_by_colleagues','=',False)]}" colspan="1"/>
                 <span attrs="{'invisible':[('appraisal_by_colleagues','=',False)]}">%</span>
             </xpath>
