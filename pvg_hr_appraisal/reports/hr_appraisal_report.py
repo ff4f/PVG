@@ -15,10 +15,10 @@ class hr_appraisal_report(models.AbstractModel):
             page = {'page_id': page_id.id, 'page_name': page_id.display_name}
             questions = []
             for _question in page_id.question_ids:
-                answer_text = ''
-                answer_free_text = ''
-                answer_number = 0
-                answer_date = ''
+                answer_text = []
+                answer_free_text = []
+                answer_number = []
+                answer_date = []
                 max = 0
                 answer_count = 0
                 answer_score = 0
@@ -29,10 +29,14 @@ class hr_appraisal_report(models.AbstractModel):
                             answer_count += 1
                             for answer in complete_survey.user_input_line_ids:
                                 if not answer.skipped and answer.question_id.id == _question.id:
-                                    answer_text = answer.value_text
-                                    answer_free_text = answer.value_free_text
-                                    answer_number = answer.value_number
-                                    answer_date = answer.value_date
+                                    if answer.value_text:
+                                        answer_text.append(answer.value_text)
+                                    if answer.value_free_text:
+                                        answer_free_text.append(answer.value_free_text)
+                                    if answer.value_number > 0:
+                                        answer_number.append(answer.value_number)
+                                    if answer.value_date:
+                                        answer_date.append(answer.value_date)
 
                 if _question.type == 'simple_choice' or _question.type == 'multiple_choice':
                     if _question.type == 'simple_choice':
@@ -92,7 +96,7 @@ class hr_appraisal_report(models.AbstractModel):
         else:
             total_max = 100 - total_score
         overall_page = {'page_id': 'overall_page', 'page_name': 'Over all', 'total_max': total_max,
-                        'total_score': total_score, 'gap': gap}
+                        'total_score': total_score, 'gap': gap, 'goal': goal}
         pages.append(overall_page)
         appraisal_data['pages'] = pages
         return appraisal_data

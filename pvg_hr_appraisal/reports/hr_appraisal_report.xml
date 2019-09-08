@@ -28,35 +28,7 @@
                                     </h3>
                                     <hr/>
                                     <t t-if="page['questions']" t-foreach="page['questions']" t-as="question">
-                                        <t t-if="question['answer_text']">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <span t-esc="['answer_text']"/>
-                                        </t>
-                                        <t t-elif="question['answer_free_text']">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <span t-esc="['answer_free_text']"/>
-                                        </t>
-                                        <t t-elif="question['answer_number']">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <span t-esc="['answer_number']"/>
-                                        </t>
-                                        <t t-elif="question['answer_date']">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <span t-esc="['answer_date']"/>
-                                        </t>
-                                        <t t-elif="question['max'] > 0 and not question['matrix']">
+                                        <t t-if="question['max'] > 0 and not question['matrix']">
                                             <strong>
                                                 <span t-esc="question['string']"/>
                                             </strong>
@@ -73,12 +45,13 @@
                                                 <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
                                             </div>
                                             <script type="text/javascript">
+                                                score = <t t-esc="question['score']"/>
+                                                gap = <t t-esc="question['max']"/> - score
+                                                total = score + gap
+                                                score = Math.round((score/total)*100)
+                                                gap = Math.round((gap/total)*100)
                                                 <t t-esc="chart_gr_name"/>
-                                                = [{'label': 'Score', 'value':
-                                                <t t-esc="question['score']"/>
-                                                }, {'label': 'Gap', 'value':
-                                                <t t-esc="question['max']"/>
-                                                -<t t-esc="question['score']"/>}]
+                                                = [{'label': 'Score '+ score.toString()+'%', 'value': score}, {'label': '-', 'value': gap}]
                                                 nv.addGraph(function() {
                                                 var
                                                 <t t-esc="chart_name"/>
@@ -87,7 +60,8 @@
                                                 .y(function(d) { return d.value })
                                                 .showLabels(true)
                                                 .labelThreshold(.05)
-                                                .labelType("percent")
+                                                .showLegend(false)
+                                                .labelType("key")
                                                 .donut(true)
                                                 .donutRatio(0.35)
 
@@ -153,12 +127,24 @@
                                             <hr/>
                                         </t>
                                         <t t-else="">
-                                            <span t-esc="question['string']"/>
+                                            <strong><span t-esc="question['string']"/></strong>
                                             <br/>
-                                            <span t-esc="question['answer_text']"/>
-                                            <span t-esc="question['answer_free_text']"/>
-                                            <span t-esc="question['answer_number']"/>
-                                            <span t-esc="question['answer_date']"/>
+                                            <t t-foreach="question['answer_text']" t-as="text">
+                                                <span t-esc="text"/>
+                                                <br/>
+                                            </t>
+                                            <t t-foreach="question['answer_free_text']" t-as="free_text">
+                                                <span t-esc="free_text"/>
+                                                <br/>
+                                            </t>
+                                            <t t-foreach="question['answer_number']" t-as="number">
+                                                <span t-esc="number"/>
+                                                <br/>
+                                            </t>
+                                            <t t-foreach="question['answer_date']" t-as="date">
+                                                <span t-esc="date"/>
+                                                <br/>
+                                            </t>
                                         </t>
                                         <hr/>
                                     </t>
@@ -167,8 +153,9 @@
                                     <h3>
                                         <span>Total Score</span>
                                     </h3>
-                                    <!--<span t-esc="page['total_max']"/>-->
-                                    <!--<span t-esc="page['total_score']"/>-->
+                                    <span>Goal: </span><span t-esc="page['goal']"/><span>%</span>
+                                    <span>Score: </span><span t-esc="page['total_score']"/><span>%</span>
+                                    <span>Gap: </span><span t-esc="page['gap']"/><span>%</span>
                                     <t t-set="chart_name" t-value="'ch_'+str(page['page_id'])"/>
                                     <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
                                     <div t-att-id="chart_name">
@@ -178,11 +165,9 @@
                                         total_score = <t t-esc="page['total_score']"/>
                                         gap = <t t-esc="page['gap']"/>
                                         total = <t t-esc="page['total_max']"/>
-                                        <t t-if="gap &lt;= 0">
-                                            <t t-esc="chart_gr_name"/> = [{'label': 'Score', 'value': total_score}, {'label': 'Total', 'value': total}]
-                                        </t>
-                                        <t t-elif="gap &gt; 0">
-                                            <t t-esc="chart_gr_name"/> = [{'label': 'Score', 'value': total_score}, {'gap': gap}, {'label': 'Total', 'value': total}]
+                                        <t t-esc="chart_gr_name"/> = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score}, {'label': '-', 'value': total}]
+                                        <t t-if="page['gap'] &gt;= 0">
+                                            <t t-esc="chart_gr_name"/> = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score}, {'label': '-', 'value': total}, {'label': 'Gap '+ gap.toString()+'%', 'value': gap}]
                                         </t>
                                         nv.addGraph(function() {
                                         var
@@ -190,9 +175,10 @@
                                         = nv.models.pieChart()
                                         .x(function(d) { return d.label })
                                         .y(function(d) { return d.value })
+                                        .showLegend(false)
                                         .showLabels(true)
                                         .labelThreshold(.05)
-                                        .labelType("percent")
+                                        .labelType("key")
                                         .donut(true)
                                         .donutRatio(0.35)
 
