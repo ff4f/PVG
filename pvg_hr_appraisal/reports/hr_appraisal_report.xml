@@ -23,7 +23,7 @@
                             <t t-if="doc.manager_appraisal_data" t-foreach="doc.manager_appraisal_data['pages']"
                                t-as="page">
                                 <t t-if="page['page_id'] != 'overall_page'">
-                                    <div style="page-break-inside: avoid">
+                                    <div style="page-break-after:always">
                                         <h3>
                                             <span t-esc="page['page_name']"/>
                                         </h3>
@@ -44,7 +44,7 @@
                                                     <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
                                                     <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
                                                     <div t-att-id="chart_name">
-                                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                        <svg style="height: 350px; width: 500px; text-align: left!important; direction: ltr;"/>
                                                     </div>
                                                     <script type="text/javascript">
                                                         score =
@@ -99,7 +99,7 @@
                                                     <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
                                                     <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
                                                     <div t-att-id="chart_name">
-                                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                        <svg style="height: 350px; width: 500px; text-align: left!important; direction: ltr;"/>
                                                     </div>
                                                     <script type="text/javascript">
                                                         <t t-esc="chart_gr_name"/>
@@ -179,7 +179,7 @@
                                         <t t-set="chart_name" t-value="'ch_'+str(page['page_id'])"/>
                                         <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
                                         <div t-att-id="chart_name">
-                                            <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                            <svg style="height: 350px; width: 500px; text-align: left!important; direction: ltr;"/>
                                         </div>
                                         <script type="text/javascript">
                                             total_score = Math.round(<t t-esc="page['total_score']"/>)
