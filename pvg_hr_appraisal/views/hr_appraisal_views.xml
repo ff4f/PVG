@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="pvg_hr_employee_view_form" model="ir.ui.view">
+        <field name="name">pvg.hr.employee.view.form.inherit.appraisal</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[2]/group" position="attributes">
+                <attribute name="col">6</attribute>
+            </xpath>
+            <xpath expr="//field[@name='appraisal_manager_survey_id']" position="after">
+                <field name="appraisal_manager_survey_goal" attrs="{'invisible':[('appraisal_by_manager','=',False)]}"
+                       colspan="1"/>
+                <span attrs="{'invisible':[('appraisal_by_manager','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='appraisal_self_survey_id']" position="after">
+                <field name="appraisal_self_survey_goal" attrs="{'invisible':[('appraisal_self','=',False)]}"
+                       colspan="1"/>
+                <span attrs="{'invisible':[('appraisal_self','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='appraisal_collaborators_survey_id']" position="after">
+                <field name="appraisal_collaborators_survey_goal"
+                       attrs="{'invisible':[('appraisal_by_collaborators','=',False)]}" colspan="1"/>
+                <span attrs="{'invisible':[('appraisal_by_collaborators','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='appraisal_colleagues_survey_id']" position="after">
+                <field name="appraisal_colleagues_survey_goal"
+                       attrs="{'invisible':[('appraisal_by_colleagues','=',False)]}" colspan="1"/>
+                <span attrs="{'invisible':[('appraisal_by_colleagues','=',False)]}">%</span>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pvg_hr_appraisal_view_form" model="ir.ui.view">
+        <field name="name">pvg.hr.appraisal.form.inherit.appraisal</field>
+        <field name="model">hr.appraisal</field>
+        <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[2]/group" position="attributes">
+                <attribute name="col">6</attribute>
+            </xpath>
+            <xpath expr="//field[@name='manager_survey_id']" position="after">
+                <field name="manager_survey_goal"
+                       attrs="{'invisible':[('manager_appraisal','=',False)], 'readonly':[('state', '!=', 'new')]}" colspan="1"/>
+                <span attrs="{'invisible':[('manager_appraisal','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='employee_survey_id']" position="after">
+                <field name="employee_survey_goal"
+                       attrs="{'invisible':[('employee_appraisal','=',False)], 'readonly':[('state', '!=', 'new')]}" colspan="1"/>
+                <span attrs="{'invisible':[('employee_appraisal','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='collaborators_survey_id']" position="after">
+                <field name="collaborators_survey_goal"
+                       attrs="{'invisible':[('collaborators_appraisal','=',False)], 'readonly':[('state', '!=', 'new')]}" colspan="1"/>
+                <span attrs="{'invisible':[('collaborators_appraisal','=',False)]}">%</span>
+            </xpath>
+            <xpath expr="//field[@name='colleagues_survey_id']" position="after">
+                <field name="colleagues_survey_goal"
+                       attrs="{'invisible':[('colleagues_appraisal','=',False)], 'readonly':[('state', '!=', 'new')]}" colspan="1"/>
+                <span attrs="{'invisible':[('colleagues_appraisal','=',False)]}">%</span>
+            </xpath>
+        </field>
+    </record>
+</odoo>

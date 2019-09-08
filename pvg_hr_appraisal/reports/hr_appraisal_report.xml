@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="pvg_hr_appraisal_report"
+            model="hr.appraisal"
+            string="Appraisal"
+            report_type="qweb-html"
+            name="pvg_hr_appraisal.hr_appraisal_report"
+    />
+
+    <template id="hr_appraisal_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <link rel="stylesheet" type="text/css" href="/web/static/lib/nvd3/nv.d3.css"/>
+                        <script src="/web/static/lib/nvd3/d3.v3.js"/>
+                        <script src="/web/static/lib/nvd3/nv.d3.js"/>
+                        <h2>Appraisal Report</h2>
+                        <p>This Appraisal is for
+                            <span t-field="doc.display_name"/>
+                            <hr/>
+                            <t t-if="doc.manager_appraisal_data" t-foreach="doc.manager_appraisal_data['pages']"
+                               t-as="page">
+                                <t t-if="page['page_id'] != 'overall_page'">
+                                    <h3>
+                                        <span t-esc="page['page_name']"/>
+                                    </h3>
+                                    <hr/>
+                                    <t t-if="page['questions']" t-foreach="page['questions']" t-as="question">
+                                        <t t-if="question['answer_text']">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <span t-esc="['answer_text']"/>
+                                        </t>
+                                        <t t-elif="question['answer_free_text']">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <span t-esc="['answer_free_text']"/>
+                                        </t>
+                                        <t t-elif="question['answer_number']">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <span t-esc="['answer_number']"/>
+                                        </t>
+                                        <t t-elif="question['answer_date']">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <span t-esc="['answer_date']"/>
+                                        </t>
+                                        <t t-elif="question['max'] > 0 and not question['matrix']">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <span>Score:</span>
+                                            <span t-esc="question['score']"/>
+                                            <span>from</span>
+                                            <span t-esc="question['max']"/>
+                                            <!--<span t-esc="question['question_type']"/>-->
+                                            <t t-set="differ" t-vaule="question['max'] - question['score']"/>
+                                            <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
+                                            <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                            <div t-att-id="chart_name">
+                                                <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                            </div>
+                                            <script type="text/javascript">
+                                                <t t-esc="chart_gr_name"/>
+                                                = [{'label': 'Score', 'value':
+                                                <t t-esc="question['score']"/>
+                                                }, {'label': 'Gap', 'value':
+                                                <t t-esc="question['max']"/>
+                                                -<t t-esc="question['score']"/>}]
+                                                nv.addGraph(function() {
+                                                var
+                                                <t t-esc="chart_name"/>
+                                                = nv.models.pieChart()
+                                                .x(function(d) { return d.label })
+                                                .y(function(d) { return d.value })
+                                                .showLabels(true)
+                                                .labelThreshold(.05)
+                                                .labelType("percent")
+                                                .donut(true)
+                                                .donutRatio(0.35)
+
+                                                _chart_name = '<t t-esc="chart_name"/>'
+                                                d3.select('#'+_chart_name+' svg')
+                                                .datum(<t t-esc="chart_gr_name"/>)
+                                                .transition().duration(1200)
+                                                .call(<t t-esc="chart_name"/>);
+
+                                                return <t t-esc="chart_name"/>;
+                                                });
+                                            </script>
+                                        </t>
+                                        <t t-elif="len(question['matrix']) > 0">
+                                            <strong>
+                                                <span t-esc="question['string']"/>
+                                            </strong>
+                                            <br/>
+                                            <t t-foreach="question['matrix']" t-as="m_question">
+                                                <span t-esc="m_question['m_question']"/>
+                                                <br/>
+                                                <span>Score:</span>
+                                                <span t-esc="m_question['score']"/>
+                                                <span>from</span>
+                                                <span t-esc="question['max']"/>
+                                                <br/>
+                                            </t>
+                                            <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
+                                            <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                            <div t-att-id="chart_name">
+                                                <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                            </div>
+                                            <script type="text/javascript">
+                                                <t t-esc="chart_gr_name"/>
+                                                = [{key: '<t t-esc="question['string']"/>', values: []}]
+                                                <t t-foreach="question['matrix']" t-as="m_question">
+                                                    <t t-esc="chart_gr_name"/>[0].values.push({'label': '<t
+                                                        t-esc="m_question['m_question']"/>', 'value':<t
+                                                        t-esc="m_question['score']"/>})
+                                                </t>
+                                                nv.addGraph(function() {
+                                                var
+                                                <t t-esc="chart_name"/>
+                                                = nv.models.discreteBarChart()
+                                                .x(function(d) { return d.label })
+                                                .y(function(d) { return d.value })
+                                                .staggerLabels(true)
+                                                .showValues(true)
+                                                .forceY([0,<t t-esc="question['max']"/>])
+
+                                                _chart_name = '<t t-esc="chart_name"/>'
+                                                d3.select('#'+_chart_name+' svg')
+                                                .datum(<t t-esc="chart_gr_name"/>)
+                                                .transition().duration(500)
+                                                .call(<t t-esc="chart_name"/>)
+                                                ;
+
+                                                nv.utils.windowResize(<t t-esc="chart_name"/>.update);
+
+                                                return <t t-esc="chart_name"/>;
+                                                });
+                                            </script>
+                                            <hr/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="question['string']"/>
+                                            <!--<span t-esc="question['question_type']"/>-->
+                                            <span t-esc="question['answer_text']"/>
+                                            <span t-esc="question['answer_free_text']"/>
+                                            <span t-esc="question['answer_number']"/>
+                                            <span t-esc="question['answer_date']"/>
+                                        </t>
+                                        <hr/>
+                                    </t>
+                                </t>
+                                <t t-elif="page['page_id'] == 'overall_page'">
+                                    <h3>
+                                        <span>Total Score</span>
+                                    </h3>
+                                    <!--<span t-esc="page['total_max']"/>-->
+                                    <!--<span t-esc="page['total_score']"/>-->
+                                    <t t-set="chart_name" t-value="'ch_'+str(page['page_id'])"/>
+                                    <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                    <div t-att-id="chart_name">
+                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                    </div>
+                                    <script type="text/javascript">
+                                        <t t-esc="chart_gr_name"/>
+                                        = [{'label': 'Score', 'value':
+                                        <t t-esc="page['total_score']"/>
+                                        }, {'label': 'Gap', 'value':
+                                        <t t-esc="page['gap']"/>}
+                                        , {'label': 'Total', 'value':
+                                        <t t-esc="page['total_max']"/>}]
+                                        nv.addGraph(function() {
+                                        var
+                                        <t t-esc="chart_name"/>
+                                        = nv.models.pieChart()
+                                        .x(function(d) { return d.label })
+                                        .y(function(d) { return d.value })
+                                        .showLabels(true)
+                                        .labelThreshold(.05)
+                                        .labelType("percent")
+                                        .donut(true)
+                                        .donutRatio(0.35)
+
+                                        _chart_name = '<t t-esc="chart_name"/>'
+                                        d3.select('#'+_chart_name+' svg')
+                                        .datum(<t t-esc="chart_gr_name"/>)
+                                        .transition().duration(1200)
+                                        .call(<t t-esc="chart_name"/>);
+
+                                        return <t t-esc="chart_name"/>;
+                                        });
+                                    </script>
+                                </t>
+                            </t>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
