@@ -23,193 +23,201 @@
                             <t t-if="doc.manager_appraisal_data" t-foreach="doc.manager_appraisal_data['pages']"
                                t-as="page">
                                 <t t-if="page['page_id'] != 'overall_page'">
-                                    <h3>
-                                        <span t-esc="page['page_name']"/>
-                                    </h3>
-                                    <hr/>
-                                    <t t-if="page['questions']" t-foreach="page['questions']" t-as="question">
-                                        <t t-if="question['max'] > 0 and not question['matrix']">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <span>Score:</span>
-                                            <span t-esc="question['score']"/>
-                                            <span>from</span>
-                                            <span t-esc="question['max']"/>
-                                            <!--<span t-esc="question['question_type']"/>-->
-                                            <t t-set="differ" t-vaule="question['max'] - question['score']"/>
-                                            <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
-                                            <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
-                                            <div t-att-id="chart_name">
-                                                <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
-                                            </div>
-                                            <script type="text/javascript">
-                                                score =
-                                                <t t-esc="question['score']"/>
-                                                gap =
-                                                <t t-esc="question['max']"/>
-                                                - score
-                                                total = score + gap
-                                                score = Math.round((score/total)*100)
-                                                gap = Math.round((gap/total)*100)
-                                                <t t-esc="chart_gr_name"/>
-                                                = [{'label': 'Score '+ score.toString()+'%', 'value': score}, {'label':
-                                                '-', 'value': gap}]
-                                                nv.addGraph(function() {
-                                                var
-                                                <t t-esc="chart_name"/>
-                                                = nv.models.pieChart()
-                                                .x(function(d) { return d.label })
-                                                .y(function(d) { return d.value })
-                                                .showLabels(true)
-                                                .labelThreshold(.05)
-                                                .showLegend(false)
-                                                .labelType("key")
-                                                .donut(true)
-                                                .donutRatio(0.35)
+                                    <div style="page-break-inside: avoid">
+                                        <h3>
+                                            <span t-esc="page['page_name']"/>
+                                        </h3>
+                                        <hr/>
+                                        <t t-if="page['questions']" t-foreach="page['questions']" t-as="question">
+                                            <div style="page-break-inside: avoid">
+                                                <t t-if="question['max'] > 0 and not question['matrix']">
+                                                    <strong>
+                                                        <span t-esc="question['string']"/>
+                                                    </strong>
+                                                    <br/>
+                                                    <span>Score:</span>
+                                                    <span t-esc="question['score']"/>
+                                                    <span>from</span>
+                                                    <span t-esc="question['max']"/>
+                                                    <!--<span t-esc="question['question_type']"/>-->
+                                                    <t t-set="differ" t-vaule="question['max'] - question['score']"/>
+                                                    <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
+                                                    <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                                    <div t-att-id="chart_name">
+                                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        score =
+                                                        <t t-esc="question['score']"/>
+                                                        gap =
+                                                        <t t-esc="question['max']"/>
+                                                        - score
+                                                        total = score + gap
+                                                        score = Math.round((score/total)*100)
+                                                        gap = Math.round((gap/total)*100)
+                                                        <t t-esc="chart_gr_name"/>
+                                                        = [{'label': 'Score '+ score.toString()+'%', 'value': score},
+                                                        {'label':
+                                                        '-', 'value': gap}]
+                                                        nv.addGraph(function() {
+                                                        var
+                                                        <t t-esc="chart_name"/>
+                                                        = nv.models.pieChart()
+                                                        .x(function(d) { return d.label })
+                                                        .y(function(d) { return d.value })
+                                                        .showLabels(true)
+                                                        .labelThreshold(.05)
+                                                        .showLegend(false)
+                                                        .labelType("key")
+                                                        .donut(true)
+                                                        .donutRatio(0.35)
 
-                                                _chart_name = '<t t-esc="chart_name"/>'
-                                                d3.select('#'+_chart_name+' svg')
-                                                .datum(<t t-esc="chart_gr_name"/>)
-                                                .transition().duration(1200)
-                                                .call(<t t-esc="chart_name"/>);
+                                                        _chart_name = '<t t-esc="chart_name"/>'
+                                                        d3.select('#'+_chart_name+' svg')
+                                                        .datum(<t t-esc="chart_gr_name"/>)
+                                                        .transition().duration(1200)
+                                                        .call(<t t-esc="chart_name"/>);
 
-                                                return <t t-esc="chart_name"/>;
-                                                });
-                                            </script>
-                                        </t>
-                                        <t t-elif="len(question['matrix']) > 0">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <t t-foreach="question['matrix']" t-as="m_question">
-                                                <span t-esc="m_question['m_question']"/>
-                                                <br/>
-                                                <span>Score:</span>
-                                                <span t-esc="m_question['score']"/>
-                                                <span>from</span>
-                                                <span t-esc="question['max']"/>
-                                                <br/>
-                                            </t>
-                                            <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
-                                            <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
-                                            <div t-att-id="chart_name">
-                                                <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
-                                            </div>
-                                            <script type="text/javascript">
-                                                <t t-esc="chart_gr_name"/>
-                                                = [{key: '<t t-esc="question['string']"/>', values: []}]
-                                                <t t-foreach="question['matrix']" t-as="m_question">
-                                                    <t t-esc="chart_gr_name"/>[0].values.push({'label': '<t
-                                                        t-esc="m_question['m_question']"/>', 'value':<t
-                                                        t-esc="m_question['score']"/>})
+                                                        return <t t-esc="chart_name"/>;
+                                                        });
+                                                    </script>
                                                 </t>
-                                                nv.addGraph(function() {
-                                                var
-                                                <t t-esc="chart_name"/>
-                                                = nv.models.discreteBarChart()
-                                                .x(function(d) { return d.label })
-                                                .y(function(d) { return d.value })
-                                                .staggerLabels(true)
-                                                .showValues(true)
-                                                .forceY([0,<t t-esc="question['max']"/>])
+                                                <t t-elif="len(question['matrix']) > 0">
+                                                    <strong>
+                                                        <span t-esc="question['string']"/>
+                                                    </strong>
+                                                    <br/>
+                                                    <t t-foreach="question['matrix']" t-as="m_question">
+                                                        <span t-esc="m_question['m_question']"/>
+                                                        <br/>
+                                                        <span>Score:</span>
+                                                        <span t-esc="m_question['score']"/>
+                                                        <span>from</span>
+                                                        <span t-esc="question['max']"/>
+                                                        <br/>
+                                                    </t>
+                                                    <t t-set="chart_name" t-value="'ch_'+str(question['question_id'])"/>
+                                                    <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                                    <div t-att-id="chart_name">
+                                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        <t t-esc="chart_gr_name"/>
+                                                        = [{key: '<t t-esc="question['string']"/>', values: []}]
+                                                        <t t-foreach="question['matrix']" t-as="m_question">
+                                                            <t t-esc="chart_gr_name"/>[0].values.push({'label': '<t
+                                                                t-esc="m_question['m_question']"/>', 'value':<t
+                                                                t-esc="m_question['score']"/>})
+                                                        </t>
+                                                        nv.addGraph(function() {
+                                                        var
+                                                        <t t-esc="chart_name"/>
+                                                        = nv.models.discreteBarChart()
+                                                        .x(function(d) { return d.label })
+                                                        .y(function(d) { return d.value })
+                                                        .staggerLabels(true)
+                                                        .showValues(true)
+                                                        .forceY([0,<t t-esc="question['max']"/>])
 
-                                                _chart_name = '<t t-esc="chart_name"/>'
-                                                d3.select('#'+_chart_name+' svg')
-                                                .datum(<t t-esc="chart_gr_name"/>)
-                                                .transition().duration(500)
-                                                .call(<t t-esc="chart_name"/>)
-                                                ;
+                                                        _chart_name = '<t t-esc="chart_name"/>'
+                                                        d3.select('#'+_chart_name+' svg')
+                                                        .datum(<t t-esc="chart_gr_name"/>)
+                                                        .transition().duration(500)
+                                                        .call(<t t-esc="chart_name"/>)
+                                                        ;
 
-                                                nv.utils.windowResize(<t t-esc="chart_name"/>.update);
+                                                        nv.utils.windowResize(<t t-esc="chart_name"/>.update);
 
-                                                return <t t-esc="chart_name"/>;
-                                                });
-                                            </script>
+                                                        return <t t-esc="chart_name"/>;
+                                                        });
+                                                    </script>
+                                                    <hr/>
+                                                </t>
+                                                <t t-else="">
+                                                    <strong>
+                                                        <span t-esc="question['string']"/>
+                                                    </strong>
+                                                    <br/>
+                                                    <ul>
+                                                        <li t-foreach="question['answer_text']" t-as="text">
+                                                            <span t-esc="text"/>
+                                                            <br/>
+                                                        </li>
+                                                        <li t-foreach="question['answer_free_text']" t-as="free_text">
+                                                            <span t-esc="free_text"/>
+                                                            <br/>
+                                                        </li>
+                                                        <li t-foreach="question['answer_number']" t-as="number">
+                                                            <span t-esc="number"/>
+                                                            <br/>
+                                                        </li>
+                                                        <li t-foreach="question['answer_date']" t-as="date">
+                                                            <span t-esc="date"/>
+                                                            <br/>
+                                                        </li>
+                                                    </ul>
+                                                </t>
+                                            </div>
                                             <hr/>
                                         </t>
-                                        <t t-else="">
-                                            <strong>
-                                                <span t-esc="question['string']"/>
-                                            </strong>
-                                            <br/>
-                                            <ul>
-                                                <li t-foreach="question['answer_text']" t-as="text">
-                                                    <span t-esc="text"/>
-                                                    <br/>
-                                                </li>
-                                                <li t-foreach="question['answer_free_text']" t-as="free_text">
-                                                    <span t-esc="free_text"/>
-                                                    <br/>
-                                                </li>
-                                                <li t-foreach="question['answer_number']" t-as="number">
-                                                    <span t-esc="number"/>
-                                                    <br/>
-                                                </li>
-                                                <li t-foreach="question['answer_date']" t-as="date">
-                                                    <span t-esc="date"/>
-                                                    <br/>
-                                                </li>
-                                            </ul>
-                                        </t>
-                                        <hr/>
-                                    </t>
+                                    </div>
                                 </t>
                                 <t t-elif="page['page_id'] == 'overall_page'">
-                                    <h3>
-                                        <span>Total Score</span>
-                                    </h3>
-                                    <span>Goal:</span>
-                                    <span t-esc="page['goal']"/>
-                                    <span>%</span>
-                                    <span>Score:</span>
-                                    <span t-esc="page['total_score']"/>
-                                    <span>%</span>
-                                    <span>Gap:</span>
-                                    <span t-esc="page['gap']"/>
-                                    <span>%</span>
-                                    <t t-set="chart_name" t-value="'ch_'+str(page['page_id'])"/>
-                                    <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
-                                    <div t-att-id="chart_name">
-                                        <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
-                                    </div>
-                                    <script type="text/javascript">
-                                        total_score = Math.round(<t t-esc="page['total_score']"/>)
-                                        gap = Math.round(<t t-esc="page['gap']"/>)
-                                        total = Math.round(<t t-esc="page['total_max']"/>)
-                                        <t t-esc="chart_gr_name"/>
-                                        = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score},
-                                        {'label': '-', 'value': total}]
-                                        <t t-if="page['gap'] &gt;= 0">
+                                    <div style="page-break-inside: avoid">
+                                        <h3>
+                                            <span>Total Score</span>
+                                        </h3>
+                                        <span>Goal:</span>
+                                        <span t-esc="page['goal']"/>
+                                        <span>%</span>
+                                        <span>Score:</span>
+                                        <span t-esc="page['total_score']"/>
+                                        <span>%</span>
+                                        <span>Gap:</span>
+                                        <span t-esc="page['gap']"/>
+                                        <span>%</span>
+                                        <t t-set="chart_name" t-value="'ch_'+str(page['page_id'])"/>
+                                        <t t-set="chart_gr_name" t-value="'gr_'+str(chart_name)"/>
+                                        <div t-att-id="chart_name">
+                                            <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
+                                        </div>
+                                        <script type="text/javascript">
+                                            total_score = Math.round(<t t-esc="page['total_score']"/>)
+                                            gap = Math.round(<t t-esc="page['gap']"/>)
+                                            total = Math.round(<t t-esc="page['total_max']"/>)
                                             <t t-esc="chart_gr_name"/>
                                             = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score},
-                                            {'label': '-', 'value': total}, {'label': 'Gap '+ gap.toString()+'%',
-                                            'value': gap}]
-                                        </t>
-                                        nv.addGraph(function() {
-                                        var
-                                        <t t-esc="chart_name"/>
-                                        = nv.models.pieChart()
-                                        .x(function(d) { return d.label })
-                                        .y(function(d) { return d.value })
-                                        .showLegend(false)
-                                        .showLabels(true)
-                                        .labelThreshold(.05)
-                                        .labelType("key")
-                                        .donut(true)
-                                        .donutRatio(0.35)
+                                            {'label': '-', 'value': total}]
+                                            <t t-if="page['gap'] &gt;= 0">
+                                                <t t-esc="chart_gr_name"/>
+                                                = [{'label': 'Score '+ total_score.toString()+'%', 'value':
+                                                total_score},
+                                                {'label': '-', 'value': total}, {'label': 'Gap '+ gap.toString()+'%',
+                                                'value': gap}]
+                                            </t>
+                                            nv.addGraph(function() {
+                                            var
+                                            <t t-esc="chart_name"/>
+                                            = nv.models.pieChart()
+                                            .x(function(d) { return d.label })
+                                            .y(function(d) { return d.value })
+                                            .showLegend(false)
+                                            .showLabels(true)
+                                            .labelThreshold(.05)
+                                            .labelType("key")
+                                            .donut(true)
+                                            .donutRatio(0.35)
 
-                                        _chart_name = '<t t-esc="chart_name"/>'
-                                        d3.select('#'+_chart_name+' svg')
-                                        .datum(<t t-esc="chart_gr_name"/>)
-                                        .transition().duration(1200)
-                                        .call(<t t-esc="chart_name"/>);
+                                            _chart_name = '<t t-esc="chart_name"/>'
+                                            d3.select('#'+_chart_name+' svg')
+                                            .datum(<t t-esc="chart_gr_name"/>)
+                                            .transition().duration(1200)
+                                            .call(<t t-esc="chart_name"/>);
 
-                                        return <t t-esc="chart_name"/>;
-                                        });
-                                    </script>
+                                            return <t t-esc="chart_name"/>;
+                                            });
+                                        </script>
+                                    </div>
                                 </t>
                             </t>
                         </p>
