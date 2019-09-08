@@ -86,7 +86,7 @@ class hr_appraisal_report(models.AbstractModel):
             if complete_survey.survey_id.id == _survey_id:
                 total_score += complete_survey.quizz_score
         total_score = (total_score / total_max) * 100
-        gap = ((goal/total_max)*100) - total_score
+        gap = ((((total_max/100)*goal)/total_max)*100) - total_score
         total_max = 100 - (total_score + gap)
         overall_page = {'page_id': 'overall_page', 'page_name': 'Over all', 'total_max': total_max,
                         'total_score': total_score, 'gap': gap}
