@@ -178,10 +178,10 @@
                                         total_score = <t t-esc="page['total_score']"/>
                                         gap = <t t-esc="page['gap']"/>
                                         total = <t t-esc="page['total_max']"/>
-                                        <t t-if="gap <= 0">
+                                        <t t-if="gap &lt;= 0">
                                             <t t-esc="chart_gr_name"/> = [{'label': 'Score', 'value': total_score}, {'label': 'Total', 'value': total}]
                                         </t>
-                                        <t t-elif="gap > 0">
+                                        <t t-elif="gap &gt; 0">
                                             <t t-esc="chart_gr_name"/> = [{'label': 'Score', 'value': total_score}, {'gap': gap}, {'label': 'Total', 'value': total}]
                                         </t>
                                         nv.addGraph(function() {
