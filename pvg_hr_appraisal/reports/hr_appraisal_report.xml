@@ -162,9 +162,9 @@
                                         <svg style="height: 500px; width: 730px; text-align: left!important; direction: ltr;"/>
                                     </div>
                                     <script type="text/javascript">
-                                        total_score = <t t-esc="page['total_score']"/>
-                                        gap = <t t-esc="page['gap']"/>
-                                        total = <t t-esc="page['total_max']"/>
+                                        total_score = Math.round(<t t-esc="page['total_score']"/>)
+                                        gap = Math.round(<t t-esc="page['gap']"/>)
+                                        total = Math.round(<t t-esc="page['total_max']"/>)
                                         <t t-esc="chart_gr_name"/> = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score}, {'label': '-', 'value': total}]
                                         <t t-if="page['gap'] &gt;= 0">
                                             <t t-esc="chart_gr_name"/> = [{'label': 'Score '+ total_score.toString()+'%', 'value': total_score}, {'label': '-', 'value': total}, {'label': 'Gap '+ gap.toString()+'%', 'value': gap}]
