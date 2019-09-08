@@ -154,7 +154,7 @@
                                         </t>
                                         <t t-else="">
                                             <span t-esc="question['string']"/>
-                                            <!--<span t-esc="question['question_type']"/>-->
+                                            <br/>
                                             <span t-esc="question['answer_text']"/>
                                             <span t-esc="question['answer_free_text']"/>
                                             <span t-esc="question['answer_number']"/>
