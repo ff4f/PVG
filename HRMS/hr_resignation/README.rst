@@ -1,4 +1,4 @@
-OHRMS Employee Resignation v11
+OHRMS Employee Resignation v12
 ==============================
 
 Employee Resignation Process.
@@ -15,7 +15,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/11.0/setup/install.html
+- www.odoo.com/documentation/12.0/setup/install.html
 - Install our custom addon
 
 
@@ -30,7 +30,7 @@ Credits
 Author
 ------
 
-Developer: Niyas Raphy @ cybrosys, niyas@cybrosys.in
+Developer: Niyas Raphy @ cybrosys, odoo@cybrosys.com
 
 Maintainer
 ----------
