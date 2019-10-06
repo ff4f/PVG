@@ -9,7 +9,7 @@ from ..lib.ks_date_filter_selections import ks_get_date
 class KsDashboardNinjaItems(models.Model):
     _name = 'ks_dashboard_ninja.item'
 
-    name = fields.Char(string=u"Name", size=256, translatable=True)
+    name = fields.Char(string=u"Name", size=256, translate=True)
     ks_model_id = fields.Many2one('ir.model', string=u'Model', required=True,
                                   domain="[('access_ids','!=',False),('transient','=',False),('model','not ilike','base_import%'),('model','not ilike','ir.%'),('model','not ilike','web_editor.%'),('model','not ilike','web_tour.%'),('model','!=','mail.thread'),('model','not ilike','ks_dash%')]")
     ks_domain = fields.Char(string=u"Domain")

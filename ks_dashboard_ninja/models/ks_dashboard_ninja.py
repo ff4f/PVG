@@ -10,7 +10,7 @@ from ..lib.ks_date_filter_selections import ks_get_date
 class KsDashboardNinjaBoard(models.Model):
     _name = 'ks_dashboard_ninja.board'
 
-    name = fields.Char(string=u"Dashboard Name", required=True, size=35, translatable=True)
+    name = fields.Char(string=u"Dashboard Name", required=True, size=35, translate=True)
     ks_dashboard_items_ids = fields.One2many('ks_dashboard_ninja.item', 'ks_dashboard_ninja_board_id',
                                              string=u'Dashboard Items')
     ks_dashboard_menu_name = fields.Char(string=u"Menu Name")
