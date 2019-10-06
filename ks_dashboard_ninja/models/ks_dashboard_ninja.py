@@ -10,17 +10,17 @@ from ..lib.ks_date_filter_selections import ks_get_date
 class KsDashboardNinjaBoard(models.Model):
     _name = 'ks_dashboard_ninja.board'
 
-    name = fields.Char(string="Dashboard Name", required=True, size=35)
+    name = fields.Char(string=u"Dashboard Name", required=True, size=35, translatable=True)
     ks_dashboard_items_ids = fields.One2many('ks_dashboard_ninja.item', 'ks_dashboard_ninja_board_id',
-                                             string='Dashboard Items')
-    ks_dashboard_menu_name = fields.Char(string="Menu Name")
+                                             string=u'Dashboard Items')
+    ks_dashboard_menu_name = fields.Char(string=u"Menu Name")
     ks_dashboard_top_menu_id = fields.Many2one('ir.ui.menu', domain="[('parent_id','=',False)]",
-                                               string="Show Under Menu")
+                                               string=u"Show Under Menu")
     ks_dashboard_client_action_id = fields.Many2one('ir.actions.client')
     ks_dashboard_menu_id = fields.Many2one('ir.ui.menu')
     ks_dashboard_state = fields.Char()
-    ks_dashboard_active = fields.Boolean(string="Active", default=True)
-    ks_dashboard_group_access = fields.Many2many('res.groups', string="Group Access")
+    ks_dashboard_active = fields.Boolean(string=u"Active", default=True)
+    ks_dashboard_group_access = fields.Many2many('res.groups', string=u"Group Access")
 
     # DateFilter Fields
     ks_dashboard_start_date = fields.Datetime()
@@ -48,7 +48,7 @@ class KsDashboardNinjaBoard(models.Model):
     ks_dashboard_default_template = fields.Many2one('ks_dashboard_ninja.board_template',
                                                     default=lambda self: self.env.ref('ks_dashboard_ninja.ks_blank',
                                                                                       False),
-                                                    string="Dashboard Template", required=True)
+                                                    string=u"Dashboard Template", required=True)
 
     ks_set_interval = fields.Selection([
         (15000, '15 Seconds'),

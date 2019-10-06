@@ -9,12 +9,12 @@ from ..lib.ks_date_filter_selections import ks_get_date
 class KsDashboardNinjaItems(models.Model):
     _name = 'ks_dashboard_ninja.item'
 
-    name = fields.Char(string="Name", size=256)
-    ks_model_id = fields.Many2one('ir.model', string='Model', required=True,
+    name = fields.Char(string=u"Name", size=256, translatable=True)
+    ks_model_id = fields.Many2one('ir.model', string=u'Model', required=True,
                                   domain="[('access_ids','!=',False),('transient','=',False),('model','not ilike','base_import%'),('model','not ilike','ir.%'),('model','not ilike','web_editor.%'),('model','not ilike','web_tour.%'),('model','!=','mail.thread'),('model','not ilike','ks_dash%')]")
-    ks_domain = fields.Char(string="Domain")
+    ks_domain = fields.Char(string=u"Domain")
 
-    ks_model_id_2 = fields.Many2one('ir.model', string='Model',
+    ks_model_id_2 = fields.Many2one('ir.model', string=u'Model',
                                     domain="[('access_ids','!=',False),('transient','=',False),('model','not ilike','base_import%'),('model','not ilike','ir.%'),('model','not ilike','web_editor.%'),('model','not ilike','web_tour.%'),('model','!=','mail.thread'),('model','not ilike','ks_dash%')]")
 
     ks_model_name_2 = fields.Char(related='ks_model_id_2.model')
@@ -26,32 +26,32 @@ class KsDashboardNinjaItems(models.Model):
     ks_icon = fields.Binary(string="Icon", attachment=True)
     ks_default_icon = fields.Char(string="Icon", default="bar-chart")
     ks_default_icon_color = fields.Char(default="#ffffff,0.99", string="Icon Color")
-    ks_icon_select = fields.Char(string="Icon Option", default="Default")
-    ks_font_color = fields.Char(default="#ffffff,0.99", string="Font Color")
-    ks_dashboard_item_theme = fields.Char(string="Theme", default="white")
+    ks_icon_select = fields.Char(string=u"Icon Option", default="Default")
+    ks_font_color = fields.Char(default="#ffffff,0.99", string=u"Font Color")
+    ks_dashboard_item_theme = fields.Char(string=u"Theme", default="white")
     ks_layout = fields.Selection([('layout1', 'Layout 1'),
                                   ('layout2', 'Layout 2'),
                                   ('layout3', 'Layout 3'),
                                   ('layout4', 'Layout 4'),
                                   ('layout5', 'Layout 5'),
                                   ('layout6', 'Layout 6'),
-                                  ], default=('layout1'), required=True, string="Layout")
-    ks_preview = fields.Integer(default=1, string="Preview")
+                                  ], default=('layout1'), required=True, string=u"Layout")
+    ks_preview = fields.Integer(default=1, string=u"Preview")
     ks_model_name = fields.Char(related='ks_model_id.model')
 
     ks_record_count_type_2 = fields.Selection([('count', 'Count'),
                                                ('sum', 'Sum'),
-                                               ('average', 'Average')], string="Record Type", default="sum")
+                                               ('average', 'Average')], string=u"Record Type", default="sum")
     ks_record_field_2 = fields.Many2one('ir.model.fields',
                                         domain="[('model_id','=',ks_model_id_2),('name','!=','id'),'|','|',('ttype','=','integer'),('ttype','=','float'),('ttype','=','monetary')]",
-                                        string="Record Field")
+                                        string=u"Record Field")
     ks_record_count_type = fields.Selection([('count', 'Count'),
                                              ('sum', 'Sum'),
-                                             ('average', 'Average')], string="Record Type", default="count")
+                                             ('average', 'Average')], string=u"Record Type", default="count")
     ks_record_count = fields.Float(string="Record Count", compute='ks_get_record_count', readonly=True)
     ks_record_field = fields.Many2one('ir.model.fields',
                                       domain="[('model_id','=',ks_model_id),('name','!=','id'),'|','|',('ttype','=','integer'),('ttype','=','float'),('ttype','=','monetary')]",
-                                      string="Record Field")
+                                      string=u"Record Field")
 
     # Date Filter Fields
     # Condition to tell if date filter is applied or not
@@ -60,7 +60,7 @@ class KsDashboardNinjaItems(models.Model):
     # ---------------------------- Date Filter Fields ------------------------------------------
     ks_date_filter_field = fields.Many2one('ir.model.fields',
                                            domain="[('model_id','=',ks_model_id),'|',('ttype','=','date'),('ttype','=','datetime')]",
-                                           string="Date Filter Field")
+                                           string=u"Date Filter Field")
     ks_date_filter_selection = fields.Selection([
         ('l_none', 'None'),
         ('l_day', 'Today'),
@@ -78,19 +78,19 @@ class KsDashboardNinjaItems(models.Model):
         ('l_quarter', 'Last 90 days'),
         ('l_year', 'Last 365 days'),
         ('l_custom', 'Custom Filter'),
-    ], string="Date Filter Selection", default="l_none", required=True)
+    ], string=u"Date Filter Selection", default="l_none", required=True)
 
-    ks_item_start_date = fields.Datetime(string="Start Date")
-    ks_item_end_date = fields.Datetime(string="End Date")
+    ks_item_start_date = fields.Datetime(string=u"Start Date")
+    ks_item_end_date = fields.Datetime(string=u"End Date")
 
     ks_date_filter_field_2 = fields.Many2one('ir.model.fields',
                                              domain="[('model_id','=',ks_model_id_2),'|',('ttype','=','date'),('ttype','=','datetime')]",
-                                             string="Date Filter Field")
+                                             string=u"Date Filter Field")
 
-    ks_item_start_date_2 = fields.Datetime(string="Start Date")
-    ks_item_end_date_2 = fields.Datetime(string="End Date")
+    ks_item_start_date_2 = fields.Datetime(string=u"Start Date")
+    ks_item_end_date_2 = fields.Datetime(string=u"End Date")
 
-    ks_domain_2 = fields.Char(string="Domain")
+    ks_domain_2 = fields.Char(string=u"Domain")
 
     ks_date_filter_selection_2 = fields.Selection([
         ('l_none', "None"),
@@ -109,9 +109,9 @@ class KsDashboardNinjaItems(models.Model):
         ('l_quarter', 'Last 90 days'),
         ('l_year', 'Last 365 days'),
         ('l_custom', 'Custom Filter'),
-    ], string="Date Filter Selection", required=True, default='l_none')
+    ], string=u"Date Filter Selection", required=True, default='l_none')
 
-    ks_previous_period = fields.Boolean(string="Previous Period")
+    ks_previous_period = fields.Boolean(string=u"Previous Period")
 
     # ------------------------ Pro Fields --------------------
     ks_dashboard_ninja_board_id = fields.Many2one('ks_dashboard_ninja.board',
@@ -137,98 +137,98 @@ class KsDashboardNinjaItems(models.Model):
     ks_chart_relation_groupby = fields.Many2one('ir.model.fields',
                                                 domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),'|',"
                                                        "'|','|',('ttype','=','many2one'),('ttype','=','selection'),('ttype','=','date'),('ttype','=','datetime')]",
-                                                string="Group By")
+                                                string=u"Group By")
     ks_chart_relation_sub_groupby = fields.Many2one('ir.model.fields',
                                                     domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),'|',"
                                                            "'|','|',('ttype','=','many2one'),('ttype','=','selection'),('ttype','=','date'),('ttype','=','datetime')]",
-                                                    string=" Sub Group By")
+                                                    string=u" Sub Group By")
     ks_chart_date_groupby = fields.Selection([('day', 'Day'),
                                               ('week', 'Week'),
                                               ('month', 'Month'),
                                               ('quarter', 'Quarter'),
                                               ('year', 'Year'),
-                                              ], string="Dashboard Item Chart Group By Type")
+                                              ], string=u"Dashboard Item Chart Group By Type")
     ks_chart_date_sub_groupby = fields.Selection([('day', 'Day'),
                                                   ('week', 'Week'),
                                                   ('month', 'Month'),
                                                   ('quarter', 'Quarter'),
                                                   ('year', 'Year'),
-                                                  ], string="Dashboard Item Chart Sub Group By Type")
-    ks_graph_preview = fields.Char(string="Preview", default="Graph Preview")
-    ks_chart_data = fields.Char(string="Chart Data in string form", compute='ks_get_chart_data')
+                                                  ], string=u"Dashboard Item Chart Sub Group By Type")
+    ks_graph_preview = fields.Char(string=u"Preview", default="Graph Preview")
+    ks_chart_data = fields.Char(string=u"Chart Data in string form", compute='ks_get_chart_data')
     ks_chart_data_count_type = fields.Selection([('count', 'Count'), ('sum', 'Sum'), ('average', 'Average')],
-                                                string="Data Type", default="sum")
+                                                string=u"Data Type", default="sum")
     ks_chart_measure_field = fields.Many2many('ir.model.fields', 'ks_dn_measure_field_rel', 'measure_field_id',
                                               'field_id',
                                               domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),'|','|',"
                                                      "('ttype','=','integer'),('ttype','=','float'),"
                                                      "('ttype','=','monetary')]",
-                                              string="Measure 1")
+                                              string=u"Measure 1")
 
     ks_chart_measure_field_2 = fields.Many2many('ir.model.fields', 'ks_dn_measure_field_rel_2', 'measure_field_id_2',
                                                 'field_id',
                                                 domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),'|','|',"
                                                        "('ttype','=','integer'),('ttype','=','float'),"
                                                        "('ttype','=','monetary')]",
-                                                string="Line Measure")
+                                                string=u"Line Measure")
 
-    ks_bar_chart_stacked = fields.Boolean(string="Stacked Bar Chart")
+    ks_bar_chart_stacked = fields.Boolean(string=u"Stacked Bar Chart")
 
-    ks_semi_circle_chart = fields.Boolean(string="Semi Circle Chart")
+    ks_semi_circle_chart = fields.Boolean(string=u"Semi Circle Chart")
 
     ks_sort_by_field = fields.Many2one('ir.model.fields',
                                        domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),"
                                               "('ttype','!=','one2many'),('ttype','!=','many2one'),('ttype','!=','binary')]",
-                                       string="Sort By Field")
+                                       string=u"Sort By Field")
     ks_sort_by_order = fields.Selection([('ASC', 'Ascending'), ('DESC', 'Descending')],
-                                        string="Sort Order")
-    ks_record_data_limit = fields.Integer(string="Record Limit")
+                                        string=u"Sort Order")
+    ks_record_data_limit = fields.Integer(string=u"Record Limit")
 
-    ks_list_view_preview = fields.Char(string="List View Preview", default="List View Preview")
+    ks_list_view_preview = fields.Char(string=u"List View Preview", default="List View Preview")
 
-    ks_kpi_preview = fields.Char(string="Preview", default="KPI Preview")
+    ks_kpi_preview = fields.Char(string=u"Preview", default="KPI Preview")
 
     ks_kpi_type = fields.Selection([
         ('layout_1', 'KPI With Target'),
         ('layout_2', 'Data Comparison'),
-    ], string="Layout", default="layout_1")
+    ], string=u"Layout", default="layout_1")
 
-    ks_target_view = fields.Char(string="View", default="Number")
+    ks_target_view = fields.Char(string=u"View", default="Number")
 
-    ks_data_comparison = fields.Char(string="Data Type", default="None")
+    ks_data_comparison = fields.Char(string=u"Data Type", default="None")
 
-    ks_kpi_data = fields.Char(string="KPI Data", compute="ks_get_kpi_data")
+    ks_kpi_data = fields.Char(string=u"KPI Data", compute="ks_get_kpi_data")
 
     ks_chart_item_color = fields.Selection(
         [('default', 'Default'), ('cool', 'Cool'), ('warm', 'Warm'), ('neon', 'Neon')],
-        string="Chart Color Palette", default="default")
+        string=u"Chart Color Palette", default="default")
 
     # ------------------------ List View Fields ------------------------------
 
     ks_list_view_type = fields.Selection([('ungrouped', 'Un-Grouped'), ('grouped', 'Grouped')], default="ungrouped",
-                                         string="List View Type", required=True)
+                                         string=u"List View Type", required=True)
     ks_list_view_fields = fields.Many2many('ir.model.fields', 'ks_dn_list_field_rel', 'list_field_id', 'field_id',
                                            domain="[('model_id','=',ks_model_id),('store','=',True),"
                                                   "('ttype','!=','one2many'),('ttype','!=','many2many'),('ttype','!=','binary')]",
-                                           string="Fields to show in list")
+                                           string=u"Fields to show in list")
 
     ks_list_view_group_fields = fields.Many2many('ir.model.fields', 'ks_dn_list_group_field_rel', 'list_field_id',
                                                  'field_id',
                                                  domain="[('model_id','=',ks_model_id),('name','!=','id'),('store','=',True),'|','|',"
                                                         "('ttype','=','integer'),('ttype','=','float'),"
                                                         "('ttype','=','monetary')]",
-                                                 string="List View Grouped Fields")
+                                                 string=u"List View Grouped Fields")
 
-    ks_list_view_data = fields.Char(string="List View Data in JSon", compute='ks_get_list_view_data')
+    ks_list_view_data = fields.Char(string=u"List View Data in JSon", compute='ks_get_list_view_data')
 
     # -------------------- Multi Company Feature ---------------------
-    ks_company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id)
+    ks_company_id = fields.Many2one('res.company', string=u'Company', default=lambda self: self.env.user.company_id)
 
     # -------------------- Target Company Feature ---------------------
-    ks_goal_enable = fields.Boolean(string="Enable Target")
-    ks_goal_bar_line = fields.Boolean(string="Show Target As Line")
-    ks_standard_goal_value = fields.Float(string="Standard Target")
-    ks_goal_lines = fields.One2many('ks_dashboard_ninja.item_goal', 'ks_dashboard_item', string="Target Lines")
+    ks_goal_enable = fields.Boolean(string=u"Enable Target")
+    ks_goal_bar_line = fields.Boolean(string=u"Show Target As Line")
+    ks_standard_goal_value = fields.Float(string=u"Standard Target")
+    ks_goal_lines = fields.One2many('ks_dashboard_ninja.item_goal', 'ks_dashboard_item', string=u"Target Lines")
 
     @api.multi
     def name_get(self):
