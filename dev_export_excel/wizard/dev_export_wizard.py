@@ -619,6 +619,9 @@ class dev_export_wizard(models.TransientModel):
                             main_val_format = workbook.add_format()
                             main_val_format = self.set_main_val_format(rec,main_val_format,'right')
                             worksheet[sheet_i].write(row,col, format((main_vals[i]),'.2f') or 0.00,main_val_format)
+                        elif isinstance(main_vals[i], datetime.date or datetime.datetime):
+                            main_val_format = workbook.add_format({'num_format': 'dd/mm/yy'})
+                            worksheet[sheet_i].write(row,col, main_vals[i] or ' ',main_val_format)
                         else:
                             worksheet[sheet_i].write(row,col, main_vals[i] or ' ',main_val_format)
                         main_val_format = workbook.add_format()
@@ -642,6 +645,10 @@ class dev_export_wizard(models.TransientModel):
                             main_val_format = workbook.add_format()
                             main_val_format = self.set_main_val_format(rec,main_val_format,'right')
                             worksheet[sheet_i].write(row,col, format((main_vals[i]),'.2f') or 0.00,main_val_format)
+                        elif isinstance(main_vals[i], datetime.date or datetime.datetime):
+                            main_val_format = workbook.add_format({'num_format': 'dd/mm/yy'})
+                            main_val_format = self.set_main_val_format(rec, main_val_format, 'center')
+                            worksheet[sheet_i].write(row, col, main_vals[i] or ' ', main_val_format)
                         else:
                             worksheet[sheet_i].write(row,col, main_vals[i] or ' ',main_val_format)
                         main_val_format = workbook.add_format()
@@ -664,6 +671,10 @@ class dev_export_wizard(models.TransientModel):
                             main_val_format = workbook.add_format()
                             main_val_format = self.set_main_val_format(rec,main_val_format,'right')
                             worksheet[sheet_i].write(my_row,col, format((main_vals[i]),'.2f') or 0.00,main_val_format)
+                        elif isinstance(main_vals[i], datetime.date or datetime.datetime):
+                            main_val_format = workbook.add_format({'num_format': 'dd/mm/yy'})
+                            main_val_format = self.set_main_val_format(rec, main_val_format, 'center')
+                            worksheet[sheet_i].write(row, col, main_vals[i] or ' ', main_val_format)
                         else:
                             worksheet[sheet_i].write(my_row,col, main_vals[i] or 0.00,main_val_format)
                         main_val_format = workbook.add_format()
@@ -683,6 +694,10 @@ class dev_export_wizard(models.TransientModel):
                             main_val_format = workbook.add_format()
                             main_val_format = self.set_main_val_format(rec,main_val_format,'right')
                             worksheet[sheet_i].write(row,col, format((main_vals[count]),'.2f') or 0.00,main_val_format)
+                        elif isinstance(main_vals[count], datetime.date or datetime.datetime):
+                            main_val_format = workbook.add_format({'num_format': 'dd/mm/yy'})
+                            main_val_format = self.set_main_val_format(rec, main_val_format, 'center')
+                            worksheet[sheet_i].write(row, col, main_vals[count] or ' ', main_val_format)
                         else:
                             worksheet[sheet_i].write(row,col, main_vals[count] or '',main_val_format)
                         main_val_format = workbook.add_format()
