@@ -62,6 +62,20 @@
                                 <span t-field="doc.gander"/>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <Strong>السنة الدراسية: </Strong>
+                                </span>
+                                <span t-field="doc.school_year"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>تاريخ التقرير: </Strong>
+                                </span>
+                                <span t-field="doc.report_date"/>
+                            </div>
+                        </div>
                         <div class="row" style="page-break-inside: avoid">
                             <div class="col-12">
                                 <span>

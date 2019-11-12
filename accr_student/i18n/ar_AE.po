@@ -436,6 +436,16 @@ msgid "Plan Create Date"
 msgstr "تاريخ انشاء الخظة"
 
 #. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__school_year
+msgid "Plan Create Date"
+msgstr "السنة الدراسية"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__report_date
+msgid "Plan Create Date"
+msgstr "تاريخ التقرير"
+
+#. module: accr_student
 #: selection:accr.student.notification,activity_state:0
 msgid "Planned"
 msgstr "مخطط"

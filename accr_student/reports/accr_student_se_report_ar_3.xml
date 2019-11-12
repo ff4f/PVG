@@ -70,6 +70,20 @@
                                 <span t-field="doc.diagnosis"/>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <Strong>السنة الدراسية: </Strong>
+                                </span>
+                                <span t-field="doc.school_year"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>تاريخ التقرير: </Strong>
+                                </span>
+                                <span t-field="doc.report_date"/>
+                            </div>
+                        </div>
                         <hr/>
                         <div class="row" style="page-break-after:always">
                             <dic class="col-12">

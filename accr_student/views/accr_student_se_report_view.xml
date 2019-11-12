@@ -28,6 +28,14 @@
                             <field name="plan" domain="[('x_studio_student','=',student)]" widget="selection"/>
                             <field name="plan_date" />
                         </group>
+                        <group>
+                            <group>
+                                <field name="school_year"/>
+                            </group>
+                            <group>
+                                <field name="report_date"/>
+                            </group>
+                        </group>
                         <group col="4">
                             <field name="desc" colspan="4"/>
                         </group>
