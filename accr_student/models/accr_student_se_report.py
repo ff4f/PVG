@@ -16,7 +16,7 @@ class accrStudentSEReport(models.Model):
     gander = fields.Selection(related='student.x_studio_gander', string=u'Gander', )
 
     school_year = fields.Char(string='School Year')
-    reprot_date = fields.Date(string='Report Date')
+    report_date = fields.Date(string='Report Date')
     
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
     plan_date = fields.Datetime(related='plan.create_date', string=u'Plan Create Date', )
