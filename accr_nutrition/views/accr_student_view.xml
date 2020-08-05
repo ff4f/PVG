@@ -286,12 +286,12 @@
                     <field name="student_residential_room" />
                     <field name="student_residential_supervisor"/>
                     <field name="student_residential_caregiver"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Section" name="group_by_section" domain="[]" context="{'group_by':'student_residential_section'}"/>
+                        <filter string="Supervisor" name="group_by_supervisor" domain="[]" context="{'group_by':'student_residential_supervisor'}"/>
+                        <filter string="Caregiver" name="group_by_caregiver" domain="[]" context="{'group_by':'student_residential_caregiver'}"/>
+                    </group>
                 </search>
-                <group expand="0" string="Group By...">
-                    <filter string="Section" name="group_by_section" domain="[]" context="{'group_by':'student_residential_section'}"/>
-                    <filter string="Supervisor" name="group_by_supervisor" domain="[]" context="{'group_by':'student_residential_supervisor'}"/>
-                    <filter string="Caregiver" name="group_by_caregiver" domain="[]" context="{'group_by':'student_residential_caregiver'}"/>
-                </group>
             </field>
         </record>
 
