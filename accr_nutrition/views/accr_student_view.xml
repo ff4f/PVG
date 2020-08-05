@@ -11,6 +11,7 @@
                     <field name="student" />
                     <field name="student_diagnosis" />
                     <field name="student_age" />
+                    <field name="student_residential_section" />
                     <field name="student_admission_date" />
                 </tree>
             </field>
@@ -36,6 +37,7 @@
                             <field name="student_file_no" />
                             <field name="student_admission_date" />
                             <field name="student_residential_section" />
+                            <field name="student_residential_room" />
                             <field name="student_medical_diagnosis" />
                             <field name="student_diagnosis" />
                         </group>

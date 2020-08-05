@@ -38,6 +38,8 @@ class accrNutritionStudent(models.Model):
         related='student.x_studio_joining_date', string=u'Admission Date', store=False, readonly=True, )
     student_residential_section = fields.Many2one(
         related='student.x_studio_residential_sections', string=u'Residential Section', readonly=True, store=False, )
+    student_residential_room = fields.Many2one(
+        related='student.x_residential_section_room', string=u'Residential Room', readonly=True, store=False, )
     student_medications = fields.One2many(
         related='student.x_medications', string=u'Medications', store=False, track_visibility='onchange', readonly=True, )
     student_medical_investigations = fields.One2many(related='student.x_studio_field_MSnvc', string='Medical Investigations', store=False, readonly=True, track_visibility='onchange', )
