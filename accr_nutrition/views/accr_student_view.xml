@@ -11,7 +11,7 @@
                     <field name="student" />
                     <field name="student_diagnosis" />
                     <field name="student_age" />
-                    <field name="student_residential_section" />
+                    <field name="student_residential_section"/>
                     <field name="student_admission_date" />
                 </tree>
             </field>
