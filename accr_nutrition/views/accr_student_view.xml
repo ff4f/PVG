@@ -26,7 +26,7 @@
                     <sheet>
                         <group>
                             <field name="name" nolabel="1" />
-                            <field name="student_photo" widget='image' />
+                            <field name="student_photo" widget='image' class="oe_avatar"/>
                         </group>
                         <group string="General Info">
                             <group>
@@ -36,13 +36,15 @@
                                 <field name="student_birth_date" />
                                 <field name="student_age" />
                                 <field name="student_nationality" />
+                                <field name="student_medical_diagnosis" />
+                                <field name="student_diagnosis" />
                             </group>
                             <group>
                             <field name="student_admission_date" />
                             <field name="student_residential_section" />
                             <field name="student_residential_room" />
-                            <field name="student_medical_diagnosis" />
-                            <field name="student_diagnosis" />
+                            <field name="student_residential_supervisor"/>
+                            <field name="student_residential_caregiver"/>
                             </group>
                         </group>
                         <group col="2">
