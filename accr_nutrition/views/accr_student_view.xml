@@ -281,13 +281,14 @@
             <field name="arch" type="xml">
                 <search string="Students">
                     <field name="student" select="True" />
-                    <field name="student_residential_section" select="True" />
                     <field name="food_preferences" select="True" />
+                    <field name="student_residential_section" select="True" />
                     <field name="student_residential_room" />
                     <field name="student_residential_supervisor"/>
                     <field name="student_residential_caregiver"/>
                     <group expand="0" string="Group By...">
                         <filter string="Section" name="group_by_section" domain="[]" context="{'group_by':'student_residential_section'}"/>
+                        <filter string="Section" name="group_by_section_room" domain="[]" context="{'group_by':'student_residential_room'}"/>
                         <filter string="Supervisor" name="group_by_supervisor" domain="[]" context="{'group_by':'student_residential_supervisor'}"/>
                         <filter string="Caregiver" name="group_by_caregiver" domain="[]" context="{'group_by':'student_residential_caregiver'}"/>
                     </group>
