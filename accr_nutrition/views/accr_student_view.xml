@@ -28,18 +28,22 @@
                             <field name="name" nolabel="1" />
                             <field name="student_photo" widget='image' />
                         </group>
-                        <group col="4" string="General Info">
-                            <field name="student" domain="['&amp;',['x_stage_id','=',3],['x_nutrition_details','=',False]]" />
-                            <field name="student_gander" />
-                            <field name="student_birth_date" />
-                            <field name="student_age" />
-                            <field name="student_nationality" />
-                            <field name="student_file_no" />
+                        <group string="General Info">
+                            <group>
+                                <field name="student" domain="['&amp;',['x_stage_id','=',3],['x_nutrition_details','=',False]]" />
+                                <field name="student_file_no" />
+                                <field name="student_gander" />
+                                <field name="student_birth_date" />
+                                <field name="student_age" />
+                                <field name="student_nationality" />
+                            </group>
+                            <group>
                             <field name="student_admission_date" />
                             <field name="student_residential_section" />
                             <field name="student_residential_room" />
                             <field name="student_medical_diagnosis" />
                             <field name="student_diagnosis" />
+                            </group>
                         </group>
                         <group col="2">
                             <field name="diet" colspan="2" />
