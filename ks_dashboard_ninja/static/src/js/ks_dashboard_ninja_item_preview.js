@@ -97,6 +97,7 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_item_preview', function (requi
                 icon_select: field.ks_icon_select,
                 default_icon: field.ks_default_icon,
                 icon_color: ks_rgba_icon_color,
+                count_tooltip: field.ks_record_count,
             }
             if (field.ks_icon) {
 

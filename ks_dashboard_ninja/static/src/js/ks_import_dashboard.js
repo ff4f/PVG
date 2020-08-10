@@ -26,6 +26,7 @@ var framework = require('web.framework');
 
         // TO hide odoo default import button (it is inserted in dom by other module)
         on_attach_callback : function(){
+            this._super.apply(this, arguments);
             var self = this;
             if(this.modelName == "ks_dashboard_ninja.board"){
                $('button.o_button_import').hide();

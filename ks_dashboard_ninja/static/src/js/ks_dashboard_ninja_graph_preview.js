@@ -10,6 +10,7 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
     var utils = require('web.utils');
     var config = require('web.config');
     var field_utils = require('web.field_utils');
+    var KsGlobalFunction = require('ks_dashboard_ninja.KsGlobalFunction');
 
     var QWeb = core.qweb;
 
@@ -23,12 +24,10 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
         init: function (parent, state, params) {
             this._super.apply(this, arguments);
 
-            this.jsLibs.push('/ks_dashboard_ninja/static/lib/js/Chart.js',
-                '/ks_dashboard_ninja/static/lib/js/Chart.min.js',
-                '/ks_dashboard_ninja/static/lib/js/Chart.bundle.min.js',
-                '/ks_dashboard_ninja/static/lib/js/Chart.bundle.js',
+            this.jsLibs.push('/ks_dashboard_ninja/static/lib/js/Chart.bundle.min.js',
+            '/ks_dashboard_ninja/static/lib/js/chartjs-plugin-datalabels.js',
             );
-            this.cssLibs.push('/ks_dashboard_ninja/static/lib/css/Chart.css',
+            this.cssLibs.push(
                 '/ks_dashboard_ninja/static/lib/css/Chart.min.css',
             );
         },
@@ -39,6 +38,7 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
             core.bus.on("DOM_updated", this, function () {
                 if(self.shouldRenderChart && $.find('#ksMyChart').length>0) self.renderChart();
             });
+            Chart.plugins.unregister(ChartDataLabels);
             return this._super();
         },
 
@@ -61,6 +61,15 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                     }
                 }
             });
+
+            Chart.Legend.prototype.afterFit = function() {
+                var chart_type = this.chart.config.type;
+                if(chart_type === "pie" || chart_type ==="doughnut" ) {
+                    this.height = this.height;
+                }else{
+                    this.height = this.height + 20;
+                };
+            }
         },
 
         _render: function () {
@@ -132,8 +141,9 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
         },
 
         renderChart: function(){
-            var self = this;
+             var self = this;
             if(this.recordData.ks_chart_measure_field_2.count && this.recordData.ks_dashboard_item_type === 'ks_bar_chart'){
+                 var self = this;
                 var scales  = {}
                 scales.yAxes = [
                     {
@@ -142,7 +152,7 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                         position: "left",
                         id: "y-axis-0",
                         gridLines:{
-                            display: false
+                            display: true
                         },
                         labels: {
                             show:true,
@@ -159,15 +169,33 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                         ticks: {
                             beginAtZero: true,
                             callback : function(value, index, values){
-                                return field_utils.format.float(value,Float64Array);
+                                var ks_selection = self.chart_data.ks_selection;
+                                if (ks_selection === 'monetary'){
+                                    var ks_currency_id = self.chart_data.ks_currency;
+                                    var ks_data = KsGlobalFunction.ksNumFormatter(value,1);
+                                    ks_data = KsGlobalFunction.ks_monetary(ks_data, ks_currency_id);
+                                    return ks_data;
+                                }
+                                else if (ks_selection === 'custom'){
+                                    var ks_field = self.chart_data.ks_field;
+                                    return KsGlobalFunction.ksNumFormatter(value,1) +' '+ ks_field;
+                                }
+                                else{
+                                    return KsGlobalFunction.ksNumFormatter(value,1);
+                                }
                             },
                         }
                     }
                 ]
 
             }
+            var chart_plugin = [];
+            if (this.recordData.ks_show_data_value) {
+                chart_plugin.push(ChartDataLabels);
+            }
             this.ksMyChart = new Chart($.find('#ksMyChart')[0], {
                     type: this.chart_type === "area" ? "line" : this.chart_type,
+                    plugins: chart_plugin,
                     data: {
                         labels: this.chart_data['labels'],
                         datasets: this.chart_data.datasets,
@@ -177,14 +205,54 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                         animation: {
                             easing: 'easeInQuad',
                         },
+                        legend: {
+                            display: this.recordData.ks_hide_legend,
+                        },
+                        layout: {
+                                    padding: {
+                                        bottom: 0,
+                                    }
+                                },
                         scales:scales,
+                        plugins: {
+                            datalabels: {
+                                backgroundColor: function(context) {
+                                    return context.dataset.backgroundColor;
+                                },
+                                borderRadius: 4,
+                                color: 'white',
+                                font: {
+                                    weight: 'bold'
+                                },
+                                anchor: 'center',
+                                textAlign: 'center',
+                                display: 'auto',
+                                clamp: true,
+                                formatter : function(value, ctx) {
+                                    let sum = 0;
+                                    let dataArr = ctx.dataset.data;
+                                    dataArr.map(data => {
+                                        sum += data;
+                                    });
+                                    let percentage = sum === 0 ? 0 + "%" : (value*100 / sum).toFixed(2)+"%";
+                                    return percentage;
+                                },
+                            },
+                        },
+
                     }
                 });
-
-            self.ksChartColors(this.recordData.ks_chart_item_color, this.ksMyChart, this.chart_type, this.chart_family);
+            if(this.chart_data && this.chart_data["datasets"].length>0){
+               self.ksChartColors(this.recordData.ks_chart_item_color, this.ksMyChart, this.chart_type, this.chart_family,this.recordData.ks_show_data_value);
+            }
         },
 
-        ksChartColors: function (palette, ksMyChart, ksChartType, ksChartFamily) {
+        ksHideFunction: function(options,recordData,ksChartFamily,chartType){
+            return options;
+        },
+
+        ksChartColors: function (palette, ksMyChart, ksChartType, ksChartFamily,ks_show_data_value) {
+            var self =  this;
             var currentPalette = "cool";
             if (!palette) palette = currentPalette;
             currentPalette = palette;
@@ -290,13 +358,44 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
 
             options.legend.labels.usePointStyle = true;
             if (ksChartFamily == "circle") {
-                options.legend.position = 'bottom';
+                if(ks_show_data_value){
+                    options.legend.position = 'top';
+                    options.layout.padding.top = 10;
+                    options.layout.padding.bottom = 20;
+                }else{
+                    options.legend.position = 'bottom';
+                }
+
+                options = this.ksHideFunction(options,this.recordData,ksChartFamily,chartType);
+
+                options.plugins.datalabels.align = 'center';
+                options.plugins.datalabels.anchor = 'end';
+                options.plugins.datalabels.borderColor = 'white';
+                options.plugins.datalabels.borderRadius = 25;
+                options.plugins.datalabels.borderWidth = 2;
+                options.plugins.datalabels.clamp = true;
+                options.plugins.datalabels.clip = false;
+
                 options.tooltips.callbacks = {
                                                title: function(tooltipItem, data) {
+                                                    var ks_self = self;
                                                     var k_amount = data.datasets[tooltipItem[0].datasetIndex]['data'][tooltipItem[0].index];
-                                                    k_amount = field_utils.format.float(k_amount,Float64Array);
-                                                    return data.datasets[tooltipItem[0].datasetIndex]['label']+" : " + k_amount;
-                                               },
+                                                    var ks_selection = ks_self.chart_data.ks_selection;
+                                                    if (ks_selection === 'monetary'){
+                                                        var ks_currency_id = ks_self.chart_data.ks_currency;
+                                                        k_amount = KsGlobalFunction.ks_monetary(k_amount, ks_currency_id);
+                                                        return data.datasets[tooltipItem[0].datasetIndex]['label']+" : " + k_amount
+                                                    }
+                                                    else if (ks_selection === 'custom'){
+                                                        var ks_field = ks_self.chart_data.ks_field;
+//                                                        ks_type = field_utils.format.char(ks_field);
+                                                        k_amount = field_utils.format.float(k_amount,Float64Array);
+                                                        return data.datasets[tooltipItem[0].datasetIndex]['label']+" : " + k_amount+" "+ ks_field;
+                                                    }
+                                                    else {
+                                                        k_amount = field_utils.format.float(k_amount,Float64Array);
+                                                        return data.datasets[tooltipItem[0].datasetIndex]['label']+" : " + k_amount
+                                                    }                                               },
                                                label : function(tooltipItem, data) {
                                                           return data.labels[tooltipItem.index];
                                                         },
@@ -306,30 +405,101 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                     datasets[i].backgroundColor = chartColors;
                     datasets[i].borderColor = "rgba(255,255,255,1)";
                 }
-                if(this.recordData.ks_semi_circle_chart && (chartType === "pie" || chartType ==="doughnut") ){
+                if(this.recordData.ks_semi_circle_chart && (chartType === "pie" || chartType ==="doughnut" ) ){
                     options.rotation = 1*Math.PI;
                     options.circumference = 1*Math.PI;
                 }
             } else if (ksChartFamily == "square") {
+                options = this.ksHideFunction(options,this.recordData,ksChartFamily,chartType);
+
                 options.scales.xAxes[0].gridLines.display = false;
                 options.scales.yAxes[0].ticks.beginAtZero = true;
+                options.plugins.datalabels.align = 'end';
+
+                options.plugins.datalabels.formatter = function(value, ctx) {
+                    var ks_self = self;
+                    var ks_selection = ks_self.chart_data.ks_selection;
+                    if (ks_selection === 'monetary'){
+                        var ks_currency_id = ks_self.chart_data.ks_currency;
+                        var ks_data = KsGlobalFunction.ksNumFormatter(value,1);
+                        ks_data = KsGlobalFunction.ks_monetary(ks_data, ks_currency_id);
+                        return ks_data;
+                    }
+                    else if (ks_selection === 'custom'){
+                        var ks_field = ks_self.chart_data.ks_field;
+                        return KsGlobalFunction.ksNumFormatter(value,1) +' '+ ks_field;
+                    }
+                    else {
+                        return KsGlobalFunction.ksNumFormatter(value,1);
+                    }
+                };
+
+                if(chartType==="line"){
+                    options.plugins.datalabels.backgroundColor= function(context) {
+                                    return context.dataset.borderColor;
+                                };
+                }
+
 
                 if(chartType === "horizontalBar"){
                     options.scales.xAxes[0].ticks.callback = function(value,index,values){
-                        return field_utils.format.float(value,Float64Array)
+                        var ks_self = self;
+                        var ks_selection = ks_self.chart_data.ks_selection;
+                        if (ks_selection === 'monetary'){
+                            var ks_currency_id = ks_self.chart_data.ks_currency;
+                            var ks_data = KsGlobalFunction.ksNumFormatter(value,1);
+                            ks_data = KsGlobalFunction.ks_monetary(ks_data, ks_currency_id);
+                            return ks_data;
+                        }
+                        else if (ks_selection === 'custom'){
+                            var ks_field = ks_self.chart_data.ks_field;
+                            return KsGlobalFunction.ksNumFormatter(value,1) +' '+ ks_field;
+                        }
+                        else{
+                            return KsGlobalFunction.ksNumFormatter(value,1);
+                        }
                     }
                     options.scales.xAxes[0].ticks.beginAtZero = true;
                 }
                 else{
                     options.scales.yAxes[0].ticks.callback = function(value,index,values){
-                        return field_utils.format.float(value,Float64Array)
+                        var ks_self = self;
+                        var ks_selection = ks_self.chart_data.ks_selection;
+                        if (ks_selection === 'monetary'){
+                            var ks_currency_id = ks_self.chart_data.ks_currency;
+                            var ks_data = KsGlobalFunction.ksNumFormatter(value,1);
+                            ks_data = KsGlobalFunction.ks_monetary(ks_data, ks_currency_id);
+                            return ks_data;
+                        }
+                        else if (ks_selection === 'custom'){
+                            var ks_field = ks_self.chart_data.ks_field;
+                            return KsGlobalFunction.ksNumFormatter(value,1) +' '+ ks_field;
+                        }
+                        else{
+                            return KsGlobalFunction.ksNumFormatter(value,1);
+                        }
                     }
                 }
                 options.tooltips.callbacks = {
                     label: function(tooltipItem, data) {
+                        var ks_self = self;
                         var k_amount = data.datasets[tooltipItem.datasetIndex]['data'][tooltipItem.index];
-                        k_amount = field_utils.format.float(k_amount,Float64Array);
-                        return data.datasets[tooltipItem.datasetIndex]['label']+" : " + k_amount;
+                        var ks_selection = ks_self.chart_data.ks_selection;
+                        if (ks_selection === 'monetary'){
+                            var ks_currency_id = ks_self.chart_data.ks_currency;
+                            k_amount = KsGlobalFunction.ks_monetary(k_amount, ks_currency_id);
+                            return data.datasets[tooltipItem.datasetIndex]['label']+" : " + k_amount
+                        }
+                        else if (ks_selection === 'custom'){
+                            var ks_field = ks_self.chart_data.ks_field;
+                           // ks_type = field_utils.format.char(ks_field);
+                            k_amount = field_utils.format.float(k_amount,Float64Array);
+                            return data.datasets[tooltipItem.datasetIndex]['label']+" : " + k_amount+" "+ ks_field;
+                        }
+                        else {
+                            k_amount = field_utils.format.float(k_amount,Float64Array);
+                            return data.datasets[tooltipItem.datasetIndex]['label']+" : " + k_amount
+                        }
                     }
                 }
 
@@ -340,6 +510,10 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function (requ
                             if (datasets[i].type && datasets[i].type=="line"){
                                 datasets[i].borderColor = chartColors[i];
                                 datasets[i].backgroundColor = "rgba(255,255,255,0)";
+                                datasets[i]['datalabels'] = {
+                                    backgroundColor: chartColors[i],
+                                }
+
                             }
                             else{
                                 datasets[i].backgroundColor = chartColors[i];

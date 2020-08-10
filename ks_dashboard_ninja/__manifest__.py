@@ -7,9 +7,10 @@
     """,
 
     'description': """
-        Dashboard Ninja v11.0,
+        Dashboard Ninja v12.0,
         Odoo Dashboard, 
         Dashboard,
+	Dashboards,
         Odoo apps,
         Dashboard app,
         HR Dashboard,
@@ -44,28 +45,26 @@
     'author': "Ksolves India Pvt. Ltd.",
     'license': 'OPL-1',
     'currency': 'EUR',
-    'price': 149.0,
+    'price': 279.00,
     'website': "https://www.ksolves.com",
     'maintainer': 'Ksolves India Pvt. Ltd.',
-    'live_test_url': 'https://dashboardninja.kappso.com',
+    'live_test_url': 'https://dashboardninja12.kappso.com/web/demo_login',
     'category': 'Tools',
-    'version': '5.1.1',
+    'version': '12.0.8.1.2',
     'support': 'sales@ksolves.com',
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/new_banner.gif'],
 
-    'depends': ['base', 'web', 'base_setup','sale','sale_management'],
+    'depends': ['base', 'web', 'base_setup'],
 
     'data': [
         'security/ir.model.access.csv',
         'security/ks_security_groups.xml',
-        'data/ks_sales_data.xml',
         'data/ks_default_data.xml',
         'views/ks_dashboard_ninja_view.xml',
         'views/ks_dashboard_ninja_item_view.xml',
         'views/ks_dashboard_ninja_assets.xml',
         'views/ks_dashboard_action.xml',
     ],
-
     'qweb': [
         'static/src/xml/ks_dashboard_ninja_templates.xml',
         'static/src/xml/ks_dashboard_ninja_item_templates.xml',

@@ -24,9 +24,9 @@ odoo.define('ks_dashboard_ninja_list.ks_color_picker', function (require) {
         init: function (parent, state, params) {
             this._super.apply(this, arguments);
 
-            this.jsLibs.push('/ks_dashboard_ninja/static/lib/js/spectrum.js', );
+            this.jsLibs.push('/ks_dashboard_ninja/static/lib/js/spectrum.js');
 
-            this.cssLibs.push('/ks_dashboard_ninja/static/lib/css/spectrum.css', );
+            this.cssLibs.push('/ks_dashboard_ninja/static/lib/css/spectrum.css');
 
         },
 
@@ -104,7 +104,7 @@ odoo.define('ks_dashboard_ninja_list.ks_color_picker', function (require) {
 
 
     });
-    registry.add('ks_color_picker', KsColorPicker);
+    registry.add('ks_color_dashboard_picker', KsColorPicker);
 
     return {
         KsColorPicker: KsColorPicker

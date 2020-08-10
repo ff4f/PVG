@@ -55,6 +55,7 @@
 /* Layout 6 exception case CSS */
 .ks_dashboard_item_header_l6{
     top: 5px !important;
+    right: 10px;
 }
 
 
@@ -143,7 +144,7 @@ table#ksListViewTable {
 }
 
 .ks_chart_export_menu_item{
-    padding: 5px 14px 5px 14px;
+    padding: 5px 10px 5px 10px;
     cursor : pointer;
 }
 
@@ -167,3 +168,43 @@ table#ksListViewTable {
     padding-right: 10px;
 }
 
+.ks_overflow {
+    overflow: auto;
+}
+
+.ks_pager {
+    min-width:98px;
+}
+
+.ks_next_previous_bg_color{
+    background-color: transparent ! important;
+}
+
+.ks_list_view_heading{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media(max-width: 767px){
+    .dropdown-max-height {
+     max-height: 240px;
+     overflow:auto;
+    }
+}
+
+@media(max-width: 767px){
+    .ks_date_input_fields{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 767px){
+    .ks_date_filter_selection_input{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

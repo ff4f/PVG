@@ -130,7 +130,7 @@ odoo.define('ks_dashboard_ninja.quick_edit_view', function (require) {
         ksUpdateItemView : function(){
             var self = this;
             self.ksDashboardController.ksUpdateDashboardItem([self.item.id]);
-            self.item_el = $.find(`#${self.item.id}.ks_dashboarditem_id`);
+            self.item_el = $.find('#' + self.item.id + '.ks_dashboarditem_id');
 
         },
 

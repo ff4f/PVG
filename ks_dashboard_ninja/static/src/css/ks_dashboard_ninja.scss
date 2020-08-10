@@ -385,7 +385,7 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0px;
-  z-index: 10;
+  z-index: 8;
 }
 
 .ks_dashboard_datepicker_z-index{
@@ -453,13 +453,17 @@
 
 .ks_btn_middle_child{
     border-radius: 0 !important;
+    height: 100%;
+}
 
+.ks_btn_middle_child input, .ks_btn_last_child input {
+    padding: inherit !important;
 }
 
 .ks_btn_last_child{
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
-
+    height: 100%;
 }
 
 .ks_hide{
@@ -538,3 +542,11 @@
         justify-content: space-between;
     }
 }
+
+.ks_height_100 {
+    height: 100% !important;
+}
+// .o_web_client .o_main_navbar {
+//  z-index:10000000000;
+//
+// }
