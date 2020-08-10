@@ -7,8 +7,7 @@
             <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_icon_container_modal.css"/>
             <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_dashboard_item_theme.css"/>
             <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_toggle_icon.css"/>
-            <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_dashboard_options.css"/>
-            <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_global_functions.js"/>
+            <!-- <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_dashboard_options.css"/> -->
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_dashboard_ninja.js"/>
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_color_picker.js"/>
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_dashboard_ninja_item_preview.js"/>
@@ -19,7 +18,6 @@
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_domain_fix.js"/>
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_quick_edit_view.js"/>
             <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_dashboard_ninja_kpi_preview.js"/>
-            <script type="text/javascript" src="/ks_dashboard_ninja/static/src/js/ks_date_picker.js"/>
             <!--            for some reason gridstack css is not laoding from the js. #FIXME-->
             <link rel="stylesheet" href="/ks_dashboard_ninja/static/lib/css/gridstack.min.css"/>
             <link rel="stylesheet" href="/ks_dashboard_ninja/static/src/css/ks_dashboard_ninja_pro.css"/>

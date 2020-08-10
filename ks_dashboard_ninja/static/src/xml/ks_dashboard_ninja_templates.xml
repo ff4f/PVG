@@ -37,7 +37,7 @@
                 </t>
             </div>
 
-
+            <t t-if="ks_dashboard_manager">
                 <div class="ks_dashboard_top_menu ks_select_none">
 
                     <!--  Date Filter Selection Options (Hide default for no content view)-->
@@ -53,7 +53,7 @@
                                         <span class="caret"/>
                                     </button>
 
-                                    <ul id="ks_date_selector_container" class="dropdown-menu ks_date_filters_menu dropdown-max-height"
+                                    <ul id="ks_date_selector_container" class="dropdown-menu ks_date_filters_menu"
                                         role="menu">
                                         <li id="l_none">
                                             <span class="df_selection_text">All Time</span>
@@ -72,6 +72,14 @@
 
                             <!--Date input fields are shown only when Date Filter : Custom-->
                             <div class="ks_date_input_fields ks_hide">
+                                <span class="ks-dashboard-date-labels ks_hide">From:</span>
+                                <input type="text" id="ks_start_date_picker" placeholder="Start Date"
+                                       autocomplete="off" class="ks_btn_middle_child o_input"/>
+                                <input type="hidden" id="ksActualStartDateToStore"/>
+                                <span class="ks-dashboard-date-labels ks_hide">To:</span>
+                                <input type="text" id="ks_end_date_picker" placeholder="End Date" autocomplete="off"
+                                       class="ks_btn_last_child o_input"/>
+                                <input type="hidden" id="ksActualEndDateToStore"/>
                             </div>
                         </div>
                         <div class="ks_date_apply_clear_print">
@@ -88,103 +96,93 @@
                         </div>
                     </div>
 
-                    <t t-if="ks_dashboard_manager">
+                    <!-- Add and Edit buttons-->
+                    <div class="ks_dashboard_top_settings dropdown d-none d-lg-block">
 
-                        <!-- Add and Edit buttons-->
-                        <div class="ks_dashboard_top_settings dropdown d-none d-lg-block">
+                        <button class="btn btn-primary ks_add_item_type_button dropdown-toggle mr-1"
+                                data-toggle="dropdown"
+                                aria-expanded="false">
+                            <span class="fa fa-lg fa-plus-circle"/>
+                            Add
+                            <span class="caret"/>
+                        </button>
+                        <ul id="ks_add_item_selection" class="dropdown-menu"
+                            role="menu">
+                            <li data-item="ks_tile">
+                                <span class="df_selection_text">
+                                    Tile
+                                </span>
+                            </li>
+                            <li data-item="ks_bar_chart">
+                                <span class="df_selection_text">
+                                    Bar Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_horizontalBar_chart">
+                                <span class="df_selection_text">
+                                    Horizontal Bar Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_line_chart">
+                                <span class="df_selection_text">
+                                    Line Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_area_chart">
+                                <span class="df_selection_text">
+                                    Area Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_pie_chart">
+                                <span class="df_selection_text">
+                                    Pie Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_doughnut_chart">
+                                <span class="df_selection_text">
+                                    Doughnut Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_polarArea_chart">
+                                <span class="df_selection_text">
+                                    Polar Chart
+                                </span>
+                            </li>
+                            <li data-item="ks_list_view">
+                                <span class="df_selection_text">
+                                    List View
+                                </span>
+                            </li>
+                            <li data-item="ks_kpi">
+                                <span class="df_selection_text">
+                                    KPI
+                                </span>
+                            </li>
+                        </ul>
+                        <button id="ks_dashboard_layout_edit" class="btn btn-primary ks_dashboard_edit_layout">
+                            <span class="fa fa-lg fa-pencil"/>
+                            Edit Layout
+                        </button>
+                    </div>
 
-                            <button class="btn btn-primary ks_add_item_type_button dropdown-toggle mr-1"
-                                    data-toggle="dropdown"
-                                    aria-expanded="false">
-                                <span class="fa fa-lg fa-plus-circle"/>
-                                Add
-                                <span class="caret"/>
+                    <!-- This should only be shown on : Edit Mode Layout-->
+                    <div class="ks_dashboard_edit_mode_settings ks_hide">
+                        <div class="oe_dashboard_links ">
+                            <button type="button"
+                                    class="button ks_dashboard_save_layout btn btn-primary o_form_button_save"
+                                    title="Save Changes">
+                                <span>Save</span>
                             </button>
-                            <ul id="ks_add_item_selection" class="dropdown-menu"
-                                role="menu">
-                                <li data-item="ks_tile">
-                                    <span class="df_selection_text">
-                                        Tile
-                                    </span>
-                                </li>
-                                <li data-item="ks_bar_chart">
-                                    <span class="df_selection_text">
-                                        Bar Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_horizontalBar_chart">
-                                    <span class="df_selection_text">
-                                        Horizontal Bar Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_line_chart">
-                                    <span class="df_selection_text">
-                                        Line Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_area_chart">
-                                    <span class="df_selection_text">
-                                        Area Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_pie_chart">
-                                    <span class="df_selection_text">
-                                        Pie Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_doughnut_chart">
-                                    <span class="df_selection_text">
-                                        Doughnut Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_polarArea_chart">
-                                    <span class="df_selection_text">
-                                        Polar Area Chart
-                                    </span>
-                                </li>
-                                <li data-item="ks_list_view">
-                                    <span class="df_selection_text">
-                                        List View
-                                    </span>
-                                </li>
-                                <li data-item="ks_kpi">
-                                    <span class="df_selection_text">
-                                        KPI
-                                    </span>
-                                </li>
-                                <li data-item="ks_json">
-                                    <span class="df_selection_text">
-                                        Import Item
-                                    </span>
-                                </li>
-                                <input accept=".json " t-attf-id="file_#{_id}"
-                                    name="file" class="ks_input_import_item_button" type="file" style="display:none;"/>
-                            </ul>
-                            <button id="ks_dashboard_layout_edit" class="btn btn-primary ks_dashboard_edit_layout">
-                                <span class="fa fa-lg fa-pencil"/>
-                                Edit Layout
+
+                            <button type="button"
+                                    class="button ks_dashboard_cancel_layout btn btn-secondary o_form_button_cancel"
+                                    title="Discard Changes">
+                                <span>Discard</span>
                             </button>
                         </div>
-
-                        <!-- This should only be shown on : Edit Mode Layout-->
-                        <div class="ks_dashboard_edit_mode_settings ks_hide">
-                            <div class="oe_dashboard_links ">
-                                <button type="button"
-                                        class="button ks_dashboard_save_layout btn btn-primary o_form_button_save"
-                                        title="Save Changes">
-                                    <span>Save</span>
-                                </button>
-
-                                <button type="button"
-                                        class="button ks_dashboard_cancel_layout btn btn-secondary o_form_button_cancel"
-                                        title="Discard Changes">
-                                    <span>Discard</span>
-                                </button>
-                            </div>
-                        </div>
-                    </t>
-
+                    </div>
                 </div>
+            </t>
         </div>
     </t>
 
@@ -217,7 +215,7 @@
             <div t-att-id="item.id"
                  t-att-class="'ks_dashboarditem_id ks_dashboard_item ks_dashboard_item_hover ' + ks_inner_container_class"
                  t-att-style="style_main_body">
-                <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header ks_dashboard_item_header_hover">
                     <t t-if="item.ksIsDashboardManager">
 
                         <!--  Dashboard Item Move/Copy Feature -->
@@ -262,27 +260,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </t>
                 </div>
 
@@ -303,7 +280,7 @@
                         <div class="ks_dashboard_item_name" t-att-title="item.name">
                             <t t-esc="item.name"/>
                         </div>
-                        <div class="ks_dashboard_item_domain_count" t-att-title="count">
+                        <div class="ks_dashboard_item_domain_count" t-att-title="data_count">
                             <t t-esc="data_count"/>
                         </div>
                     </div>
@@ -331,7 +308,7 @@
                 </div>
 
                 <div class="ks_dashboard_item_main_body_l2 ">
-                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="count">
+                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="data_count">
                         <t t-esc="data_count"/>
                     </div>
                     <div class="ks_dashboard_item_name_l2" t-att-title="item.name">
@@ -340,8 +317,7 @@
                 </div>
 
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover"
-                         t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -386,27 +362,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -419,7 +374,7 @@
                  t-att-class="'ks_dashboarditem_id ks_dashboard_item ks_dashboard_item_hover '+ ks_inner_container_class"
                  t-att-style="style_main_body">
 
-                <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header ks_dashboard_item_header_hover">
                     <t t-if="item.ksIsDashboardManager">
 
                         <!--  Dashboard Item Move/Copy Feature -->
@@ -463,27 +418,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </t>
                 </div>
                 <div class="ks_dashboard_item_main_body">
@@ -499,7 +433,7 @@
                         </t>
                     </div>
                     <div class="ks_dashboard_item_info ks_dashboard_item_info_l3">
-                        <div class="ks_dashboard_item_domain_count_l3" t-att-title="count">
+                        <div class="ks_dashboard_item_domain_count_l3" t-att-title="data_count">
                             <t t-esc="data_count"/>
                         </div>
                         <div class="ks_dashboard_item_name_l3" t-att-title="item.name">
@@ -530,7 +464,7 @@
                 </div>
 
                 <div class="ks_dashboard_item_main_body_l2 ks_bg_white">
-                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="count">
+                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="data_count">
                         <t t-esc="data_count"/>
                     </div>
                     <div class="ks_dashboard_item_name_l2" t-att-title="item.name">
@@ -539,7 +473,7 @@
                 </div>
 
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -588,27 +522,6 @@
                         >
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -632,7 +545,7 @@
                     </t>
                 </div>
                 <div class="ks_dashboard_item_main_body_l5">
-                    <div class="ks_dashboard_item_domain_count_l5" t-att-title="count">
+                    <div class="ks_dashboard_item_domain_count_l5" t-att-title="data_count">
                         <t t-esc="data_count"/>
                     </div>
                     <div class="ks_dashboard_item_name_l5" t-att-title="item.name">
@@ -641,7 +554,7 @@
                 </div>
                 <t t-if="item.ksIsDashboardManager">
 
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l2 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l2 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -669,7 +582,6 @@
                                 <button class="btn btn-primary o_apply_group o_add_group ks_move_item" tabindex="-1"
                                         type="button">Move
                                 </button>
-
                             </li>
                         </ul>
 
@@ -686,27 +598,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -722,7 +613,7 @@
 
 
                 <div class="ks_dashboard_item_main_body_l2">
-                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="count">
+                    <div class="ks_dashboard_item_domain_count_l2" t-att-title="data_count">
                         <t t-esc="data_count"/>
                     </div>
                     <div class="ks_dashboard_item_name_l2" t-att-title="item.name">
@@ -743,7 +634,7 @@
                 </div>
 
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -787,27 +678,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                        <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -889,7 +759,7 @@
                     </t>
                 </div>
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -933,27 +803,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                         <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -1012,7 +861,7 @@
                     </div>
                 </t>
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -1056,27 +905,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                         <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>
@@ -1139,7 +967,7 @@
                     </t>
                 </t>
                 <t t-if="item.ksIsDashboardManager">
-                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover" t-att-data-item_id="item.id">
+                    <div class="ks_dashboard_item_button_container ks_dropdown_container ks_dashboard_item_header_l6 ks_dashboard_item_header_hover">
 
                         <!--  Dashboard Item Move/Copy Feature -->
                         <button title="Move/Duplicate" data-toggle="dropdown"
@@ -1183,27 +1011,6 @@
                         <button type="button" title="Remove Item" class="ks_dashboard_item_delete">
                             <i class="fa fa-times"/>
                         </button>
-                         <div class="ks_chart_inner_buttons">
-                            <button title="Export Item" data-toggle="dropdown"
-                                        class="ks_dashboard_item_action  btn dropdown-toggle btn-xs o-no-caret btn"
-                                        type="button"
-                                        aria-expanded="true">
-                                    <i class="fa fa-ellipsis-v"/>
-                                </button>
-                                <div role="menu" class="dropdown-menu dropdown-menu-right">
-                                    <!--Dynamic Rendering-->
-                                    <div class="ks_chart_export_menu">
-                                <div class="ks_chart_export_menu_header">
-                                    <span>Export</span>
-                                </div>
-                                <div class="ks_chart_json_export ks_chart_export_menu_item" t-att-data-item-id="item_id"
-                                     data-format="chart_xls">
-                                    <i class="fa fa-file-code-o"/>
-                                    <span>Export Item</span>
-                                </div>
-                             </div>
-                            </div>
-                            </div>
                     </div>
                 </t>
             </div>

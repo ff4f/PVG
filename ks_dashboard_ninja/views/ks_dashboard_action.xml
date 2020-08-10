@@ -8,7 +8,7 @@
                 <form string="Dashboard Item Action">
                     <group>
                         <group>
-                            <field name="ks_dashboard_item_ids" invisible='1' required="1"/>
+                            <field name="ks_dashboard_item" invisible='1' required="1"/>
                             <field name="ks_dashboard_ninja_id"
                                    attrs="{'invisible':[('ks_action','=','duplicate')], 'required':[('ks_action','=','move')]}"
                                    options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>

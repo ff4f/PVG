@@ -119,7 +119,7 @@
                     <div class="ks_dashboard_item_name" t-att-title="name">
                         <t t-esc="name"/>
                     </div>
-                    <div class="ks_dashboard_item_domain_count" t-att-title="count_tooltip">
+                    <div class="ks_dashboard_item_domain_count">
                         <t t-esc="count"/>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
             </div>
 
             <div class="ks_dashboard_item_main_body_l2">
-                <div class="ks_dashboard_item_domain_count_l2" t-att-title="count_tooltip">
+                <div class="ks_dashboard_item_domain_count_l2">
                     <t t-esc="count"/>
                 </div>
                 <div class="ks_dashboard_item_name_l2" t-att-title="name">
@@ -187,7 +187,7 @@
                     </t>
                 </div>
                 <div class="ks_dashboard_item_info ks_dashboard_item_info_l3">
-                    <div class="ks_dashboard_item_domain_count_l3" t-att-title="count_tooltip">
+                    <div class="ks_dashboard_item_domain_count_l3">
                         <t t-esc="count"/>
                     </div>
                     <div class="ks_dashboard_item_name_l3" t-att-title="name">
@@ -212,7 +212,7 @@
             </div>
 
             <div class="ks_dashboard_item_main_body_l2">
-                <div class="ks_dashboard_item_domain_count_l2" t-att-title="count_tooltip">
+                <div class="ks_dashboard_item_domain_count_l2">
                     <t t-esc="count"/>
                 </div>
                 <div class="ks_dashboard_item_name_l2" t-att-title="name">
@@ -246,7 +246,7 @@
                 </t>
             </div>
             <div class="ks_dashboard_item_main_body_l5">
-                <div class="ks_dashboard_item_domain_count_l5" t-att-title="count_tooltip">
+                <div class="ks_dashboard_item_domain_count_l5">
                     <t t-esc="count"/>
                 </div>
                 <div class="ks_dashboard_item_name_l5" t-att-title="name">
@@ -268,7 +268,7 @@
     <t t-name="ks_db_list_preview_layout6">
         <div class="ks_dashboard_item_l2  ks_db_item_preview ks_db_item_preview_color_picker">
             <div class="ks_dashboard_item_main_body_l2">
-                <div class="ks_dashboard_item_domain_count_l2" t-att-title="count_tooltip">
+                <div class="ks_dashboard_item_domain_count_l2">
                     <t t-esc="count"/>
                 </div>
                 <div class="ks_dashboard_item_name_l2" t-att-title="name">
@@ -438,7 +438,7 @@
                             <span class="target_deviation">
                                 <t t-esc="target_deviation"/>
                                 <t t-if="pre_arrow">
-                                    <i t-att-class="'fa fa-arrow-'+ pre_arrow"/>
+                                        <i t-att-class="'fa fa-arrow-'+ pre_arrow"/>
                                 </t>
                             </span>
                         </div>

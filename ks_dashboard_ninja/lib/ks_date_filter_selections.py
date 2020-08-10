@@ -19,9 +19,9 @@ def ks_date_series_l(ks_date_selection):
         'quarter': 90,
         'year': 365,
     }
-    ks_date_data["selected_end_date"] = datetime.strptime(datetime.now().strftime("%Y-%m-%d 23:59:59"),'%Y-%m-%d %H:%M:%S')
-    ks_date_data["selected_start_date"] = datetime.strptime((datetime.now() - timedelta(
-        days=date_filter_options[ks_date_selection])).strftime("%Y-%m-%d 00:00:00"),'%Y-%m-%d %H:%M:%S')
+    ks_date_data["selected_end_date"] = datetime.now().strftime("%Y-%m-%d 23:59:59")
+    ks_date_data["selected_start_date"] = (datetime.now() - timedelta(
+        days=date_filter_options[ks_date_selection])).strftime("%Y-%m-%d 00:00:00")
     return ks_date_data
 
 
@@ -35,20 +35,13 @@ def ks_date_series_ls(ks_date_selection):
     return eval("ks_get_date_range_from_"+ks_date_selection)("previous")
 
 
-# Next Date Ranges : Day, Week, Month, Quarter, year
-def ks_date_series_n(ks_date_selection):
-    return eval("ks_get_date_range_from_"+ks_date_selection)("next")
-
-
 def ks_get_date_range_from_day(date_state):
     ks_date_data = {}
 
     date = datetime.now()
 
-    if date_state == "previous":
-        date = date - timedelta(days=1)
-    elif date_state == "next":
-        date = date + timedelta(days=1)
+    if date_state=="previous":
+        date = date-timedelta(days=1)
 
     ks_date_data["selected_start_date"] = datetime(date.year,date.month,date.day)
     ks_date_data["selected_end_date"] = datetime(date.year, date.month, date.day) + timedelta(days=1, seconds=-1)
@@ -60,10 +53,8 @@ def ks_get_date_range_from_week(date_state):
 
     date = datetime.now()
 
-    if date_state == "previous":
-        date = date - timedelta(days=7)
-    elif date_state == "next":
-        date = date + timedelta(days=7)
+    if date_state=="previous":
+        date = date-timedelta(days=7)
 
     date_iso = date.isocalendar()
     year = date_iso[0]
@@ -72,7 +63,6 @@ def ks_get_date_range_from_week(date_state):
     ks_date_data["selected_start_date"] = datetime.strptime('%s-W%s-1'%(year,week_no-1), "%Y-W%W-%w")
     ks_date_data["selected_end_date"] = ks_date_data["selected_start_date"] + timedelta(days=6,hours=23,minutes=59,seconds=59,milliseconds=59)
     return ks_date_data
-
 
 def ks_get_date_range_from_month(date_state):
     ks_date_data = {}
@@ -86,12 +76,6 @@ def ks_get_date_range_from_month(date_state):
         if month==0:
             month = 12
             year -= 1
-    elif date_state == "next":
-        month += 1
-        if month==13:
-            month = 1
-            year += 1
-
 
     end_year = year
     end_month = month
@@ -119,11 +103,6 @@ def ks_get_date_range_from_quarter(date_state):
         if quarter == 0:
             quarter = 4
             year -= 1
-    elif date_state == "next":
-        quarter += 1
-        if quarter == 5:
-            quarter = 1
-            year += 1
 
     ks_date_data["selected_start_date"] = datetime(year, 3 * quarter - 2, 1)
 
@@ -140,10 +119,8 @@ def ks_get_date_range_from_year(date_state):
     date = datetime.now()
     year = date.year
 
-    if date_state == "previous":
+    if date_state=="previous":
         year -= 1
-    elif date_state == "next":
-        year += 1
 
     ks_date_data["selected_start_date"] = datetime(year, 1, 1)
     ks_date_data["selected_end_date"] = datetime(year+1, 1, 1)-timedelta(seconds=1)

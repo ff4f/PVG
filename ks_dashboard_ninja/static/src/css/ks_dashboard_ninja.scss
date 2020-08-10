@@ -5,11 +5,6 @@
 .ks_dashboard_ninja {
       margin-bottom: 20px;
 }
-
-.ks_dashboard_main_content {
-    overflow: auto;
-    height:100%;
-}
 .ks_dashboard_ninja_header{
     text-align : right;
     display: flex ;
@@ -20,9 +15,7 @@
     margin-bottom: 25px;
 }
 
-.ks_overflow {
-    overflow: auto;
-}
+
 
 .ks_dashboard_header_name {
         margin: 0;
@@ -310,7 +303,7 @@
 }
 
 .ks_dashboard_icon_l5 > img{
-    width: 20px !important;
+    width: 20px;
     height: 20px;
     margin: 10px;
 }
@@ -460,17 +453,13 @@
 
 .ks_btn_middle_child{
     border-radius: 0 !important;
-    height: 100%;
-}
 
-.ks_btn_middle_child input, .ks_btn_last_child input {
-    padding: inherit !important;
 }
 
 .ks_btn_last_child{
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
-    height: 100%;
+
 }
 
 .ks_hide{
@@ -549,5 +538,3 @@
         justify-content: space-between;
     }
 }
-
-
