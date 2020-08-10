@@ -24,25 +24,6 @@ i.ks-options-plus {
     padding: 0.5em 0.6em;
 }
 
-
-.printableArea {
-    width: 8.5cm; // !important
-    height:100%; // !important
-}
-
-@page {
-    size: 8cm auto; //
-    width: 8cm; //
-    height: 100%; //
-    margin: 0;
-    margin-left: 5px !important; // this is for me.
-}
-@font-face {
-    font-family: 'FontAwesome';
-    src: url(data:application/x-font-truetype;base64,<< insert base64 encoded fontawesome-webfont.ttf here >>) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 .apply-dashboard-date-filter{
     margin-left: 10px;
 }
@@ -89,4 +70,13 @@ i.ks-options-plus {
     margin-top: inherit;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.ks_event_offer_list {
+    pointer-events: none;
+    color: #8080805e !important;
+}
+
+.ks_event_offer_list:focus {
+    box-shadow: none;
 }

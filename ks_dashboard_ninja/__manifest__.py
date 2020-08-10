@@ -7,9 +7,10 @@
     """,
 
     'description': """
-        Dashboard Ninja v11.0,
+        Dashboard Ninja v13.0,
         Odoo Dashboard, 
         Dashboard,
+	    Dashboards,
         Odoo apps,
         Dashboard app,
         HR Dashboard,
@@ -44,21 +45,20 @@
     'author': "Ksolves India Pvt. Ltd.",
     'license': 'OPL-1',
     'currency': 'EUR',
-    'price': 149.0,
+    'price': 279.0,
     'website': "https://www.ksolves.com",
     'maintainer': 'Ksolves India Pvt. Ltd.',
     'live_test_url': 'https://dashboardninja.kappso.com',
     'category': 'Tools',
-    'version': '5.1.1',
+    'version': '13.0.2.0.0',
     'support': 'sales@ksolves.com',
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner1.gif'],
 
-    'depends': ['base', 'web', 'base_setup','sale','sale_management'],
+    'depends': ['base', 'web', 'base_setup'],
 
     'data': [
         'security/ir.model.access.csv',
         'security/ks_security_groups.xml',
-        'data/ks_sales_data.xml',
         'data/ks_default_data.xml',
         'views/ks_dashboard_ninja_view.xml',
         'views/ks_dashboard_ninja_item_view.xml',
