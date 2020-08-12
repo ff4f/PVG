@@ -7,7 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Period" editable="top" default_order="am_pm,hour,minute">
-                    <field name="sequence" />
+                    <field name="sequence" widget="handle"/>
                     <field name="name" />
                     <field name="hour" widget=""/>
                     <field name="minute" />
