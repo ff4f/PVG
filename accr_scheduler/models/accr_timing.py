@@ -8,7 +8,7 @@ class accrTiming(models.Model):
 
     name = fields.Char('Name', required=True)
     hour = fields.Selection(
-        [('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
+        [('01', '1'), ('2', '02'), ('3', '3'), ('4', '4'), ('5', '5'),
          ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'),
          ('11', '11'), ('12', '12')], 'Hours', required=True)
     minute = fields.Selection(
