@@ -6,7 +6,7 @@
             <field name="model">accr.timing</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Period" editable="bottom" default_order="hour, minute asc">
+                <tree string="Period" editable="bottom" default_order="hour,minute asc">
                     <field name="name" />
                     <field name="hour" />
                     <field name="minute" />
