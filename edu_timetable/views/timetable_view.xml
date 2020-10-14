@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_op_subject_form" model="ir.ui.view">
+            <field name="name">edu.subject.form</field>
+            <field name="model">edu.subject</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Subject">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="subject_type"/>
+                            <field name="grade_weightage"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_edu_timetable_tree" model="ir.ui.view">
+            <field name="name">edu.timetable.tree</field>
+            <field name="model">edu.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Timetable">
+                    <field name="name"/>
+                    <field name="class_room_id"/>
+                    <field name="user_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_edu_timetable_form" model="ir.ui.view">
+            <field name="name">edu.timetable.form</field>
+            <field name="model">edu.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="timetable">
+                    <sheet>
+                        <div name="smart_button" class="oe_button_box">
+                        </div>
+                        <group>
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="class_room_id"/>
+                            <field name="user_id" ref="base.user_root"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <notebook>
+                            <page string="Timings">
+                                <field name="line_ids">
+                                    <tree string="Timings Days" editable="bottom">
+                                        <field name="subject_id"/>
+                                        <field name="dayofweek"/>
+                                        <field name="hour_from" widget="float_time"/>
+                                        <field name="hour_to" widget="float_time"/>
+                                        <field name="student_ids" widget="many2many_tags"/>
+                                        <field name="timetable_id" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_op_session_search" model="ir.ui.view">
+            <field name="name">edu.timetable.search</field>
+            <field name="model">edu.timetable</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Timetable">
+                    <field name="class_room_id" select="True"/>
+                    <field name="start_date" select="True"/>
+                    <field name="end_date" select="True"/>
+                    <newline/>
+                    <filter string="Week" name="filter_session_week"
+                            domain="[('start_date', '&gt;=', (context_today()+relativedelta(weeks=-2,days=1,weekday=0)).strftime('%Y-%m-%d')),
+                                    ('start_date', '&lt;', (context_today()+relativedelta(weekday=6)).strftime('%Y-%m-%d'))]"/>
+                    <filter string="Month" name="filter_session_month"
+                            domain="[('start_date', '&lt;=', (datetime.date.today()+relativedelta(day=31)).strftime('%Y-%m-%d')),
+                                    ('start_date', '&gt;=', (datetime.date.today()-relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_session_kanban">
+            <field name="name">timetable.kanban</field>
+            <field name="model">edu.timetable</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable">
+                                            <li>
+                                                <a type="edit">Edit</a>
+                                            </li>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                        </t>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker"
+                                                data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <div class="oe_kanban_left">
+                                        <li t-if="record.class_room_id.raw_value">
+                                            <b>Class Room:</b>
+                                            <field name="class_room_id"/>
+                                        </li>
+                                        <li t-if="record.start_date.raw_value">
+                                            <b>Start:</b>
+                                            <field name="start_date"/>
+                                        </li>
+                                        <li t-if="record.end_date.raw_value">
+                                            <b>End:</b>
+                                            <field name="end_date"/>
+                                        </li>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_op_session_view">
+            <field name="name">Timetable</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">edu.timetable</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_op_session_search"/>
+        </record>
+
+
+        <menuitem id="menu_op_timetable_root"
+                  name="TimeTables"
+                  sequence="90"
+                  web_icon="edu_timetable,static/description/icon.png"/>
+        <menuitem id="menu_op_timetable"
+                  string="Timetable"
+                  parent="menu_op_timetable_root"
+                  sequence="10" action="act_open_op_session_view"/>
+    </data>
+</odoo>

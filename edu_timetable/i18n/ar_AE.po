@@ -1,0 +1,401 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* edu_timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-04 22:10+0000\n"
+"PO-Revision-Date: 2020-10-04 22:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_session_kanban
+msgid "<b>Class Room:</b>"
+msgstr "الفصل"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_session_kanban
+msgid "<b>End:</b>"
+msgstr "نهاية"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_session_kanban
+msgid "<b>Start:</b>"
+msgstr "بداية"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__class_room_id
+msgid "Class Room"
+msgstr "الفصل"
+
+#. module: edu_timetable
+#: sql_constraint:edu.subject:0
+msgid "Code should be unique per subject!"
+msgstr "الكود لا يجب ان يكرر"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__color
+msgid "Color Index"
+msgstr "اللون"
+
+#. module: edu_timetable
+#: selection:edu.subject,subject_type:0
+msgid "Compulsory"
+msgstr "إلزامي"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__create_uid
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__create_uid
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__create_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__create_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Day"
+msgstr "اليوم"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__dayofweek
+msgid "Day of Week"
+msgstr "يوم من الأسبوع"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_session_kanban
+msgid "Delete"
+msgstr "حذف"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__display_name
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__display_name
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_session_kanban
+msgid "Edit"
+msgstr "تعديل"
+
+#. module: edu_timetable
+#: selection:edu.subject,subject_type:0
+msgid "Elective"
+msgstr "أختياري"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__end_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__end_date
+msgid "End Time"
+msgstr "نهاية الوقت"
+
+#. module: edu_timetable
+#: code:addons/edu_timetable/models/timetable.py:39
+#, python-format
+msgid "End Time cannot be set before Start Time."
+msgstr "وقت النهاية لا يجب ان يدخل قبل وقت البداية"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__grade_weightage
+msgid "Grade Weightage"
+msgstr "الدرجة"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Group By..."
+msgstr ""
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__id
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__id
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject____last_update
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable____last_update
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__write_uid
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__write_uid
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__write_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__write_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__line_ids
+msgid "Lines"
+msgstr "البنود"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Monday"
+msgstr "الأثنين"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_session_search
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Month"
+msgstr "الشهور"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__name
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الأخطاء"
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: edu_timetable
+#: model:ir.model,name:edu_timetable.model_edu_timing
+msgid "Period"
+msgstr "الفترة"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__user_id
+msgid "Representative"
+msgstr "المعلم"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__start_date
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__start_date
+msgid "Start Time"
+msgstr "بداية الوقت"
+
+#. module: edu_timetable
+#: model:ir.model.fields,help:edu_timetable.field_edu_timetable_item__hour_from
+msgid "Start and End time of working.\n"
+"A specific value of 24:00 is interpreted as 23:59:59.999999."
+msgstr "وقت بدء ونهاية العمل.\n"
+"تُكتب القيمة المحددة 24:00 بالصيغة 23:59:59.999999."
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__student_ids
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: edu_timetable
+#: model:ir.model,name:edu_timetable.model_edu_subject
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__subject_id
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_subject_form
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Subject"
+msgstr "المادة الدراسية"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_subject__subject_type
+msgid "Subject Type"
+msgstr "نوع للمادة"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Sunday"
+msgstr "الأحد"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Thursday"
+msgstr "الاربعاء"
+
+#. module: edu_timetable
+#: model:ir.ui.menu,name:edu_timetable.menu_op_timetable_root
+msgid "TimeTables"
+msgstr "جدول الحصص"
+
+#. module: edu_timetable
+#: model:ir.actions.act_window,name:edu_timetable.act_open_op_session_view
+#: model:ir.model,name:edu_timetable.model_edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__timetable_id
+#: model:ir.ui.menu,name:edu_timetable.menu_op_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_edu_timetable_tree
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_session_search
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Timetable"
+msgstr "جدول الحصص"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_edu_timetable_line_tree
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Timing"
+msgstr "الحصة"
+
+#. module: edu_timetable
+#: model:ir.actions.act_window,name:edu_timetable.act_open_op_timing_view
+#: model:ir.ui.menu,name:edu_timetable.menu_op_period
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_edu_timetable_form
+msgid "Timings"
+msgstr "الحصص"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_edu_timetable_form
+msgid "Timings Days"
+msgstr "أيام الحصص"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: edu_timetable
+#: selection:edu.timetable.item,dayofweek:0
+msgid "Wednesday"
+msgstr "الخميس"
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_session_search
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_op_timing_search
+msgid "Week"
+msgstr "اسبوع"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__hour_from
+msgid "Work from"
+msgstr "الوقت من"
+
+#. module: edu_timetable
+#: model:ir.model.fields,field_description:edu_timetable.field_edu_timetable_item__hour_to
+msgid "Work to"
+msgstr "الوقت إلى"
+
+#. module: edu_timetable
+#: model:ir.model,name:edu_timetable.model_edu_timetable_item
+msgid "edu.timetable.item"
+msgstr ""
+
+#. module: edu_timetable
+#: model_terms:ir.ui.view,arch_db:edu_timetable.view_edu_timetable_form
+msgid "timetable"
+msgstr "جدول الحصص"
+

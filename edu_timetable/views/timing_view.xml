@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_edu_timetable_line_tree" model="ir.ui.view">
+            <field name="name">edu.timetable.item.tree</field>
+            <field name="model">edu.timetable.item</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Timing">
+                    <field name="subject_id"/>
+                    <field name="dayofweek"/>
+                    <field name="hour_from" widget="float_time"/>
+                    <field name="hour_to" widget="float_time"/>
+                    <field name="student_ids" widget="many2many_tags"/>
+                    <field name="timetable_id" invisible="True"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_op_timing_search" model="ir.ui.view">
+            <field name="name">edu.timetable.item.search</field>
+            <field name="model">edu.timetable.item</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Timing">
+                    <field name="subject_id" select="True"/>
+                    <field name="dayofweek"/>
+                    <field name="hour_from" select="True"/>
+                    <field name="hour_to" select="True"/>
+                    <newline/>
+                    <filter string="Week" name="filter_session_week"
+                            domain="[('start_date', '&gt;=', (context_today()+relativedelta(weeks=-2,days=1,weekday=0)).strftime('%Y-%m-%d')),
+                                    ('start_date', '&lt;', (context_today()+relativedelta(weekday=6)).strftime('%Y-%m-%d'))]"/>
+                    <filter string="Month" name="filter_session_month"
+                            domain="[('start_date', '&lt;=', (datetime.date.today()+relativedelta(day=31)).strftime('%Y-%m-%d')),
+                                    ('start_date', '&gt;=', (datetime.date.today()-relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+
+                    <group expand="0" string="Group By...">
+                        <filter string="Timetable" name="timetable" domain="[]" context="{'group_by':'timetable_id'}"/>
+                        <filter string="Day" name="dayofweek" domain="[]"
+                                context="{'group_by':'dayofweek'}"/>
+                        <filter string="Subject" name="subject_id" domain="[]"
+                                context="{'group_by':'subject_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_op_timing_view">
+            <field name="name">Timings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">edu.timetable.item</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_op_timing_search"/>
+        </record>
+
+        <menuitem id="menu_op_period"
+                  string="Timing"
+                  parent="menu_op_timetable_root"
+                  sequence="10"
+                  action="act_open_op_timing_view"/>
+    </data>
+</odoo>
