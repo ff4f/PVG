@@ -22,107 +22,104 @@
                             </center>
                         </h2>
                         <hr/>
-                        <table style="height: 100%;" width="100%">
+                        <table width="100%">
                             <tbody>
                                 <tr>
-                                    <td style="width: 263px;">
-                                        <span style="float:right" t-field="doc.birthdate"/>
-                                    </td>
                                     <td>
-                                        <span style="float:right">تاريخ الميلاد</span>
+                                        <span style="float:right">الاسم</span>
                                     </td>
                                     <td style="width: 264px;">
                                         <span style="float:right" t-field="doc.student_id.x_name"/>
                                     </td>
                                     <td>
-                                        <span style="float:right">الاسم</span>
+                                        <span style="float:right">تاريخ الميلاد</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.birthdate"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.prepardate"/>
-                                    </td>
-                                    <td style="width: 264px;">
-                                        <span style="float:right">تاريخ اعداد البرنامج</span>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">تاريخ التحويل</span>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right" t-field="doc.transdate"/>
                                     </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right">تاريخ التحويل</span>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">تاريخ اعداد البرنامج</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.prepardate"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.manager_id.name"/>
-                                    </td>
-                                    <td style="width: 264px;">
-                                        <span style="float:right">مدير الحالة</span>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">العنوان</span>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right" t-field="doc.address"/>
                                     </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right">العنوان</span>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">مدير الحالة</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.manager_id.name"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.contact_mobiles"/>
-                                    </td>
-                                    <td style="width: 264px;">
-                                        <span style="float:right">رقم تواصل مع ولى الامر</span>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">التشخيص الطبى</span>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right" t-field="doc.medical_diagnosis"/>
                                     </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right">التشخيص الطبى</span>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">رقم تواصل مع ولى الامر</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.contact_mobiles"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.language"/>
-                                    </td>
-                                    <td style="width: 264px;">
-                                        <span style="float:right">اللغة المستخدمة بالمنزل</span>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">الجنسيه</span>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right" t-field="doc.nationality.name"/>
                                     </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right">الجنسيه</span>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">اللغة المستخدمة بالمنزل</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.language"/>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <br/>
-                        <br/>
-                        <br/>
                         <h3>فريق أعداد البرنامج الفردي</h3>
                         <table style="border-collapse: collapse;">
                             <thead style="width:100%;border-left: 1px solid gray;border-top: 1px solid gray;border-bottom: 1px solid gray;                     border-right: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;                     font-weight: bold;padding-left:0px;padding-top:5px;padding-bottom:5px;border-collapse: collapse;">
                                 <tr>
                                     <th style="width: 341px;border: 1px solid black;">
-                                        <center>التوقيع</center>
+                                        <center>الاسم</center>
                                     </th>
                                     <th style="width: 341px;border: 1px solid black;">
                                         <center>الوظيفه</center>
                                     </th>
                                     <th style="width: 341px;border: 1px solid black;">
-                                        <center>الاسم</center>
+                                        <center>التوقيع</center>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.lines_ids" t-as="rec">
-                                    <td class="text-right"></td>
-                                    <td class="text-right">
-                                        <span t-field="rec.position_id"/>
-                                    </td>
-                                    <td class="text-right">
+                                    <td class="text-right" style="background-color: #e6e6e6;border-left: 1px solid gray;border-bottom: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;align:center;">
                                         <span t-field="rec.response_id.name"/>
                                     </td>
+                                    <td class="text-right" style="background-color: #e6e6e6;border-left: 1px solid gray;border-bottom: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;align:center;">
+                                        <span t-field="rec.position_id"/>
+                                    </td>
+                                    <td class="text-right" style="background-color: #e6e6e6;border-left: 1px solid gray;border-bottom: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;align:center;"></td>
                                 </tr>
                             </tbody>
                         </table>

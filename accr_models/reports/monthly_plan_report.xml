@@ -15,8 +15,8 @@
                     <div class="page">
                         <div>
                             <h2 class="text-center">
-                                <span t-field="doc.month"/>
                                 <strong>التخطيط الشهري لشهر</strong>
+                                <span t-field="doc.month"/>
                             </h2>
                         </div>
                         <br/>
@@ -24,19 +24,19 @@
                     font: 16px Arial, Helvetica, sans-serif;
                     padding-left:0px;border-collapse: collapse;">
                             <tr>
-                                <td class="text-right" style="padding-top:0px;padding-bottom:1px;" colspan="2">
-                                    <span>(</span>
-                                    <strong t-esc="doc.date_to"/>
-                                    <span>)</span>
-                                    <strong>:</strong>
-                                    <strong>الي</strong>
-                                </td>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
                                     <span>(</span>
                                     <strong t-esc="doc.date_from"/>
                                     <span>)</span>
                                     <strong>:</strong>
                                     <strong>من</strong>
+                                </td>
+                                <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
+                                    <span>(</span>
+                                    <strong t-esc="doc.date_to"/>
+                                    <span>)</span>
+                                    <strong>:</strong>
+                                    <strong>الي</strong>
                                 </td>
                             </tr>
                             <tr>
@@ -55,42 +55,33 @@
                                             <strong>:</strong>
                                             <strong>الطالب</strong>
                                         </t>
-
                                     </div>
                                 </td>
                             </tr>
                         </table>
-                        <br/>
-                        <br/>
-                        <br/>
                         <table style="border-collapse: collapse;">
                             <thead style="width:100%;border-left: 1px solid gray;border-top: 1px solid gray;border-bottom: 1px solid gray;                     border-right: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;                     font-weight: bold;padding-left:0px;padding-top:5px;padding-bottom:5px;border-collapse: collapse;">
 
                                 <tr>
                                     <th class="text-right">
-                                        <center>لم ينجز</center>
-                                    </th>
-                                    <th class="text-right">
-                                        <center>أنجر</center>
+                                        <center>الاهداف التعليمية</center>
                                     </th>
                                     <th class="text-right">
                                         <center>الملاحظات</center>
                                     </th>
                                     <th class="text-right">
-                                        <center>الاهداف التعليمية</center>
+                                        <center>أنجر</center>
+                                    </th>
+                                    <th class="text-right">
+                                        <center>لم ينجز</center>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.line_ids" t-as="rec">
-                                    <td class="text-right">
+                                     <td class="text-right">
                                         <center>
-                                            <span t-field="rec.not_accomplished"/>
-                                        </center>
-                                    </td>
-                                    <td class="text-right">
-                                        <center>
-                                            <span t-field="rec.is_accomplished"/>
+                                            <span t-field="rec.teach_goal_id.x_name"/>
                                         </center>
                                     </td>
                                     <td class="text-right">
@@ -98,16 +89,19 @@
                                             <span t-field="rec.comment"/>
                                         </center>
                                     </td>
+                                     <td class="text-right">
+                                        <center>
+                                            <span t-field="rec.is_accomplished"/>
+                                        </center>
+                                    </td>
                                     <td class="text-right">
                                         <center>
-                                            <span t-field="rec.teach_goal_id.x_name"/>
+                                            <span t-field="rec.not_accomplished"/>
                                         </center>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <br/>
-                        <br/>
                     </div>
                 </t>
             </t>

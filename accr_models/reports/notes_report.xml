@@ -5,7 +5,7 @@
             model="notes.directions"
             string="Notes"
             report_type="qweb-pdf"
-            name="monthly_plans.notes_report"
+            name="accr_models.notes_report"
     />
 
     <template id="notes_report">
