@@ -18,12 +18,12 @@
     'version': '0.12',
 
     # any module necessary for this one to work correctly
-    'depends': ['hr'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/individual_education_view.xml',
         'views/weekly_plan.xml',
         'views/notes.xml',
         'views/monthly_plan.xml',
@@ -34,6 +34,5 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
     ],
 }
