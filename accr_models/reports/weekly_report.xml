@@ -5,7 +5,7 @@
             model="weekly.plans"
             string="Weekly Report"
             report_type="qweb-pdf"
-            name="monthly_plans.weekly_report"
+            name="accr_models.weekly_report"
     />
 
     <template id="weekly_report">
@@ -18,44 +18,81 @@
                                 نموذج الاسبوعي للأنشطة الجماعية
                             </center>
                         </h2>
-                            <hr/>
-                            <table style="height: 100%;" width="100%">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 263px;"></td>
-                                        <td style="width: 263px;"><span style="margin-left:8px"></span></td>
-                                        <td style="width: 264px;"><span style="float:right" t-field="doc.teacher_id.name"/> </td>
-                                        <td style="width: 264px;"><span style="margin-left:8px"> اسم المعلم/ه </span></td>
+                        <hr/>
+                        <table style="height: 100%;" width="100%">
+                            <tbody>
+                                <tr>
+
+                                    <td style="width: 264px;" class="text-right">
+                                        <span style="margin-left:8px">اسم المعلم/ه</span>
+                                    </td>
+                                    <td style="width: 264px;" class="text-right">
+                                        <span style="float:right" t-field="doc.teacher_id.name"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="margin-left:8px"></span>
+                                    </td>
+                                    <td style="width: 263px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 263px;" class="text-right">
+                                        <span style="margin-left:8px">من</span>
+                                    </td>
+                                    <td style="width: 263px;" class="text-right">
+                                        <span style="float:right" t-field="doc.date_from"/>
+                                    </td>
+                                    <td style="width: 264px;" class="text-right">
+                                        <span style="margin-left:8px">الى</span>
+                                    </td>
+                                    <td style="width: 264px;" class="text-right">
+                                        <span style="float:right" t-field="doc.date_to"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <th style="width: 341px;border: 1px solid black;" class="text-right">
+                                        <center>المجال</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;" class="text-right">
+                                        <center>نوع النشاط</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;" class="text-right">
+                                        <center>الهدف منه</center>
+                                    </th>
+
+
+                                </tr>
+                                <tr>
+                                    <tr t-foreach="doc.weekly_plans_ids" t-as="rec">
+
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.type"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.activity_type"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.goal"/>
+                                            </center>
+                                        </td>
+
                                     </tr>
-                                    <tr>
-                                       <td style="width: 264px;"><span style="float:right" t-field="doc.date_to"/></td>
-                                        <td style="width: 264px;"><span style="margin-left:8px"> الى </span></td>
-                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.date_from"/></td>
-                                        <td style="width: 263px;"><span style="margin-left:8px">تاريخ من</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
-                                <tbody>
-                                    <tr>
-                                        <th style="width: 341px;border: 1px solid black;"><center>الهدف منه</center></th>
-                                        <th style="width: 341px;border: 1px solid black;"><center>نوع النشاط</center></th>
-                                        <th style="width: 341px;border: 1px solid black;"><center>المجال</center></th>
-                                    </tr>
-                                    <tr>
-                                        <tr t-foreach="doc.weekly_plans_ids" t-as="rec">
-                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.goal"/></center></td>
-                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.activity_type"/></center></td>
-                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.type"/></center></td>
-                                        </tr>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br/>
-                            <br/>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
                     </div>
                 </t>
             </t>
