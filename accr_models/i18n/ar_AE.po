@@ -1,0 +1,872 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* accr_models
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-23 13:12+0000\n"
+"PO-Revision-Date: 2020-10-23 13:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "<br/>\n"
+"                            <br/>\n"
+"                            <span style=\"float:right;padding-right:20px\">/المشرف</span>\n"
+"                            <br/>\n"
+"                        <span style=\"float:right;padding-right:20px\">/التوقيع</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">الاسم</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">التشخيص الطبى</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">الجنسيه</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">العنوان</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">اللغة المستخدمة بالمنزل</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">تاريخ اعداد البرنامج</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">تاريخ التحويل</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">تاريخ الميلاد</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">رقم تواصل مع ولى الامر</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "<span style=\"float:right\">مدير الحالة</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "<span style=\"margin-left:8px\"> /التاريخ</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "<span style=\"margin-left:8px\"> /اليوم</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "<span style=\"margin-left:8px\"> اسم المعلم/ه </span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "<span style=\"margin-left:8px\"> الأخصائ/ية </span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "<span style=\"margin-left:8px\"> التوقيع </span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "<span style=\"margin-left:8px\"> الى </span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "<span style=\"margin-left:8px\">أسم الطالب</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "<span style=\"margin-left:8px\">أسم المعلم</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "<span style=\"margin-left:8px\">التخطيط الشهري لشهر</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "<span style=\"margin-left:8px\">الى</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "<span style=\"margin-left:8px\">تاريخ من</span>"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "<span style=\"margin-left:8px\">من</span>"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.ui.menu,name:accr_models.accr_models_root
+msgid "ACCR Models"
+msgstr "النماذج"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__is_accomplished
+msgid "Accomplished"
+msgstr "انجز"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_needaction
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_needaction
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_needaction
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_plans_form
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__activity_type
+msgid "Activity Type"
+msgstr "نوع النشاط"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: accr_models
+#: selection:individual.education,language:0
+msgid "Arabic"
+msgstr "عربي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_attachment_count
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_attachment_count
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_attachment_count
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__birthdate
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__comment
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: accr_models
+#: model_terms:ir.actions.act_window,help:accr_models.notes_directions_action
+msgid "Create New Notes"
+msgstr "أضافة جديد"
+
+#. module: accr_models
+#: model_terms:ir.actions.act_window,help:accr_models.individual_education_action
+msgid "Create New individual education"
+msgstr "اضضافة جديد"
+
+#. module: accr_models
+#: model_terms:ir.actions.act_window,help:accr_models.monthly_plans_action
+msgid "Create New monthly Plan"
+msgstr "اضافة جديد"
+
+#. module: accr_models
+#: model_terms:ir.actions.act_window,help:accr_models.weekly_plans_action
+msgid "Create New weekly Plan"
+msgstr "اضافة جديد"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__create_uid
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__create_date
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__create_date
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__create_date
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__create_date
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__create_date
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__create_date
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__create_date
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__date_from
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__date_from
+msgid "Date From"
+msgstr "تاريخ من"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__date_to
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__date_to
+msgid "Date To"
+msgstr "تاريخ الي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__transdate
+msgid "Date of conversion"
+msgstr "تاريخ التحويل"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__prepardate
+msgid "Date of preparation of the program"
+msgstr "تاريخ اعداد البرنامج"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__display_name
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__display_name
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__display_name
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__display_name
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__display_name
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__display_name
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__display_name
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Social specialist"
+msgstr "أخصائي اجتماعي"
+
+#. module: accr_models
+#: selection:individual.education,language:0
+msgid "English"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_follower_ids
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_follower_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_follower_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_channel_ids
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_channel_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_channel_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_partner_ids
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_partner_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_partner_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__teach_goal_id
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__goal
+msgid "Goal"
+msgstr "الهدف منه"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__id
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__id
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__id
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__id
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__id
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__id
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__id
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_unread
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_unread
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_unread
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_needaction
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_needaction
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_needaction
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_has_error
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_has_error
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_has_error
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__individual_id
+msgid "Individual"
+msgstr "فردية"
+
+#. module: accr_models
+#: model:ir.actions.act_window,name:accr_models.individual_education_action
+#: model_terms:ir.ui.view,arch_db:accr_models.individual_education_view_form
+#: model_terms:ir.ui.view,arch_db:accr_models.ndividual_education_tree
+msgid "Individual Education"
+msgstr "البرنامج التعليمية الفردية"
+
+#. module: accr_models
+#: model:ir.ui.menu,name:accr_models.monthly_plans_categ
+msgid "Individual Education Program"
+msgstr "البرنامج التعليمي الفردي"
+
+#. module: accr_models
+#: model:ir.actions.report,name:accr_models.pvg_plan_report
+msgid "Individual Education Program Report"
+msgstr "تقرير البرنامج التعليمي الفردي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_is_follower
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_is_follower
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_is_follower
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__item
+msgid "Item"
+msgstr "البند"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__language
+msgid "Language"
+msgstr "اللغة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education____last_update
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines____last_update
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans____last_update
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines____last_update
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions____last_update
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines____last_update
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans____last_update
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__write_uid
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__write_date
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__write_date
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__write_date
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__write_date
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__write_date
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__write_date
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__write_date
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__line_ids
+msgid "Line"
+msgstr "بند"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__lines_ids
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plans_form
+msgid "Lines"
+msgstr "البنود"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_main_attachment_id
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_main_attachment_id
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_main_attachment_id
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__manager_id
+msgid "Manager"
+msgstr "مدير الحالة"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Behavior modification specialist"
+msgstr "أخصائي تعديل سلوك"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__medical_diagnosis
+msgid "Medical diagnosis"
+msgstr "التشخيص الطبي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_has_error
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_has_error
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_has_error
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_ids
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Monday"
+msgstr "الاثنين"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__month
+msgid "Month"
+msgstr "شهر"
+
+#. module: accr_models
+#: model:ir.actions.act_window,name:accr_models.monthly_plans_action
+#: model:ir.ui.menu,name:accr_models.monthly_plans
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plans_form
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plans_tree
+msgid "Monthly Plans"
+msgstr "المخطط الشهري للمعلمين"
+
+#. module: accr_models
+#: model:ir.actions.report,name:accr_models.monthly_plan_report_action
+msgid "Monthly Report"
+msgstr "تقرير المخطط الشهريي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__response_id
+msgid "Name"
+msgstr "الاسم"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__not_accomplished
+msgid "Not Accomplished"
+msgstr "لم ينجز"
+
+#. module: accr_models
+#: model:ir.actions.report,name:accr_models.pvg_notes_report
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_directions_tree
+msgid "Notes Plans"
+msgstr "ملاحظات وتوجيهات زيارة الصف"
+
+#. module: accr_models
+#: model:ir.actions.act_window,name:accr_models.notes_directions_action
+msgid "Notes action"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__type
+#: model:ir.ui.menu,name:accr_models.notes_directions_categ
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_directions_form
+msgid "Notes and directions"
+msgstr "ملاحظات وتوجيهات"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__notesdirections_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions_lines__notesdirections
+msgid "Notesdirections"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_needaction_counter
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_needaction_counter
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_needaction_counter
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_has_error_counter
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_has_error_counter
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_has_error_counter
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الاخطاء"
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_needaction_counter
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_needaction_counter
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_needaction_counter
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_has_error_counter
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_has_error_counter
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_has_error_counter
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__message_unread_counter
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__message_unread_counter
+#: model:ir.model.fields,help:accr_models.field_notes_directions__message_unread_counter
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Occupational specialist"
+msgstr "أخصائي العلاج الوظيفي"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Parent"
+msgstr "ولي الامر"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__contact_mobiles
+msgid "Parent Mobile"
+msgstr "ارقام التواصل مع ولي الامر"
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.individual_education_view_form
+msgid "Personal data"
+msgstr "البيانات الشخصية"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Physiotherapy specialist"
+msgstr "أخصائي العلاج الطبيعي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans_lines__plan_id
+msgid "Plan"
+msgstr "خطة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education_lines__position_id
+msgid "Position"
+msgstr "الوظيفة"
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.individual_education_view_form
+msgid "Program preparation team"
+msgstr "فريق اعداد البرنامج"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Psychological specialist"
+msgstr "أخصائي نفسي"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Special Education specialist"
+msgstr "أخصائي تربية خاصة"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Speech specialist"
+msgstr "أخصائي العلاج النطقي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__student_id
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__student_id
+msgid "Student"
+msgstr "الطالب"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Sunday"
+msgstr "الاحد"
+
+#. module: accr_models
+#: selection:individual.education.lines,position_id:0
+msgid "Supervisor"
+msgstr "المنسق التربوي"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__teacher_id
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__teacher_id
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__teacher_id
+msgid "Teacher"
+msgstr "المعلم"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Thursday"
+msgstr "الثلاثاء"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Tuesday"
+msgstr "الاربعاء"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_unread
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_unread
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_unread
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__message_unread_counter
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__message_unread_counter
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__message_unread_counter
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_individual_education__website_message_ids
+#: model:ir.model.fields,field_description:accr_models.field_monthly_plans__website_message_ids
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__website_message_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: accr_models
+#: model:ir.model.fields,help:accr_models.field_individual_education__website_message_ids
+#: model:ir.model.fields,help:accr_models.field_monthly_plans__website_message_ids
+#: model:ir.model.fields,help:accr_models.field_notes_directions__website_message_ids
+#: model:ir.model.fields,help:accr_models.field_weekly_plans__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: accr_models
+#: selection:notes.directions,week_list:0
+msgid "Wednesday"
+msgstr "الخميس"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_notes_directions__week_list
+msgid "Weekday"
+msgstr "يوم العمل"
+
+#. module: accr_models
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans__weekly_plans_ids
+#: model:ir.model.fields,field_description:accr_models.field_weekly_plans_lines__weekly_plans
+#: model:ir.ui.menu,name:accr_models.weekly_plans_categ
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_plans_form
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_plans_tree
+msgid "Weekly Plans"
+msgstr "المخطط الاسبوعي"
+
+#. module: accr_models
+#: model:ir.actions.report,name:accr_models.pvg_weekly_report
+msgid "Weekly Report"
+msgstr "تقرير الاسبوعي"
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_individual_education
+msgid "individual.education"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_individual_education_lines
+msgid "individual.education.lines"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_monthly_plans
+msgid "monthly.plans"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_monthly_plans_lines
+msgid "monthly.plans.lines"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_notes_directions
+msgid "notes.directions"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_notes_directions_lines
+msgid "notes.directions.lines"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.actions.act_window,name:accr_models.weekly_plans_action
+msgid "weekly plans action"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_weekly_plans
+msgid "weekly.plans"
+msgstr ""
+
+#. module: accr_models
+#: model:ir.model,name:accr_models.model_weekly_plans_lines
+msgid "weekly.plans.lines"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "أنجر"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "الاسم"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "الاهداف التعليمية"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "البند"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "التوقيع"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "الخطة التربوية الفردية"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "المجال"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "الملاحظات"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "الملاحظات والتوجيهات"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "الهدف منه"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "الوظيفه"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "برنامج التعليم الفردى"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.plan_report
+msgid "فريق أعداد البرنامج الفردي"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.monthly_plan_report
+msgid "لم ينجز"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.notes_report
+msgid "ملاحظات وتوجيهات زيارة الصف"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "نموذج الاسبوعي للأنشطة الجماعية"
+msgstr ""
+
+#. module: accr_models
+#: model_terms:ir.ui.view,arch_db:accr_models.weekly_report
+msgid "نوع النشاط"
+msgstr ""
+

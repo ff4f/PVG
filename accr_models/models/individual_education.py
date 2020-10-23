@@ -24,5 +24,5 @@ class individualeducationlines(models.Model):
     _name = 'individual.education.lines'
 
     response_id = fields.Many2one(comodel_name="res.users", string="Name", required=True, )
-    position_id = fields.Selection(selection=[('parent', 'Parent'), ('supervisor', 'Supervisor'),('medical', 'Medical User'),('psychological', 'Psychological User'),('physiotherapy', 'Physiotherapy User'),('occupational', 'Occupational User'),('speech', 'Speech User'),('special', 'Special Education User'),('esocial','E-social User')], string='Position', )
+    position_id = fields.Selection(selection=[('parent', 'Parent'), ('supervisor', 'Supervisor'),('behavior', 'Behavior modification specialist'),('psychological', 'Psychological specialist'),('physiotherapy', 'Physiotherapy specialist'),('occupational', 'Occupational specialist'),('speech', 'Speech specialist'),('special', 'Special Education specialist'),('esocial','Social specialist')], string='Position', )
     individual_id = fields.Many2one(comodel_name="individual.education")

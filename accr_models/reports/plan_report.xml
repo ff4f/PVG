@@ -32,7 +32,7 @@
                                         <span style="float:right">تاريخ الميلاد</span>
                                     </td>
                                     <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.student_id.name"/>
+                                        <span style="float:right" t-field="doc.student_id.x_name"/>
                                     </td>
                                     <td>
                                         <span style="float:right">الاسم</span>
@@ -100,8 +100,8 @@
                         <br/>
                         <br/>
                         <h3>فريق أعداد البرنامج الفردي</h3>
-                        <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
-                            <tbody>
+                        <table style="border-collapse: collapse;">
+                            <thead style="width:100%;border-left: 1px solid gray;border-top: 1px solid gray;border-bottom: 1px solid gray;                     border-right: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;                     font-weight: bold;padding-left:0px;padding-top:5px;padding-bottom:5px;border-collapse: collapse;">
                                 <tr>
                                     <th style="width: 341px;border: 1px solid black;">
                                         <center>التوقيع</center>
@@ -113,20 +113,16 @@
                                         <center>الاسم</center>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <tr t-foreach="doc.lines_ids" t-as="rec">
-                                        <td style="width: 341px;border: 1px solid black;"></td>
-                                        <td style="width: 341px;border: 1px solid black;">
-                                            <center>
-                                                <span t-field="rec.position_id.name"/>
-                                            </center>
-                                        </td>
-                                        <td style="width: 341px;border: 1px solid black;">
-                                            <center>
-                                                <span t-field="rec.response_id.name"/>
-                                            </center>
-                                        </td>
-                                    </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.lines_ids" t-as="rec">
+                                    <td class="text-right"></td>
+                                    <td class="text-right">
+                                        <span t-field="rec.position_id.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="rec.response_id.name"/>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
