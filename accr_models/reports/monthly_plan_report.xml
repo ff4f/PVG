@@ -33,8 +33,8 @@
 
                                 </td>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
-                                    <strong>:</strong>
                                     <strong>الي</strong>
+                                    <strong>:</strong>
                                     <span>(</span>
                                     <strong t-esc="doc.date_to"/>
                                     <span>)</span>
@@ -43,18 +43,18 @@
                             <tr>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
                                     <t t-if="doc.teacher_id">
-                                        <strong t-field="doc.teacher_id.name"/>
-                                        <strong>:</strong>
                                         <strong>المعلم</strong>
+                                        <strong>:</strong>
+                                        <strong t-field="doc.teacher_id.name"/>
                                     </t>
 
                                 </td>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
                                     <div class="text-right">
                                         <t t-if="doc.student_id">
-                                            <strong t-field="doc.student_id.x_name"/>
-                                            <strong>:</strong>
                                             <strong>الطالب</strong>
+                                            <strong>:</strong>
+                                            <strong t-field="doc.student_id.x_name"/>
                                         </t>
                                     </div>
                                 </td>
