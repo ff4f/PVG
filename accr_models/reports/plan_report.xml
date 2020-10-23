@@ -60,7 +60,7 @@
                                         <span style="float:right">مدير الحالة</span>
                                     </td>
                                     <td style="width: 263px;">
-                                        <span style="float:right" t-field="doc.adress"/>
+                                        <span style="float:right" t-field="doc.address"/>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right">العنوان</span>
@@ -74,7 +74,7 @@
                                         <span style="float:right">رقم تواصل مع ولى الامر</span>
                                     </td>
                                     <td style="width: 263px;">
-                                        <span style="float:right" t-field="doc.doctor_feedback"/>
+                                        <span style="float:right" t-field="doc.medical_diagnosis"/>
                                     </td>
                                     <td style="width: 263px;">
                                         <span style="float:right">التشخيص الطبى</span>

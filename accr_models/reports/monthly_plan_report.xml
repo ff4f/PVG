@@ -26,14 +26,14 @@
                             <tr>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;" colspan="2">
                                     <span>(</span>
-                                    <strong t-esc="o.date_to"/>
+                                    <strong t-esc="doc.date_to"/>
                                     <span>)</span>
                                     <strong>:</strong>
                                     <strong>الي</strong>
                                 </td>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
                                     <span>(</span>
-                                    <strong t-esc="o.date_from"/>
+                                    <strong t-esc="doc.date_from"/>
                                     <span>)</span>
                                     <strong>:</strong>
                                     <strong>من</strong>
@@ -41,8 +41,8 @@
                             </tr>
                             <tr>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
-                                    <t t-if="o.teacher_id">
-                                        <strong t-field="o.teacher_id.name"/>
+                                    <t t-if="doc.teacher_id">
+                                        <strong t-field="doc.teacher_id.name"/>
                                         <strong>:</strong>
                                         <strong>المعلم</strong>
                                     </t>
@@ -50,8 +50,8 @@
                                 </td>
                                 <td class="text-right" style="padding-top:0px;padding-bottom:1px;">
                                     <div class="text-right">
-                                        <t t-if="o.student_id">
-                                            <strong t-field="o.student_id.x_name"/>
+                                        <t t-if="doc.student_id">
+                                            <strong t-field="doc.student_id.x_name"/>
                                             <strong>:</strong>
                                             <strong>الطالب</strong>
                                         </t>

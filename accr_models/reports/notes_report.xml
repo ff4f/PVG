@@ -5,7 +5,7 @@
             model="notes.directions"
             string="Notes"
             report_type="qweb-pdf"
-            name="accr_models.notes_report"
+            name="monthly_plans.notes_report"
     />
 
     <template id="notes_report">
@@ -18,68 +18,44 @@
                                 ملاحظات وتوجيهات زيارة الصف
                             </center>
                         </h2>
-                        <hr/>
-                        <table style="height: 100%;" width="100%">
-                            <tbody>
-                                <tr>
-                                    <td style="width: 264px;">
-                                        <span style="float:right" t-field="doc.teacher_id.name"/>
-                                    </td>
-                                    <td style="width: 264px;">
-                                        <span style="margin-left:8px">الأخصائ/ية</span>
-                                    </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right" t-field="doc.week_list"/>
-                                    </td>
-                                    <td style="width: 263px;">
-                                        <span style="margin-left:8px">/اليوم</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 264px;"></td>
-                                    <td style="width: 264px;">
-                                        <span style="margin-left:8px">التوقيع</span>
-                                    </td>
-                                    <td style="width: 263px;">
-                                        <span style="float:right" t-field="doc.date"/>
-                                    </td>
-                                    <td style="width: 263px;">
-                                        <span style="margin-left:8px">/التاريخ</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <table style="border-collapse: collapse;">
-                            <thead style="width:100%;border-left: 1px solid gray;border-top: 1px solid gray;border-bottom: 1px solid gray;                     border-right: 1px solid gray;font: 14px Arial, Helvetica, sans-serif;                     font-weight: bold;padding-left:0px;padding-top:5px;padding-bottom:5px;border-collapse: collapse;">
-                                <tr>
-                                    <th class="text-right">
-                                        <center>الملاحظات والتوجيهات</center>
-                                    </th>
-                                    <th class="text-right">
-                                        <center>البند</center>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <tr t-foreach="doc.notesdirections_ids" t-as="rec">
-                                        <td class="text-right">
-                                            <span t-field="rec.type"/>
-                                        </td>
-                                        <td class="text-right">
-                                            <span t-field="rec.item"/>
-                                        </td>
+                            <hr/>
+                            <table style="height: 100%;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 264px;"><span style="float:right" t-field="doc.teacher_id.name"/> </td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> الأخصائ/ية </span></td>
+                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.week_list"/></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px"> /اليوم</span></td>
                                     </tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br/>
-                        <br/>
-                        <span style="float:right;padding-right:20px">/المشرف</span>
-                        <br/>
+                                    <tr>
+                                       <td style="width: 264px;"></td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> التوقيع </span></td>
+                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.date"/></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px"> /التاريخ</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 264px;border: 1px solid black;"><center>الملاحظات والتوجيهات</center></th>
+                                        <th style="width: 264px;border: 1px solid black;"><center>البند</center></th>
+                                    </tr>
+                                    <tr>
+                                        <tr t-foreach="doc.notesdirections_ids" t-as="rec">
+                                            <td style="width: 263px;border: 1px solid black;"> <center><span t-field="rec.type"/></center></td>
+                                            <td style="width: 263px;border: 1px solid black;"> <center><span t-field="rec.item"/></center></td>
+                                        </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <span style="float:right;padding-right:20px">/المشرف</span>
+                            <br/>
                         <span style="float:right;padding-right:20px">/التوقيع</span>
                     </div>
                 </t>
