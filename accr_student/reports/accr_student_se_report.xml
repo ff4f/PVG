@@ -51,9 +51,15 @@
                         <div class="row">
                             <div class="col-6">
                                 <span>
-                                    <Strong>File_no: </Strong>
+                                    <Strong>File no: </Strong>
                                 </span>
                                 <span t-field="doc.file_no"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>Registry no: </Strong>
+                                </span>
+                                <span t-field="doc.registry_no"/>
                             </div>
                             <div class="col-6">
                                 <span>

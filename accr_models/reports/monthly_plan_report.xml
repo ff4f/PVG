@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="monthly_plan_report_action"
+            model="monthly.plans"
+            string="Monthly Report"
+            report_type="qweb-pdf"
+            name="accr_models.monthly_plan_report"
+    />
+
+    <template id="monthly_plan_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <table style="height: 100%;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.date_to"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="margin-left:8px">الى</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.date_from"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="margin-left:8px">من</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.month"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="margin-left:8px">التخطيط الشهري لشهر</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.teacher_id.name"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="margin-left:8px">أسم المعلم</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.student_id.x_name"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="margin-left:8px">أسم الطالب</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>لم ينجز</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>أنجر</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>الملاحظات</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>الاهداف التعليمية</center>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <tr t-foreach="doc.line_ids" t-as="rec">
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.not_accomplished"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.is_accomplished"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.comment"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.teach_goal_id.x_name"/>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

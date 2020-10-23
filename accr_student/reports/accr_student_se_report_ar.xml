@@ -57,6 +57,12 @@
                             </div>
                             <div class="col-6">
                                 <span>
+                                    <Strong>رقم السجل المدني: </Strong>
+                                </span>
+                                <span t-field="doc.registry_no"/>
+                            </div>
+                            <div class="col-6">
+                                <span>
                                     <Strong>الجنس: </Strong>
                                 </span>
                                 <span t-field="doc.gander"/>

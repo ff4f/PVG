@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_individual_education,access.individual.education,model_individual_education,base.group_user,1,1,1,1
+access_weekly_plans,weekly.plans,model_weekly_plans,base.group_user,1,1,1,1
+access_individual_education_lines,access.individual.education.lines,model_individual_education_lines,base.group_user,1,1,1,1
+access_weekly_plans_lines,weekly.plans.lines,model_weekly_plans_lines,base.group_user,1,1,1,1
+access_notes_directions,notes.directions,model_notes_directions,base.group_user,1,1,1,1
+access_notes_directions_lines,notes.directions.lines,model_notes_directions_lines,base.group_user,1,1,1,1
+access_monthly_plans,access.monthly.plans,model_monthly_plans,base.group_user,1,1,1,1
+access_monthly_plans_line,access.monthly.plans.lines,model_monthly_plans_lines,base.group_user,1,1,1,1
+

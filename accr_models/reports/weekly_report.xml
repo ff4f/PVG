@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="pvg_weekly_report"
+            model="weekly.plans"
+            string="Weekly Report"
+            report_type="qweb-html"
+            name="accr_models.weekly_report"
+    />
+
+    <template id="weekly_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <center>
+                                نموذج الاسبوعي للأنشطة الجماعية
+                            </center>
+                        </h2>
+                            <hr/>
+                            <table style="height: 100%;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 263px;"></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px"></span></td>
+                                        <td style="width: 264px;"><span style="float:right" t-field="doc.teacher_id.name"/> </td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> اسم المعلم/ه </span></td>
+                                    </tr>
+                                    <tr>
+                                       <td style="width: 264px;"><span style="float:right" t-field="doc.date_to"/></td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> الى </span></td>
+                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.date_from"/></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px">تاريخ من</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 341px;border: 1px solid black;"><center>الهدف منه</center></th>
+                                        <th style="width: 341px;border: 1px solid black;"><center>نوع النشاط</center></th>
+                                        <th style="width: 341px;border: 1px solid black;"><center>المجال</center></th>
+                                    </tr>
+                                    <tr>
+                                        <tr t-foreach="doc.weekly_plans_ids" t-as="rec">
+                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.goal"/></center></td>
+                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.activity_type"/></center></td>
+                                            <td style="width: 341px;border: 1px solid black;"> <center><span t-field="rec.type"/></center></td>
+                                        </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

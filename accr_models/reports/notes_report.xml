@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="pvg_notes_report"
+            model="notes.directions"
+            string="Notes"
+            report_type="qweb-html"
+            name="accr_models.notes_report"
+    />
+
+    <template id="notes_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <center>
+                                ملاحظات وتوجيهات زيارة الصف
+                            </center>
+                        </h2>
+                            <hr/>
+                            <table style="height: 100%;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 264px;"><span style="float:right" t-field="doc.teacher_id.name"/> </td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> الأخصائ/ية </span></td>
+                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.week_list"/></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px"> /اليوم</span></td>
+                                    </tr>
+                                    <tr>
+                                       <td style="width: 264px;"></td>
+                                        <td style="width: 264px;"><span style="margin-left:8px"> التوقيع </span></td>
+                                        <td style="width: 263px;"> <span style="float:right" t-field="doc.date"/></td>
+                                        <td style="width: 263px;"><span style="margin-left:8px"> /التاريخ</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 264px;border: 1px solid black;"><center>الملاحظات والتوجيهات</center></th>
+                                        <th style="width: 264px;border: 1px solid black;"><center>البند</center></th>
+                                    </tr>
+                                    <tr>
+                                        <tr t-foreach="doc.notesdirections_ids" t-as="rec">
+                                            <td style="width: 263px;border: 1px solid black;"> <center><span t-field="rec.type"/></center></td>
+                                            <td style="width: 263px;border: 1px solid black;"> <center><span t-field="rec.item"/></center></td>
+                                        </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <span style="float:right;padding-right:20px">/المشرف</span>
+                            <br/>
+                        <span style="float:right;padding-right:20px">/التوقيع</span>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

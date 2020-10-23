@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+
+        <record id="weekly_plans_form" model="ir.ui.view">
+            <field name="name">weekly.plans.form</field>
+            <field name="model">weekly.plans</field>
+            <field name="arch" type="xml">
+                <form string="Weekly Plans">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="teacher_id"/>
+                            </group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Activities">
+                                <field name="weekly_plans_ids">
+                                    <tree string="Activities" editable="bottom">
+                                        <field name="type"/>
+                                        <field name="activity_type"/>
+                                        <field name="goal"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="weekly_plans_tree" model="ir.ui.view">
+            <field name="name">weekly.plans.tree</field>
+            <field name="model">weekly.plans</field>
+            <field name="arch" type="xml">
+                <tree string="Weekly Plans">
+                    <field name="teacher_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="weekly_plans_action" model="ir.actions.act_window">
+            <field name="name">weekly plans action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">weekly.plans</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create New weekly Plan
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="weekly_plans_categ" name="Weekly Plans" parent="accr_models_root" action="weekly_plans_action"
+                  sequence="4"/>
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="pvg_plan_report"
+            model="individual.education"
+            string="Individual Education Program Report"
+            report_type="qweb-pdf"
+            name="accr_models.plan_report"
+    />
+
+    <template id="plan_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <center>
+                                برنامج التعليم الفردى
+                            </center>
+                            <center>
+                                الخطة التربوية الفردية
+                            </center>
+                        </h2>
+                        <hr/>
+                        <table style="height: 100%;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.birthdate"/>
+                                    </td>
+                                    <td>
+                                        <span style="float:right">تاريخ الميلاد</span>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.student_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span style="float:right">الاسم</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.prepardate"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">تاريخ اعداد البرنامج</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.transdate"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">تاريخ التحويل</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.manager_id.name"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">مدير الحالة</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.adress"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">العنوان</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.contact_mobiles"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">رقم تواصل مع ولى الامر</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.doctor_feedback"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">التشخيص الطبى</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 264px;">
+                                        <span style="float:right" t-field="doc.language"/>
+                                    </td>
+                                    <td style="width: 264px;">
+                                        <span style="float:right">اللغة المستخدمة بالمنزل</span>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right" t-field="doc.nationality.name"/>
+                                    </td>
+                                    <td style="width: 263px;">
+                                        <span style="float:right">الجنسيه</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h3>فريق أعداد البرنامج الفردي</h3>
+                        <table class="center" style="height: 100%;margin-left: auto;margin-right: auto;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>التوقيع</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>الوظيفه</center>
+                                    </th>
+                                    <th style="width: 341px;border: 1px solid black;">
+                                        <center>الاسم</center>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <tr t-foreach="doc.lines_ids" t-as="rec">
+                                        <td style="width: 341px;border: 1px solid black;"></td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.position_id.name"/>
+                                            </center>
+                                        </td>
+                                        <td style="width: 341px;border: 1px solid black;">
+                                            <center>
+                                                <span t-field="rec.response_id.name"/>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

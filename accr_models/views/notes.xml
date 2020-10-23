@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="notes_directions_form" model="ir.ui.view">
+            <field name="name">notes.directions.form</field>
+            <field name="model">notes.directions</field>
+            <field name="arch" type="xml">
+                <form string="Notes and directions">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="teacher_id"/>
+                            </group>
+                            <group>
+                                <field name="week_list"/>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Notes and directions">
+                                <field name="notesdirections_ids">
+                                    <tree string="Notes and directions" editable="bottom">
+                                        <field name="item"/>
+                                        <field name="type"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="notes_directions_tree" model="ir.ui.view">
+            <field name="name">notes.directions.tree</field>
+            <field name="model">notes.directions</field>
+            <field name="arch" type="xml">
+                <tree string="Notes Plans">
+                    <field name="teacher_id"/>
+                    <field name="week_list"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="notes_directions_action" model="ir.actions.act_window">
+            <field name="name">Notes action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">notes.directions</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create New Notes
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="notes_directions_categ" name="Notes and directions" parent="accr_models_root" action="notes_directions_action" sequence="3"/>
+    </data>
+</odoo>
