@@ -118,7 +118,7 @@
                                 <tr t-foreach="doc.lines_ids" t-as="rec">
                                     <td class="text-right"></td>
                                     <td class="text-right">
-                                        <span t-field="rec.position_id.name"/>
+                                        <span t-field="rec.position_id"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-field="rec.response_id.name"/>
