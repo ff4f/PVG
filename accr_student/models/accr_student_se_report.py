@@ -20,7 +20,7 @@ class accrStudentSEReport(models.Model):
     report_date = fields.Date(string='Report Date')
     
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
-    plan_date = fields.Datetime(string=u'Plan Create Date')
+    plan_date = fields.Datetime(string=u'Plan Create Date',related='plan.create_date',store=True)
 
 #     plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
 #     plan_response_forms = fields.One2many(related='plan.x_studio_response_forms', string=u'Plan Response Forms', )
