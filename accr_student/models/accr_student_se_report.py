@@ -18,9 +18,17 @@ class accrStudentSEReport(models.Model):
 
     school_year = fields.Char(string='School Year')
     report_date = fields.Date(string='Report Date')
-    
+
     plan = fields.Many2one('x_se_long_term_plan', string=u'Plan', readonly=False, required=True, )
-    plan_date = fields.Datetime(string=u'Plan Create Date',related='plan.create_date',store=True)
+    plan_date = fields.Datetime(string=u'Plan Create Date')
+
+    def _cron_plan_date(self):
+        rep = self.env['accr.student.se.report'].search([])
+        for rec in rep:
+            if rec.plan:
+                rec.plan_date = rec.plan.create_date
+
+
 
 #     plan_categories = fields.One2many(related='plan.x_studio_categories', string=u'Plan Categories', )
 #     plan_response_forms = fields.One2many(related='plan.x_studio_response_forms', string=u'Plan Response Forms', )
