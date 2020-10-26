@@ -54,7 +54,7 @@
                                     <Strong>رقم الملف: </Strong>
                                 </span>
                                 <span t-field="doc.file_no"/>
-                            </div
+                            </div>
                             <div class="col-6">
                                 <span>
                                     <Strong>الجنس: </Strong>
