@@ -59,12 +59,6 @@
                             </div>
                             <div class="col-6">
                                 <span>
-                                    <Strong>رقم السجل المدني:</Strong>
-                                </span>
-                                <span t-field="doc.registry_no"/>
-                            </div>
-                            <div class="col-6">
-                                <span>
                                     <Strong>الجنس:</Strong>
                                 </span>
                                 <span t-field="doc.gander"/>
@@ -85,11 +79,17 @@
                             </div>
                         </div>
                         <div class="row" style="page-break-inside: avoid">
-                            <div class="col-12">
+                            <div class="col-6">
                                 <span>
                                     <Strong>التشخيص:</Strong>
                                 </span>
                                 <span t-field="doc.diagnosis"/>
+                            </div>
+                             <div class="col-6">
+                                <span>
+                                    <Strong>رقم السجل المدني: </Strong>
+                                </span>
+                                <span t-field="doc.registry_no"/>
                             </div>
                         </div>
                         <hr/>

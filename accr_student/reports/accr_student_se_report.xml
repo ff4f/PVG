@@ -75,6 +75,12 @@
                                 </span>
                                 <span t-field="doc.diagnosis"/>
                             </div>
+                            <div class="col-6">
+                                <span>
+                                    <Strong>No. civil registry</Strong>
+                                </span>
+                                <span t-field="doc.registry_no"/>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-6">

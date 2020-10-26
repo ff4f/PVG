@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-24 22:53+0000\n"
-"PO-Revision-Date: 2019-05-24 22:53+0000\n"
+"POT-Creation-Date: 2020-10-26 21:24+0000\n"
+"PO-Revision-Date: 2020-10-26 21:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,20 @@ msgid "<b>Passport Expiration Date:</b>"
 msgstr "<b>تاريخ انتهاء جواز السفر:</b>"
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span style=\"font-weight: 700;\">مفتاح الرسم البياني:</span><br/>\n"
+"                                                            <span style=\"font-weight: 700; color: rgb(31, 119, 180);\">لا استجابة</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(174, 199, 232);\">جسدي-مساعدة كلية</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(255, 127, 14);\">جسدي-مساعدة جزئية</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(255, 187, 120);\">تقليد</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(44, 160, 44);\">لفظي-مساعدة كلية</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(152, 223, 138);\">لفظي-مساعدة جزئية</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(214, 39, 40);\">ايمائي</span> - \n"
+"                                                            <span style=\"font-weight: 700; color: rgb(255, 152, 150);\">مستقل</span>"
+msgstr ""
+
+#. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "<span>Acheived</span>"
 msgstr "<span>تحقق؟</span>"
@@ -33,7 +47,7 @@ msgstr "<span>تحقق؟</span>"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "<span>Notes</span>"
-msgstr "<span>ملاحظات</span>"
+msgstr ""
 
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
@@ -43,27 +57,75 @@ msgstr "<span>المهارة</span>"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "<span>Student Special Education Report</span>"
-msgstr "<span>تقرير التربية الخاصة</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>التحقق</span>"
+msgstr ""
 
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "<span>الحالة</span>"
-msgstr "<span>الحالة</span>"
+msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "<span>المهارة</span>"
-msgstr "<span>المهارة</span>"
+msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+msgid "<span>تاريخ التحقق</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>تحقق بمساعدة</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>تحقق</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "<span>تقرير التربية الخاصة</span>"
-msgstr "<span>تقرير التربية الخاصة</span>"
+msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>لم يتحقق</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>مسلسل</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "<span>ملاحظات</span>"
-msgstr "<span>ملاحظات</span>"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "<span>ملاحظات</span>\n"
+"                                                        <br/>"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.module.category,name:accr_student.module_students_category
@@ -76,9 +138,14 @@ msgid "Achieved"
 msgstr "تحقق"
 
 #. module: accr_student
+#: selection:accr.student.se.report.s.goal,goal_achieved:0
+msgid "Achieved With Help"
+msgstr "تحقق بمساعدة"
+
+#. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_needaction
 msgid "Action Needed"
-msgstr "الإجراء المطلوب"
+msgstr "إجراء مطلوب"
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_ids
@@ -98,7 +165,7 @@ msgstr "اسم الطالب بالعربية"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "Arabic Name:"
-msgstr "اسم الطالب بالعربية"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_attachment_count
@@ -113,7 +180,7 @@ msgstr "تاريخ الميلاد"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "Birth Date:"
-msgstr "تاريخ الميلاد"
+msgstr ""
 
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
@@ -168,7 +235,7 @@ msgstr "التشخيص"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "Diagnosis:"
-msgstr "التشخيص"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__display_name
@@ -182,7 +249,7 @@ msgstr "اسم العرض"
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__educational_plan
 msgid "Educational Plan"
-msgstr "الخطة التعليمية"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__file_no
@@ -192,7 +259,7 @@ msgstr "رقم الملف"
 
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
-msgid "File_no:"
+msgid "File no:"
 msgstr "رقم الملف"
 
 #. module: accr_student
@@ -218,7 +285,7 @@ msgstr "الجنس"
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
 msgid "Gander:"
-msgstr "الجنس"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__goal_achieved
@@ -237,7 +304,7 @@ msgstr "المعرف"
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__id_expiration_date
 msgid "ID Expiration Date"
-msgstr "تاريخ انتهاء الهوية"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_unread
@@ -360,16 +427,17 @@ msgid "Next Activity Type"
 msgstr "نوع النشاط التالي"
 
 #. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__registry_no
+msgid "No. civil registry"
+msgstr "رقم السجل المدني"
+
+#. module: accr_student
 #: selection:accr.student.se.report.s.goal,goal_achieved:0
 msgid "Not Achieved"
 msgstr "لم يتحقق"
 
 #. module: accr_student
-#: selection:accr.student.se.report.s.goal,goal_achieved:0
-msgid "Achieved With Help"
-msgstr "تحقق بمساعدة"
-
-#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__notes
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__notes
 msgid "Notes"
 msgstr "ملاحظات"
@@ -387,7 +455,7 @@ msgstr "عدد الإجراءات"
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__message_has_error_counter
 msgid "Number of error"
-msgstr "عدد الاخطاء"
+msgstr "عدد الأخطاء"
 
 #. module: accr_student
 #: model:ir.model.fields,help:accr_student.field_accr_student_notification__message_needaction_counter
@@ -407,7 +475,7 @@ msgstr "عدد الرسائل الجديدة"
 #. module: accr_student
 #: selection:accr.student.notification,activity_state:0
 msgid "Overdue"
-msgstr "المستحقات المتأخرة"
+msgstr "تأخر"
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__passport_expiration_date
@@ -417,13 +485,13 @@ msgstr ""
 #. module: accr_student
 #: model:ir.ui.menu,name:accr_student.menu_accr_students_passport_id_notifications
 msgid "Passport and ID Notifications"
-msgstr "تاريخ انتهاء جواز السفر"
+msgstr "أشعارات انتهاء الهوية و جواز السفر"
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__plan
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__plan
 msgid "Plan"
-msgstr "الخطة"
+msgstr "خطة"
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__plan_categories
@@ -433,17 +501,7 @@ msgstr "مجالات الخطط التربوية"
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__plan_date
 msgid "Plan Create Date"
-msgstr "تاريخ انشاء الخظة"
-
-#. module: accr_student
-#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__school_year
-msgid "Plan Create Date"
-msgstr "السنة الدراسية"
-
-#. module: accr_student
-#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__report_date
-msgid "Plan Create Date"
-msgstr "تاريخ التقرير"
+msgstr "تاريخ انشاء الخطة"
 
 #. module: accr_student
 #: selection:accr.student.notification,activity_state:0
@@ -451,9 +509,19 @@ msgid "Planned"
 msgstr "مخطط"
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_template
+msgid "Registry No :"
+msgstr ""
+
+#. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__report_category
 msgid "Report Category"
 msgstr "مجال الخطة"
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__report_date
+msgid "Report Date"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__report
@@ -475,7 +543,7 @@ msgstr "التقارير"
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__activity_user_id
 msgid "Responsible User"
-msgstr "المسئول"
+msgstr "المستخدم المسئول"
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__response_forms
@@ -483,19 +551,31 @@ msgid "Resposen Forms"
 msgstr "نماذج الاستجابة"
 
 #. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report__school_year
+msgid "School Year"
+msgstr ""
+
+#. module: accr_student
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_category__sequence
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__sequence
+#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_s_goal__short_term_goal
 msgid "Short Term Goal"
-msgstr "الهدف قصير المدي"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__short_term_goals
 msgid "Short Term Goals"
-msgstr "الاهداف قصيرة المدي"
+msgstr ""
 
 #. module: accr_student
-#: model:ir.model.fields,field_description:accr_student.field_accr_student_se_report_l_goal__notes
-msgid "Notes"
-msgstr "ملاحظات"
+#: model:ir.actions.report,name:accr_student.accr_student_special_education_report_ar_3
+msgid "Special Education Final Report Without Achievement Date"
+msgstr "تقرير التربية الخاصة بدون تاريخ التحقق"
 
 #. module: accr_student
 #: model:ir.ui.menu,name:accr_student.menu_accr_student_se_report
@@ -527,13 +607,13 @@ msgstr "اسم الطالب"
 #. module: accr_student
 #: model:ir.model,name:accr_student.model_accr_student_notification
 msgid "Student Passport and ID Expiration Notification"
-msgstr "اشعار انتهاء الهوية و حواز السفر"
+msgstr ""
 
 #. module: accr_student
 #: model:ir.actions.report,name:accr_student.accr_student_special_education_report
 #: model:ir.model,name:accr_student.model_accr_student_se_report
 msgid "Student Special Education Report"
-msgstr "تقرير التربية الخاصة"
+msgstr ""
 
 #. module: accr_student
 #: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_notification_tree
@@ -543,7 +623,12 @@ msgstr "الطلاب"
 #. module: accr_student
 #: model:ir.actions.act_window,name:accr_student.act_open_accr_student_notification_view
 msgid "Students Notifications"
-msgstr "اشعارات الطلاب"
+msgstr "أشعارات انتهاء الهوية و جواز السفر"
+
+#. module: accr_student
+#: model:res.groups,name:accr_student.students_group_teacher
+msgid "Teacher"
+msgstr ""
 
 #. module: accr_student
 #: selection:accr.student.notification,activity_state:0
@@ -566,11 +651,6 @@ msgid "User"
 msgstr "المستخدم"
 
 #. module: accr_student
-#: model:ir.model,name:accr_student.model_accr_student_se_report_categories
-msgid "accr.student.se.report.categories"
-msgstr ""
-
-#. module: accr_student
 #: model:ir.model,name:accr_student.model_accr_student_se_report_category
 msgid "accr.student.se.report.category"
 msgstr ""
@@ -581,11 +661,6 @@ msgid "accr.student.se.report.l.goal"
 msgstr ""
 
 #. module: accr_student
-#: model:ir.model,name:accr_student.model_accr_student_se_report_lgoals
-msgid "accr.student.se.report.lgoals"
-msgstr ""
-
-#. module: accr_student
 #: model:ir.model,name:accr_student.model_accr_student_se_report_s_goal
 msgid "accr.student.se.report.s.goal"
 msgstr ""
@@ -593,44 +668,70 @@ msgstr ""
 #. module: accr_student
 #: model:ir.model.fields,field_description:accr_student.field_accr_student_notification__student
 msgid "student"
-msgstr "الطالب"
+msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "اسم الطالب بالانجليزية:"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "اسم الطالب:"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "التشخيص:"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "التقرير الوصفي"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "الجنس:"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "السنة الدراسية:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "المجالات"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "تاريخ الالتحاق:"
 msgstr ""
 
 #. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+msgid "تاريخ التقرير:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "تاريخ الميلاد:"
 msgstr ""
@@ -641,6 +742,25 @@ msgid "تقرير التربية الخاصة"
 msgstr ""
 
 #. module: accr_student
+#: model:ir.actions.report,name:accr_student.accr_student_special_education_report_ar_2
+msgid "تقرير التربية الخاصة بتاريخ التحقق"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.view_accr_student_se_report_form
+msgid "رقم السجل المدني"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
+msgid "رقم السجل المدني:"
+msgstr ""
+
+#. module: accr_student
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_2_template
+#: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_3_template
 #: model_terms:ir.ui.view,arch_db:accr_student.report_accr_student_se_report_ar_template
 msgid "رقم الملف:"
 msgstr ""
