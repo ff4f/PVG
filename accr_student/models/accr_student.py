@@ -9,4 +9,4 @@ class accrStudent(models.Model):
 class LongPlan(models.Model):
     _inherit = ['x_se_long_term_plan']
 
-    write_date = fields.Datetime("Last Updated On", readonly=False, index=True)
+    write_date = fields.Datetime("Last Updated On", readonly=False)
